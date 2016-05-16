@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>代码发布系统</title>
+<link href="/static/css/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="top">
+
+    </div>
+    <div class="loginCen">
+        <div class="loginBox">
+            <div class="loginBox_top">代码发布系统</div>
+            <div class="loginBox_cont">
+                <form action="/web/login" method="POST">
+                       <table>
+                               <tr>
+                                 <td class="ltd">用户名：</td>
+                                 <td><input type="text" class="inp" name="admin_user" maxlength=20/></td>
+                            </tr>
+                            <tr>
+                                 <td class="ltd">密码：</td>
+                                 <td><input type="password" class="inp" name="admin_pass" maxlength=20/></td>
+                            </tr>
+                            <tr>
+                                 <td colspan="2" class="tcen">
+                                 <input type="submit" class="btn btn_big btn_blue" value="登 录" />
+                                 </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="tcen">
+                                {{ret_msg}}
+                                </td>
+                            </tr>
+                       </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
