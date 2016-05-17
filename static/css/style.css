@@ -171,7 +171,7 @@ body{ line-height:150%; color:#333; font-family:"微软雅黑"; font-size:12px; 
 
 .w{ width:1000px; margin:0 auto;}
 
-.top{ height:90px; background:#fff; border-bottom:1px solid #dddddd;}
+.top{ height:90px; background:#fff;}
 .logo{ float:left; margin-top:10px;}
 
 .btn{ height:35px; width:128px; border-radius:2px; line-height:35px; cursor:pointer; text-align:center; color:#fff; text-decoration:none; display:inline-block; background:#74c956;border:none; font-family:"微软雅黑";}
@@ -186,7 +186,7 @@ body{ line-height:150%; color:#333; font-family:"微软雅黑"; font-size:12px; 
 .loginBox_cont table{width:100%;}
 .loginBox_cont table td{ padding:15px 4px;}
 .loginBox_cont table td.ltd{ text-align:right; font-size:14px;}
-.loginBox_cont table td.tcen{ text-align:center;}
+.loginBox_cont table td.tcen{ text-align:center;color:red;}
 .loginBox_cont table td .inp{ width:70%; height:42px; font-size:16px;}
 
 .btn_big{ height:52px; line-height:52px; font-size:16px; width:200px;}

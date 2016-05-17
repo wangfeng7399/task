@@ -62,12 +62,12 @@
 
                     <li id="fat-menu" class="dropdown">
                         <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="icon-user"></i> {{username}}
+                            <i class="icon-user"></i> {{user}}
                             <i class="icon-caret-down"></i>
                         </a>
 
                         <ul class="dropdown-menu">
-                            <li><a tabindex="-1" href="sign-in.html">退出</a></li>
+                            <li><a tabindex="-1" href="{% url 'logout' %}">退出</a></li>
                         </ul>
                     </li>
                     </ul>
@@ -82,7 +82,7 @@
         <div class="row-fluid">
             <div class="span3">
                 <div class="sidebar-nav">
-                  <div class="nav-header" data-toggle="collapse" data-target="#dashboard-menu"><i class="dashboard"></i>主页</div>
+                  <div class="nav-header" data-toggle="collapse"><i class="dashboard"></i>主页</div>
                 <div class="nav-header" data-toggle="collapse" data-target="#accounts-menu"><i class="icon-github-sign"></i>代码发布</div>
                 <ul id="accounts-menu" class="nav nav-list collapse in">
                   <li ><a href="sign-in.html">提交更新</a></li>
@@ -92,10 +92,23 @@
                   <li ><a href="reset-password.html">审核发布</a></li>
                 </ul>
 
-                <div class="nav-header" data-toggle="collapse" data-target="#settings-menu"><i class="icon-user-md"></i>人员管理</div>
+
+                <div class="nav-header" data-toggle="collapse" data-target="#dashboard-menu"><i class="icon-upload-alt"></i>数据库发布</div>
+                <ul id="dashboard-menu" class="nav nav-list collapse in">
+                  <li ><a href="sign-in.html">数据库脚本更新</a></li>
+                  <li ><a href="sign-up.html">所有更新</a></li>
+                  <li ><a href="reset-password.html">数据库查询</a></li>
+                  <li ><a href="reset-password.html">回滚记录</a></li>
+                  <li ><a href="reset-password.html">审核发布</a></li>
+                </ul>
+
+                <div class="nav-header" data-toggle="collapse" data-target="#settings-menu"><i class="icon-user"></i>人员管理</div>
                 <ul id="settings-menu" class="nav nav-list collapse in">
                   <li ><a href="403.html">新增人员</a></li>
                   <li ><a href="404.html">人员列表</a></li>
+                  <li><a href="404.html">人员调整</li>
+                  <li ><a href="404.html">新增组</a></li>
+                  <li ><a href="404.html">组列表</a></li>
                 </ul>
             </div>
         </div>

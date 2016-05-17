@@ -1,3 +1,5 @@
+#!/bin/env python3
+#coding:utf-8
 """
 WSGI config for task project.
 

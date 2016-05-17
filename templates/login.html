@@ -8,14 +8,16 @@
 
 <body>
     <div class="top">
-
     </div>
     <div class="loginCen">
         <div class="loginBox">
             <div class="loginBox_top">代码发布系统</div>
             <div class="loginBox_cont">
-                <form action="/web/login" method="POST">
+
+                <form action='{% url 'login' %}' method="POST">
+                        {% csrf_token %}
                        <table>
+
                                <tr>
                                  <td class="ltd">用户名：</td>
                                  <td><input type="text" class="inp" name="admin_user" maxlength=20/></td>
