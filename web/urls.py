@@ -11,4 +11,6 @@ urlpatterns = [
     url(r'^index',views.index,name="index"),
     url(r'^logout/$',views.Logout,name='logout'),
     url(r'^error/$',views.error,name='error'),
+    url(r'^createuser/$',user.createuser,name='createuser'),
+    url(r'^agentpasswd/$',user.agentpasswd,name='agentpasswd'),
 ]
