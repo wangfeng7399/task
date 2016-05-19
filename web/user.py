@@ -5,8 +5,73 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
+from django.contrib.auth.models import User
+from .models import Team,Host
+from .base import encode,decode
+@login_required(login_url=reverse_lazy('login'))
 def createuser(request):
-    return render(request,'user.html')
+    if request.method == 'POST':
+        name=request.POST.get('name')
+        username=request.POST.get('loginname')
+        superuser=request.POST.get('superuser')
+        password="1"
+        print(type(superuser),superuser)
+        if superuser=="0":
+            user=User.objects.create_user(username=username,password=password)
+        else:
+            user=User.objects.create_superuser(username=username,email="",password=password)
+        user.first_name=name
+        user.save()
+    else:
+        return render(request, 'user.html')
 
+@login_required(login_url=reverse_lazy('login'))
 def agentpasswd(request):
-    return render(request,'agentpasswd.html')
+    if request.method == 'POST':
+        passwd=request.POST.get('pwd')
+        user=User.objects.get(username=request.user)
+        user.set_password(passwd)
+        user.save()
+        return render(request,'agentpasswd.html',{"msg":"修改成功"})
+    else:
+        return render(request,'agentpasswd.html')
+
+@login_required(login_url=reverse_lazy('login'))
+def creategroup(request):
+    if request.method=='POST':
+        groupname=request.POST.get("groupname")
+        Team.objects.get_or_create(groupname=groupname)
+        return redirect(reverse('groupall'))
+    else:
+        return render(request,'creategroup.html')
+
+@login_required(login_url=reverse_lazy('login'))
+def teamall(request):
+    group=Team.objects.all()
+    return render(request,'groupall.html',{"group":group})
+
+@login_required(login_url=reverse_lazy('login'))
+def groupall(request):
+    group=Team.objects.all()
+    return render(request,'groupallnew.html',{"group":group})
+
+
+@login_required(login_url=reverse_lazy('login'))
+def createhost(request):
+    if request.method=='POST':
+        hostip=request.POST.get('hostip')
+        hostpwd=request.POST.get('hostpwd')
+        teamname=request.POST.get('teamname')
+        teampath=request.POST.get('teampath')
+        svnpath=request.POST.get('svnpath')
+        svnpwd=request.POST.get('svnpwd')
+        nginxpath=request.POST.get('nginxpath')
+        nginxupstream=request.POST.get('nginxupstream')
+        nginxsbin=request.POST.get('nginxsbin')
+        ps=request.POST.get('ps')
+        encodepwd=encode(hostpwd)
+
+        Host.objects.create(hostip=hostip,hostpwd=encodepwd,path=teampath,svnpath=svnpath,svnpwd=svnpwd,nginxpath=nginxpath,nginxsbin=nginxsbin,nginxupstream=nginxupstream,ps=ps)
+        return render(request,'createhost.html')
+    else:
+        return render(request,'createhost.html')

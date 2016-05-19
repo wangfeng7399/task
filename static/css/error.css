@@ -6,6 +6,8 @@ Error Pages
 
 .page-404 {
   text-align: center;
+  top:40%;
+  position: fixed;
 }
 
 .page-404 .number {
@@ -29,6 +31,8 @@ Error Pages
 /* 500 page option #1 */
 .page-500 {
   text-align: center;
+  top:40%;
+  position: fixed;
 }
 
 .page-500 .number {  

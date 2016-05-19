@@ -10,8 +10,8 @@ def Login(request):
     if request.method == "POST":
         username=request.POST.get("username")
         password=request.POST.get("password")
-        print(username,password)
         user = authenticate(username=username,password=password)
+        print(user)
         if user:
             login(request,user)
             request.session["name"]=1
@@ -31,4 +31,4 @@ def Logout(request):
 
 @login_required(login_url=reverse_lazy('login'))
 def error(request):
-    return render(request,'500.html')
+    return render(request,'404.html')
