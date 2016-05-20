@@ -24,8 +24,9 @@ var TableEditable = function () {
                 jqTds[3].innerHTML = '<input type="text" class="m-wrap small" value="' + aData[3] + '">';
                 jqTds[4].innerHTML = '<input type="text" class="m-wrap small" value="' + aData[4] + '">';
                 jqTds[5].innerHTML = '<input type="text" class="m-wrap small" value="' + aData[5] + '">';
-                jqTds[6].innerHTML = '<a class="edit" href="">Save</a>';
-                jqTds[7].innerHTML = '<a class="cancel" href="">Cancel</a>';
+                jqTds[6].innerHTML = '<input type="text" class="m-wrap small" value="' + aData[6] + '">';
+                jqTds[7].innerHTML = '<a class="edit" href="">Save</a>';
+                jqTds[8].innerHTML = '<a class="cancel" href="">Cancel</a>';
             }
 
             function saveRow(oTable, nRow) {
@@ -36,8 +37,9 @@ var TableEditable = function () {
                 oTable.fnUpdate(jqInputs[3].value, nRow, 3, false);
                 oTable.fnUpdate(jqInputs[4].value, nRow, 4, false);
                 oTable.fnUpdate(jqInputs[5].value, nRow, 5, false);
-                oTable.fnUpdate('<a class="edit" href="">Edit</a>', nRow, 6, false);
-                oTable.fnUpdate('<a class="delete" href="">Delete</a>', nRow, 7, false);
+                oTable.fnUpdate(jqInputs[6].value, nRow, 6, false);
+                oTable.fnUpdate('<a class="edit" href="">Edit</a>', nRow, 7, false);
+                oTable.fnUpdate('<a class="delete" href="">Delete</a>', nRow, 8, false);
                 oTable.fnDraw();
             }
 
@@ -49,7 +51,8 @@ var TableEditable = function () {
                 oTable.fnUpdate(jqInputs[3].value, nRow, 3, false);
                 oTable.fnUpdate(jqInputs[4].value, nRow, 4, false);
                 oTable.fnUpdate(jqInputs[5].value, nRow, 5, false);
-                oTable.fnUpdate('<a class="edit" href="">Edit</a>', nRow, 6, false);
+                oTable.fnUpdate(jqInputs[6].value, nRow, 6, false);
+                oTable.fnUpdate('<a class="edit" href="">Edit</a>', nRow, 7, false);
                 oTable.fnDraw();
             }
 
@@ -86,7 +89,7 @@ var TableEditable = function () {
 
             $('#sample_editable_1_new').click(function (e) {
                 e.preventDefault();
-                var aiNew = oTable.fnAddData(['', '', '', '',
+                var aiNew = oTable.fnAddData(['', '', '', '','','','',
                         '<a class="edit" href="">Edit</a>', '<a class="cancel" data-mode="new" href="">Cancel</a>'
                 ]);
                 var nRow = oTable.fnGetNodes(aiNew[0]);
@@ -103,6 +106,17 @@ var TableEditable = function () {
 
                 var nRow = $(this).parents('tr')[0];
                 oTable.fnDeleteRow(nRow);
+                //ajax后台提交删除数据
+                var hostip=$("#sample_editable_1 tr:gt(0)")
+                $.ajax({
+                    url: '/web/test/',
+                    type:'POST',
+                    data:{data:'123'},
+                    success:function(arg){
+                        console.log(arg)
+                    }
+
+                });
                 alert("删除成功");
             });
 
@@ -132,6 +146,16 @@ var TableEditable = function () {
                     /* Editing this row and want to save it */
                     saveRow(oTable, nEditing);
                     nEditing = null;
+                    //ajax后台提交删除数据
+                    $.ajax({
+                    url: '/web/test/',
+                    type:'POST',
+                    data:{data:'123'},
+                    success:function(arg){
+                        console.log(arg)
+                    }
+
+                });
                     alert("更新成功");
                 } else {
                     /* No edit in progress - let's start one */

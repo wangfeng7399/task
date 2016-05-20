@@ -1,8 +1,7 @@
 #!/bin/env python3
 #coding:utf-8
 #用户管理操作
-from django.shortcuts import render,redirect
-from django.contrib.auth import authenticate,login,logout
+from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
@@ -48,13 +47,12 @@ def creategroup(request):
 @login_required(login_url=reverse_lazy('login'))
 def teamall(request):
     group=Team.objects.all()
-    return render(request,'groupall.html',{"group":group})
+    return render(request, 'hostall.html', {"group":group})
 
 @login_required(login_url=reverse_lazy('login'))
-def groupall(request):
+def hostall(request):
     group=Team.objects.all()
-    return render(request,'groupallnew.html',{"group":group})
-
+    return render(request, 'hostall.html', {"group":group})
 
 @login_required(login_url=reverse_lazy('login'))
 def createhost(request):
@@ -75,3 +73,9 @@ def createhost(request):
         return render(request,'createhost.html')
     else:
         return render(request,'createhost.html')
+
+def test(request):
+    if request.method == 'POST':
+        data=request.POST.get('data')
+        print(data)
+        return HttpResponse('ok!')

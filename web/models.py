@@ -11,6 +11,7 @@ class Host(models.Model):
     hostpwd=models.CharField(max_length=200,null=True,blank=True)
     path=models.CharField(max_length=200)
     svnpath=models.CharField(max_length=200,null=True,blank=True)
+    svnuser=models.CharField(max_length=200,null=True,blank=True)
     svnpwd=models.CharField(max_length=200,null=True,blank=True)
     nginxconf=models.CharField(max_length=200,null=True,blank=True)
     nginxupsteam=models.CharField(max_length=200,null=True,blank=True)

@@ -16,5 +16,6 @@ urlpatterns = [
     url(r'^creategroup/$',user.creategroup,name='creategroup'),
     url(r'^createhost/$',user.createhost,name='createhost'),
     url(r'^teamall/$',user.teamall,name='teamall'),
-    url(r'^groupall/$',user.groupall,name='groupall'),
+    url(r'^hostall/$',user.hostall,name='hostall'),
+    url(r'^test/$',user.test,name='test'),
 ]
