@@ -534,10 +534,8 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/theme.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/master/master.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/dropzone.js" afterPath="$PROJECT_DIR$/static/js/dropzone.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/creategroup.html" afterPath="$PROJECT_DIR$/templates/creategroup.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/urls.py" afterPath="$PROJECT_DIR$/web/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/user.py" afterPath="$PROJECT_DIR$/web/user.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/404.html" afterPath="$PROJECT_DIR$/templates/404.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/master/index.html" afterPath="$PROJECT_DIR$/templates/master/index.html" />
     </list>
     <ignored path="task.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -569,18 +567,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="code.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/code.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-              <folding>
-                <element signature="e#39#96#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="form_dropzone.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/form_dropzone.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -601,15 +587,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="creategroup.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="creategroup.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/creategroup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39473686">
-              <caret line="55" column="68" selection-start-line="55" selection-start-column="68" selection-end-line="55" selection-end-column="68" />
+            <state vertical-scroll-proportion="-5.625">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding>
                 <element signature="e#1699#1717#0#HTML" expanded="true" />
                 <element signature="e#1839#1873#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/master/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.5">
+              <caret line="186" column="58" selection-start-line="186" selection-start-column="58" selection-end-line="186" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="404.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/404.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4473684">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -639,8 +645,8 @@
       <file leaf-file-name="hostall.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/hostall.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.875">
-              <caret line="234" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
+            <state vertical-scroll-proportion="-7.5">
+              <caret line="235" column="0" selection-start-line="235" selection-start-column="0" selection-end-line="245" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -651,16 +657,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-29.125">
               <caret line="3496" column="0" selection-start-line="3496" selection-start-column="0" selection-end-line="3656" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="table_advanced.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/table_advanced.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.125">
-              <caret line="3029" column="35" selection-start-line="3029" selection-start-column="35" selection-end-line="3029" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -709,7 +705,6 @@
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/templates/500.html" />
         <option value="$PROJECT_DIR$/static/css/error.css" />
-        <option value="$PROJECT_DIR$/templates/404.html" />
         <option value="$PROJECT_DIR$/web/views.py" />
         <option value="$PROJECT_DIR$/templates/user.html" />
         <option value="$PROJECT_DIR$/templates/from.html" />
@@ -728,13 +723,14 @@
         <option value="$PROJECT_DIR$/templates/groupall.html" />
         <option value="$PROJECT_DIR$/static/js/table-editable.js" />
         <option value="$PROJECT_DIR$/templates/hostall.html" />
-        <option value="$PROJECT_DIR$/templates/master/index.html" />
         <option value="$PROJECT_DIR$/web/code.py" />
         <option value="$PROJECT_DIR$/static/js/dropzone.js" />
         <option value="$PROJECT_DIR$/templates/form_dropzone.html" />
         <option value="$PROJECT_DIR$/web/user.py" />
         <option value="$PROJECT_DIR$/web/urls.py" />
         <option value="$PROJECT_DIR$/templates/creategroup.html" />
+        <option value="$PROJECT_DIR$/templates/master/index.html" />
+        <option value="$PROJECT_DIR$/templates/404.html" />
       </list>
     </option>
   </component>
@@ -841,6 +837,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="task" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="task" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="master" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1504,14 +1518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/master/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.625">
-          <caret line="328" column="0" selection-start-line="328" selection-start-column="0" selection-end-line="328" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/groupallnew.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-74.291664">
@@ -1540,14 +1546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.7916666">
           <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.083333">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1643,14 +1641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hostall.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875">
-          <caret line="234" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/form_component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-29.125">
@@ -1686,14 +1676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1704,14 +1686,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/master/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5">
+          <caret line="186" column="58" selection-start-line="186" selection-start-column="58" selection-end-line="186" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/creategroup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39473686">
-          <caret line="55" column="68" selection-start-line="55" selection-start-column="68" selection-end-line="55" selection-end-column="68" />
+        <state vertical-scroll-proportion="-5.625">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding>
             <element signature="e#1699#1717#0#HTML" expanded="true" />
             <element signature="e#1839#1873#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/hostall.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5">
+          <caret line="235" column="0" selection-start-line="235" selection-start-column="0" selection-end-line="245" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4473684">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
