@@ -18,4 +18,7 @@ urlpatterns = [
     url(r'^teamall/$',user.teamall,name='teamall'),
     url(r'^hostall/$',user.hostall,name='hostall'),
     url(r'^test/$',user.test,name='test'),
+    url(r'^agentteam/$',user.agentteam,name='agentteam'),
+    url(r'^code/$',code.code,name='code'),
+
 ]

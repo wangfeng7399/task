@@ -534,8 +534,10 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/theme.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/master/master.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/code.py" afterPath="$PROJECT_DIR$/web/code.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/dropzone.js" afterPath="$PROJECT_DIR$/static/js/dropzone.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/creategroup.html" afterPath="$PROJECT_DIR$/templates/creategroup.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/urls.py" afterPath="$PROJECT_DIR$/web/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/user.py" afterPath="$PROJECT_DIR$/web/user.py" />
     </list>
     <ignored path="task.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -567,26 +569,79 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/views.py">
+      <file leaf-file-name="code.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/code.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
               <folding>
-                <element signature="e#34#78#0" expanded="true" />
+                <element signature="e#39#96#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="code.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/code.py">
+      <file leaf-file-name="form_dropzone.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/form_dropzone.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42929292">
-              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+            <state vertical-scroll-proportion="-40.0">
+              <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/user.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="creategroup.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/creategroup.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.39473686">
+              <caret line="55" column="68" selection-start-line="55" selection-start-column="68" selection-end-line="55" selection-end-column="68" />
               <folding>
-                <element signature="e#39#96#0" expanded="true" />
+                <element signature="e#1699#1717#0#HTML" expanded="true" />
+                <element signature="e#1839#1873#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dropzone.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/dropzone.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.84375">
+              <caret line="419" column="23" selection-start-line="419" selection-start-column="23" selection-end-line="419" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+              <folding>
+                <element signature="e#34#66#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hostall.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/hostall.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.875">
+              <caret line="234" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -611,58 +666,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table_editable.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/table_editable.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dropzone.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/dropzone.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.34375">
-              <caret line="441" column="12" selection-start-line="441" selection-start-column="12" selection-end-line="441" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="createhost.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/createhost.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.875">
-              <caret line="95" column="27" selection-start-line="95" selection-start-column="27" selection-end-line="117" selection-end-column="34" />
+            <state vertical-scroll-proportion="-6.2083335">
+              <caret line="95" column="28" selection-start-line="95" selection-start-column="28" selection-end-line="117" selection-end-column="34" />
               <folding>
                 <element signature="e#2096#2486#0#HTML" expanded="false" />
                 <element signature="e#2951#3785#0#HTML" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-              <folding>
-                <element signature="e#33#61#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
-              <folding>
-                <element signature="e#34#66#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -711,17 +722,19 @@
         <option value="$PROJECT_DIR$/templates/table.html" />
         <option value="$PROJECT_DIR$/templates/groupallnew.html" />
         <option value="$PROJECT_DIR$/templates/table_advanced.html" />
-        <option value="$PROJECT_DIR$/templates/creategroup.html" />
         <option value="$PROJECT_DIR$/templates/agentpasswd.html" />
         <option value="$PROJECT_DIR$/web/models.py" />
         <option value="$PROJECT_DIR$/templates/createhost.html" />
         <option value="$PROJECT_DIR$/templates/groupall.html" />
         <option value="$PROJECT_DIR$/static/js/table-editable.js" />
-        <option value="$PROJECT_DIR$/web/urls.py" />
-        <option value="$PROJECT_DIR$/web/user.py" />
         <option value="$PROJECT_DIR$/templates/hostall.html" />
         <option value="$PROJECT_DIR$/templates/master/index.html" />
         <option value="$PROJECT_DIR$/web/code.py" />
+        <option value="$PROJECT_DIR$/static/js/dropzone.js" />
+        <option value="$PROJECT_DIR$/templates/form_dropzone.html" />
+        <option value="$PROJECT_DIR$/web/user.py" />
+        <option value="$PROJECT_DIR$/web/urls.py" />
+        <option value="$PROJECT_DIR$/templates/creategroup.html" />
       </list>
     </option>
   </component>
@@ -1491,14 +1504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hostall.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.375">
-          <caret line="39" column="80" selection-start-line="39" selection-start-column="80" selection-end-line="39" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/master/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.625">
@@ -1531,14 +1536,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/creategroup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.375">
-          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="125" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/500.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.7916666">
@@ -1552,24 +1549,6 @@
         <state vertical-scroll-proportion="-10.083333">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70074815">
-          <caret line="88" column="42" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
-          <folding>
-            <element signature="e#34#66#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1628,25 +1607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/createhost.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.875">
-          <caret line="95" column="27" selection-start-line="95" selection-start-column="27" selection-end-line="117" selection-end-column="34" />
-          <folding>
-            <element signature="e#2096#2486#0#HTML" expanded="false" />
-            <element signature="e#2951#3785#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/dropzone.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.34375">
-          <caret line="441" column="12" selection-start-line="441" selection-start-column="12" selection-end-line="441" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1657,10 +1617,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/form_component.html">
+    <entry file="file://$PROJECT_DIR$/templates/table_editable.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.125">
-          <caret line="3496" column="0" selection-start-line="3496" selection-start-column="0" selection-end-line="3656" selection-end-column="43" />
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1673,20 +1633,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/table_editable.html">
+    <entry file="file://$PROJECT_DIR$/web/code.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <folding>
+            <element signature="e#39#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/hostall.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.875">
+          <caret line="234" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/code.py">
+    <entry file="file://$PROJECT_DIR$/templates/form_component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42929292">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        <state vertical-scroll-proportion="-29.125">
+          <caret line="3496" column="0" selection-start-line="3496" selection-start-column="0" selection-end-line="3656" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/createhost.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.2083335">
+          <caret line="95" column="28" selection-start-line="95" selection-start-column="28" selection-end-line="117" selection-end-column="34" />
           <folding>
-            <element signature="e#39#96#0" expanded="true" />
+            <element signature="e#2096#2486#0#HTML" expanded="false" />
+            <element signature="e#2951#3785#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/dropzone.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.84375">
+          <caret line="419" column="23" selection-start-line="419" selection-start-column="23" selection-end-line="419" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/form_dropzone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-40.0">
+          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+          <folding>
+            <element signature="e#34#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/creategroup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39473686">
+          <caret line="55" column="68" selection-start-line="55" selection-start-column="68" selection-end-line="55" selection-end-column="68" />
+          <folding>
+            <element signature="e#1699#1717#0#HTML" expanded="true" />
+            <element signature="e#1839#1873#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

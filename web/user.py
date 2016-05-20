@@ -79,3 +79,12 @@ def test(request):
         data=request.POST.get('data')
         print(data)
         return HttpResponse('ok!')
+
+def agentteam(request):
+    if request.method=="POST":
+        teamname=request.POST.get('team')
+        team=Team.objects.filter(groupname=teamname).count()
+        if team !=0:
+            return HttpResponse('项目已经存在')
+        else:
+            return HttpResponse('项目可以添加')
