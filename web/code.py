@@ -27,3 +27,5 @@ def status(request):
     return render(request, 'status.html')
 
 
+def updateall(request):
+    return render(request,'updateall.html')

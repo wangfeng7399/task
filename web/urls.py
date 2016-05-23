@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^code/$',code.code,name='code'),
     url(r'^rust/$',views.rust,name='rust'),
     url(r'^status/$',code.status,name='status'),
+    url(r'^updateall/$',code.updateall,name='updateall'),
 ]
