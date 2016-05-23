@@ -532,23 +532,9 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/elements.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/myelements.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/groupallnew.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/master/master.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/createhost.html" afterPath="$PROJECT_DIR$/templates/createhost.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/createlanguage.html" afterPath="$PROJECT_DIR$/templates/createlanguage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/form_component.html" afterPath="$PROJECT_DIR$/templates/form_component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/form_dropzone.html" afterPath="$PROJECT_DIR$/templates/form_dropzone.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/master/index.html" afterPath="$PROJECT_DIR$/templates/master/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/table_advanced.html" afterPath="$PROJECT_DIR$/templates/table_advanced.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/table_editable.html" afterPath="$PROJECT_DIR$/templates/table_editable.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user.html" afterPath="$PROJECT_DIR$/templates/user.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/code.py" afterPath="$PROJECT_DIR$/web/code.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/models.py" afterPath="$PROJECT_DIR$/web/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/urls.py" afterPath="$PROJECT_DIR$/web/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/user.py" afterPath="$PROJECT_DIR$/web/user.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views.py" afterPath="$PROJECT_DIR$/web/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/status.html" afterPath="$PROJECT_DIR$/templates/status.html" />
     </list>
     <ignored path="task.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -629,11 +615,21 @@
       <file leaf-file-name="status.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/status.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75092936">
-              <caret line="135" column="83" selection-start-line="135" selection-start-column="83" selection-end-line="135" selection-end-column="83" />
+            <state vertical-scroll-proportion="0.3605948">
+              <caret line="93" column="67" selection-start-line="93" selection-start-column="67" selection-end-line="93" selection-end-column="67" />
               <folding>
-                <element signature="e#1776#1798#0#HTML" expanded="true" />
+                <element signature="e#1776#1796#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.min.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/bootstrap.min.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="187.93878">
+              <caret line="8" column="67158" selection-start-line="8" selection-start-column="67158" selection-end-line="8" selection-end-column="67158" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1331,14 +1327,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33125">
-          <caret line="8" column="42322" selection-start-line="8" selection-start-column="42317" selection-end-line="8" selection-end-column="42322" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/login-soft.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.1755726">
@@ -1711,12 +1699,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="187.93878">
+          <caret line="8" column="67158" selection-start-line="8" selection-start-column="67158" selection-end-line="8" selection-end-column="67158" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/status.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75092936">
-          <caret line="135" column="83" selection-start-line="135" selection-start-column="83" selection-end-line="135" selection-end-column="83" />
+        <state vertical-scroll-proportion="0.3605948">
+          <caret line="93" column="67" selection-start-line="93" selection-start-column="67" selection-end-line="93" selection-end-column="67" />
           <folding>
-            <element signature="e#1776#1798#0#HTML" expanded="true" />
+            <element signature="e#1776#1796#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
