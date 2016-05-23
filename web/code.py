@@ -8,6 +8,8 @@ from django.contrib.auth.models import User
 from .models import Team,Host
 from .base import encode,decode
 import paramiko
+
+@login_required(login_url=reverse_lazy('login'))
 def code(request):
     teamall=Team.objects.all()
     if request.method =="POST":
@@ -20,5 +22,8 @@ def code(request):
         return HttpResponse("上传完成")
     return render(request,'updatefile.html',{"teamall":teamall})
 
+@login_required(login_url=reverse_lazy('login'))
 def status(request):
     return render(request, 'status.html')
+
+
