@@ -3,6 +3,10 @@
 from django.db import models
 from django.contrib.auth.models import User,Group
 
+
+
+class Language(models.Model):
+     language=models.CharField(max_length=200)
 class Team(models.Model):
     groupname=models.CharField(max_length=200)
     userid=models.ManyToManyField(User)
@@ -18,11 +22,11 @@ class Host(models.Model):
     nginxsbin=models.CharField(max_length=200,null=True,blank=True)
     teamid=models.ManyToManyField(Team)
     ps=models.CharField(max_length=200,null=True,blank=True)
+    language_id=models.ForeignKey(Language)
     def __str__(self):
         return self.hostip,self.path
 class Code(models.Model):
     create_data=models.DateTimeField(auto_now=True)
     team=models.ForeignKey(Team)
 
-class Language(models.Model):
-     language=models.CharField(max_length=200)
+

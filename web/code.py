@@ -9,11 +9,16 @@ from .models import Team,Host
 from .base import encode,decode
 import paramiko
 def code(request):
+    teamall=Team.objects.all()
     if request.method =="POST":
         filename=request.FILES.get('file')
         path='{0}/{1}'.format('/root/',filename.name)
         with open(path,'wb+') as f:
             for chunk in filename.chunks():
                 f.write(chunk)
+        #cp文件，重启服务，返回结果
         return HttpResponse("上传完成")
-    return render(request,'form_dropzone.html')
+    return render(request,'updatefile.html',{"teamall":teamall})
+
+def status(request):
+    return render(request, 'status.html')

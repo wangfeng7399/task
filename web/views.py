@@ -1,10 +1,11 @@
 #!/bin/env python3
 #coding:utf-8
 
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
+from django.contrib.auth.models import User
 # Create your views here.
 def Login(request):
     if request.method == "POST":
@@ -32,3 +33,11 @@ def Logout(request):
 @login_required(login_url=reverse_lazy('login'))
 def error(request):
     return render(request,'404.html')
+
+@login_required(login_url=reverse_lazy('login'))
+def rust(request):
+    user=User.objects.get(username=request.user)
+    if user.is_superuser:
+        return HttpResponse(1)
+    else:
+        return HttpResponse(0)
