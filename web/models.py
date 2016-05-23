@@ -20,6 +20,9 @@ class Host(models.Model):
     ps=models.CharField(max_length=200,null=True,blank=True)
     def __str__(self):
         return self.hostip,self.path
-class code(models.Model):
+class Code(models.Model):
     create_data=models.DateTimeField(auto_now=True)
     team=models.ForeignKey(Team)
+
+class Language(models.Model):
+     language=models.CharField(max_length=200)

@@ -420,7 +420,7 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
       maxFilesize: 2048,
       paramName: "file",
       createImageThumbnails: true,
-      maxThumbnailFilesize: 10,
+      maxThumbnailFilesize: 20,
       thumbnailWidth: 100,
       thumbnailHeight: 100,
       params: {},

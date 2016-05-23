@@ -5,7 +5,7 @@ from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
-from .models import Team,Host
+from .models import Team,Host,Language
 from .base import encode,decode
 @login_required(login_url=reverse_lazy('login'))
 def createuser(request):
@@ -40,7 +40,7 @@ def creategroup(request):
     if request.method=='POST':
         groupname=request.POST.get("groupname")
         Team.objects.get_or_create(groupname=groupname)
-        return redirect(reverse('groupall'))
+        return render(request,'creategroup.html',{"msg":"添加成功"})
     else:
         return render(request,'creategroup.html')
 
@@ -80,7 +80,38 @@ def test(request):
         print(data)
         return HttpResponse('ok!')
 
+@login_required(login_url=reverse_lazy('login'))
 def agentteam(request):
+    if request.method=="POST":
+        teamname=request.POST.get('team')
+        team=Team.objects.filter(groupname=teamname).count()
+        if team !=0:
+            return HttpResponse('项目已经存在')
+        else:
+            return HttpResponse('项目可以添加')
+
+@login_required(login_url=reverse_lazy('login'))
+def createlanguage(request):
+    if request.method=='POST':
+        language=request.POST.get("language")
+        Language.objects.get_or_create(language=language)
+        return render(request,'createlanguage.html',{"msg":"添加成功"})
+    else:
+        return render(request,'createlanguage.html')
+
+
+@login_required(login_url=reverse_lazy('login'))
+def agentteam(request):
+    if request.method=="POST":
+        teamname=request.POST.get('team')
+        team=Team.objects.filter(groupname=teamname).count()
+        if team !=0:
+            return HttpResponse('项目已经存在')
+        else:
+            return HttpResponse('项目可以添加')
+
+@login_required(login_url=reverse_lazy('login'))
+def agentlanguage(request):
     if request.method=="POST":
         teamname=request.POST.get('team')
         team=Team.objects.filter(groupname=teamname).count()
