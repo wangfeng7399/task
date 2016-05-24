@@ -1,6 +1,6 @@
 #!/bin/env python3
 #coding:utf-8
-#用户管理操作
+#用户管理以及项目操作
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
@@ -143,3 +143,25 @@ def createstatus(request):
         return render(request,'createstatus.html',{"msg":"添加成功"})
     else:
         return render(request,'createstatus.html')
+
+def createteam(request):
+    language=Language.objects.all()
+    teamall=TeamGroup.objects.all()
+    if request.method=='POST':
+        hostip=request.POST.get('hostip')
+        hostpwd=request.POST.get('hostpwd')
+        teamname=request.POST.get('teamname')
+        teampath=request.POST.get('teampath')
+        svnpath=request.POST.get('svnpath')
+        svnuser=request.POST.get('svnuser')
+        svnpwd=request.POST.get('svnpwd')
+        nginxpath=request.POST.get('nginxpath')
+        nginxupstream=request.POST.get('nginxupstream')
+        teamlanguage=request.POST.get('teamlanguage')
+        nginxsbin=request.POST.get('nginxsbin')
+        ps=request.POST.get('ps')
+        encodepwd=encode(hostpwd)
+        Host.objects.create(language_id=teamlanguage,hostip=hostip,hostpwd=encodepwd,path=teampath,svnpath=svnpath,svnpwd=svnpwd,nginxpath=nginxpath,nginxsbin=nginxsbin,nginxupstream=nginxupstream,ps=ps,svnuser=svnuser)
+        return render(request,'createhost.html')
+    else:
+        return render(request,'createteam.html',{"language":language,"teamall":teamall})

@@ -17,6 +17,7 @@ urlpatterns = [
     url(r'^createhost/$',user.createhost,name='createhost'),
     url(r'^createstatus/$',user.createstatus,name='createstatus'),
     url(r'^agentstatus/$',user.agentstatus,name='agentstatus'),
+     url(r'^createteam/$',user.createteam,name='createteam'),
     url(r'^teamall/$',user.teamall,name='teamall'),
     url(r'^hostall/$',user.hostall,name='hostall'),
     url(r'^test/$',user.test,name='test'),
