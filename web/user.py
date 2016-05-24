@@ -5,7 +5,7 @@ from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
-from .models import Team,Host,Language
+from .models import TeamGroup,Host,Language,Status
 from .base import encode,decode
 @login_required(login_url=reverse_lazy('login'))
 def createuser(request):
@@ -40,25 +40,25 @@ def agentpasswd(request):
 def creategroup(request):
     if request.method=='POST':
         groupname=request.POST.get("groupname")
-        Team.objects.get_or_create(groupname=groupname)
+        TeamGroup.objects.get_or_create(groupname=groupname)
         return render(request,'creategroup.html',{"msg":"添加成功"})
     else:
         return render(request,'creategroup.html')
 
 @login_required(login_url=reverse_lazy('login'))
 def teamall(request):
-    group=Team.objects.all()
+    group=TeamGroup.objects.all()
     return render(request, 'hostall.html', {"group":group})
 
 @login_required(login_url=reverse_lazy('login'))
 def hostall(request):
-    group=Team.objects.all()
+    group=TeamGroup.objects.all()
     return render(request, 'hostall.html', {"group":group})
 
 @login_required(login_url=reverse_lazy('login'))
 def createhost(request):
     language=Language.objects.all()
-    teamall=Team.objects.all()
+    teamall=TeamGroup.objects.all()
     if request.method=='POST':
         hostip=request.POST.get('hostip')
         hostpwd=request.POST.get('hostpwd')
@@ -89,7 +89,7 @@ def test(request):
 def agentteam(request):
     if request.method=="POST":
         teamname=request.POST.get('team')
-        team=Team.objects.filter(groupname=teamname).count()
+        team=TeamGroup.objects.filter(groupname=teamname).count()
         if team !=0:
             return HttpResponse('项目已经存在')
         else:
@@ -109,7 +109,7 @@ def createlanguage(request):
 def agentteam(request):
     if request.method=="POST":
         teamname=request.POST.get('team')
-        team=Team.objects.filter(groupname=teamname).count()
+        team=TeamGroup.objects.filter(groupname=teamname).count()
         if team !=0:
             return HttpResponse('项目已经存在')
         else:
@@ -124,3 +124,22 @@ def agentlanguage(request):
             return HttpResponse('项目语言已经存在')
         else:
             return HttpResponse('项目语言可以添加')
+
+@login_required(login_url=reverse_lazy('login'))
+def agentstatus(request):
+    if request.method=="POST":
+        status=request.POST.get('status')
+        status_rust=Status.objects.filter(status=status).count()
+        if status_rust !=0:
+            return HttpResponse('状态已经存在')
+        else:
+            return HttpResponse('状态可以添加')
+
+@login_required(login_url=reverse_lazy('login'))
+def createstatus(request):
+    if request.method=='POST':
+        status=request.POST.get("status")
+        Status.objects.get_or_create(status=status)
+        return render(request,'createstatus.html',{"msg":"添加成功"})
+    else:
+        return render(request,'createstatus.html')

@@ -29,3 +29,6 @@ def status(request):
 
 def updateall(request):
     return render(request,'updateall.html')
+
+def backall(request):
+    return render(request,'backall.html')
