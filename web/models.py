@@ -35,12 +35,13 @@ class Team(models.Model):
     svnuser=models.CharField(max_length=200,null=True,blank=True)
     svnpwd=models.CharField(max_length=200,null=True,blank=True)
     nginxconf=models.CharField(max_length=200,null=True,blank=True)
-    nginxupsteam=models.CharField(max_length=200,null=True,blank=True)
+    nginxupstream=models.CharField(max_length=200,null=True,blank=True)
     nginxsbin=models.CharField(max_length=200,null=True,blank=True)
     teamid=models.ManyToManyField(TeamGroup)
+    url=models.CharField(max_length=200,null=True,blank=True)
     ps=models.CharField(max_length=200,null=True,blank=True)
     language_id=models.ForeignKey(Language)
-    status=models.ForeignKey(Status)
+    status=models.ManyToManyField(Status)
     host=models.ManyToManyField(Host)
     def __str__(self):
         return self.hostip,self.path

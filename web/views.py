@@ -23,8 +23,7 @@ def Login(request):
         return render(request, 'login.html')
 @login_required(login_url=reverse_lazy('login'))
 def index(request):
-    print(request.user)
-    return render(request, 'master/index.html')
+    return render(request, 'updateall.html')
 
 def Logout(request):
     logout(request)

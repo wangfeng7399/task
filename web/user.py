@@ -5,14 +5,14 @@ from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
-from .models import TeamGroup,Host,Language,Status
+from .models import TeamGroup,Host,Language,Status,Team
 from .base import encode,decode
 @login_required(login_url=reverse_lazy('login'))
 def createuser(request):
     if request.method == 'POST':
-        name=request.POST.get('name')
-        username=request.POST.get('loginname')
-        superuser=request.POST.get('superuser')
+        name=request.POST.get('name',None)
+        username=request.POST.get('loginname',None)
+        superuser=request.POST.get('superuser',None)
         password="1"
         print(type(superuser),superuser)
         if superuser=="0":
@@ -28,7 +28,7 @@ def createuser(request):
 @login_required(login_url=reverse_lazy('login'))
 def agentpasswd(request):
     if request.method == 'POST':
-        passwd=request.POST.get('pwd')
+        passwd=request.POST.get('pwd',None)
         user=User.objects.get(username=request.user)
         user.set_password(passwd)
         user.save()
@@ -39,7 +39,7 @@ def agentpasswd(request):
 @login_required(login_url=reverse_lazy('login'))
 def creategroup(request):
     if request.method=='POST':
-        groupname=request.POST.get("groupname")
+        groupname=request.POST.get("groupname",None)
         TeamGroup.objects.get_or_create(groupname=groupname)
         return render(request,'creategroup.html',{"msg":"添加成功"})
     else:
@@ -57,38 +57,31 @@ def hostall(request):
 
 @login_required(login_url=reverse_lazy('login'))
 def createhost(request):
-    language=Language.objects.all()
-    teamall=TeamGroup.objects.all()
     if request.method=='POST':
         hostip=request.POST.get('hostip')
         hostpwd=request.POST.get('hostpwd')
-        teamname=request.POST.get('teamname')
-        teampath=request.POST.get('teampath')
-        svnpath=request.POST.get('svnpath')
-        svnuser=request.POST.get('svnuser')
-        svnpwd=request.POST.get('svnpwd')
-        nginxpath=request.POST.get('nginxpath')
-        nginxupstream=request.POST.get('nginxupstream')
-        teamlanguage=request.POST.get('teamlanguage')
-        nginxsbin=request.POST.get('nginxsbin')
-        ps=request.POST.get('ps')
+        hostuser=request.POST.get('hostuser')
+        hostport=request.POST.get('hostport')
         encodepwd=encode(hostpwd)
-        Host.objects.create(language_id=teamlanguage,hostip=hostip,hostpwd=encodepwd,path=teampath,svnpath=svnpath,svnpwd=svnpwd,nginxpath=nginxpath,nginxsbin=nginxsbin,nginxupstream=nginxupstream,ps=ps,svnuser=svnuser)
-        return render(request,'createhost.html')
+        if hostport == "":
+            Host.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser)
+        else:
+            Host.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser,port=int(hostport))
+        return render(request,'createhost.html',{"msg":"新增成功"})
     else:
-        return render(request,'createhost.html',{"language":language,"teamall":teamall})
+        return render(request,'createhost.html')
 
 
 def test(request):
     if request.method == 'POST':
-        data=request.POST.get('data')
+        data=request.POST.get('data',)
         print(data)
         return HttpResponse('ok!')
 
 @login_required(login_url=reverse_lazy('login'))
 def agentteam(request):
     if request.method=="POST":
-        teamname=request.POST.get('team')
+        teamname=request.POST.get('team',None)
         team=TeamGroup.objects.filter(groupname=teamname).count()
         if team !=0:
             return HttpResponse('项目已经存在')
@@ -108,7 +101,7 @@ def createlanguage(request):
 @login_required(login_url=reverse_lazy('login'))
 def agentteam(request):
     if request.method=="POST":
-        teamname=request.POST.get('team')
+        teamname=request.POST.get('team',None)
         team=TeamGroup.objects.filter(groupname=teamname).count()
         if team !=0:
             return HttpResponse('项目已经存在')
@@ -118,7 +111,7 @@ def agentteam(request):
 @login_required(login_url=reverse_lazy('login'))
 def agentlanguage(request):
     if request.method=="POST":
-        language=request.POST.get('language')
+        language=request.POST.get('language',None)
         language_rust=Language.objects.filter(language=language).count()
         if language_rust !=0:
             return HttpResponse('项目语言已经存在')
@@ -128,7 +121,7 @@ def agentlanguage(request):
 @login_required(login_url=reverse_lazy('login'))
 def agentstatus(request):
     if request.method=="POST":
-        status=request.POST.get('status')
+        status=request.POST.get('status',None)
         status_rust=Status.objects.filter(status=status).count()
         if status_rust !=0:
             return HttpResponse('状态已经存在')
@@ -138,18 +131,18 @@ def agentstatus(request):
 @login_required(login_url=reverse_lazy('login'))
 def createstatus(request):
     if request.method=='POST':
-        status=request.POST.get("status")
+        status=request.POST.get("status",None)
         Status.objects.get_or_create(status=status)
         return render(request,'createstatus.html',{"msg":"添加成功"})
     else:
         return render(request,'createstatus.html')
 
 def createteam(request):
+    hostall=Host.objects.all()
     language=Language.objects.all()
     teamall=TeamGroup.objects.all()
     if request.method=='POST':
-        hostip=request.POST.get('hostip')
-        hostpwd=request.POST.get('hostpwd')
+        host=request.POST.get('host')
         teamname=request.POST.get('teamname')
         teampath=request.POST.get('teampath')
         svnpath=request.POST.get('svnpath')
@@ -160,8 +153,8 @@ def createteam(request):
         teamlanguage=request.POST.get('teamlanguage')
         nginxsbin=request.POST.get('nginxsbin')
         ps=request.POST.get('ps')
-        encodepwd=encode(hostpwd)
-        Host.objects.create(language_id=teamlanguage,hostip=hostip,hostpwd=encodepwd,path=teampath,svnpath=svnpath,svnpwd=svnpwd,nginxpath=nginxpath,nginxsbin=nginxsbin,nginxupstream=nginxupstream,ps=ps,svnuser=svnuser)
-        return render(request,'createhost.html')
+        languageid=Language.objects.get(id=teamlanguage)
+        Team.objects.create(language_id=languageid,path=teampath,svnpath=svnpath,svnpwd=svnpwd,nginxconf=nginxpath,nginxsbin=nginxsbin,nginxupstream=nginxupstream,svnuser=svnuser,ps=ps)
+        return redirect(reverse("teamall"))
     else:
-        return render(request,'createteam.html',{"language":language,"teamall":teamall})
+        return render(request,'createteam.html',{"language":language,"teamall":teamall,"hostall":hostall})
