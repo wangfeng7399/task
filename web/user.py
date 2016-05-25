@@ -115,7 +115,7 @@ def createteam(request):
     hostall=Host.objects.all()
     language=Language.objects.all()
     if request.method=='POST':
-        host=request.POST.get('host')
+        host=request.POST.getlist('host')
         teamname=request.POST.get('teamname')
         teampath=request.POST.get('teampath')
         teamport=request.POST.get('teamport')
@@ -128,11 +128,12 @@ def createteam(request):
         teamlanguage=request.POST.get('teamlanguage')
         ps=request.POST.get('ps')
         languageid=Language.objects.get(id=teamlanguage)
-        hostid=Host.objects.get(id=host)
-        port=hostid.hostip+":"+teamport
-        Team.objects.create(language_id=languageid,teamport=port,path=teampath,svnpath=svnpath,svnpwd=svnpwd,nginxconf=nginxpath,nginxupstream=nginxupstream,svnuser=svnuser,ps=ps)
-        team=Team.objects.get(teamport=port)
-        team.host.add(hostid)
+        print(host)
+        #hostid=Host.objects.get(id=host)
+        #port=hostid.hostip+":"+teamport
+        #Team.objects.create(language_id=languageid,teamport=port,path=teampath,svnpath=svnpath,svnpwd=svnpwd,nginxconf=nginxpath,nginxupstream=nginxupstream,svnuser=svnuser,ps=ps)
+        #team=Team.objects.get(teamport=port)
+        #team.host.add(hostid)
         return redirect(reverse("teamall"))
     else:
         return render(request,'createteam.html',{"language":language,"hostall":hostall})
