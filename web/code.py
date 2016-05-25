@@ -5,13 +5,31 @@ from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
-from .models import Team,Host
+from .models import Team,Host,TeamGroup
 from .base import encode,decode
 import paramiko
 
+
+#上传文件
+def update():
+    pass
+
+#摘机器
+def nginx():
+    pass
+
+#备份
+def backup():
+    pass
+
+#回滚
+def back():
+    pass
+
+
 @login_required(login_url=reverse_lazy('login'))
 def code(request):
-    teamall=Team.objects.all()
+    teamall=TeamGroup.objects.all()
     if request.method =="POST":
         filename=request.FILES.get('file')
         path='{0}/{1}'.format('/root/',filename.name)
@@ -32,3 +50,7 @@ def updateall(request):
 
 def backall(request):
     return render(request,'backall.html')
+
+
+def tree(request):
+    return render(request,'phptree.html')

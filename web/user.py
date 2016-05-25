@@ -12,13 +12,13 @@ def createuser(request):
     if request.method == 'POST':
         name=request.POST.get('name',None)
         username=request.POST.get('loginname',None)
+        email=request.POST.get('email',None)
         superuser=request.POST.get('superuser',None)
         password="1"
-        print(type(superuser),superuser)
         if superuser=="0":
-            user=User.objects.create_user(username=username,password=password)
+            user=User.objects.create_user(username=username,email=email,password=password)
         else:
-            user=User.objects.create_superuser(username=username,email="",password=password)
+            user=User.objects.create_superuser(username=username,email=email,password=password)
         user.first_name=name
         user.save()
         return render(request, 'user.html',{"msg":"添加成功"})
@@ -47,13 +47,15 @@ def creategroup(request):
 
 @login_required(login_url=reverse_lazy('login'))
 def teamall(request):
-    group=TeamGroup.objects.all()
-    return render(request, 'hostall.html', {"group":group})
+    teamall=TeamGroup.objects.all()
+    for team in teamall:
+        print(team.team_set)
+    return render(request, 'teamall.html', {"teamall":teamall})
 
 @login_required(login_url=reverse_lazy('login'))
-def hostall(request):
-    group=TeamGroup.objects.all()
-    return render(request, 'hostall.html', {"group":group})
+def userall(request):
+    user=User.objects.all()
+    return render(request, 'userall.html',{"userall":user})
 
 @login_required(login_url=reverse_lazy('login'))
 def createhost(request):
@@ -71,15 +73,9 @@ def createhost(request):
     else:
         return render(request,'createhost.html')
 
-
-def test(request):
-    if request.method == 'POST':
-        data=request.POST.get('data',)
-        print(data)
-        return HttpResponse('ok!')
-
 @login_required(login_url=reverse_lazy('login'))
 def agentteam(request):
+
     if request.method=="POST":
         teamname=request.POST.get('team',None)
         team=TeamGroup.objects.filter(groupname=teamname).count()
@@ -145,16 +141,22 @@ def createteam(request):
         host=request.POST.get('host')
         teamname=request.POST.get('teamname')
         teampath=request.POST.get('teampath')
+        teamport=request.POST.get('teamport')
         svnpath=request.POST.get('svnpath')
         svnuser=request.POST.get('svnuser')
         svnpwd=request.POST.get('svnpwd')
         nginxpath=request.POST.get('nginxpath')
         nginxupstream=request.POST.get('nginxupstream')
+        url=request.POST.get('url')
         teamlanguage=request.POST.get('teamlanguage')
-        nginxsbin=request.POST.get('nginxsbin')
         ps=request.POST.get('ps')
         languageid=Language.objects.get(id=teamlanguage)
-        Team.objects.create(language_id=languageid,path=teampath,svnpath=svnpath,svnpwd=svnpwd,nginxconf=nginxpath,nginxsbin=nginxsbin,nginxupstream=nginxupstream,svnuser=svnuser,ps=ps)
+        teamgroup=TeamGroup.objects.get(id=teamname)
+        hostid=Host.objects.get(id=host)
+        port=hostid.hostip+":"+teamport
+        Team.objects.create(teamid=teamgroup,language_id=languageid,teamport=port,path=teampath,svnpath=svnpath,svnpwd=svnpwd,nginxconf=nginxpath,nginxupstream=nginxupstream,svnuser=svnuser,ps=ps)
+        team=Team.objects.get(teamport=port)
+        team.host.add(hostid)
         return redirect(reverse("teamall"))
     else:
         return render(request,'createteam.html',{"language":language,"teamall":teamall,"hostall":hostall})

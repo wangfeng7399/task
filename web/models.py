@@ -13,12 +13,6 @@ class Language(models.Model):
      def __str__(self):
          return self.language
 
-class TeamGroup(models.Model):
-    groupname=models.CharField(max_length=200)
-    userid=models.ManyToManyField(User)
-    def __str__(self):
-        return self.groupname
-
 class Host(models.Model):
     hostip=models.GenericIPAddressField()
     hostpwd=models.CharField(max_length=200,null=True,blank=True)
@@ -29,6 +23,8 @@ class Host(models.Model):
 
 
 class Team(models.Model):
+    groupname=models.CharField(max_length=200)
+    userid=models.ManyToManyField(User)
     path=models.CharField(max_length=200)
     teamport=models.CharField(max_length=200)
     svnpath=models.CharField(max_length=200,null=True,blank=True)
@@ -36,16 +32,14 @@ class Team(models.Model):
     svnpwd=models.CharField(max_length=200,null=True,blank=True)
     nginxconf=models.CharField(max_length=200,null=True,blank=True)
     nginxupstream=models.CharField(max_length=200,null=True,blank=True)
-    nginxsbin=models.CharField(max_length=200,null=True,blank=True)
-    teamid=models.ManyToManyField(TeamGroup)
+    teamid=models.ForeignKey(TeamGroup)
     url=models.CharField(max_length=200,null=True,blank=True)
     ps=models.CharField(max_length=200,null=True,blank=True)
     language_id=models.ForeignKey(Language)
     status=models.ManyToManyField(Status)
     host=models.ManyToManyField(Host)
     def __str__(self):
-        return self.hostip,self.path
-
+        return self.groupname
 
 class Code(models.Model):
     create_data=models.DateTimeField(auto_now=True)

@@ -19,8 +19,7 @@ urlpatterns = [
     url(r'^agentstatus/$',user.agentstatus,name='agentstatus'),
      url(r'^createteam/$',user.createteam,name='createteam'),
     url(r'^teamall/$',user.teamall,name='teamall'),
-    url(r'^hostall/$',user.hostall,name='hostall'),
-    url(r'^test/$',user.test,name='test'),
+    url(r'^userall/$',user.userall,name='userall'),
     url(r'^agentteam/$',user.agentteam,name='agentteam'),
     url(r'^createlanguage/$',user.createlanguage,name='createlanguage'),
     url(r'^agentlanguage/$',user.agentlanguage,name='agentlanguage'),
@@ -29,4 +28,5 @@ urlpatterns = [
     url(r'^status/$',code.status,name='status'),
     url(r'^updateall/$',code.updateall,name='updateall'),
     url(r'^backall/$',code.backall,name='backall'),
+    url(r'^tree/$',code.tree,name='tree'),
 ]
