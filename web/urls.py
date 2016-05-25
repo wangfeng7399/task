@@ -13,7 +13,6 @@ urlpatterns = [
     url(r'^error/$',views.error,name='error'),
     url(r'^createuser/$',user.createuser,name='createuser'),
     url(r'^agentpasswd/$',user.agentpasswd,name='agentpasswd'),
-    url(r'^creategroup/$',user.creategroup,name='creategroup'),
     url(r'^createhost/$',user.createhost,name='createhost'),
     url(r'^createstatus/$',user.createstatus,name='createstatus'),
     url(r'^agentstatus/$',user.agentstatus,name='agentstatus'),

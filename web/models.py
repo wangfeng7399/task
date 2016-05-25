@@ -32,7 +32,6 @@ class Team(models.Model):
     svnpwd=models.CharField(max_length=200,null=True,blank=True)
     nginxconf=models.CharField(max_length=200,null=True,blank=True)
     nginxupstream=models.CharField(max_length=200,null=True,blank=True)
-    teamid=models.ForeignKey(TeamGroup)
     url=models.CharField(max_length=200,null=True,blank=True)
     ps=models.CharField(max_length=200,null=True,blank=True)
     language_id=models.ForeignKey(Language)

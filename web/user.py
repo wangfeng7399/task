@@ -5,7 +5,7 @@ from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
-from .models import TeamGroup,Host,Language,Status,Team
+from .models import Host,Language,Status,Team
 from .base import encode,decode
 @login_required(login_url=reverse_lazy('login'))
 def createuser(request):
@@ -37,19 +37,8 @@ def agentpasswd(request):
         return render(request,'agentpasswd.html')
 
 @login_required(login_url=reverse_lazy('login'))
-def creategroup(request):
-    if request.method=='POST':
-        groupname=request.POST.get("groupname",None)
-        TeamGroup.objects.get_or_create(groupname=groupname)
-        return render(request,'creategroup.html',{"msg":"添加成功"})
-    else:
-        return render(request,'creategroup.html')
-
-@login_required(login_url=reverse_lazy('login'))
 def teamall(request):
-    teamall=TeamGroup.objects.all()
-    for team in teamall:
-        print(team.team_set)
+    teamall=Team.objects.all()
     return render(request, 'teamall.html', {"teamall":teamall})
 
 @login_required(login_url=reverse_lazy('login'))
@@ -78,7 +67,7 @@ def agentteam(request):
 
     if request.method=="POST":
         teamname=request.POST.get('team',None)
-        team=TeamGroup.objects.filter(groupname=teamname).count()
+        team=Team.objects.filter(groupname=teamname).count()
         if team !=0:
             return HttpResponse('项目已经存在')
         else:
@@ -92,17 +81,6 @@ def createlanguage(request):
         return render(request,'createlanguage.html',{"msg":"添加成功"})
     else:
         return render(request,'createlanguage.html')
-
-
-@login_required(login_url=reverse_lazy('login'))
-def agentteam(request):
-    if request.method=="POST":
-        teamname=request.POST.get('team',None)
-        team=TeamGroup.objects.filter(groupname=teamname).count()
-        if team !=0:
-            return HttpResponse('项目已经存在')
-        else:
-            return HttpResponse('项目可以添加')
 
 @login_required(login_url=reverse_lazy('login'))
 def agentlanguage(request):
@@ -136,7 +114,6 @@ def createstatus(request):
 def createteam(request):
     hostall=Host.objects.all()
     language=Language.objects.all()
-    teamall=TeamGroup.objects.all()
     if request.method=='POST':
         host=request.POST.get('host')
         teamname=request.POST.get('teamname')
@@ -151,12 +128,11 @@ def createteam(request):
         teamlanguage=request.POST.get('teamlanguage')
         ps=request.POST.get('ps')
         languageid=Language.objects.get(id=teamlanguage)
-        teamgroup=TeamGroup.objects.get(id=teamname)
         hostid=Host.objects.get(id=host)
         port=hostid.hostip+":"+teamport
-        Team.objects.create(teamid=teamgroup,language_id=languageid,teamport=port,path=teampath,svnpath=svnpath,svnpwd=svnpwd,nginxconf=nginxpath,nginxupstream=nginxupstream,svnuser=svnuser,ps=ps)
+        Team.objects.create(language_id=languageid,teamport=port,path=teampath,svnpath=svnpath,svnpwd=svnpwd,nginxconf=nginxpath,nginxupstream=nginxupstream,svnuser=svnuser,ps=ps)
         team=Team.objects.get(teamport=port)
         team.host.add(hostid)
         return redirect(reverse("teamall"))
     else:
-        return render(request,'createteam.html',{"language":language,"teamall":teamall,"hostall":hostall})
+        return render(request,'createteam.html',{"language":language,"hostall":hostall})

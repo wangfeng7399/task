@@ -532,35 +532,10 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/elements.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/myelements.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/form_component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/form_dropzone.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/master/master.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/table_advanced.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/table_editable.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/ui_tabs_accordions.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/image/logo.png" afterPath="$PROJECT_DIR$/static/image/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/dropzone.js" afterPath="$PROJECT_DIR$/static/js/dropzone.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/table-editable.js" afterPath="$PROJECT_DIR$/static/js/table-editable.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/createteam.html" afterPath="$PROJECT_DIR$/templates/createteam.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/hostall.html" afterPath="$PROJECT_DIR$/templates/hostall.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/master/index.html" afterPath="$PROJECT_DIR$/templates/master/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/teamall.html" afterPath="$PROJECT_DIR$/templates/teamall.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/updatefile.html" afterPath="$PROJECT_DIR$/templates/updatefile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user.html" afterPath="$PROJECT_DIR$/templates/user.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/tets.py" afterPath="$PROJECT_DIR$/test/tets.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/base.py" afterPath="$PROJECT_DIR$/web/base.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/code.py" afterPath="$PROJECT_DIR$/web/code.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/web/migrations/0001_initial.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/migrations/0002_auto_20160523_0217.py" afterPath="$PROJECT_DIR$/web/migrations/0002_auto_20160523_0217.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/migrations/0003_host_language_id.py" afterPath="$PROJECT_DIR$/web/migrations/0003_host_language_id.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/migrations/0004_status.py" afterPath="$PROJECT_DIR$/web/migrations/0004_status.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/migrations/0005_host_status.py" afterPath="$PROJECT_DIR$/web/migrations/0005_host_status.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/migrations/0006_auto_20160524_0300.py" afterPath="$PROJECT_DIR$/web/migrations/0006_auto_20160524_0300.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/migrations/0007_auto_20160524_0300.py" afterPath="$PROJECT_DIR$/web/migrations/0007_auto_20160524_0300.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/migrations/0008_auto_20160524_0801.py" afterPath="$PROJECT_DIR$/web/migrations/0008_auto_20160524_0801.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/migrations/0009_auto_20160524_0804.py" afterPath="$PROJECT_DIR$/web/migrations/0009_auto_20160524_0804.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/models.py" afterPath="$PROJECT_DIR$/web/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/urls.py" afterPath="$PROJECT_DIR$/web/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/user.py" afterPath="$PROJECT_DIR$/web/user.py" />
@@ -595,11 +570,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35353535">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="33" column="71" selection-start-line="33" selection-start-column="71" selection-end-line="33" selection-end-column="71" />
               <folding>
                 <element signature="e#33#61#0" expanded="true" />
               </folding>
@@ -610,8 +585,8 @@
       <file leaf-file-name="createteam.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/createteam.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.125">
-              <caret line="130" column="28" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="28" />
+            <state vertical-scroll-proportion="-5.625">
+              <caret line="112" column="34" selection-start-line="112" selection-start-column="34" selection-end-line="112" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -621,7 +596,7 @@
         <entry file="file://$PROJECT_DIR$/web/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+              <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
               <folding>
                 <element signature="e#34#66#0" expanded="true" />
               </folding>
@@ -642,8 +617,8 @@
       <file leaf-file-name="teamall.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/teamall.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.75">
-              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+            <state vertical-scroll-proportion="19.375">
+              <caret line="47" column="93" selection-start-line="47" selection-start-column="93" selection-end-line="47" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -652,7 +627,7 @@
       <file leaf-file-name="user.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.75">
+            <state vertical-scroll-proportion="-7.375">
               <caret line="104" column="36" selection-start-line="104" selection-start-column="36" selection-end-line="215" selection-end-column="0" />
               <folding>
                 <element signature="e#2926#5342#0#HTML" expanded="false" />
@@ -667,6 +642,33 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="51" column="75" selection-start-line="51" selection-start-column="75" selection-end-line="51" selection-end-column="75" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/user.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.34343433">
+              <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+              <folding>
+                <element signature="e#45#102#0" expanded="true" />
+                <element signature="e#2839#3100#0" expanded="false" />
+                <element signature="e#3183#3465#0" expanded="false" />
+                <element signature="e#3546#3810#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="code.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/code.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+              <folding>
+                <element signature="e#39#96#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -728,16 +730,16 @@
         <option value="$PROJECT_DIR$/templates/hostall.html" />
         <option value="$PROJECT_DIR$/templates/ui_tree.html" />
         <option value="$PROJECT_DIR$/test/tets.py" />
-        <option value="$PROJECT_DIR$/web/code.py" />
         <option value="$PROJECT_DIR$/templates/user.html" />
-        <option value="$PROJECT_DIR$/web/urls.py" />
         <option value="$PROJECT_DIR$/templates/master/index.html" />
         <option value="$PROJECT_DIR$/templates/userall.html" />
         <option value="$PROJECT_DIR$/static/js/table-editable.js" />
         <option value="$PROJECT_DIR$/templates/teamall.html" />
-        <option value="$PROJECT_DIR$/web/user.py" />
-        <option value="$PROJECT_DIR$/templates/createteam.html" />
         <option value="$PROJECT_DIR$/web/models.py" />
+        <option value="$PROJECT_DIR$/templates/createteam.html" />
+        <option value="$PROJECT_DIR$/web/code.py" />
+        <option value="$PROJECT_DIR$/web/urls.py" />
+        <option value="$PROJECT_DIR$/web/user.py" />
       </list>
     </option>
   </component>
@@ -1684,81 +1686,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/code.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
-          <folding>
-            <element signature="e#39#96#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/userall.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.1052632">
           <caret line="80" column="73" selection-start-line="80" selection-start-column="73" selection-end-line="80" selection-end-column="73" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
-          <folding>
-            <element signature="e#34#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/master/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875">
-          <caret line="320" column="52" selection-start-line="320" selection-start-column="52" selection-end-line="320" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/teamall.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75">
-          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.75">
-          <caret line="104" column="36" selection-start-line="104" selection-start-column="36" selection-end-line="215" selection-end-column="0" />
-          <folding>
-            <element signature="e#2926#5342#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/createteam.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.125">
-          <caret line="130" column="28" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2777778">
-          <caret line="51" column="28" selection-start-line="51" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding>
-            <element signature="e#45#102#0" expanded="true" />
-            <element signature="e#1142#1446#0" expanded="false" />
-            <element signature="e#1527#1792#0" expanded="false" />
-            <element signature="e#3259#3520#0" expanded="false" />
-            <element signature="e#3600#3858#0" expanded="false" />
-            <element signature="e#3941#4223#0" expanded="false" />
-            <element signature="e#4304#4568#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1772,10 +1704,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35353535">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="71" selection-start-line="33" selection-start-column="71" selection-end-line="33" selection-end-column="71" />
           <folding>
             <element signature="e#33#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/master/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.875">
+          <caret line="320" column="52" selection-start-line="320" selection-start-column="52" selection-end-line="320" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.375">
+          <caret line="104" column="36" selection-start-line="104" selection-start-column="36" selection-end-line="215" selection-end-column="0" />
+          <folding>
+            <element signature="e#2926#5342#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/code.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+          <folding>
+            <element signature="e#39#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+          <folding>
+            <element signature="e#34#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/createteam.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.625">
+          <caret line="112" column="34" selection-start-line="112" selection-start-column="34" selection-end-line="112" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/teamall.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="19.375">
+          <caret line="47" column="93" selection-start-line="47" selection-start-column="93" selection-end-line="47" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34343433">
+          <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+          <folding>
+            <element signature="e#45#102#0" expanded="true" />
+            <element signature="e#2839#3100#0" expanded="false" />
+            <element signature="e#3183#3465#0" expanded="false" />
+            <element signature="e#3546#3810#0" expanded="false" />
           </folding>
         </state>
       </provider>

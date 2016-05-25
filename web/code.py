@@ -5,7 +5,7 @@ from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
-from .models import Team,Host,TeamGroup
+from .models import Team,Host
 from .base import encode,decode
 import paramiko
 
@@ -29,7 +29,7 @@ def back():
 
 @login_required(login_url=reverse_lazy('login'))
 def code(request):
-    teamall=TeamGroup.objects.all()
+    teamall=Team.objects.all()
     if request.method =="POST":
         filename=request.FILES.get('file')
         path='{0}/{1}'.format('/root/',filename.name)
