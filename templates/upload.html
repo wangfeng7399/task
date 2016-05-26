@@ -1,0 +1,176 @@
+{% extends 'master/index.html' %}
+{% block css %}
+     <link href="/static/css/dropzone.css" rel="stylesheet" xmlns="http://www.w3.org/1999/html"/>
+    <link rel="stylesheet" type="text/css" href="/static/upload/css/jquery.filer.css">
+    <link rel="stylesheet" type="text/css" href="/static/upload/css/jquery.filer-dragdropbox-theme.css">
+    <link rel="stylesheet" type="text/css" href="/static/upload/css/tomorrow.css">
+    <link rel="stylesheet" type="text/css" href="/static/upload/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-fileupload.css" />
+
+    <link rel="stylesheet" type="text/css" href="/static/css/jquery.gritter.css" />
+
+    <link rel="stylesheet" type="text/css" href="/static/css/chosen.css" />
+
+    <link rel="stylesheet" type="text/css" href="/static/css/select2_metro.css" />
+
+    <link rel="stylesheet" type="text/css" href="/static/css/jquery.tagsinput.css" />
+
+    <link rel="stylesheet" type="text/css" href="/static/css/clockface.css" />
+
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-wysihtml5.css" />
+
+    <link rel="stylesheet" type="text/css" href="/static/css/datepicker.css" />
+
+    <link rel="stylesheet" type="text/css" href="/static/css/timepicker.css" />
+
+    <link rel="stylesheet" type="text/css" href="/static/css/colorpicker.css" />
+
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-toggle-buttons.css" />
+
+    <link rel="stylesheet" type="text/css" href="/static/css/daterangepicker.css" />
+
+    <link rel="stylesheet" type="text/css" href="/static/css/datetimepicker.css" />
+
+    <link rel="stylesheet" type="text/css" href="/static/css/multi-select-metro.css" />
+
+
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+{% endblock %}
+{% block body %}
+	<article class="htmleaf-container">
+		<section id="section4" class="section-white">
+                        <a name="demos"></a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div>
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane pt20 pb20 fade in active" id="demo-default">
+                                           <div class="control-group">
+                                            <p style="color: blue;text-align: center">
+                                                {{ msg }}
+                                            </p>
+
+
+                                        </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <form action="" method="post" enctype="multipart/form-data" class="text-center">
+                                                  <label class="control-label">请选择项目名：</label>
+                                                  <select name="teamname" class="span3 chosen" data-placeholder="项目名" tabindex="1">
+                                                        {% for team in teamall %}
+                                                        <option value=""></option>
+                                                        <option value="{{ team.id }}">{{ team.groupname }}</option>
+                                                        {% endfor %}
+                                                   </select>
+
+                                                  <input type="file" name="files[]" id="demo-fileInput-4" multiple="multiple">
+                                                  <input type="submit" class="btn-custom green" value="Submit">
+                                            </form>
+                                        </div>
+                                    </div>
+                                           <div class="control-group">
+                                            <p style="color: red">
+
+                                                <span class="label label-important">提示:</span>&nbsp;
+
+                                                1.支持的浏览器为Chrome,Firefox,Safari,Opera 和 IE10,点击空白处选择文件</br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.请上传直接上传war包
+
+                                            </p>
+
+
+                                        </div>
+                                    <br><hr><br>
+                                    
+                               </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+	</article>
+    {% endblock %}
+    {% block js %}
+
+    <script src="/static/upload/js/jquery.filer.min.js" type="text/javascript"></script>
+    <script src="/static/upload/js/prettify.js" type="text/javascript"></script>
+    <script src="/static/upload/js/scripts.js" type="text/javascript"></script>
+    <script src="/static/upload/js/custom.js" type="text/javascript"></script>
+    <script src="/static/js/dropzone.js"></script>
+    <script type="text/javascript" src="/static/js/ckeditor.js"></script>
+
+    <script type="text/javascript" src="/static/js/bootstrap-fileupload.js"></script>
+
+    <script type="text/javascript" src="/static/js/chosen.jquery.min.js"></script>
+
+    <script type="text/javascript" src="/static/js/select2.min.js"></script>
+
+    <script type="text/javascript" src="/static/js/wysihtml5-0.3.0.js"></script>
+
+    <script type="text/javascript" src="/static/js/bootstrap-wysihtml5.js"></script>
+
+    <script type="text/javascript" src="/static/js/jquery.tagsinput.min.js"></script>
+
+    <script type="text/javascript" src="/static/js/jquery.toggle.buttons.js"></script>
+
+    <script type="text/javascript" src="/static/js/bootstrap-datepicker.js"></script>
+
+    <script type="text/javascript" src="/static/js/bootstrap-datetimepicker.js"></script>
+
+    <script type="text/javascript" src="/static/js/clockface.js"></script>
+
+    <script type="text/javascript" src="/static/js/date.js"></script>
+
+    <script type="text/javascript" src="/static/js/daterangepicker.js"></script>
+
+    <script type="text/javascript" src="/static/js/bootstrap-colorpicker.js"></script>
+
+    <script type="text/javascript" src="/static/js/bootstrap-timepicker.js"></script>
+
+    <script type="text/javascript" src="/static/js/jquery.inputmask.bundle.min.js"></script>
+
+    <script type="text/javascript" src="/static/js/jquery.input-ip-address-control-1.0.min.js"></script>
+
+    <script type="text/javascript" src="/static/js/jquery.multi-select.js"></script>
+
+    <script src="/static/js/bootstrap-modal.js" type="text/javascript" ></script>
+
+    <script src="/static/js/bootstrap-modalmanager.js" type="text/javascript" ></script>
+	<!-- BEGIN PAGE LEVEL PLUGINS -->
+
+	<script type="text/javascript" src="/static/js/select2.min.js"></script>
+
+	<script type="text/javascript" src="/static/js/jquery.dataTables.js"></script>
+
+	<script type="text/javascript" src="/static/js/DT_bootstrap.js"></script>
+
+	<!-- END PAGE LEVEL PLUGINS -->
+
+	<!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+	<script src="/static/js/app.js"></script>
+    <script src="/static/js/form-components.js"></script>
+	<script src="/static/js/table-editable.js"></script>
+	<script>
+
+		jQuery(document).ready(function() {
+
+		// initiate layout and plugins
+
+		App.init();
+
+		});
+
+	</script>
+
+	<!-- END PAGE LEVEL SCRIPTS -->
+
+<script type="text/javascript">  var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-37564768-1']);  _gaq.push(['_setDomainName', 'keenthemes.com']);  _gaq.push(['_setAllowLinker', true]);  _gaq.push(['_trackPageview']);  (function() {    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })();</script></body>
+
+    {% endblock %}
