@@ -21,6 +21,13 @@ class Host(models.Model):
     def __str__(self):
         return self.hostip
 
+class NginxHost(models.Model):
+    hostip=models.GenericIPAddressField()
+    hostpwd=models.CharField(max_length=200,null=True,blank=True)
+    user=models.CharField(max_length=200,default='root')
+    port=models.IntegerField(default=22)
+    def __str__(self):
+        return self.hostip
 
 class Team(models.Model):
     groupname=models.CharField(max_length=200)
@@ -32,6 +39,7 @@ class Team(models.Model):
     svnpwd=models.CharField(max_length=200,null=True,blank=True)
     nginxconf=models.CharField(max_length=200,null=True,blank=True)
     nginxupstream=models.CharField(max_length=200,null=True,blank=True)
+    nginxhost=models.ManyToManyField(NginxHost)
     url=models.CharField(max_length=200,null=True,blank=True)
     ps=models.CharField(max_length=200,null=True,blank=True)
     language_id=models.ForeignKey(Language)

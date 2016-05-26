@@ -5,7 +5,7 @@ from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
-from .models import Host,Language,Status,Team
+from .models import Host,Language,Status,Team,NginxHost
 from .base import encode,decode
 @login_required(login_url=reverse_lazy('login'))
 def createuser(request):
@@ -53,11 +53,18 @@ def createhost(request):
         hostpwd=request.POST.get('hostpwd')
         hostuser=request.POST.get('hostuser')
         hostport=request.POST.get('hostport')
+        nginxhost=request.POST.get('nginxhost')
         encodepwd=encode(hostpwd)
-        if hostport == "":
-            Host.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser)
+        if nginxhost =="0":
+            if hostport == "":
+                Host.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser)
+            else:
+                Host.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser,port=int(hostport))
         else:
-            Host.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser,port=int(hostport))
+            if hostport == "":
+                NginxHost.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser)
+            else:
+                NginxHost.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser,port=int(hostport))
         return render(request,'createhost.html',{"msg":"新增成功"})
     else:
         return render(request,'createhost.html')
@@ -111,9 +118,11 @@ def createstatus(request):
     else:
         return render(request,'createstatus.html')
 
+@login_required(login_url=reverse_lazy('login'))
 def createteam(request):
     hostall=Host.objects.all()
     language=Language.objects.all()
+    nhost=NginxHost.objects.all()
     if request.method=='POST':
         host=request.POST.getlist('host')
         teamname=request.POST.get('teamname')
@@ -123,17 +132,22 @@ def createteam(request):
         svnuser=request.POST.get('svnuser')
         svnpwd=request.POST.get('svnpwd')
         nginxpath=request.POST.get('nginxpath')
+        nginxhost=request.POST.getlist('nginxhost')
         nginxupstream=request.POST.get('nginxupstream')
         url=request.POST.get('url')
         teamlanguage=request.POST.get('teamlanguage')
         ps=request.POST.get('ps')
         languageid=Language.objects.get(id=teamlanguage)
-        print(host)
-        #hostid=Host.objects.get(id=host)
-        #port=hostid.hostip+":"+teamport
-        #Team.objects.create(language_id=languageid,teamport=port,path=teampath,svnpath=svnpath,svnpwd=svnpwd,nginxconf=nginxpath,nginxupstream=nginxupstream,svnuser=svnuser,ps=ps)
-        #team=Team.objects.get(teamport=port)
-        #team.host.add(hostid)
+        if nginxupstream=="":
+            nginxupstream=teamname
+        Team.objects.create(groupname=teamname,language_id=languageid,teamport=teamport,url=url,path=teampath,svnpath=svnpath,svnpwd=svnpwd,nginxconf=nginxpath,nginxupstream=nginxupstream,svnuser=svnuser,ps=ps)
+        team=Team.objects.get(groupname=teamname)
+        for h in host:
+            hostid=Host.objects.get(id=h)
+            team.host.add(h)
+        for nh in nginxhost:
+            nhid=NginxHost.objects.get(id=nh)
+            team.nginxhost.add(nhid)
         return redirect(reverse("teamall"))
     else:
-        return render(request,'createteam.html',{"language":language,"hostall":hostall})
+        return render(request,'createteam.html',{"language":language,"hostall":hostall,"nginxhost":nhost})
