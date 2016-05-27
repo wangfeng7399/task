@@ -90,13 +90,15 @@ def code(request):
 def status(request):
     return render(request, 'status.html')
 
-
+@login_required(login_url=reverse_lazy('login'))
 def updateall(request):
     return render(request,'updateall.html')
 
+
+@login_required(login_url=reverse_lazy('login'))
 def backall(request):
     return render(request,'backall.html')
 
-
+@login_required(login_url=reverse_lazy('login'))
 def tree(request):
     return render(request,'phptree.html')
