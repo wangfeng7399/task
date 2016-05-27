@@ -147,8 +147,7 @@ def createteam(request):
         languageid=Language.objects.get(id=teamlanguage)
         if nginxupstream=="":
             nginxupstream=teamname
-        status=Status.objects.get(status="服务中")
-        Team.objects.create(groupname=teamname,language_id=languageid,status=status,teamport=teamport,url=url,path=teampath,svnpath=svnpath,svnpwd=svnpwd,nginxconf=nginxpath,nginxupstream=nginxupstream,svnuser=svnuser,ps=ps)
+        Team.objects.create(groupname=teamname,language_id=languageid,teamport=teamport,url=url,path=teampath,svnpath=svnpath,svnpwd=svnpwd,nginxconf=nginxpath,nginxupstream=nginxupstream,svnuser=svnuser,ps=ps)
         team=Team.objects.get(groupname=teamname)
         for h in host:
             hostid=Host.objects.get(id=h)

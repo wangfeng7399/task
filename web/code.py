@@ -79,7 +79,8 @@ def code(request):
                 p.apply_async(u.update())
             p.close()
             p.join()
-        Code.objects.create(team=teamhost,path=pathname)
+        status=Status.objects.get(status='正在上传')
+        Code.objects.create(team=teamhost,path=pathname,status=status)
         return render(request,'upload.html',{"msg":"已经成功上传,正在发布，请关注邮箱，在发布完成，系统会发送邮件给你","teamall":teamall})
     return render(request,'upload.html',{"teamall":teamall})
 
