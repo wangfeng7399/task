@@ -29,6 +29,7 @@ class NginxHost(models.Model):
     hostpwd=models.CharField(max_length=200,null=True,blank=True)
     user=models.CharField(max_length=200,default='root')
     port=models.IntegerField(default=22)
+    status=models.ForeignKey(HostStatus)
     def __str__(self):
         return self.hostip
 
@@ -46,7 +47,6 @@ class Team(models.Model):
     url=models.CharField(max_length=200,null=True,blank=True)
     ps=models.CharField(max_length=200,null=True,blank=True)
     language_id=models.ForeignKey(Language)
-    status=models.ForeignKey(Status)
     host=models.ManyToManyField(Host)
     def __str__(self):
         return self.groupname
@@ -55,5 +55,5 @@ class Code(models.Model):
     create_data=models.DateTimeField(auto_now=True)
     team=models.ForeignKey(Team)
     path=models.CharField(max_length=200)
-    user=models.ManyToManyField(User)
-
+    user=models.ForeignKey(User)
+    status=models.ForeignKey(Status)

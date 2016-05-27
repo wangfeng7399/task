@@ -5,15 +5,17 @@ from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
-from .models import Host,Language,Status,Team,NginxHost
+from .models import Host,Language,Status,Team,NginxHost,HostStatus
 from .base import encode,decode
 @login_required(login_url=reverse_lazy('login'))
 def createuser(request):
+    teamall=Team.objects.all()
     if request.method == 'POST':
         name=request.POST.get('name',None)
         username=request.POST.get('loginname',None)
         email=request.POST.get('email',None)
         superuser=request.POST.get('superuser',None)
+        teamid=request.POST.getlist('team')
         password="1"
         if superuser=="0":
             user=User.objects.create_user(username=username,email=email,password=password)
@@ -21,9 +23,13 @@ def createuser(request):
             user=User.objects.create_superuser(username=username,email=email,password=password)
         user.first_name=name
         user.save()
-        return render(request, 'user.html',{"msg":"添加成功"})
+        user=User.objects.get(username=username)
+        for id in teamid:
+            team=Team.objects.get(id=id)
+            team.userid.add(user)
+        return render(request, 'user.html',{"msg":"添加成功",'teamall':teamall})
     else:
-        return render(request, 'user.html')
+        return render(request, 'user.html',{'teamall':teamall})
 
 @login_required(login_url=reverse_lazy('login'))
 def agentpasswd(request):
@@ -55,16 +61,17 @@ def createhost(request):
         hostport=request.POST.get('hostport')
         nginxhost=request.POST.get('nginxhost')
         encodepwd=encode(hostpwd)
+        hoststuts=HostStatus.objects.get(status='在线')
         if nginxhost =="0":
             if hostport == "":
-                Host.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser)
+                Host.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser,status=hoststuts)
             else:
-                Host.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser,port=int(hostport))
+                Host.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser,port=int(hostport),status=hoststuts)
         else:
             if hostport == "":
-                NginxHost.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser)
+                NginxHost.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser,status=hoststuts)
             else:
-                NginxHost.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser,port=int(hostport))
+                NginxHost.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser,port=int(hostport),status=hoststuts)
         return render(request,'createhost.html',{"msg":"新增成功"})
     else:
         return render(request,'createhost.html')
@@ -140,7 +147,8 @@ def createteam(request):
         languageid=Language.objects.get(id=teamlanguage)
         if nginxupstream=="":
             nginxupstream=teamname
-        Team.objects.create(groupname=teamname,language_id=languageid,teamport=teamport,url=url,path=teampath,svnpath=svnpath,svnpwd=svnpwd,nginxconf=nginxpath,nginxupstream=nginxupstream,svnuser=svnuser,ps=ps)
+        status=Status.objects.get(status="服务中")
+        Team.objects.create(groupname=teamname,language_id=languageid,status=status,teamport=teamport,url=url,path=teampath,svnpath=svnpath,svnpwd=svnpwd,nginxconf=nginxpath,nginxupstream=nginxupstream,svnuser=svnuser,ps=ps)
         team=Team.objects.get(groupname=teamname)
         for h in host:
             hostid=Host.objects.get(id=h)
