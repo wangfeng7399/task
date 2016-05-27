@@ -5,15 +5,15 @@ from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
-from .models import Team,Host
+from .models import Team,Host,Status
 from .base import encode,decode
-import paramiko
+import paramiko,re
 import time
 import os
 from multiprocessing import Pool
 
 #上传文件
-def update(hostip,port,username,password,updatefile,filename):
+def update(hostip,port,username,password,updatefile,filename,teamnameid):
     t=paramiko.Transport(hostip,port)
     t.connect(username=username,password=password)
     sftp=paramiko.SFTPClient.from_transport(t)
@@ -21,12 +21,27 @@ def update(hostip,port,username,password,updatefile,filename):
         sftp.mkdir('/update',mode=0o755)
     except:
         pass
-    sftp.put(updatefile,'{0}/{1}'.format('/update',filename))
+    sftp.put(updatefile,'{0}/{1}'.format('/update',filename),)
     t.close()
+    team=Team.objects.get(id=teamnameid)
+    status=Status.objects.get(status='等待更新')
+    team.status.add(status)
+#重启nginx,默认nginx使用www用户启动
+def nginx(hostip,port,username,password):
+    ssh=paramiko.SSHClient()
+    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    ssh.connect(hostip,port,username,password)
 
-#摘机器
-def nginx():
-    pass
+    comm="sed -i 's/\(server {0} .*;\)/'"
+    stdin,stdout,stderr=ssh.exec_command('ls')
+
+#重启tomcat，默认tomcat使用app用户启动
+def nginx(hostip,port,username,password):
+    ssh=paramiko.SSHClient()
+    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    ssh.connect(hostip,port,username,password)
+    comm="sed -i 's/\(server {0} .*;\)/'"
+    stdin,stdout,stderr=ssh.exec_command('ls')
 
 #备份
 def backup():
@@ -57,11 +72,10 @@ def code(request):
             #这里应该用多进程写
             p=Pool(5)
             for host in teamhost.host.all():
-                p.apply_async(update,args=(host.hostip,host.port,host.user,decode(host.hostpwd),pathname,file.name))
+                p.apply_async(update,args=(host.hostip,host.port,host.user,decode(host.hostpwd),pathname,file.name,teamname))
             p.close()
             p.join()
             return render(request,'upload.html',{"msg":"已经成功上传,正在发布，请关注邮箱，在发布完成，系统会发送邮件给你"})
-
     return render(request,'upload.html',{"teamall":teamall})
 
 @login_required(login_url=reverse_lazy('login'))

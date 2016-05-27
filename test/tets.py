@@ -28,7 +28,7 @@ print(c)
 
 import os
 os.path.exists('/opt/admin/2016-5-26/')'''
-
+"""
 from multiprocessing import Pool
 import os,time,random
 def long_time_task(name):
@@ -49,7 +49,7 @@ if __name__ == '__main__':
     print('waiting for all sub done')
     p.close()
     p.join()
-    print('all sub done')
+    print('all sub done')"""
 import paramiko
 import os
 """
@@ -63,17 +63,8 @@ for i in stdout.readlines():
     else:
         print('da')
 """
-"""
+
 t=paramiko.Transport('10.10.0.53',22)
 t.connect(username='root',password='51credit.com')
 sftp=paramiko.SFTPClient.from_transport(t)
-try:
-    sftp.mkdir('/opt/admin/1',mode=0o755)
-except:
-    pass
-try:
-    sftp.put('/opt/admin/2016-05-26/Hydrangeas.jpg','/opt/admin/2/Hydrangeas.jpg')
-except:
-
-    t.close()
-"""
+sftp.put('/opt/admin/1/test.jpg',"/root/abc.jpg")
