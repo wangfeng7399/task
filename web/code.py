@@ -46,14 +46,12 @@ class update:
             pass
         self.sftp.put(self.updatefile,'{0}/{1}'.format('/update',self.filename),)
         self.t.close()
-        status=Status.objects.get(status='等待更新')
-        Team.objects.update(status=status)
     #备份
     def backup(self):
-        pass
+        time.sleep(100)
 
     #回滚
-    def back(self):
+    def goback(self):
         pass
     #多进程
 
@@ -79,8 +77,12 @@ def code(request):
                 p.apply_async(u.update())
             p.close()
             p.join()
-        status=Status.objects.get(status='正在上传')
-        Code.objects.create(team=teamhost,path=pathname,status=status)
+        status=Status.objects.get(status='等待更新')
+        Code.objects.create(team=teamhost,path=pathname,status=status,user=userid)
+        p=Pool(5)
+        for host in teamhost.host.all():
+            u=update(host.hostip,host.port,host.user,decode(host.hostpwd),pathname,file.name,teamname)
+            p.apply_async(u.backup())
         return render(request,'upload.html',{"msg":"已经成功上传,正在发布，请关注邮箱，在发布完成，系统会发送邮件给你","teamall":teamall})
     return render(request,'upload.html',{"teamall":teamall})
 
