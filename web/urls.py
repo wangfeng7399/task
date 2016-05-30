@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^createlanguage/$',user.createlanguage,name='createlanguage'),
     url(r'^agentlanguage/$',user.agentlanguage,name='agentlanguage'),
     url(r'^code/$',code.code,name='code'),
+    url(r'^release/$',code.release,name='release'),
     url(r'^rust/$',views.rust,name='rust'),
     url(r'^status/$',code.status,name='status'),
     url(r'^updateall/$',code.updateall,name='updateall'),

@@ -83,16 +83,24 @@ def code(request):
         for host in teamhost.host.all():
             u=update(host.hostip,host.port,host.user,decode(host.hostpwd),pathname,file.name,teamname)
             p.apply_async(u.backup())
-        return render(request,'upload.html',{"msg":"已经成功上传,正在发布，请关注邮箱，在发布完成，系统会发送邮件给你","teamall":teamall})
+        return render(request,'upload.html',{"msg":"已经上传成功，请前往发布列表页进行发布","teamall":teamall})
     return render(request,'upload.html',{"teamall":teamall})
 
 @login_required(login_url=reverse_lazy('login'))
 def status(request):
+
     return render(request, 'status.html')
 
 @login_required(login_url=reverse_lazy('login'))
 def updateall(request):
-    return render(request,'updateall.html')
+    user=User.objects.get(username=request.user)
+    if user.is_superuser:
+        updateall=Code.objects.all()
+        print(updateall)
+        return render(request,'updateall.html',{'updateall':updateall})
+    else:
+        updateall=Code.objects.filter(user=user)
+        return render(request,'updateall.html',{'updateall':updateall})
 
 
 @login_required(login_url=reverse_lazy('login'))
@@ -102,3 +110,9 @@ def backall(request):
 @login_required(login_url=reverse_lazy('login'))
 def tree(request):
     return render(request,'phptree.html')
+
+def release(request):
+    if request.method=="POST":
+        id=request.POST.get("id")
+        print(id)
+        return HttpResponse("ok")
