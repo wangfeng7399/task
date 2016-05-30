@@ -24,8 +24,7 @@ var TableEditable = function () {
                 jqTds[3].innerHTML = '<input type="text" class="m-wrap small" value="' + aData[3] + '">';
                 jqTds[4].innerHTML = '<input type="text" class="m-wrap small" value="' + aData[4] + '">';
                 jqTds[5].innerHTML = '<input type="text" class="m-wrap small" value="' + aData[5] + '">';
-                jqTds[6].innerHTML = '<a class="edit" href="">Save</a>';
-                jqTds[7].innerHTML = '<a class="cancel" href="">Cancel</a>';
+                jqTds[6].innerHTML = '<a class="cancel" href=""><button>Cancel</button></a>';
             }
 
             function saveRow(oTable, nRow) {
@@ -36,8 +35,7 @@ var TableEditable = function () {
                 oTable.fnUpdate(jqInputs[3].value, nRow, 3, false);
                 oTable.fnUpdate(jqInputs[4].value, nRow, 4, false);
                 oTable.fnUpdate(jqInputs[5].value, nRow, 5, false);
-                oTable.fnUpdate('<a class="edit" href="">Edit</a>', nRow, 6, false);
-                oTable.fnUpdate('<a class="delete" href="">Delete</a>', nRow, 7, false);
+                oTable.fnUpdate('<a class="delete" href=""><button>Delete</button></a>', nRow, 6, false);
                 oTable.fnDraw();
             }
 
@@ -49,7 +47,7 @@ var TableEditable = function () {
                 oTable.fnUpdate(jqInputs[3].value, nRow, 3, false);
                 oTable.fnUpdate(jqInputs[4].value, nRow, 4, false);
                 oTable.fnUpdate(jqInputs[5].value, nRow, 5, false);
-                oTable.fnUpdate('<a class="edit" href="">Edit</a>', nRow, 6, false);
+                oTable.fnUpdate('<a class="edit" href=""><button>Edit</button></a>', nRow, 6, false);
                 oTable.fnDraw();
             }
 
@@ -84,15 +82,15 @@ var TableEditable = function () {
 
             var nEditing = null;
 
-            $('#sample_editable_1_new').click(function (e) {
-                e.preventDefault();
-                var aiNew = oTable.fnAddData(['', '', '', '','','','',
-                        '<a class="edit" href="">Edit</a>', '<a class="cancel" data-mode="new" href="">Cancel</a>'
-                ]);
-                var nRow = oTable.fnGetNodes(aiNew[0]);
-                editRow(oTable, nRow);
-                nEditing = nRow;
-            });
+            //$('#sample_editable_1_new').click(function (e) {
+            //    e.preventDefault();
+            //    var aiNew = oTable.fnAddData(['', '', '', '','','',
+            //        '<a class="cancel" data-mode="new" href=""><button>Delete</button></a>','<a><button>详情</button></a>'
+            //    ]);
+            //    var nRow = oTable.fnGetNodes(aiNew[0]);
+            //    editRow(oTable, nRow);
+            //    nEditing = nRow;
+            //});
 
             $('#sample_editable_1 a.delete').live('click', function (e) {
                 e.preventDefault();

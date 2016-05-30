@@ -52,8 +52,9 @@ class Team(models.Model):
         return self.groupname
 
 class Code(models.Model):
-    create_data=models.DateTimeField(auto_now=True)
+    create_data=models.DateTimeField(auto_now_add=True)
     team=models.ForeignKey(Team)
     path=models.CharField(max_length=200)
     user=models.ForeignKey(User)
     status=models.ForeignKey(Status)
+    update_date=models.DateTimeField(auto_now=True)

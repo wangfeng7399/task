@@ -79,10 +79,6 @@ def code(request):
             p.join()
         status=Status.objects.get(status='等待更新')
         Code.objects.create(team=teamhost,path=pathname,status=status,user=userid)
-        p=Pool(5)
-        for host in teamhost.host.all():
-            u=update(host.hostip,host.port,host.user,decode(host.hostpwd),pathname,file.name,teamname)
-            p.apply_async(u.backup())
         return render(request,'upload.html',{"msg":"已经上传成功，请前往发布列表页进行发布","teamall":teamall})
     return render(request,'upload.html',{"teamall":teamall})
 
@@ -96,7 +92,6 @@ def updateall(request):
     user=User.objects.get(username=request.user)
     if user.is_superuser:
         updateall=Code.objects.all()
-        print(updateall)
         return render(request,'updateall.html',{'updateall':updateall})
     else:
         updateall=Code.objects.filter(user=user)
@@ -105,7 +100,9 @@ def updateall(request):
 
 @login_required(login_url=reverse_lazy('login'))
 def backall(request):
-    return render(request,'backall.html')
+    status=Status.objects.get(status="回退")
+    backall=Code.objects.filter(status=status)
+    return render(request,'backall.html',{"backall":backall})
 
 @login_required(login_url=reverse_lazy('login'))
 def tree(request):
@@ -115,4 +112,8 @@ def release(request):
     if request.method=="POST":
         id=request.POST.get("id")
         print(id)
-        return HttpResponse("ok")
+        code=Code.objects.get(id=id)
+        status=Status.objects.get(status="正在发布")
+        code.status=status
+        code.save()
+        return redirect(reverse("updateall"))
