@@ -108,6 +108,7 @@ def backall(request):
 def tree(request):
     return render(request,'phptree.html')
 
+@login_required(login_url=reverse_lazy('login'))
 def release(request):
     if request.method=="POST":
         id=request.POST.get("id")
@@ -116,4 +117,9 @@ def release(request):
         status=Status.objects.get(status="正在发布")
         code.status=status
         code.save()
-        return redirect(reverse("updateall"))
+        #摘nginx
+        #备份
+        #重启
+        #测试
+        #回退
+        #重启
