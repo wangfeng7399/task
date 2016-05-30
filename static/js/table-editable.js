@@ -35,7 +35,7 @@ var TableEditable = function () {
                 oTable.fnUpdate(jqInputs[3].value, nRow, 3, false);
                 oTable.fnUpdate(jqInputs[4].value, nRow, 4, false);
                 oTable.fnUpdate(jqInputs[5].value, nRow, 5, false);
-                oTable.fnUpdate('<a class="delete" href=""><button>Delete</button></a>', nRow, 6, false);
+                oTable.fnUpdate('<a  class="delete" href=""><button data_id="{{ update.id }}">Delete</button></a>', nRow, 6, false);
                 oTable.fnDraw();
             }
 
@@ -82,82 +82,6 @@ var TableEditable = function () {
 
             var nEditing = null;
 
-            //$('#sample_editable_1_new').click(function (e) {
-            //    e.preventDefault();
-            //    var aiNew = oTable.fnAddData(['', '', '', '','','',
-            //        '<a class="cancel" data-mode="new" href=""><button>Delete</button></a>','<a><button>详情</button></a>'
-            //    ]);
-            //    var nRow = oTable.fnGetNodes(aiNew[0]);
-            //    editRow(oTable, nRow);
-            //    nEditing = nRow;
-            //});
-
-            $('#sample_editable_1 a.delete').live('click', function (e) {
-                e.preventDefault();
-
-                if (confirm("确定删除？") == false) {
-                    return;
-                }
-
-                var nRow = $(this).parents('tr')[0];
-                oTable.fnDeleteRow(nRow);
-                //ajax后台提交删除数据
-                var hostip=$("#sample_editable_1 tr:gt(0)")
-                $.ajax({
-                    url: '/web/test/',
-                    type:'POST',
-                    data:{data:'123'},
-                    success:function(arg){
-                        console.log(arg)
-                    }
-
-                });
-                alert("删除成功");
-            });
-
-            $('#sample_editable_1 a.cancel').live('click', function (e) {
-                e.preventDefault();
-                if ($(this).attr("data-mode") == "new") {
-                    var nRow = $(this).parents('tr')[0];
-                    oTable.fnDeleteRow(nRow);
-                } else {
-                    restoreRow(oTable, nEditing);
-                    nEditing = null;
-                }
-            });
-
-            $('#sample_editable_1 a.edit').live('click', function (e) {
-                e.preventDefault();
-
-                /* Get the row as a parent of the link that was clicked on */
-                var nRow = $(this).parents('tr')[0];
-
-                if (nEditing !== null && nEditing != nRow) {
-                    /* Currently editing - but not this row - restore the old before continuing to edit mode */
-                    restoreRow(oTable, nEditing);
-                    editRow(oTable, nRow);
-                    nEditing = nRow;
-                } else if (nEditing == nRow && this.innerHTML == "Save") {
-                    /* Editing this row and want to save it */
-                    saveRow(oTable, nEditing);
-                    nEditing = null;
-                    //ajax后台提交删除数据
-                    $.ajax({
-                    url: '/web/test/',
-                    type:'POST',
-                    data:{data:'123'},
-                    success:function(arg){
-                        console.log(arg)
-                    }
-
-                });
-                    alert("更新成功");
-                } else {
-                    /* No edit in progress - let's start one */
-                    editRow(oTable, nRow);
-                    nEditing = nRow;
-                }
-            });
         }
 
     };

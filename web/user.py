@@ -158,3 +158,4 @@ def createteam(request):
         return redirect(reverse("teamall"))
     else:
         return render(request,'createteam.html',{"language":language,"hostall":hostall,"nginxhost":nhost})
+
