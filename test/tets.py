@@ -63,8 +63,14 @@ for i in stdout.readlines():
     else:
         print('da')
 """
-
+"""
 t=paramiko.Transport('10.10.0.53',22)
 t.connect(username='root',password='51credit.com')
 sftp=paramiko.SFTPClient.from_transport(t)
 sftp.put('/opt/admin/1/test.jpg',"/root/abc.jpg")
+"""
+import urllib.request
+try:
+    urllib.request.urlopen("http://www.w2qweqweq.com")
+except:
+    print("jje")
