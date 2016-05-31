@@ -7,7 +7,7 @@ from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
 from .models import Team,Host,Status,Code,NginxHost
 from .base import encode,decode
-import paramiko,re
+import paramiko,random
 import time
 import os
 from multiprocessing import Pool
@@ -25,7 +25,6 @@ class update:
         self.ssh=paramiko.SSHClient()
         self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         self.ssh.connect(hostip,port,username,password)
-    #上传文件
     def update(self):
         try:
             self.sftp.mkdir('/update',mode=0o755)
@@ -42,23 +41,39 @@ class update:
         pass
 
 class nginx:
-    def __init__(self,host,teamnameid,nginxconf):
-        self.teamnameid=teamnameid
+    def __init__(self,host,upstream,nginxconf,code):
+        self.upstream=upstream
         self.nginxconf=nginxconf
+        self.code=code
         self.ssh=paramiko.SSHClient()
         self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        self.ssh.connect(host.hostip,host.port,host.username,host.hostpwd)
+        self.ssh.connect(hostname=host.hostip,port=host.port,username=host.user,password=decode(host.hostpwd))
     def downteam(self):
-        pass
-        #下线一台机器，写数据库
-        #重启
+        command=r"sed -i 's/\({0}.*;\)'/#\1/g {1}".format(self.upstream,self.nginxconf)
+        #command="touch /tmp/a.txt"
+        self.ssh.exec_command(command)
+        self.reloadnginx()
+        #
     def upteam(self):
         pass
         #上线机器，写数据库
-def curl(url):
+    def reloadnginx(self):
+        command="/usr/local/tengine-2.1.2/sbin/nginx -c {0} -s reload".format(self.nginxconf)
+        #command="/usr/sbin/nginx -c /etc/nginx/nginx.conf -s reload"
+        self.ssh.exec_command(command)
+        status=Status.objects.get(status="灰度发布中")
+        self.code.status=status
+        self.code.save()
+def curl(url,status,code):
     import urllib.request
     try:
         urllib.request.urlopen(url)
+        if status ==1:
+            status=Status.objects.get(status="测试通过")
+        else:
+            status=Status.objects.get(status="发布成功")
+        code.status=status
+        code.save()
         return True
     except:
         return False
@@ -67,6 +82,7 @@ def code(request):
     userid=User.objects.get(username=request.user)
     teamall=Team.objects.filter(userid=userid).all()
     if request.method =="POST":
+        list=[]
         filename=request.FILES.getlist('files[]')
         teamname=request.POST.get('teamname')
         teamhost=Team.objects.get(id=teamname)
@@ -78,6 +94,7 @@ def code(request):
             with open(pathname,'wb+') as f:
                 for chunk in file.chunks():
                     f.write(chunk)
+            list.append(file.name)
             p=Pool(5)
             for host in teamhost.host.all():
                 u=update(host.hostip,host.port,host.user,decode(host.hostpwd),pathname,file.name,teamname,teamhost)
@@ -85,7 +102,7 @@ def code(request):
             p.close()
             p.join()
         status=Status.objects.get(status='等待更新')
-        Code.objects.create(team=teamhost,path=pathname,status=status,user=userid)
+        Code.objects.create(team=teamhost,path=list,status=status,user=userid)
         return render(request,'upload.html',{"msg":"已经上传成功，请前往发布列表页进行发布","teamall":teamall})
     return render(request,'upload.html',{"teamall":teamall})
 
@@ -129,12 +146,15 @@ def release(request):
         nginxconf=code.team.nginxconf #nginx的配置文件
         nginxupstream=code.team.nginxupstream #nginx的upstream
         teamhosts=code.team.host.all() #项目的所有主机
+        rd=random.randint(0,int(teamhosts.count()))
+        upstream='{0}:{1}'.format(teamhosts[rd].hostip,code.team.teamport)
         p=Pool(5)
         for nginxhost in nginxhosts:
-            nginx=nginx(nginxhost,id,nginxconf)
-            p.apply_async(nginx.downteam())
+            ng=nginx(nginxhost,upstream,nginxconf,code)
+            p.apply_async(ng.downteam())
         p.close()
         p.join()
+
         #重启
         #备份
         #测试

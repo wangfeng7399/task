@@ -25,9 +25,9 @@ b=re.findall('upstream\s*%s\s*\{.*?;\n\}\n'%'oldd',a,re.S)
 print(b[0])
 c=re.sub('(.*back)',lambda m:"#"+m.group(0),b[0])
 print(c)
-
+''''''
 import os
-os.path.exists('/opt/admin/2016-5-26/')'''
+os.path.exists('/opt/admin/2016-5-26/')
 """
 from multiprocessing import Pool
 import os,time,random
@@ -50,27 +50,65 @@ if __name__ == '__main__':
     p.close()
     p.join()
     print('all sub done')"""
-import paramiko
+import paramiko,re
 import os
 """
 ssh=paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-ssh.connect('10.10.0.53',22,'root',)
-stdin,stdout,stderr=ssh.exec_command('ls')
-for i in stdout.readlines():
-    if os.path.isdir(i):
-        print('daa')
-    else:
-        print('da')
+ssh.connect('10.10.0.53',22,'root','51credit.com')
+command=r"sed -i 's/\({0}.*\)/#\1/g' {1}".format("In","/root/a.txt")
+stdin,stdout,stderr=ssh.exec_command(command)
+print(stdout)
 """
 """
+
 t=paramiko.Transport('10.10.0.53',22)
 t.connect(username='root',password='51credit.com')
 sftp=paramiko.SFTPClient.from_transport(t)
-sftp.put('/opt/admin/1/test.jpg',"/root/abc.jpg")
-"""
+stdout=sftp.file("/root/a.txt",mode="r+")
+print(stdout.read())
+b=re.findall('na',stdout.read(),re.S)
+print(b)
+c=re.sub('na','NA',str(stdout.read()))
+print(c)
+#stdout.write(c)
+'''
+'''
 import urllib.request
 try:
     urllib.request.urlopen("http://www.w2qweqweq.com")
 except:
     print("jje")
+'''
+'''
+import  paramiko
+t=paramiko.Transport('10.10.0.53',22)
+t.connect(username='root',password='51credit.com')
+sftp=paramiko.SFTPClient.from_transport(t)
+#sftp.get("/root/a.txt","/tmp/a.txt")
+stdout=sftp.file("/root/a.txt",mode="r+")
+print(stdout.read())
+#b=re.findall('na',stdout.read(),re.S)
+#print(b)
+c=re.sub('(.*na.*)',lambda m:"#"+m.group(0),str(stdout.read()))
+print(c)
+#stdout.write(c)
+'''
+'''
+
+with open("/tmp/a.txt","r+")as f:
+    c=re.sub('(.*na.*)',lambda m:"#"+m.group(0),f.read())
+with open("/tmp/a.txt","w+") as f:
+    f.write(c)
+'''
+'''
+with open("/tmp/a.txt","r+")as f:
+    c=re.sub('#(.*)',lambda m:m.group(0),f.read())
+    print(c)
+'''
+import paramiko
+ssh=paramiko.SSHClient()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+ssh.connect('10.10.0.53',22,'root','51credit.com')
+#command=r"sed -i 's/\({0}.*\)/#\1/g' {1}".format("In","/root/a.txt")
+stdin,stdout,stderr=ssh.exec_command("/usr/sbin/nginx -c /etc/nginx/nginx.conf -s reload")

@@ -54,7 +54,7 @@ class Team(models.Model):
 class Code(models.Model):
     create_date=models.DateTimeField(auto_now_add=True)
     team=models.ForeignKey(Team)
-    path=models.CharField(max_length=200)
+    path=models.CharField(max_length=2000)
     user=models.ForeignKey(User)
     status=models.ForeignKey(Status)
     update_date=models.DateTimeField(auto_now=True)
