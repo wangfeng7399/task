@@ -534,10 +534,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/theme.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/master/master.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/tets.py" afterPath="$PROJECT_DIR$/test/tets.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/code.py" afterPath="$PROJECT_DIR$/web/code.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/models.py" afterPath="$PROJECT_DIR$/web/models.py" />
     </list>
     <ignored path="task.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -572,13 +569,12 @@
       <file leaf-file-name="code.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/code.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3181818">
-              <caret line="96" column="33" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.18518518">
+              <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
               <folding>
                 <element signature="e#39#96#0" expanded="true" />
-                <element signature="e#1304#1446#0" expanded="false" />
-                <element signature="e#1495#1499#0" expanded="false" />
-                <element signature="e#4952#4989#0" expanded="false" />
+                <element signature="e#1221#1225#0" expanded="false" />
+                <element signature="e#4661#4698#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1749,13 +1745,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/code.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3181818">
-          <caret line="96" column="33" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.18518518">
+          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
           <folding>
             <element signature="e#39#96#0" expanded="true" />
-            <element signature="e#1304#1446#0" expanded="false" />
-            <element signature="e#1495#1499#0" expanded="false" />
-            <element signature="e#4952#4989#0" expanded="false" />
+            <element signature="e#1221#1225#0" expanded="false" />
+            <element signature="e#4661#4698#0" expanded="false" />
           </folding>
         </state>
       </provider>
