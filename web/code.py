@@ -41,6 +41,27 @@ class update:
     def goback(self):
         pass
 
+class nginx:
+    def __init__(self,host,teamnameid,nginxconf):
+        self.teamnameid=teamnameid
+        self.nginxconf=nginxconf
+        self.ssh=paramiko.SSHClient()
+        self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        self.ssh.connect(host.hostip,host.port,host.username,host.hostpwd)
+    def downteam(self):
+        pass
+        #下线一台机器，写数据库
+        #重启
+    def upteam(self):
+        pass
+        #上线机器，写数据库
+def curl(url):
+    import urllib.request
+    try:
+        urllib.request.urlopen(url)
+        return True
+    except:
+        return False
 @login_required(login_url=reverse_lazy('login'))
 def code(request):
     userid=User.objects.get(username=request.user)
