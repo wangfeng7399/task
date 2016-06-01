@@ -127,3 +127,11 @@ ws.write(2,1,1)
 ws.write(2,2,xlwt.Formula("A3+B3"))
 wb.save("test.xls")
 '''
+import xlrd
+data=xlrd.open_workbook("test.xls")
+table=data.sheets()[0]
+nrows=table.nrows
+ncols=table.ncols
+for r in range(nrows):
+    for c in range(ncols):
+        print("{0}行{1}列的数据为{2},值的类型{3} ".format(r+1,c+1,table.cell(r,c).value,type(table.cell(r,c).value)))

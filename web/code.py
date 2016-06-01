@@ -5,7 +5,7 @@ from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
-from .models import Team,Host,Status,Code,NginxHost
+from .models import Team,Host,Status,Code,NginxHost,Relat
 from .base import encode,decode
 import paramiko,random
 import time
@@ -32,15 +32,15 @@ class update:
     #备份
     def backup(self):
         for file in self.filename:
-            time=time.strftime("%Y-%m-%d",time.localtime())
+            t=time.strftime("%Y-%m-%d",time.localtime())
             #command='cp -rf /data/{0}.war /backup/{1}'.format(项目名称.项目名称+时间)
             #self.ssh.exec_command(command)
     #替换文件
-    def replace(self):
+    def replace(self,updatefile,filename):
         pass
 
     #回滚
-    def goback(self):
+    def goback(self,updatefile,filename):
         pass
 
 class nginx:
@@ -58,8 +58,9 @@ class nginx:
         self.reloadnginx()
         #
     def upteam(self):
-        pass
-        #上线机器，写数据库
+        command=r"sed -i 's/\(#{0}.*;\)'/\1/g {1}".format(self.upstream,self.nginxconf)
+        self.ssh.exec_command(command)
+        self.reloadnginx()
     def reloadnginx(self):
         command="/usr/local/tengine-2.1.2/sbin/nginx -c {0} -s reload".format(self.nginxconf)
         #command="/usr/sbin/nginx -c /etc/nginx/nginx.conf -s reload"
@@ -106,7 +107,11 @@ def code(request):
             p.close()
             p.join()
         status=Status.objects.get(status='等待更新')
-        Code.objects.create(team=teamhost,path=list,status=status,user=userid)
+        t=time.time()
+        Code.objects.get_or_create(team=teamhost,path=list,status=status,user=userid,date=t)
+        code=Code.objects.get(team=teamhost,path=list,status=status,user=userid,date=t)
+        for host in teamhost.host.all():
+            Relat.objects.create(code=code,host=host,status=status)
         return render(request,'upload.html',{"msg":"已经上传成功，请前往发布列表页进行发布","teamall":teamall})
     return render(request,'upload.html',{"teamall":teamall})
 
@@ -159,8 +164,7 @@ def release(request):
             p.apply_async(ng.downteam())
         p.close()
         p.join()
-        for host in teamhosts:
-            up=update(host.hostip,host.port,host.user,decode(host.hostpwd),"",code.path)
+        #上面已经摘除了一台机器
         #重启
         #备份
         #测试

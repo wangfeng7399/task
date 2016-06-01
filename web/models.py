@@ -52,9 +52,16 @@ class Team(models.Model):
         return self.groupname
 
 class Code(models.Model):
+    date=models.IntegerField()
     create_date=models.DateTimeField(auto_now_add=True)
     team=models.ForeignKey(Team)
     path=models.CharField(max_length=2000)
     user=models.ForeignKey(User)
+    status=models.ForeignKey(Status)
+    update_date=models.DateTimeField(auto_now=True)
+
+class Relat(models.Model):
+    code=models.ForeignKey(Code)
+    host=models.ForeignKey(Host)
     status=models.ForeignKey(Status)
     update_date=models.DateTimeField(auto_now=True)
