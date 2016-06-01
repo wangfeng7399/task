@@ -3,6 +3,7 @@
 #公用的模块
 import base64
 import smtplib
+import xlwt
 from email.mime.text import MIMEText
 def encode(str):
     encodestr=base64.b64encode(str.encode())
@@ -26,3 +27,4 @@ def send_mail(to_list,sub,content):
     s.login(mail_user,mail_pass)
     s.sendmail(me,to_list,msg.as_string())
     s.close()
+

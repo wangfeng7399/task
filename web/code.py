@@ -31,8 +31,14 @@ class update:
         self.t.close()
     #备份
     def backup(self):
-        pass
+        for file in self.filename:
+            time=time.strftime("%Y-%m-%d",time.localtime())
+            #command='cp -rf /data/{0}.war /backup/{1}'.format(项目名称.项目名称+时间)
+            #self.ssh.exec_command(command)
     #替换文件
+    def replace(self):
+        pass
+
     #回滚
     def goback(self):
         pass
@@ -61,6 +67,7 @@ class nginx:
         status=Status.objects.get(status="灰度发布中")
         self.code.status=status
         self.code.save()
+        self.ssh.close()
 def curl(url,status,code):
     import urllib.request
     try:
@@ -83,7 +90,7 @@ def code(request):
         filename=request.FILES.getlist('files[]')
         teamname=request.POST.get('teamname')
         teamhost=Team.objects.get(id=teamname)
-        path='{0}/{1}/{2}'.format('/opt',request.user,time.strftime("%Y-%m-%d",time.localtime()),)
+        path='{0}/{1}/{2}/{3}'.format('/opt',teamhost.groupname,request.user,time.strftime("%Y-%m-%d-%H-%M",time.localtime()),)
         if not os.path.exists(path):
             os.makedirs(path)
         for file in filename:
@@ -152,7 +159,8 @@ def release(request):
             p.apply_async(ng.downteam())
         p.close()
         p.join()
-
+        for host in teamhosts:
+            up=update(host.hostip,host.port,host.user,decode(host.hostpwd),"",code.path)
         #重启
         #备份
         #测试

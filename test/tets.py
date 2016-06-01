@@ -106,9 +106,24 @@ with open("/tmp/a.txt","r+")as f:
     c=re.sub('#(.*)',lambda m:m.group(0),f.read())
     print(c)
 '''
+'''
 import paramiko
 ssh=paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 ssh.connect('10.10.0.53',22,'root','51credit.com')
 #command=r"sed -i 's/\({0}.*\)/#\1/g' {1}".format("In","/root/a.txt")
 stdin,stdout,stderr=ssh.exec_command("/usr/sbin/nginx -c /etc/nginx/nginx.conf -s reload")
+'''
+'''
+import xlwt
+style0=xlwt.easyxf("font: name  Time New Roman, color-index red")
+style1=xlwt.easyxf(num_format_str="D-MMMM-YY")
+wb=xlwt.Workbook()
+ws=wb.add_sheet("A Test Sheet")
+ws.write(0,0,123,style0)
+ws.write(1,0,"b",style1)
+ws.write(2,0,1)
+ws.write(2,1,1)
+ws.write(2,2,xlwt.Formula("A3+B3"))
+wb.save("test.xls")
+'''
