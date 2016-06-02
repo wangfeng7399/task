@@ -48,6 +48,7 @@ class Team(models.Model):
     ps=models.CharField(max_length=200,null=True,blank=True)
     language_id=models.ForeignKey(Language)
     host=models.ManyToManyField(Host)
+    datepath=models.CharField(max_length=200)
     def __str__(self):
         return self.groupname
 
@@ -59,6 +60,7 @@ class Code(models.Model):
     user=models.ForeignKey(User)
     status=models.ForeignKey(Status)
     update_date=models.DateTimeField(auto_now=True)
+    dir=models.CharField(max_length=100)
 
 class Relat(models.Model):
     code=models.ForeignKey(Code)
