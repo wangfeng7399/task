@@ -94,15 +94,11 @@ class nginx:
         self.code.status=status
         self.code.save()
         self.ssh.close()
-def curl(url,status,code):
+def curl(code):
     import urllib.request
     try:
-        urllib.request.urlopen(url)
-        if status ==1:
-            status=Status.objects.get(status="等待测试")
-            sub="您发布的{0}项目的一台主机{1}，已经发布完成，在等待您的测试，请通过绑定host的方式去测试您的发布正确与否，测试通过，请前往发布系统确认，以便可以发布后续机器，谢谢！".format(code.team.groupname,)
-        else:
-            status=Status.objects.get(status="发布成功")
+        urllib.request.urlopen(code.team.url)
+        status=Status.objects.get(status="等待测试")
         code.status=status
         code.save()
         return True
@@ -208,8 +204,11 @@ def release(request):
                 p.apply_async(up.backup(table.cell(r,1).value))
         p.close()
         p.join()
-        if curl(code.team.url,1,code):
-            pass
+        if curl(code):
+            content="您发布的{0}项目的一台主机{1}，已经测试通过，在等待您的确认，请通过绑定host的方式去测试您的发布正确与否，测试通过，请前往发布系统确认，以便可以发布后续机器，谢谢！".format(code.team.groupname,w.host.hostip)
+        else:
+            content="您发布的{0}项目的一台主机{1}，发布失败,请重新发布！"
+        send_mail(userid.email,"发布平台通知",content)
             #发送邮件
         return HttpResponse('OK')
 
@@ -221,10 +220,8 @@ def retype(request):
         waitupdate=Relat.objects.filter(code=code,status=status)
         if waitupdate.count()==0:
             status=Status.objects.get(status="发布成功")
-            code.status=status
-            code.save()
         else:
             status=Status.objects.get(status="测试通过")
-            code.status=status
-            code.save()
+        code.status=status
+        code.save()
         return HttpResponse("ok")
