@@ -48,7 +48,7 @@ class Team(models.Model):
     ps=models.CharField(max_length=200,null=True,blank=True)
     language_id=models.ForeignKey(Language)
     host=models.ManyToManyField(Host)
-    datepath=models.CharField(max_length=200)
+    datapath=models.CharField(max_length=200)
     def __str__(self):
         return self.groupname
 

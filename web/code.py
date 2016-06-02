@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
 from .models import Team,Host,Status,Code,NginxHost,Relat
-from .base import encode,decode
+from .base import encode,decode,send_mail
 import paramiko,random
 import time
 import os
@@ -14,7 +14,11 @@ import xlrd
 from multiprocessing import Pool
 
 class update:
-    def __init__(self,hostip,port,username,password):
+    def __init__(self,hostip,port,username,password,datapath,path,code,host):
+        self.datapath=datapath
+        self.code=code
+        self.path=path
+        self.host=host #relat表中的数据
         self.t=paramiko.Transport(hostip,port)
         self.t.connect(username=username,password=password)
         self.sftp=paramiko.SFTPClient.from_transport(self.t)
@@ -23,32 +27,43 @@ class update:
         self.ssh.connect(hostip,port,username,password)
     def update(self,updatefile,filename):
         try:
-            self.sftp.mkdir('/update',mode=0o755)
+            self.sftp.mkdir('/update',mode=0o777)
         except:
             pass
         self.sftp.put(updatefile,'{0}/{1}'.format('/update',filename),)
         self.t.close()
     #备份
-    def backup(self,dir,filename):
+    def backup(self,filename):
         t=time.strftime("%Y-%m-%d",time.localtime())
         try:
-            self.sftp.mkdir('/backup',mode=0o755)
+            self.sftp.mkdir('/backup',mode=0o777)
         except:
             pass
-        command='cp -rf {0}/{1} /backup/{2}'.format(dir,filename,filename+t)
+        command='cp -rf {0}/{1} /backup/{2}'.format(self.datapath,filename,filename+t)
+        self.ssh.exec_command(command)
+        self.replace(filename)
+    #替换文件
+    def replace(self,filename):
+        command='cp -rf {0}/{1} {2}/{3}'.format("/update",filename,self.datapath,filename)
         print(command)
         self.ssh.exec_command(command)
-        self.replace(dir,filename)
-    #替换文件
-    def replace(self,dir,filename):
-        command='cp -rf {0}/{1} {2}/{3}'.format("/update",filename,dir,filename)
-        self.ssh.exec_command(command)
+        self.reload()
     #重启JAVA服务
     def reload(self):
-        stopcommand="kill -9 `ps -ef|grep {0}|grep -v grep |awk '{print $2}'`".format()
-        self.ssh.exec_command(stopcommand)
-        time.sleep(5)
-        startcommand='sh {0}/bin/startup.sh'.format()
+        if self.code.team.language_id.language=="java":
+            stopcommand="kill -9 `ps -ef|grep {0}|grep -v grep |awk '{print $2}'`".format(self.path)
+            print(stopcommand)
+            self.ssh.exec_command(stopcommand)
+            time.sleep(5)
+            startcommand='sh {0}/bin/startup.sh'.format(self.path)
+            print(startcommand)
+            self.ssh.exec_command(startcommand)
+        status=Status.objects.get(status="灰度发布中")
+        self.code.status=status
+        self.code.save()
+        hstatus=Status.objects.get(status="等待测试")
+        self.host.status=hstatus
+        self.host.save()
     #回滚
     def goback(self,updatefile,filename):
         pass
@@ -84,7 +99,8 @@ def curl(url,status,code):
     try:
         urllib.request.urlopen(url)
         if status ==1:
-            status=Status.objects.get(status="测试通过")
+            status=Status.objects.get(status="等待测试")
+            sub="您发布的{0}项目的一台主机{1}，已经发布完成，在等待您的测试，请通过绑定host的方式去测试您的发布正确与否，测试通过，请前往发布系统确认，以便可以发布后续机器，谢谢！".format(code.team.groupname,)
         else:
             status=Status.objects.get(status="发布成功")
         code.status=status
@@ -113,7 +129,7 @@ def code(request):
                 list.append(file.name)
             p=Pool(5)
             for host in teamhost.host.all():
-                u=update(host.hostip,host.port,host.user,decode(host.hostpwd))
+                u=update(host.hostip,host.port,host.user,decode(host.hostpwd),'','','','')
                 p.apply_async(u.update(pathname,file.name))
             p.close()
             p.join()
@@ -156,6 +172,7 @@ def tree(request):
 @login_required(login_url=reverse_lazy('login'))
 def release(request):
     if request.method=="POST":
+        userid=User.objects.get(username=request.user)
         id=request.POST.get("id")
         code=Code.objects.get(id=id)
         status=Status.objects.get(status="正在发布")
@@ -166,8 +183,9 @@ def release(request):
         nginxhosts=code.team.nginxhost.all()#所有nginx
         nginxconf=code.team.nginxconf #nginx的配置文件
         nginxupstream=code.team.nginxupstream #nginx的upstream
-        status=Status.objects.get(status="等待更新")
+        status=Status.objects.get(status='等待更新')
         waitupdate=Relat.objects.filter(code=code,status=status) #项目所有在等待更新状态的主机
+        print(waitupdate)
         rd=random.randint(0,int(waitupdate.count())-1)#任选一台
         w=waitupdate[rd]
         upstream='{0}:{1}'.format(w.host.hostip,code.team.teamport)
@@ -180,20 +198,33 @@ def release(request):
         #上面摘除了一台机器
         #下面进行升级替换
         p=Pool(5)
-        up=update(w.host.hostip,w.host.port,w.host.user,decode(w.host.hostpwd))
+        up=update(w.host.hostip,w.host.port,w.host.user,decode(w.host.hostpwd),code.team.datapath,code.team.path,code,w)
         data=xlrd.open_workbook("{0}/{1}".format(code.dir,"readme.xls"))
         table=data.sheets()[0]
         nrows=table.nrows
         ncols=table.ncols
         for r in range(nrows):
             for c in range(ncols):
-                p.apply_async(up.backup(code.team.path,table.cell(r,1).value))
+                p.apply_async(up.backup(table.cell(r,1).value))
         p.close()
         p.join()
-                #用到进程通信
-        #重启
-        #备份
-        #测试
-        #回退
-        #重启
+        if curl(code.team.url,1,code):
+            pass
+            #发送邮件
         return HttpResponse('OK')
+
+def retype(request):
+    if request.method=="POST":
+        id=request.POST.get("id")
+        code=Code.objects.get(id=id)
+        status=Status.objects.get(status='等待更新')
+        waitupdate=Relat.objects.filter(code=code,status=status)
+        if waitupdate.count()==0:
+            status=Status.objects.get(status="发布成功")
+            code.status=status
+            code.save()
+        else:
+            status=Status.objects.get(status="测试通过")
+            code.status=status
+            code.save()
+        return HttpResponse("ok")

@@ -134,6 +134,7 @@ def createteam(request):
         host=request.POST.getlist('host')
         teamname=request.POST.get('teamname')
         teampath=request.POST.get('teampath')
+        datapath=request.POST.get('datapath')
         teamport=request.POST.get('teamport')
         svnpath=request.POST.get('svnpath')
         svnuser=request.POST.get('svnuser')
@@ -147,7 +148,7 @@ def createteam(request):
         languageid=Language.objects.get(id=teamlanguage)
         if nginxupstream=="":
             nginxupstream=teamname
-        Team.objects.create(groupname=teamname,language_id=languageid,teamport=teamport,url=url,path=teampath,svnpath=svnpath,svnpwd=svnpwd,nginxconf=nginxpath,nginxupstream=nginxupstream,svnuser=svnuser,ps=ps)
+        Team.objects.create(groupname=teamname,language_id=languageid,teamport=teamport,datapath=datapath,url=url,path=teampath,svnpath=svnpath,svnpwd=svnpwd,nginxconf=nginxpath,nginxupstream=nginxupstream,svnuser=svnuser,ps=ps)
         team=Team.objects.get(groupname=teamname)
         for h in host:
             hostid=Host.objects.get(id=h)

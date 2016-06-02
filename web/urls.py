@@ -29,4 +29,5 @@ urlpatterns = [
     url(r'^updateall/$',code.updateall,name='updateall'),
     url(r'^backall/$',code.backall,name='backall'),
     url(r'^tree/$',code.tree,name='tree'),
+    url(r'^retype/$',code.retype,name='retype'),
 ]
