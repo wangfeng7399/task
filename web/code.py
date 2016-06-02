@@ -45,7 +45,6 @@ class update:
     #替换文件
     def replace(self,filename):
         command='cp -rf {0}/{1} {2}/{3}'.format("/update",filename,self.datapath,filename)
-        print(command)
         self.ssh.exec_command(command)
         self.reload()
     #重启JAVA服务
@@ -200,8 +199,7 @@ def release(request):
         nrows=table.nrows
         ncols=table.ncols
         for r in range(nrows):
-            for c in range(ncols):
-                p.apply_async(up.backup(table.cell(r,1).value))
+            p.apply_async(up.backup(table.cell(r,1).value))
         p.close()
         p.join()
         if curl(code):
