@@ -180,7 +180,6 @@ def release(request):
         nginxupstream=code.team.nginxupstream #nginx的upstream
         status=Status.objects.get(status='等待更新')
         waitupdate=Relat.objects.filter(code=code,status=status) #项目所有在等待更新状态的主机
-        print(waitupdate)
         rd=random.randint(0,int(waitupdate.count())-1)#任选一台
         w=waitupdate[rd]
         upstream='{0}:{1}'.format(w.host.hostip,code.team.teamport)
@@ -222,4 +221,16 @@ def retype(request):
             status=Status.objects.get(status="测试通过")
         code.status=status
         code.save()
+        status=Status.objects.get(status="测试通过")
+        nginxhosts=code.team.nginxhost.all()#所有nginx
+        nginxconf=code.team.nginxconf #nginx的配置文件
+        testok=Relat.objects.filter(code=code,status=status) #项目所有测试通过的主机
+        for t in testok:
+            upstream='{0}:{1}'.format(t.host.hostip,code.team.teamport)
+            p=Pool(5)
+            for nginxhost in nginxhosts:
+                ng=nginx(nginxhost,upstream,nginxconf,code)
+                p.apply_async(ng.downteam())
+            p.close()
+            p.join()
         return HttpResponse("ok")

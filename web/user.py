@@ -160,3 +160,6 @@ def createteam(request):
     else:
         return render(request,'createteam.html',{"language":language,"hostall":hostall,"nginxhost":nhost})
 
+def reuser(request):
+    teamall=Team.objects.all()
+    return render(request,'reuser.html',{"teamall":teamall})

@@ -30,4 +30,5 @@ urlpatterns = [
     url(r'^backall/$',code.backall,name='backall'),
     url(r'^tree/$',code.tree,name='tree'),
     url(r'^retype/$',code.retype,name='retype'),
+    url(r'^reuser/$',user.reuser,name='reuser'),
 ]
