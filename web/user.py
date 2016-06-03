@@ -15,7 +15,7 @@ def createuser(request):
         username=request.POST.get('loginname',None)
         email=request.POST.get('email',None)
         superuser=request.POST.get('superuser',None)
-        teamid=request.POST.getlist('team')
+        teamid=request.POST.getlist('my_multi_select1[]')
         password="1"
         if superuser=="0":
             user=User.objects.create_user(username=username,email=email,password=password)
@@ -162,4 +162,8 @@ def createteam(request):
 
 def reuser(request):
     teamall=Team.objects.all()
+    if request.method=="POST":
+        list=request.POST.getlist("my_multi_select1[]")
+        print(list)
+        return render(request,'reuser.html',{"teamall":teamall})
     return render(request,'reuser.html',{"teamall":teamall})
