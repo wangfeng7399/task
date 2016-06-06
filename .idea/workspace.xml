@@ -534,11 +534,9 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/theme.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/master/master.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/upload/js/custom.js" afterPath="$PROJECT_DIR$/static/upload/js/custom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/upload/js/jquery.filer.min.js" afterPath="$PROJECT_DIR$/static/upload/js/jquery.filer.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/reuser.html" afterPath="$PROJECT_DIR$/templates/reuser.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/teamall.html" afterPath="$PROJECT_DIR$/templates/teamall.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/userall.html" afterPath="$PROJECT_DIR$/templates/userall.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/teamnew.html" afterPath="$PROJECT_DIR$/templates/reteam.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/updateall.html" afterPath="$PROJECT_DIR$/templates/updateall.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/code.py" afterPath="$PROJECT_DIR$/web/code.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/urls.py" afterPath="$PROJECT_DIR$/web/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/user.py" afterPath="$PROJECT_DIR$/web/user.py" />
@@ -573,11 +571,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="code.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="code.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/code.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6868687">
-              <caret line="55" column="49" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="236" column="23" selection-start-line="236" selection-start-column="23" selection-end-line="236" selection-end-column="23" />
               <folding>
                 <element signature="e#5470#5507#0" expanded="false" />
                 <element signature="e#5586#5896#0" expanded="false" />
@@ -588,108 +586,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/user.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="195" column="34" selection-start-line="195" selection-start-column="34" selection-end-line="195" selection-end-column="34" />
-              <folding>
-                <element signature="e#3609#3870#0" expanded="false" />
-                <element signature="e#3953#4235#0" expanded="false" />
-                <element signature="e#4316#4580#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reteam.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/reteam.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.666666">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="287" selection-end-column="6" />
-              <folding>
-                <element signature="e#1433#9787#0#HTML" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="teamnew.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/teamnew.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.0">
-              <caret line="287" column="0" selection-start-line="287" selection-start-column="0" selection-end-line="287" selection-end-column="0" />
-              <folding>
-                <element signature="e#3052#3072#0#HTML" expanded="true" />
-                <element signature="e#3186#12444#0#HTML" expanded="false" />
-                <element signature="e#3308#3804#0#HTML" expanded="false" />
-                <element signature="e#4735#5227#0#HTML" expanded="false" />
-                <element signature="e#5273#5769#0#HTML" expanded="false" />
-                <element signature="e#5814#6310#0#HTML" expanded="false" />
-                <element signature="e#7359#7855#0#HTML" expanded="false" />
-                <element signature="e#7900#8398#0#HTML" expanded="false" />
-                <element signature="e#8443#8937#0#HTML" expanded="false" />
-                <element signature="e#10001#10513#0#HTML" expanded="false" />
-                <element signature="e#10558#11086#0#HTML" expanded="false" />
-                <element signature="e#11131#11620#0#HTML" expanded="false" />
-                <element signature="e#11665#12077#0#HTML" expanded="false" />
-                <element signature="e#12122#12394#0#HTML" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="59" selection-start-line="33" selection-start-column="59" selection-end-line="33" selection-end-column="59" />
+              <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teamall.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/teamall.html">
+      <file leaf-file-name="updateall.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/updateall.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.75">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="112" />
+            <state vertical-scroll-proportion="-68.75">
+              <caret line="173" column="10" selection-start-line="173" selection-start-column="10" selection-end-line="173" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userall.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/userall.html">
+      <file leaf-file-name="reteam.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/reteam.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.375">
-              <caret line="87" column="129" selection-start-line="87" selection-start-column="106" selection-end-line="87" selection-end-column="129" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/user.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.625">
-              <caret line="104" column="36" selection-start-line="104" selection-start-column="36" selection-end-line="120" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.34736842">
+              <caret line="280" column="52" selection-start-line="280" selection-start-column="52" selection-end-line="280" selection-end-column="52" />
               <folding>
-                <element signature="e#2926#3397#0#HTML" expanded="false" />
+                <element signature="e#3200#3220#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createstatus.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/createstatus.html">
+      <file leaf-file-name="codedetail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.125">
-              <caret line="55" column="85" selection-start-line="55" selection-start-column="74" selection-end-line="55" selection-end-column="85" />
-              <folding>
-                <element signature="e#1695#1713#0#HTML" expanded="true" />
-                <element signature="e#1837#1871#0#HTML" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-9.25">
+              <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -710,7 +644,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/table_editable.html" />
         <option value="$PROJECT_DIR$/templates/table.html" />
         <option value="$PROJECT_DIR$/templates/groupallnew.html" />
         <option value="$PROJECT_DIR$/templates/table_advanced.html" />
@@ -746,7 +679,6 @@
         <option value="$PROJECT_DIR$/test/test.py" />
         <option value="$PROJECT_DIR$/templates/createteam.html" />
         <option value="$PROJECT_DIR$/web/models.py" />
-        <option value="$PROJECT_DIR$/templates/updateall.html" />
         <option value="$PROJECT_DIR$/web/base.py" />
         <option value="$PROJECT_DIR$/templates/upload.html" />
         <option value="$PROJECT_DIR$/templates/user.html" />
@@ -755,12 +687,14 @@
         <option value="$PROJECT_DIR$/templates/phptree.html" />
         <option value="$PROJECT_DIR$/templates/userall.html" />
         <option value="$PROJECT_DIR$/templates/reuser.html" />
-        <option value="$PROJECT_DIR$/web/urls.py" />
         <option value="$PROJECT_DIR$/templates/teamall.html" />
-        <option value="$PROJECT_DIR$/templates/reteam.html" />
-        <option value="$PROJECT_DIR$/web/user.py" />
         <option value="$PROJECT_DIR$/templates/teamnew.html" />
+        <option value="$PROJECT_DIR$/web/user.py" />
+        <option value="$PROJECT_DIR$/web/urls.py" />
         <option value="$PROJECT_DIR$/web/code.py" />
+        <option value="$PROJECT_DIR$/templates/updateall.html" />
+        <option value="$PROJECT_DIR$/templates/codedetail.html" />
+        <option value="$PROJECT_DIR$/templates/reteam.html" />
       </list>
     </option>
   </component>
@@ -1598,7 +1532,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
           <folding>
-            <element signature="e#40#53#0" expanded="true" />
+            <element signature="e#40#53#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1698,26 +1632,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/updateall.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-51.25">
-          <caret line="154" column="19" selection-start-line="154" selection-start-column="19" selection-end-line="154" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/createteam.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.4736843">
           <caret line="125" column="28" selection-start-line="125" selection-start-column="28" selection-end-line="125" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/userall.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.375">
-          <caret line="87" column="129" selection-start-line="87" selection-start-column="106" selection-end-line="87" selection-end-column="129" />
           <folding />
         </state>
       </provider>
@@ -1727,8 +1645,8 @@
         <state vertical-scroll-proportion="-3.125">
           <caret line="55" column="85" selection-start-line="55" selection-start-column="74" selection-end-line="55" selection-end-column="85" />
           <folding>
-            <element signature="e#1695#1713#0#HTML" expanded="true" />
-            <element signature="e#1837#1871#0#HTML" expanded="true" />
+            <element signature="e#1695#1713#0#HTML" expanded="false" />
+            <element signature="e#1837#1871#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1753,32 +1671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/reteam.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.666666">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="287" selection-end-column="6" />
-          <folding>
-            <element signature="e#1433#9787#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="59" selection-start-line="33" selection-start-column="59" selection-end-line="33" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/teamall.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/user.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.625">
@@ -1789,38 +1681,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/teamnew.html">
+    <entry file="file://$PROJECT_DIR$/templates/userall.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.0">
-          <caret line="287" column="0" selection-start-line="287" selection-start-column="0" selection-end-line="287" selection-end-column="0" />
+        <state vertical-scroll-proportion="-2.5">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="6" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/teamall.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9166666">
+          <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="137" selection-end-column="47" />
           <folding>
-            <element signature="e#3052#3072#0#HTML" expanded="true" />
-            <element signature="e#3186#12444#0#HTML" expanded="false" />
-            <element signature="e#3308#3804#0#HTML" expanded="false" />
-            <element signature="e#4735#5227#0#HTML" expanded="false" />
-            <element signature="e#5273#5769#0#HTML" expanded="false" />
-            <element signature="e#5814#6310#0#HTML" expanded="false" />
-            <element signature="e#7359#7855#0#HTML" expanded="false" />
-            <element signature="e#7900#8398#0#HTML" expanded="false" />
-            <element signature="e#8443#8937#0#HTML" expanded="false" />
-            <element signature="e#10001#10513#0#HTML" expanded="false" />
-            <element signature="e#10558#11086#0#HTML" expanded="false" />
-            <element signature="e#11131#11620#0#HTML" expanded="false" />
-            <element signature="e#11665#12077#0#HTML" expanded="false" />
-            <element signature="e#12122#12394#0#HTML" expanded="false" />
+            <element signature="n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/code.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6868687">
-          <caret line="55" column="49" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="236" column="23" selection-start-line="236" selection-start-column="23" selection-end-line="236" selection-end-column="23" />
           <folding>
             <element signature="e#5470#5507#0" expanded="false" />
             <element signature="e#5586#5896#0" expanded="false" />
             <element signature="e#5974#6121#0" expanded="false" />
             <element signature="e#6195#6232#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.25">
+          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/updateall.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-68.75">
+          <caret line="173" column="10" selection-start-line="173" selection-start-column="10" selection-end-line="173" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/reteam.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34736842">
+          <caret line="280" column="52" selection-start-line="280" selection-start-column="52" selection-end-line="280" selection-end-column="52" />
+          <folding>
+            <element signature="e#3200#3220#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

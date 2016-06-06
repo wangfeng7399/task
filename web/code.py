@@ -233,3 +233,6 @@ def retype(request):
             p.close()
             p.join()
         return HttpResponse("ok")
+
+def detail(request,id):
+    return render(request,'codedetail.html')

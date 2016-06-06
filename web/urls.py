@@ -32,5 +32,6 @@ urlpatterns = [
     url(r'^retype/$',code.retype,name='retype'),
     url(r'^reuser/(?P<id>[0-9]+)$',user.reuser,name='reuser'),
     url(r'^reteam/(?P<id>[0-9]+)$',user.reteam,name='reteam'),
+    url(r'^detail/(?P<id>[0-9]+)$',code.detail,name='detail'),
     url(r'^updateuser/$',user.updateuser,name='updateuser'),
 ]

@@ -193,4 +193,4 @@ def reteam(request,id):
     language=Language.objects.all()
     nhost=NginxHost.objects.all()
     team=Team.objects.get(id=id)
-    return render(request,'teamnew.html',{"language":language,"hostall":hostall,"nginxhost":nhost,"team":team})
+    return render(request, 'reteam.html', {"language":language, "hostall":hostall, "nginxhost":nhost, "team":team})
