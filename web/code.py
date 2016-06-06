@@ -50,11 +50,10 @@ class update:
     #重启JAVA服务
     def reload(self):
         if self.code.team.language_id.language=="java":
-            stopcommand="kill -9 `ps -ef|grep {0}|grep -v grep |awk '{print $2}'`".format(self.path)
-            print(stopcommand)
+            stopcommand="/etc/init.d/resin stop"
             self.ssh.exec_command(stopcommand)
             time.sleep(5)
-            startcommand='sh {0}/bin/startup.sh'.format(self.path)
+            startcommand='/etc/init.d/resin start'
             print(startcommand)
             self.ssh.exec_command(startcommand)
         status=Status.objects.get(status="灰度发布中")

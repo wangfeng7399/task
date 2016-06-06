@@ -30,5 +30,7 @@ urlpatterns = [
     url(r'^backall/$',code.backall,name='backall'),
     url(r'^tree/$',code.tree,name='tree'),
     url(r'^retype/$',code.retype,name='retype'),
-    url(r'^reuser/$',user.reuser,name='reuser'),
+    url(r'^reuser/(?P<id>[0-9]+)$',user.reuser,name='reuser'),
+    url(r'^reteam/(?P<id>[0-9]+)$',user.reteam,name='reteam'),
+    url(r'^updateuser/$',user.updateuser,name='updateuser'),
 ]

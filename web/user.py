@@ -152,7 +152,7 @@ def createteam(request):
         team=Team.objects.get(groupname=teamname)
         for h in host:
             hostid=Host.objects.get(id=h)
-            team.host.add(h)
+            team.host.add(hostid)
         for nh in nginxhost:
             nhid=NginxHost.objects.get(id=nh)
             team.nginxhost.add(nhid)
@@ -160,10 +160,37 @@ def createteam(request):
     else:
         return render(request,'createteam.html',{"language":language,"hostall":hostall,"nginxhost":nhost})
 
-def reuser(request):
+@login_required(login_url=reverse_lazy('login'))
+def reuser(request,id):
+    teamall=Team.objects.all()
+    user=User.objects.get(id=id)
+    return render(request,'reuser.html',{"teamall":teamall,"user":user})
+
+
+@login_required(login_url=reverse_lazy('login'))
+def updateuser(request):
     teamall=Team.objects.all()
     if request.method=="POST":
-        list=request.POST.getlist("my_multi_select1[]")
-        print(list)
-        return render(request,'reuser.html',{"teamall":teamall})
-    return render(request,'reuser.html',{"teamall":teamall})
+        list=[]
+        username=request.POST.get('loginname')
+        email=request.POST.get('email')
+        superuser=request.POST.get('superuser')
+        teamid=request.POST.getlist('my_multi_select1[]')
+        user=User.objects.get(username=username)
+        for id in user.team_set.all():
+            list.append(id)
+        for newid in teamid:
+            if newid not in list:
+                team=Team.objects.get(id=newid)
+                team.userid.add(user)
+        return redirect(reverse("userall"))
+    return render(request, 'reuser.html',{'teamall':teamall})
+
+
+@login_required(login_url=reverse_lazy('login'))
+def reteam(request,id):
+    hostall=Host.objects.all()
+    language=Language.objects.all()
+    nhost=NginxHost.objects.all()
+    team=Team.objects.get(id=id)
+    return render(request,'teamnew.html',{"language":language,"hostall":hostall,"nginxhost":nhost,"team":team})
