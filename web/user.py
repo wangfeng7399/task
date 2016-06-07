@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
 from .models import Host,Language,Status,Team,NginxHost,HostStatus
-from .base import encode,decode
+from .base import encode
 @login_required(login_url=reverse_lazy('login'))
 def createuser(request):
     teamall=Team.objects.all()
@@ -173,8 +173,6 @@ def updateuser(request):
     if request.method=="POST":
         list=[]
         username=request.POST.get('loginname')
-        email=request.POST.get('email')
-        superuser=request.POST.get('superuser')
         teamid=request.POST.getlist('my_multi_select1[]')
         user=User.objects.get(username=username)
         for id in user.team_set.all():
@@ -194,3 +192,61 @@ def reteam(request,id):
     nhost=NginxHost.objects.all()
     team=Team.objects.get(id=id)
     return render(request, 'reteam.html', {"language":language, "hostall":hostall, "nginxhost":nhost, "team":team})
+
+
+@login_required(login_url=reverse_lazy('login'))
+def updateteam(request):
+    hostall=Host.objects.all()
+    language=Language.objects.all()
+    nhost=NginxHost.objects.all()
+    if request.method=='POST':
+        hostlist=[]
+        nginxlist=[]
+        host=request.POST.getlist('host')
+        teamname=request.POST.get('teamname')
+        teampath=request.POST.get('teampath')
+        datapath=request.POST.get('datapath')
+        teamport=request.POST.get('teamport')
+        svnpath=request.POST.get('svnpath')
+        svnuser=request.POST.get('svnuser')
+        svnpwd=request.POST.get('svnpwd')
+        nginxpath=request.POST.get('nginxpath')
+        nginxhost=request.POST.getlist('nginxhost')
+        nginxupstream=request.POST.get('nginxupstream')
+        url=request.POST.get('url')
+        teamlanguage=request.POST.get('teamlanguage')
+        ps=request.POST.get('ps')
+        languageid=Language.objects.get(id=teamlanguage)
+        if nginxupstream=="":
+            nginxupstream=teamname
+        team=Team.objects.get(groupname=teamname)
+        team.teamport=teamport
+        team.path=teampath
+        team.nginxupstream=nginxupstream
+        team.nginxconf=nginxpath
+        team.url=url
+        team.svnpath=svnpath
+        team.svnpwd=svnpwd
+        team.datapath=datapath
+        team.svnuser=svnuser
+        team.language_id=languageid
+        team.ps=ps
+        team.save()
+        hall=team.host.all()
+        nall=team.nginxhost.all()
+        for hl in hall:
+            hostlist.append(hl.id)
+        for nl in nall:
+            nginxlist.append(nl.id)
+        print(hostlist,nginxlist)
+        for h in host:
+            if h not in hall:
+                hostid=Host.objects.get(id=h)
+                team.host.add(hostid)
+        for nh in nginxhost:
+            if nh not in nall:
+                nhid=NginxHost.objects.get(id=nh)
+                team.nginxhost.add(nhid)
+        return redirect(reverse("teamall"))
+    else:
+        return render(request,'createteam.html',{"language":language,"hostall":hostall,"nginxhost":nhost})

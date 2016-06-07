@@ -5,8 +5,8 @@ from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
-from .models import Team,Host,Status,Code,NginxHost,Relat
-from .base import encode,decode,send_mail
+from .models import Team,Status,Code,Relat
+from .base import decode,send_mail
 import paramiko,random
 import time
 import os
@@ -235,4 +235,6 @@ def retype(request):
         return HttpResponse("ok")
 
 def detail(request,id):
-    return render(request,'codedetail.html')
+    code=Code.objects.get(id=id)
+    retail=Relat.objects.filter(code=code)
+    return render(request,'codedetail.html',{"code":code,"retail":retail})
