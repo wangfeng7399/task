@@ -534,11 +534,8 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/theme.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/master/master.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/codedetail.html" afterPath="$PROJECT_DIR$/templates/codedetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/reteam.html" afterPath="$PROJECT_DIR$/templates/reteam.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/code.py" afterPath="$PROJECT_DIR$/web/code.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/urls.py" afterPath="$PROJECT_DIR$/web/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/user.py" afterPath="$PROJECT_DIR$/web/user.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/upload/js/custom.js" afterPath="$PROJECT_DIR$/static/upload/js/custom.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/tets.py" afterPath="$PROJECT_DIR$/test/tets.py" />
     </list>
     <ignored path="task.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -570,10 +567,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="code.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="code.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/code.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2020202">
+            <state vertical-scroll-proportion="0.0">
               <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
               <folding>
                 <element signature="e#5448#5485#0" expanded="false" />
@@ -581,6 +578,26 @@
                 <element signature="e#5952#6099#0" expanded="false" />
                 <element signature="e#6173#6210#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tests.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/tests.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tets.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/tets.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -615,6 +632,55 @@
                 <element signature="e#3602#3863#0" expanded="false" />
                 <element signature="e#3946#4228#0" expanded="false" />
                 <element signature="e#4309#4573#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="upload.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/upload.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.625">
+              <caret line="104" column="39" selection-start-line="104" selection-start-column="39" selection-end-line="104" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="custom.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/upload/js/custom.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3030303">
+              <caret line="174" column="25" selection-start-line="174" selection-start-column="25" selection-end-line="174" selection-end-column="25" />
+              <folding>
+                <marker date="1465369046017" expanded="true" signature="334:370" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="646:656" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="657:2051" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="722:2020" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="787:1984" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="856:1389" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="1008:1291" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="1470:1944" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="1546:1666" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="1743:1900" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="2115:2125" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="2126:3637" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="2195:3602" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="2264:3562" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="2337:2898" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="2497:2792" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="2983:3518" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="3063:3224" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="3305:3470" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="6679:7989" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="6740:7962" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="6801:7930" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="6866:7371" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="7010:7281" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="7448:7894" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="7520:7632" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="7705:7854" placeholder="..." />
+                <marker date="1465369046017" expanded="true" signature="8934:8970" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -667,14 +733,12 @@
         <option value="$PROJECT_DIR$/templates/backall.html" />
         <option value="$PROJECT_DIR$/task/settings.py" />
         <option value="$PROJECT_DIR$/static/js/table-editable.js" />
-        <option value="$PROJECT_DIR$/test/tets.py" />
         <option value="$PROJECT_DIR$/test/test.py" />
         <option value="$PROJECT_DIR$/templates/createteam.html" />
         <option value="$PROJECT_DIR$/web/models.py" />
         <option value="$PROJECT_DIR$/web/base.py" />
         <option value="$PROJECT_DIR$/templates/upload.html" />
         <option value="$PROJECT_DIR$/templates/user.html" />
-        <option value="$PROJECT_DIR$/static/upload/js/custom.js" />
         <option value="$PROJECT_DIR$/static/upload/js/jquery.filer.min.js" />
         <option value="$PROJECT_DIR$/templates/phptree.html" />
         <option value="$PROJECT_DIR$/templates/userall.html" />
@@ -687,6 +751,8 @@
         <option value="$PROJECT_DIR$/templates/codedetail.html" />
         <option value="$PROJECT_DIR$/web/code.py" />
         <option value="$PROJECT_DIR$/web/user.py" />
+        <option value="$PROJECT_DIR$/test/tets.py" />
+        <option value="$PROJECT_DIR$/static/upload/js/custom.js" />
       </list>
     </option>
   </component>
@@ -1294,22 +1360,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/js/dropzone.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="14.3125">
-          <caret line="531" column="56" selection-start-line="531" selection-start-column="52" selection-end-line="531" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/update.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="28.125">
-          <caret line="3" column="90" selection-start-line="3" selection-start-column="90" selection-end-line="3" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/upload/js/jquery.filer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1467,13 +1517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07575758">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/python34/lib/python3.4/site-packages/paramiko/client.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18181819">
@@ -1493,13 +1536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.77272725">
           <caret line="36" column="12" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/tets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="136" column="107" selection-start-line="136" selection-start-column="107" selection-end-line="136" selection-end-column="107" />
         </state>
       </provider>
     </entry>
@@ -1537,43 +1573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/upload/js/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="26" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="26" />
-          <folding>
-            <marker date="1464944062331" expanded="true" signature="334:370" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="646:656" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="657:2051" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="722:2020" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="787:1984" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="856:1389" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="1008:1291" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="1470:1944" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="1546:1666" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="1743:1900" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="2115:2125" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="2126:3637" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="2195:3602" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="2264:3562" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="2337:2898" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="2497:2792" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="2983:3518" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="3063:3224" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="3305:3470" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="6679:7989" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="6740:7962" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="6801:7930" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="6866:7371" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="7010:7281" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="7448:7894" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="7520:7632" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="7705:7854" placeholder="..." />
-            <marker date="1464944062331" expanded="true" signature="8934:8970" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/upload/js/jquery.filer.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="34.526318">
@@ -1588,14 +1587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.0">
           <caret line="5010" column="36" selection-start-line="5010" selection-start-column="36" selection-end-line="5010" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/upload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.625">
-          <caret line="33" column="87" selection-start-line="2" selection-start-column="4" selection-end-line="33" selection-end-column="87" />
           <folding />
         </state>
       </provider>
@@ -1722,15 +1713,94 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/tets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/code.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2020202">
+        <state vertical-scroll-proportion="0.0">
           <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
           <folding>
             <element signature="e#5448#5485#0" expanded="false" />
             <element signature="e#5564#5874#0" expanded="false" />
             <element signature="e#5952#6099#0" expanded="false" />
             <element signature="e#6173#6210#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/DT_bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.5">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/dropzone.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33274022">
+          <caret line="385" column="13" selection-start-line="385" selection-start-column="10" selection-end-line="385" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.625">
+          <caret line="104" column="39" selection-start-line="104" selection-start-column="39" selection-end-line="104" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/upload/js/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3030303">
+          <caret line="174" column="25" selection-start-line="174" selection-start-column="25" selection-end-line="174" selection-end-column="25" />
+          <folding>
+            <marker date="1465369046017" expanded="true" signature="334:370" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="646:656" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="657:2051" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="722:2020" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="787:1984" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="856:1389" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="1008:1291" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="1470:1944" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="1546:1666" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="1743:1900" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="2115:2125" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="2126:3637" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="2195:3602" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="2264:3562" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="2337:2898" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="2497:2792" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="2983:3518" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="3063:3224" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="3305:3470" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="6679:7989" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="6740:7962" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="6801:7930" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="6866:7371" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="7010:7281" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="7448:7894" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="7520:7632" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="7705:7854" placeholder="..." />
+            <marker date="1465369046017" expanded="true" signature="8934:8970" placeholder="..." />
           </folding>
         </state>
       </provider>
