@@ -220,6 +220,10 @@ def retype(request):
             status=Status.objects.get(status="测试通过")
         code.status=status
         code.save()
+        waitstatus=Status.objects.get(status='等待测试')
+        update=Relat.objects.get(code=code,status=waitstatus)
+        update.status=status
+        update.save()
         status=Status.objects.get(status="测试通过")
         nginxhosts=code.team.nginxhost.all()#所有nginx
         nginxconf=code.team.nginxconf #nginx的配置文件
@@ -229,7 +233,7 @@ def retype(request):
             p=Pool(5)
             for nginxhost in nginxhosts:
                 ng=nginx(nginxhost,upstream,nginxconf,code)
-                p.apply_async(ng.downteam())
+                p.apply_async(ng.upteam())
             p.close()
             p.join()
         return HttpResponse("ok")
