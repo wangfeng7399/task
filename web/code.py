@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
 from .models import Team,Status,Code,Relat
-from .base import decode,send_mail
+from .base import dc,send_mail
 import paramiko,random
 import time
 import os
@@ -32,21 +32,7 @@ class update:
             pass
         self.sftp.put(updatefile,'{0}/{1}'.format('/update',filename),)
         self.t.close()
-    #备份
-    def backup(self,filename):
-        t=time.strftime("%Y-%m-%d",time.localtime())
-        try:
-            self.sftp.mkdir('/backup',mode=0o777)
-        except:
-            pass
-        command='cp -rf {0}/{1} /backup/{2}'.format(self.datapath,filename,filename+t)
-        self.ssh.exec_command(command)
-        self.replace(filename)
-    #替换文件
-    def replace(self,filename):
-        command='cp -rf {0}/{1} {2}/{3}'.format("/update",filename,self.datapath,filename)
-        self.ssh.exec_command(command)
-        self.reload()
+
     #重启JAVA服务
     def reload(self):
         if self.code.team.language_id.language=="java":
@@ -62,8 +48,24 @@ class update:
         hstatus=Status.objects.get(status="等待测试")
         self.host.status=hstatus
         self.host.save()
+    #替换文件
+    def replace(self,filename):
+        command='cp -rf {0}/{1} {2}/{3}'.format("/update",filename,self.datapath,filename)
+        self.ssh.exec_command(command)
+        self.reload()
+    #备份
+    def backup(self,filename):
+        t=time.strftime("%Y-%m-%d",time.localtime())
+        try:
+            self.sftp.mkdir('/backup',mode=0o777)
+        except:
+            pass
+        command='cp -rf {0}/{1} /backup/{2}'.format(self.datapath,filename,filename+t)
+        self.ssh.exec_command(command)
+        self.replace(filename)
     #回滚
     def goback(self,updatefile,filename):
+        #TODO
         pass
 
 class nginx:
@@ -73,7 +75,7 @@ class nginx:
         self.code=code
         self.ssh=paramiko.SSHClient()
         self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        self.ssh.connect(hostname=host.hostip,port=host.port,username=host.user,password=decode(host.hostpwd))
+        self.ssh.connect(hostname=host.hostip,port=host.port,username=host.user,password=dc(host.hostpwd))
     def downteam(self):
         command=r"sed -i 's/\({0}.*;\)'/#\1/g {1}".format(self.upstream,self.nginxconf)
         #command="touch /tmp/a.txt"
@@ -123,7 +125,7 @@ def code(request):
                 list.append(file.name)
             p=Pool(5)
             for host in teamhost.host.all():
-                u=update(host.hostip,host.port,host.user,decode(host.hostpwd),'','','','')
+                u=update(host.hostip,host.port,host.user,dc(host.hostpwd),'','','','')
                 p.apply_async(u.update(pathname,file.name))
             p.close()
             p.join()
@@ -191,7 +193,7 @@ def release(request):
         #上面摘除了一台机器
         #下面进行升级替换
         p=Pool(5)
-        up=update(w.host.hostip,w.host.port,w.host.user,decode(w.host.hostpwd),code.team.datapath,code.team.path,code,w)
+        up=update(w.host.hostip,w.host.port,w.host.user,dc(w.host.hostpwd),code.team.datapath,code.team.path,code,w)
         data=xlrd.open_workbook("{0}/{1}".format(code.dir,"readme.xls"))
         table=data.sheets()[0]
         nrows=table.nrows

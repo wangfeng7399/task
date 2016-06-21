@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
 from .models import Host,Language,Status,Team,NginxHost,HostStatus
-from .base import encode
+from .base import ec
 @login_required(login_url=reverse_lazy('login'))
 def createuser(request):
     teamall=Team.objects.all()
@@ -60,7 +60,7 @@ def createhost(request):
         hostuser=request.POST.get('hostuser')
         hostport=request.POST.get('hostport')
         nginxhost=request.POST.get('nginxhost')
-        encodepwd=encode(hostpwd)
+        encodepwd=ec(hostpwd)
         hoststuts=HostStatus.objects.get(status='在线')
         if nginxhost =="0":
             if hostport == "":
@@ -250,3 +250,4 @@ def updateteam(request):
         return redirect(reverse("teamall"))
     else:
         return render(request,'createteam.html',{"language":language,"hostall":hostall,"nginxhost":nhost})
+

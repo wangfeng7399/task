@@ -5,10 +5,10 @@ import base64
 import smtplib
 import xlwt
 from email.mime.text import MIMEText
-def encode(str):
+def ec(str):
     encodestr=base64.b64encode(str.encode())
     return encodestr.decode()
-def decode(str):
+def dc(str):
     decodestr=base64.b64decode(str)
     return decodestr.decode()
 
