@@ -49,25 +49,28 @@ class update:
         self.host.status=hstatus
         self.host.save()
     #替换文件
-    def replace(self,filename):
-        command='cp -rf {0}/{1} {2}/{3}'.format("/update",filename,self.datapath,filename)
+    def replace(self,update,filename):
+        command='cp -rf {0}/{1} {2}{3}'.format("/update",update,self.datapath,filename)
+        print(command)
         self.ssh.exec_command(command)
         self.reload()
     #备份
-    def backup(self,filename):
+    def backup(self,update,filename):
         t=time.strftime("%Y-%m-%d",time.localtime())
         try:
             self.sftp.mkdir('/backup',mode=0o777)
         except:
             pass
-        command='cp -rf {0}/{1} /backup/{2}'.format(self.datapath,filename,filename+t)
+        command=r'\cp -rf {0}{1} /backup/{2}'.format(self.datapath,filename,update+t)
+        print(command)
         self.ssh.exec_command(command)
         self.replace(filename)
     #回滚
     def goback(self,updatefile,filename):
         #TODO
         pass
-
+class vpdate:
+    pass
 class nginx:
     def __init__(self,host,upstream,nginxconf,code):
         self.upstream=upstream
@@ -199,7 +202,7 @@ def release(request):
         nrows=table.nrows
         ncols=table.ncols
         for r in range(nrows):
-            p.apply_async(up.backup(table.cell(r,1).value))
+            p.apply_async(up.backup(table.cell(r,0).value,table.cell(r,1).value))
         p.close()
         p.join()
         if curl(code):
