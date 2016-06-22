@@ -64,7 +64,7 @@ class update:
         command=r'\cp -rf {0}{1} /backup/{2}'.format(self.datapath,filename,update+t)
         print(command)
         self.ssh.exec_command(command)
-        self.replace(filename)
+        self.replace(update,filename)
     #回滚
     def goback(self,updatefile,filename):
         #TODO
