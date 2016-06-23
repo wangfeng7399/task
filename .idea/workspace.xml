@@ -2,49 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7da08bf5-c66f-48f1-895a-d8b81e5f6c44" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/image1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/image2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/image3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/image4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/image5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/img1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/img1_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/img2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/img3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/img4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/photo1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/photo2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/photo3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/photo4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/photo5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/photo6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/preview_02.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/preview_03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/preview_04.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/preview_05.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/preview_06.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/preview_07.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/preview_08.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/preview_09.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/preview_10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/preview_11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/preview_12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/preview_13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/preview_14.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/preview_15.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/preview_16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/image/preview_17.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/javascripts/graphDemo.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/javascripts/html5.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/bootstrap/css/bootstrap.css" afterPath="" />
@@ -575,15 +532,14 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/elements.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/myelements.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/upload/php/class.uploader.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/upload/php/readme.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/upload/php/remove_file.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/upload/php/upload.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/upload/related/1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/upload/related/2.jpg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/master/master.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/urls.py" afterPath="$PROJECT_DIR$/task/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/404.html" afterPath="$PROJECT_DIR$/templates/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/codedetail.html" afterPath="$PROJECT_DIR$/templates/codedetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/master/index.html" afterPath="$PROJECT_DIR$/templates/master/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/tets.py" afterPath="$PROJECT_DIR$/test/tets.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/base.py" afterPath="$PROJECT_DIR$/web/base.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/code.py" afterPath="$PROJECT_DIR$/web/code.py" />
     </list>
     <ignored path="task.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -615,71 +571,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ui-icons_ef8c08_256x240.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/image/ui-icons_ef8c08_256x240.png">
+      <file leaf-file-name="alpha.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/image/alpha.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ui-icons_ffd27a_256x240.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/image/ui-icons_ffd27a_256x240.png">
+      <file leaf-file-name="amazon.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/image/amazon.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ui-icons_ffffff_256x240.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/image/ui-icons_ffffff_256x240.png">
+      <file leaf-file-name="animated-overlay.gif" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/image/animated-overlay.gif">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vimeo.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/image/vimeo.png">
+      <file leaf-file-name="social_facebook.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/image/social_facebook.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vk.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/image/vk.png">
+      <file leaf-file-name="social_googleplus.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/image/social_googleplus.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="walmart.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/image/walmart.png">
+      <file leaf-file-name="social_linkedin.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/image/social_linkedin.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wordpress.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/image/wordpress.png">
+      <file leaf-file-name="social_rss.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/image/social_rss.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xing.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/image/xing.png">
+      <file leaf-file-name="sort_asc.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/image/sort_asc.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="yahoo.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/image/yahoo.png">
+      <file leaf-file-name="sort_asc_disabled.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/image/sort_asc_disabled.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="youtube.png" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/image/youtube.png">
+      <file leaf-file-name="sort_both.png" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/image/sort_both.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
@@ -845,85 +801,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tree" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="json" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1418,86 +1296,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5898305">
-          <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2633228">
-          <caret line="36" column="12" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="10" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/python34/lib/python3.4/site-packages/paramiko/transport.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7090301">
-          <caret line="1026" column="34" selection-start-line="1026" selection-start-column="30" selection-end-line="1026" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/db.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/reteam.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.7916665">
-          <caret line="95" column="68" selection-start-line="95" selection-start-column="68" selection-end-line="95" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/status.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="51.083332">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/teamall.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-56.875">
-          <caret line="93" column="58" selection-start-line="93" selection-start-column="58" selection-end-line="93" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.916667">
-          <caret line="176" column="6" selection-start-line="56" selection-start-column="0" selection-end-line="176" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/updateall.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="12.5">
-          <caret line="70" column="74" selection-start-line="70" selection-start-column="74" selection-end-line="70" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/log.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.416666">
@@ -1614,21 +1412,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/image/alpha.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/image/amazon.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/image/animated-overlay.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/image/avatar.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1740,6 +1523,80 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/image/youtube.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/blog.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/upload/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="29.583334">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/upload/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="20.625">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/image/alpha.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/image/amazon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/image/animated-overlay.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/image/social_facebook.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/image/social_googleplus.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/image/social_linkedin.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/image/social_rss.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/image/sort_asc.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/image/sort_asc_disabled.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/image/sort_both.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
