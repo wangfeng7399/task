@@ -1,0 +1,77 @@
+{% extends 'master/index.html' %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="http://www.w3cschool.cc/try/jeasyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="http://www.w3cschool.cc/try/jeasyui/themes/icon.css">
+{% endblock %}
+{% block body %}
+<div class="container-fluid">
+<!-- BEGIN PAGE CONTENT-->
+
+<div class="row-fluid ">
+
+    <div class="span12">
+
+        <!-- BEGIN INLINE TABS PORTLET-->
+
+        <div class="portlet box green">
+
+            <div class="portlet-title">
+
+                <div class="caption"><i class="icon-reorder"></i>php目录树</div>
+
+            </div>
+            <div class="portlet-body">
+
+                <ul id="tt" class="easyui-tree" url="/static/json.json" checkbox="true">
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- END INLINE TABS PORTLET-->
+
+        </div>
+
+    </div>
+    <!-- END PAGE CONTENT-->
+
+</div>
+
+{% endblock %}
+{% block js %}
+<script src="https://code.jquery.com/jquery-1.6.1.min.js"></script>
+<script src="http://www.w3cschool.cc/try/jeasyui/jquery.easyui.min.js"></script>
+{#  <script>#}
+{#      $.ajax({#}
+{#          url:{% url 'tree' %},#}
+{#          type:"GET",#}
+{#          success:function(data){#}
+{#              console.log(data)#}
+{#          },#}
+{#          error:function(){#}
+{#              console.log('error')#}
+{#          }#}
+{#      });#}
+{#  var foo = JSON.parse({{ data }});#}
+{#  $(function () {#}
+{#    // 6 create an instance when the DOM is ready#}
+{#    $('#using_json').jstree({ 'core' : {#}
+{#      'data' : [#}
+{#         'Simple root node',#}
+{#         {#}
+{#           'text' : 'Root node 2',#}
+{#           'state' : {#}
+{#             'opened' : true,#}
+{#           },#}
+{#           'children' : [#}
+{#             { 'text' : 'Child 1',children:[{"text":'son1'},{'text':'son2',children:['abc','abcsd']}] },#}
+{#             'Child 2'#}
+{#           ]#}
+{#        }#}
+{#      ]#}
+{##}
+{#        'data': foo;#}
+{#  } });#}
+{#  });#}
+{#  </script>#}
+{% endblock %}

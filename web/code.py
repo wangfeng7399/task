@@ -5,13 +5,14 @@ from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
-from .models import Team,Status,Code,Relat
+from .models import Team,Status,Code,Relat,Host
 from .base import dc,send_mail
 import paramiko,random
 import time
 import os
 import xlrd
 from multiprocessing import Pool
+import  json
 
 class update:
     def __init__(self,hostip,port,username,password,datapath,path,code,host):
@@ -166,7 +167,8 @@ def backall(request):
 
 @login_required(login_url=reverse_lazy('login'))
 def tree(request):
-    return render(request,'phptree.html')
+    return render(request,'tree.html')
+    #return HttpResponse({"data":["q","c"]})
 
 @login_required(login_url=reverse_lazy('login'))
 def release(request):
@@ -247,3 +249,9 @@ def detail(request,id):
     code=Code.objects.get(id=id)
     retail=Relat.objects.filter(code=code)
     return render(request,'codedetail.html',{"code":code,"retail":retail})
+
+
+def log(request,id,hostid):
+    code=Code.objects.get(id=id)
+    host=Host.objects.get(id=hostid)
+    return render(request,'log.html',{'data':'123'})

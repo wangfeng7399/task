@@ -3,7 +3,7 @@
 #公用的模块
 import base64
 import smtplib
-import xlwt
+import  os
 from email.mime.text import MIMEText
 def ec(str):
     encodestr=base64.b64encode(str.encode())
@@ -27,3 +27,17 @@ def send_mail(to_list,sub,content):
     s.login(mail_user,mail_pass)
     s.sendmail(me,to_list,msg.as_string())
     s.close()
+
+#生成目录数
+def createtree(path):
+    pass
+    #TODO
+    list=[]
+    for i in os.listdir(path):
+        print(i)
+def isdir(path):
+    if os.path.isdir(path):
+        return True
+    else:
+        return False
+

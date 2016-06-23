@@ -1,0 +1,63 @@
+{% extends 'master/index.html' %}
+{% block css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css">
+{% endblock %}
+{% block body %}
+<div class="container-fluid">
+<!-- BEGIN PAGE CONTENT-->
+
+<div class="row-fluid ">
+
+    <div class="span12">
+
+        <!-- BEGIN INLINE TABS PORTLET-->
+
+        <div class="portlet box green">
+
+            <div class="portlet-title">
+
+                <div class="caption"><i class="icon-reorder"></i>php目录树</div>
+
+            </div>
+
+            <div class="portlet-body">
+
+                <div id="using_json">
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- END INLINE TABS PORTLET-->
+
+        </div>
+
+    </div>
+    <!-- END PAGE CONTENT-->
+
+</div>
+
+{% endblock %}
+{% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+  <script>
+  $(function () {
+   $('#using_json').jstree({
+       'core':{
+           'data':{
+               'url':function(node){
+                   return node.id === '#'?
+                           '/static/json/json.json':
+                           '/static/json/json.json';
+               },
+               'data':function(node){
+                   return{"id":node.id};
+               }
+           }
+       }
+   })
+  });
+  </script>
+{% endblock %}
