@@ -52,7 +52,6 @@ class update:
     #替换文件
     def replace(self,update,filename):
         command='cp -rf {0}/{1} {2}{3}'.format("/update",update,self.datapath,filename)
-        print(command)
         self.ssh.exec_command(command)
         self.reload()
     #备份
@@ -63,15 +62,20 @@ class update:
         except:
             pass
         command=r'\cp -rf {0}{1} /backup/{2}'.format(self.datapath,filename,update+t)
-        print(command)
         self.ssh.exec_command(command)
         self.replace(update,filename)
     #回滚
     def goback(self,updatefile,filename):
         #TODO
         pass
-class vpdate:
-    pass
+    #取日志
+    def log(self):
+        command='tail -50 /data/logs/resin/s0/java-app-0.log'
+        _,logs,_=self.ssh.exec_command(command)
+        return logs
+    #取目录
+    def tree(self):
+        pass
 class nginx:
     def __init__(self,host,upstream,nginxconf,code):
         self.upstream=upstream
@@ -166,9 +170,8 @@ def backall(request):
     return render(request,'backall.html',{"backall":backall})
 
 @login_required(login_url=reverse_lazy('login'))
-def tree(request):
+def tree(request,id):
     return render(request,'tree.html')
-    #return HttpResponse({"data":["q","c"]})
 
 @login_required(login_url=reverse_lazy('login'))
 def release(request):
@@ -254,4 +257,6 @@ def detail(request,id):
 def log(request,id,hostid):
     code=Code.objects.get(id=id)
     host=Host.objects.get(id=hostid)
-    return render(request,'log.html',{'data':'123'})
+    u=update(host.hostip,host.port,host.user,host.hostpwd,'','','','')
+    data=u.log()
+    return render(request,'log.html',{'data':data})

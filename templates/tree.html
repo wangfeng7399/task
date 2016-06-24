@@ -1,5 +1,6 @@
 {% extends 'master/index.html' %}
 {% block css %}
+<meta content="application/json",>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css">
 {% endblock %}
 {% block body %}
@@ -16,7 +17,7 @@
 
             <div class="portlet-title">
 
-                <div class="caption"><i class="icon-reorder"></i>php目录树</div>
+                <div class="caption"><i class="icon-reorder"></i>目录树</div>
 
             </div>
 
@@ -40,6 +41,7 @@
 
 {% endblock %}
 {% block js %}
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
   <script>
@@ -48,11 +50,13 @@
        'core':{
            'data':{
                'url':function(node){
+
                    return node.id === '#'?
                            '/static/json/json.json':
                            '/static/json/json.json';
                },
                'data':function(node){
+                   alert(node)
                    return{"id":node.id};
                }
            }
@@ -60,4 +64,16 @@
    })
   });
   </script>
+    <script src="/static/js/app.js"></script>
+    <script>
+
+    jQuery(document).ready(function() {
+
+       // initiate layout and plugins
+
+       App.init();
+
+    });
+
+    </script>
 {% endblock %}
