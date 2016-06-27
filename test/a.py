@@ -18,7 +18,7 @@ c=createdict("/root")
 print(c)
 '''
 
-import  os,json
+import  os,json,sys
 def tree(path):
     list=[]
     for item in os.listdir(path):
@@ -28,4 +28,5 @@ def tree(path):
         else:
             list.append({"text":item,"children":tree(temp)})
     return list
-print(json.dumps(tree('/data/pycharm/django/tasknew'),ensure_ascii=False))
+print(json.dumps(tree(sys.argv[1]),ensure_ascii=False))
+print()

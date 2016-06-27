@@ -12,7 +12,6 @@ import time
 import os
 import xlrd
 from multiprocessing import Pool
-import  json
 
 class update:
     def __init__(self,hostip,port,username,password,datapath,path,code,host):
@@ -75,7 +74,10 @@ class update:
         return logs
     #取目录
     def tree(self):
-        pass
+        self.sftp.put('/data/pycharm/django/task/web/tree.py','/opt/tree.py')
+        self.ssh.exec_command('python /opt/tree.py {0}'.format(self.path))
+        time.sleep(10)
+        self.sftp.get('/opt/json.json','/data/pycharm/django/task/static/json/json.json')
 class nginx:
     def __init__(self,host,upstream,nginxconf,code):
         self.upstream=upstream
@@ -171,6 +173,10 @@ def backall(request):
 
 @login_required(login_url=reverse_lazy('login'))
 def tree(request,id):
+    team=Team.objects.get(id=id)
+    hostid=team.host.all()[0]
+    u=update(hostid.hostip,hostid.port,hostid.user,dc(hostid.hostpwd),'',team.path,'','')
+    u.tree()
     return render(request,'tree.html')
 
 @login_required(login_url=reverse_lazy('login'))
@@ -186,7 +192,6 @@ def release(request):
         #摘nginx
         nginxhosts=code.team.nginxhost.all()#所有nginx
         nginxconf=code.team.nginxconf #nginx的配置文件
-        nginxupstream=code.team.nginxupstream #nginx的upstream
         status=Status.objects.get(status='等待更新')
         waitupdate=Relat.objects.filter(code=code,status=status) #项目所有在等待更新状态的主机
         rd=random.randint(0,int(waitupdate.count())-1)#任选一台
@@ -255,7 +260,6 @@ def detail(request,id):
 
 
 def log(request,id,hostid):
-    code=Code.objects.get(id=id)
     host=Host.objects.get(id=hostid)
     u=update(host.hostip,host.port,host.user,host.hostpwd,'','','','')
     data=u.log()

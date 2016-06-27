@@ -16,7 +16,7 @@ def Login(request):
         if user:
             login(request,user)
             request.session["name"]=1
-            return redirect(reverse('updateall'))
+            return redirect(reverse('teamall'))
         else:
             return render(request, 'login.html',{'ret_msg':'帐号或密码错误'})
     else:
