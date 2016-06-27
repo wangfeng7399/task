@@ -534,11 +534,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/theme.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/master/master.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/json/json.json" afterPath="$PROJECT_DIR$/static/json/json.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/master/index.html" afterPath="$PROJECT_DIR$/templates/master/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/a.py" afterPath="$PROJECT_DIR$/test/a.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/code.py" afterPath="$PROJECT_DIR$/web/code.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views.py" afterPath="$PROJECT_DIR$/web/views.py" />
     </list>
     <ignored path="task.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -603,10 +599,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35117057">
+            <state vertical-scroll-proportion="0.0">
               <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
               <folding />
             </state>
@@ -623,18 +619,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="code.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="code.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/code.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.35117057">
+              <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
               <folding>
                 <element signature="e#39#96#0" expanded="true" />
-                <element signature="e#2861#3974#0" expanded="false" />
-                <element signature="e#3995#4220#0" expanded="false" />
-                <element signature="e#4293#5847#0" expanded="false" />
-                <element signature="e#5925#5962#0" expanded="false" />
-                <element signature="e#6041#6351#0" expanded="false" />
+                <element signature="e#3011#4124#0" expanded="false" />
+                <element signature="e#4145#4370#0" expanded="false" />
+                <element signature="e#4443#5997#0" expanded="false" />
+                <element signature="e#6075#6112#0" expanded="false" />
+                <element signature="e#6191#6501#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -743,10 +739,10 @@
         <option value="$PROJECT_DIR$/test/a.py" />
         <option value="$PROJECT_DIR$/static/json.json" />
         <option value="$PROJECT_DIR$/static/json/json.json" />
-        <option value="$PROJECT_DIR$/web/code.py" />
         <option value="$PROJECT_DIR$/web/tree.py" />
         <option value="$PROJECT_DIR$/templates/master/index.html" />
         <option value="$PROJECT_DIR$/web/views.py" />
+        <option value="$PROJECT_DIR$/web/code.py" />
       </list>
     </option>
   </component>
@@ -1678,21 +1674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/code.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-          <folding>
-            <element signature="e#39#96#0" expanded="true" />
-            <element signature="e#2861#3974#0" expanded="false" />
-            <element signature="e#3995#4220#0" expanded="false" />
-            <element signature="e#4293#5847#0" expanded="false" />
-            <element signature="e#5925#5962#0" expanded="false" />
-            <element signature="e#6041#6351#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/tree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1729,9 +1710,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35117057">
+        <state vertical-scroll-proportion="0.0">
           <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/code.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35117057">
+          <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
+          <folding>
+            <element signature="e#39#96#0" expanded="true" />
+            <element signature="e#3011#4124#0" expanded="false" />
+            <element signature="e#4145#4370#0" expanded="false" />
+            <element signature="e#4443#5997#0" expanded="false" />
+            <element signature="e#6075#6112#0" expanded="false" />
+            <element signature="e#6191#6501#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

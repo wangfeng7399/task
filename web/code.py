@@ -74,10 +74,12 @@ class update:
         return logs
     #取目录
     def tree(self):
-        self.sftp.put('/data/pycharm/django/task/web/tree.py','/opt/tree.py')
+        #self.sftp.put('/data/pycharm/django/task/web/tree.py','/opt/tree.py')
+        self.sftp.put('/usr/local/task/web/tree.py','/opt/tree.py')
         self.ssh.exec_command('python /opt/tree.py {0}'.format(self.path))
         time.sleep(10)
-        self.sftp.get('/opt/json.json','/data/pycharm/django/task/static/json/json.json')
+        #self.sftp.get('/opt/json.json','/data/pycharm/django/task/static/json/json.json')
+        self.sftp.get('/opt/json.json','/usr/local/task/static/json/json.json')
 class nginx:
     def __init__(self,host,upstream,nginxconf,code):
         self.upstream=upstream
