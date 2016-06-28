@@ -53,7 +53,7 @@ class Team(models.Model):
         return self.groupname
 
 class Code(models.Model):
-    date=models.IntegerField()
+    date=models.CharField(max_length=2000)
     create_date=models.DateTimeField(auto_now_add=True)
     team=models.ForeignKey(Team)
     path=models.CharField(max_length=2000)

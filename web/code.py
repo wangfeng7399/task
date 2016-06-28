@@ -125,7 +125,8 @@ def code(request):
         filename=request.FILES.getlist('files[]')
         teamname=request.POST.get('teamname')
         teamhost=Team.objects.get(id=teamname)
-        path='{0}/{1}/{2}/{3}'.format('/opt',teamhost.groupname,request.user,time.strftime("%Y-%m-%d-%H-%M",time.localtime()),)
+        datetime=time.strftime("%Y-%m-%d-%H-%M",time.localtime())
+        path='{0}/{1}/{2}/{3}'.format('/opt',teamhost.groupname,request.user,datetime)
         if not os.path.exists(path):
             os.makedirs(path)
         for file in filename:
@@ -142,9 +143,8 @@ def code(request):
             p.close()
             p.join()
         status=Status.objects.get(status='等待更新')
-        t=time.time()
-        Code.objects.get_or_create(team=teamhost,path=list,status=status,user=userid,date=t,dir=path)
-        code=Code.objects.get(team=teamhost,path=list,status=status,user=userid,date=t)
+        Code.objects.get_or_create(team=teamhost,path=list,status=status,user=userid,date=datetime,dir=path)
+        code=Code.objects.get(team=teamhost,path=list,status=status,user=userid,date=datetime)
         for host in teamhost.host.all():
             Relat.objects.create(code=code,host=host,status=status)
         return render(request,'upload.html',{"msg":"已经上传成功，请前往发布列表页进行发布","teamall":teamall})
@@ -266,3 +266,14 @@ def log(request,id,hostid):
     u=update(host.hostip,host.port,host.user,host.hostpwd,'','','','')
     data=u.log()
     return render(request,'log.html',{'data':data})
+
+
+def goback(request,id):
+    code=Code.objects.get(id=id)
+    status=Status.objects.get(status='等待测试')
+    task=Relat.objects.get(code=code,status=status)
+    back=update(task.host.hostip,task.host.port,task.host.user,dc(task.host.hostpwd),code.team.datapath,'','','')
+    print(time.strftime("%Y-%m-%d-%H-%M",code.date))
+    print(code.date)
+    #back.goback()
+    return HttpResponse('ok')

@@ -49,6 +49,7 @@ urlpatterns = [
     url(r'^retype/$',code.retype,name='retype'),
     url(r'^reuser/(?P<id>[0-9]+)$',user.reuser,name='reuser'),
     url(r'^reteam/(?P<id>[0-9]+)$',user.reteam,name='reteam'),
+    url(r'^goback/(?P<id>[0-9]+)$',code.goback,name='goback'),
     url(r'^detail/(?P<id>[0-9]+)$',code.detail,name='detail'),
     url(r'^logs/(?P<id>[0-9]+)/(?P<hostid>[0-9]+)$',code.log,name='log'),
     url(r'^updateuser/$',user.updateuser,name='updateuser'),
