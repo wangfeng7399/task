@@ -65,8 +65,10 @@ class update:
         self.replace(update,filename)
     #回滚
     def goback(self,updatefile,filename):
-        #TODO
-        pass
+        t=time.strftime("%Y-%m-%d",time.localtime())
+        command='\cp -rf {0}{1} {2}{3}'.format('/backup/',updatefile+t,self.datapath,filename)
+        print(command)
+        self.ssh.exec_command(command)
     #取日志
     def log(self):
         command='tail -50 /data/logs/resin/s0/java-app-0.log'
@@ -212,7 +214,6 @@ def release(request):
         data=xlrd.open_workbook("{0}/{1}".format(code.dir,"readme.xls"))
         table=data.sheets()[0]
         nrows=table.nrows
-        ncols=table.ncols
         for r in range(nrows):
             p.apply_async(up.backup(table.cell(r,0).value,table.cell(r,1).value))
         p.close()
@@ -225,6 +226,8 @@ def release(request):
             #发送邮件
         return HttpResponse('OK')
 
+
+@login_required(login_url=reverse_lazy('login'))
 def retype(request):
     if request.method=="POST":
         id=request.POST.get("id")
@@ -255,25 +258,37 @@ def retype(request):
             p.join()
         return HttpResponse("ok")
 
+@login_required(login_url=reverse_lazy('login'))
 def detail(request,id):
     code=Code.objects.get(id=id)
     retail=Relat.objects.filter(code=code)
     return render(request,'codedetail.html',{"code":code,"retail":retail})
 
-
+@login_required(login_url=reverse_lazy('login'))
 def log(request,id,hostid):
     host=Host.objects.get(id=hostid)
     u=update(host.hostip,host.port,host.user,host.hostpwd,'','','','')
     data=u.log()
     return render(request,'log.html',{'data':data})
 
-
+@login_required(login_url=reverse_lazy('login'))
 def goback(request,id):
     code=Code.objects.get(id=id)
     status=Status.objects.get(status='等待测试')
     task=Relat.objects.get(code=code,status=status)
+    p=Pool(5)
     back=update(task.host.hostip,task.host.port,task.host.user,dc(task.host.hostpwd),code.team.datapath,'','','')
-    print(time.strftime("%Y-%m-%d-%H-%M",code.date))
-    print(code.date)
-    #back.goback()
-    return HttpResponse('ok')
+    path='{0}/{1}/{2}/{3}'.format('/opt',code.team.groupname,request.user,code.date)
+    xls=xlrd.open_workbook("{0}/{1}".format(path,"readme.xls"))
+    table=xls.sheets()[0]
+    nrows=table.nrows
+    for r in range(nrows):
+        p.apply_async(back.goback(table.cell(r,0).value,table.cell(r,1).value))
+    p.close()
+    p.join()
+    backstatus=Status.objects.get(status='回退')
+    code.status=backstatus
+    code.save()
+    task.status=backstatus
+    task.save()
+    return redirect('updateall')
