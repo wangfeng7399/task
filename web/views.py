@@ -6,13 +6,13 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
+from .models import Code
 # Create your views here.
 def Login(request):
     if request.method == "POST":
         username=request.POST.get("username")
         password=request.POST.get("password")
         user = authenticate(username=username,password=password)
-        print(user)
         if user:
             login(request,user)
             request.session["name"]=1
@@ -23,7 +23,12 @@ def Login(request):
         return render(request, 'login.html')
 @login_required(login_url=reverse_lazy('login'))
 def index(request):
-    return render(request, 'updateall.html')
+    user=User.objects.get(username=request.user)
+    if user.is_superuser:
+        updateall=Code.objects.all()
+    else:
+        updateall=Code.objects.filter(user=user)
+    return render(request,'updateall.html',{'updateall':updateall})
 
 def Logout(request):
     logout(request)

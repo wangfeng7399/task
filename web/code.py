@@ -163,10 +163,9 @@ def updateall(request):
     user=User.objects.get(username=request.user)
     if user.is_superuser:
         updateall=Code.objects.all()
-        return render(request,'updateall.html',{'updateall':updateall})
     else:
         updateall=Code.objects.filter(user=user)
-        return render(request,'updateall.html',{'updateall':updateall})
+    return render(request,'updateall.html',{'updateall':updateall})
 
 
 @login_required(login_url=reverse_lazy('login'))
