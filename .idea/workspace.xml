@@ -534,7 +534,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/theme.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/master/master.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/updateall.html" afterPath="$PROJECT_DIR$/templates/updateall.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/code.py" afterPath="$PROJECT_DIR$/web/code.py" />
     </list>
     <ignored path="task.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -580,21 +580,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="updateall.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="updateall.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/updateall.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4965157">
-              <caret line="106" column="48" selection-start-line="106" selection-start-column="48" selection-end-line="106" selection-end-column="48" />
+            <state vertical-scroll-proportion="-19.375">
+              <caret line="118" column="55" selection-start-line="118" selection-start-column="55" selection-end-line="118" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="code.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="code.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/code.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.46989965">
+              <caret line="242" column="48" selection-start-line="242" selection-start-column="48" selection-end-line="242" selection-end-column="48" />
               <folding>
                 <element signature="e#39#96#0" expanded="true" />
                 <element signature="e#3193#4306#0" expanded="false" />
@@ -739,10 +739,10 @@
         <option value="$PROJECT_DIR$/templates/teamall.html" />
         <option value="$PROJECT_DIR$/templates/master/index.html" />
         <option value="$PROJECT_DIR$/web/urls.py" />
-        <option value="$PROJECT_DIR$/web/code.py" />
         <option value="$PROJECT_DIR$/web/views.py" />
         <option value="$PROJECT_DIR$/templates/reteam.html" />
         <option value="$PROJECT_DIR$/templates/updateall.html" />
+        <option value="$PROJECT_DIR$/web/code.py" />
       </list>
     </option>
   </component>
@@ -1717,18 +1717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/code.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
-          <folding>
-            <element signature="e#39#96#0" expanded="true" />
-            <element signature="e#3193#4306#0" expanded="false" />
-            <element signature="e#4327#4552#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.625">
@@ -1776,9 +1764,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/updateall.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4965157">
-          <caret line="106" column="48" selection-start-line="106" selection-start-column="48" selection-end-line="106" selection-end-column="48" />
+        <state vertical-scroll-proportion="-19.375">
+          <caret line="118" column="55" selection-start-line="118" selection-start-column="55" selection-end-line="118" selection-end-column="55" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/code.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46989965">
+          <caret line="242" column="48" selection-start-line="242" selection-start-column="48" selection-end-line="242" selection-end-column="48" />
+          <folding>
+            <element signature="e#39#96#0" expanded="true" />
+            <element signature="e#3193#4306#0" expanded="false" />
+            <element signature="e#4327#4552#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -240,6 +240,7 @@ def retype(request):
         code.status=status
         code.save()
         waitstatus=Status.objects.get(status='等待测试')
+        status=Status.objects.get(status="测试通过")
         update=Relat.objects.get(code=code,status=waitstatus)
         update.status=status
         update.save()
