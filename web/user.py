@@ -238,7 +238,6 @@ def updateteam(request):
             hostlist.append(hl.id)
         for nl in nall:
             nginxlist.append(nl.id)
-        print(hostlist,nginxlist)
         for h in host:
             if h not in hall:
                 hostid=Host.objects.get(id=h)
@@ -251,3 +250,6 @@ def updateteam(request):
     else:
         return render(request,'createteam.html',{"language":language,"hostall":hostall,"nginxhost":nhost})
 
+def user(request):
+    #TODO
+    pass

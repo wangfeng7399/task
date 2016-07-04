@@ -71,7 +71,7 @@ class update:
         self.ssh.exec_command(command)
     #取日志
     def log(self):
-        command='tail -50 /data/logs/resin/s0/java-app-0.log'
+        command='tail -50 /data/logs/resin/s0/jvm-app-0.log '
         _,logs,_=self.ssh.exec_command(command)
         return logs
     #取目录
@@ -108,10 +108,10 @@ class nginx:
         self.code.status=status
         self.code.save()
         self.ssh.close()
-def curl(code):
+def curl(code,ip):
     import urllib.request
     try:
-        urllib.request.urlopen(code.team.url)
+        urllib.request.urlopen('{0}/{1}'.format(ip,code.url))
         status=Status.objects.get(status="等待测试")
         code.status=status
         code.save()
@@ -126,6 +126,7 @@ def code(request):
         list=[]
         filename=request.FILES.getlist('files[]')
         teamname=request.POST.get('teamname')
+        url=request.POST.get('url')
         teamhost=Team.objects.get(id=teamname)
         datetime=time.strftime("%Y-%m-%d-%H-%M",time.localtime())
         path='{0}/{1}/{2}/{3}'.format('/opt',teamhost.groupname,request.user,datetime)
@@ -145,7 +146,7 @@ def code(request):
             p.close()
             p.join()
         status=Status.objects.get(status='等待更新')
-        Code.objects.get_or_create(team=teamhost,path=list,status=status,user=userid,date=datetime,dir=path)
+        Code.objects.get_or_create(team=teamhost,path=list,status=status,user=userid,date=datetime,dir=path,url=url)
         code=Code.objects.get(team=teamhost,path=list,status=status,user=userid,date=datetime)
         for host in teamhost.host.all():
             Relat.objects.create(code=code,host=host,status=status)
@@ -217,7 +218,7 @@ def release(request):
             p.apply_async(up.backup(table.cell(r,0).value,table.cell(r,1).value))
         p.close()
         p.join()
-        if curl(code):
+        if curl(code,w.host.hostip):
             content="您发布的{0}项目的一台主机{1}，已经测试通过，在等待您的确认，请通过绑定host的方式去测试您的发布正确与否，测试通过，请前往发布系统确认，以便可以发布后续机器，谢谢！".format(code.team.groupname,w.host.hostip)
         else:
             content="您发布的{0}项目的一台主机{1}，发布失败,请重新发布！"
@@ -267,7 +268,7 @@ def detail(request,id):
 @login_required(login_url=reverse_lazy('login'))
 def log(request,id,hostid):
     host=Host.objects.get(id=hostid)
-    u=update(host.hostip,host.port,host.user,host.hostpwd,'','','','')
+    u=update(host.hostip,host.port,host.user,dc(host.hostpwd),'','','','')
     data=u.log()
     return render(request,'log.html',{'data':data})
 
