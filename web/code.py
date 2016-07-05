@@ -273,6 +273,7 @@ def log(request,id,hostid):
     u.log(id)
     with open("/usr/local/task/logs/{0}.log".format(id),'r+') as f:
         data=f.read()
+    print(data)
     return render(request,'log.html',{'data':data})
 
 @login_required(login_url=reverse_lazy('login'))
