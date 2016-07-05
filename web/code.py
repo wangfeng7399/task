@@ -70,10 +70,10 @@ class update:
         print(command)
         self.ssh.exec_command(command)
     #取日志
-    def log(self):
-        command='tail -50 /data/logs/resin/s0/jvm-app-0.log '
-        _,logs,_=self.ssh.exec_command(command)
-        return logs
+    def log(self,id):
+        command='tail -50 /data/logs/resin/s0/jvm-app-0.log >/tmp/{0}.log'.format(id)
+        self.ssh.exec_command(command)
+        self.sftp.get('/tmp/{0}.log'.format(id),'/usr/local/task/logs/{0}.log'.format(id))
     #取目录
     def tree(self):
         #self.sftp.put('/data/pycharm/django/task/web/tree.py','/opt/tree.py')
@@ -101,7 +101,7 @@ class nginx:
         self.ssh.exec_command(command)
         self.reloadnginx()
     def reloadnginx(self):
-        command="/usr/local/tengine-2.1.2/sbin/nginx -c {0} -s reload".format(self.nginxconf)
+        command="/usr/local/tengine-2.1.2/sbin/nginx -s reload"
         #command="/usr/sbin/nginx -c /etc/nginx/nginx.conf -s reload"
         self.ssh.exec_command(command)
         status=Status.objects.get(status="灰度发布中")
@@ -151,7 +151,7 @@ def code(request):
         code=Code.objects.get(team=teamhost,path=list,status=status,user=userid,date=datetime)
         for host in teamhost.host.all():
             Relat.objects.create(code=code,host=host,status=status)
-        return render(request,'upload.html',{"msg":"已经上传成功，请前往发布列表页进行发布","teamall":teamall})
+        return redirect(reverse('updateall'))
     return render(request,'upload.html',{"teamall":teamall})
 
 
@@ -270,7 +270,9 @@ def detail(request,id):
 def log(request,id,hostid):
     host=Host.objects.get(id=hostid)
     u=update(host.hostip,host.port,host.user,dc(host.hostpwd),'','','','')
-    data=u.log()
+    u.log(id)
+    with open("/usr/local/task/logs/{0}.log".format(id),'r+') as f:
+        data=f.read()
     return render(request,'log.html',{'data':data})
 
 @login_required(login_url=reverse_lazy('login'))

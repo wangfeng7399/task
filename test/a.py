@@ -31,23 +31,5 @@ def tree(path):
 print(json.dumps(tree(sys.argv[1]),ensure_ascii=False))
 print()
 '''
-import smtplib
-from email.mime.text import MIMEText
-def send_mail(to_list,sub,content):
-    mail_host="smtp.51credit.com"
-    mail_user='alert2@51credit.com'
-    mail_pass='alert2'
-    mail_postfix='pop.51credit.com'
-    me= mail_user+"<"+mail_user+"@"+mail_postfix+">"
-    msg=MIMEText(content,_charset="utf-8")
-    msg["Subject"] =sub
-    msg["From"] =me
-    msg["To"]=to_list
-    s=smtplib.SMTP()
-    s.connect(mail_host)
-    s.login(mail_user,mail_pass)
-    s.sendmail(me,to_list,msg.as_string())
-    s.close()
-
-
-send_mail('wangshenghui@51credit.com','test','test')
+with open("/root/install.log",'r+') as f:
+    print(f.read())
