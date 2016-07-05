@@ -535,13 +535,12 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/master/master.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/.~lock.test.xls#" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/urls.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/urls.py" afterPath="$PROJECT_DIR$/task/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/createhost.html" afterPath="$PROJECT_DIR$/templates/createhost.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/createteam.html" afterPath="$PROJECT_DIR$/templates/createteam.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/master/index.html" afterPath="$PROJECT_DIR$/templates/master/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/teamall.html" afterPath="$PROJECT_DIR$/templates/teamall.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/upload.html" afterPath="$PROJECT_DIR$/templates/upload.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/a.py" afterPath="$PROJECT_DIR$/test/a.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/base.py" afterPath="$PROJECT_DIR$/web/base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/reteam.html" afterPath="$PROJECT_DIR$/templates/reteam.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/code.py" afterPath="$PROJECT_DIR$/web/code.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/models.py" afterPath="$PROJECT_DIR$/web/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/user.py" afterPath="$PROJECT_DIR$/web/user.py" />
@@ -561,7 +560,7 @@
     <SUITE FILE_PATH="coverage/task$Test__templates_login_html.coverage" NAME="Test: templates.login.html Coverage Results" MODIFIED="1463540663374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/task$base.coverage" NAME="base Coverage Results" MODIFIED="1464083451527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
     <SUITE FILE_PATH="coverage/task$Test__templates_createhost_html.coverage" NAME="Test: templates.createhost.html Coverage Results" MODIFIED="1463635216912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/task$a.coverage" NAME="a Coverage Results" MODIFIED="1467628888049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/task$a.coverage" NAME="a Coverage Results" MODIFIED="1467703319617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/task$tets.coverage" NAME="tets Coverage Results" MODIFIED="1466751803869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/task$manage.coverage" NAME="manage Coverage Results" MODIFIED="1463539178113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -577,67 +576,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="updateall.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/updateall.html">
+      <file leaf-file-name="reteam.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/reteam.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.75">
-              <caret line="118" column="55" selection-start-line="118" selection-start-column="55" selection-end-line="118" selection-end-column="55" />
+            <state vertical-scroll-proportion="-48.916668">
+              <caret line="148" column="0" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="log.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/log.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="45.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="teamall.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/teamall.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.375">
-              <caret line="89" column="68" selection-start-line="89" selection-start-column="68" selection-end-line="89" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/master/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18989547">
-              <caret line="169" column="29" selection-start-line="169" selection-start-column="29" selection-end-line="169" selection-end-column="29" />
-              <folding>
-                <element signature="n#style#0;n#li#4;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#5;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/task/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
-              <folding>
-                <element signature="e#671#711#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -646,38 +590,20 @@
         <entry file="file://$PROJECT_DIR$/web/user.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="239" column="35" selection-start-line="239" selection-start-column="35" selection-end-line="239" selection-end-column="35" />
+              <caret line="230" column="30" selection-start-line="230" selection-start-column="30" selection-end-line="230" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reteam.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/reteam.html">
+      <file leaf-file-name="code.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/code.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-88.041664">
-              <caret line="473" column="4" selection-start-line="473" selection-start-column="4" selection-end-line="473" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="phptree.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/phptree.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="36" />
-              <folding />
+            <state vertical-scroll-proportion="0.19732441">
+              <caret line="112" column="22" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
+              <folding>
+                <element signature="e#39#96#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -698,7 +624,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/update.html" />
         <option value="$PROJECT_DIR$/templates/updatefile.html" />
         <option value="$PROJECT_DIR$/static/upload/css/jquery.filer-dragdropbox-theme.css" />
         <option value="$PROJECT_DIR$/templates/login.html" />
@@ -714,7 +639,6 @@
         <option value="$PROJECT_DIR$/templates/reuser.html" />
         <option value="$PROJECT_DIR$/templates/teamnew.html" />
         <option value="$PROJECT_DIR$/static/upload/js/custom.js" />
-        <option value="$PROJECT_DIR$/templates/createteam.html" />
         <option value="$PROJECT_DIR$/templates/master/newindex.html" />
         <option value="$PROJECT_DIR$/templates/createstatus.html" />
         <option value="$PROJECT_DIR$/templates/createlanguage.html" />
@@ -738,17 +662,19 @@
         <option value="$PROJECT_DIR$/templates/codedetail.html" />
         <option value="$PROJECT_DIR$/web/urls.py" />
         <option value="$PROJECT_DIR$/web/views.py" />
-        <option value="$PROJECT_DIR$/templates/reteam.html" />
         <option value="$PROJECT_DIR$/templates/updateall.html" />
-        <option value="$PROJECT_DIR$/web/models.py" />
         <option value="$PROJECT_DIR$/templates/upload.html" />
-        <option value="$PROJECT_DIR$/web/code.py" />
         <option value="$PROJECT_DIR$/web/base.py" />
         <option value="$PROJECT_DIR$/test/a.py" />
         <option value="$PROJECT_DIR$/templates/teamall.html" />
-        <option value="$PROJECT_DIR$/web/user.py" />
         <option value="$PROJECT_DIR$/task/urls.py" />
         <option value="$PROJECT_DIR$/templates/master/index.html" />
+        <option value="$PROJECT_DIR$/templates/createhost.html" />
+        <option value="$PROJECT_DIR$/web/user.py" />
+        <option value="$PROJECT_DIR$/web/models.py" />
+        <option value="$PROJECT_DIR$/templates/createteam.html" />
+        <option value="$PROJECT_DIR$/templates/reteam.html" />
+        <option value="$PROJECT_DIR$/web/code.py" />
       </list>
     </option>
   </component>
@@ -843,24 +769,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1429,11 +1337,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/image/xing.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/image/yahoo.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1566,14 +1469,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/reuser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.125">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="86.708336">
@@ -1614,14 +1509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/createhost.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/createstatus.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.625">
@@ -1635,16 +1522,6 @@
         <state vertical-scroll-proportion="-0.625">
           <caret line="144" column="63" selection-start-line="144" selection-start-column="63" selection-end-line="144" selection-end-column="63" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/createteam.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.75">
-          <caret line="102" column="28" selection-start-line="102" selection-start-column="28" selection-end-line="112" selection-end-column="34" />
-          <folding>
-            <element signature="e#3223#3611#0#HTML" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1682,24 +1559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="3" selection-start-line="63" selection-start-column="3" selection-end-line="63" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/code.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="83" column="39" selection-start-line="83" selection-start-column="39" selection-end-line="83" selection-end-column="39" />
-          <folding>
-            <element signature="e#39#96#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/python34/lib/python3.4/site-packages/paramiko/client.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1728,9 +1587,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.26959246">
           <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
-          <folding>
-            <element signature="e#789#803#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1738,14 +1595,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/reteam.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-88.041664">
-          <caret line="473" column="4" selection-start-line="473" selection-start-column="4" selection-end-line="473" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1766,6 +1615,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/task/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+          <folding>
+            <element signature="e#671#711#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/master/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="10.458333">
+          <caret line="466" column="3" selection-start-line="466" selection-start-column="3" selection-end-line="466" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/createhost.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.833333">
+          <caret line="78" column="147" selection-start-line="78" selection-start-column="147" selection-end-line="78" selection-end-column="147" />
+          <folding>
+            <element signature="e#2512#2902#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/log.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="45.0">
@@ -1776,8 +1661,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/teamall.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.375">
+        <state vertical-scroll-proportion="-1.875">
           <caret line="89" column="68" selection-start-line="89" selection-start-column="68" selection-end-line="89" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/reuser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.9583335">
+          <caret line="103" column="36" selection-start-line="103" selection-start-column="36" selection-end-line="119" selection-end-column="42" />
+          <folding>
+            <element signature="e#2972#3443#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/form-components.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/createteam.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.083333">
+          <caret line="195" column="100" selection-start-line="195" selection-start-column="100" selection-end-line="195" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/reteam.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-48.916668">
+          <caret line="148" column="0" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1785,28 +1704,17 @@
     <entry file="file://$PROJECT_DIR$/web/user.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="239" column="35" selection-start-line="239" selection-start-column="35" selection-end-line="239" selection-end-column="35" />
+          <caret line="230" column="30" selection-start-line="230" selection-start-column="30" selection-end-line="230" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task/urls.py">
+    <entry file="file://$PROJECT_DIR$/web/code.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.19732441">
+          <caret line="112" column="22" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
           <folding>
-            <element signature="e#671#711#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/master/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18989547">
-          <caret line="169" column="29" selection-start-line="169" selection-start-column="29" selection-end-line="169" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#li#4;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#5;n#ul#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#39#96#0" expanded="true" />
           </folding>
         </state>
       </provider>

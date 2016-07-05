@@ -55,6 +55,7 @@ def userall(request):
 @login_required(login_url=reverse_lazy('login'))
 def createhost(request):
     if request.method=='POST':
+        hostname=request.POST.get('hostname')
         hostip=request.POST.get('hostip')
         hostpwd=request.POST.get('hostpwd')
         hostuser=request.POST.get('hostuser')
@@ -64,14 +65,14 @@ def createhost(request):
         hoststuts=HostStatus.objects.get(status='在线')
         if nginxhost =="0":
             if hostport == "":
-                Host.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser,status=hoststuts)
+                Host.objects.create(hostname=hostname,hostip=hostip,hostpwd=encodepwd,user=hostuser,status=hoststuts)
             else:
-                Host.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser,port=int(hostport),status=hoststuts)
+                Host.objects.create(hostname=hostname,hostip=hostip,hostpwd=encodepwd,user=hostuser,port=int(hostport),status=hoststuts)
         else:
             if hostport == "":
-                NginxHost.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser,status=hoststuts)
+                NginxHost.objects.create(hostname=hostname,hostip=hostip,hostpwd=encodepwd,user=hostuser,status=hoststuts)
             else:
-                NginxHost.objects.create(hostip=hostip,hostpwd=encodepwd,user=hostuser,port=int(hostport),status=hoststuts)
+                NginxHost.objects.create(hostname=hostname,hostip=hostip,hostpwd=encodepwd,user=hostuser,port=int(hostport),status=hoststuts)
         return render(request,'createhost.html',{"msg":"新增成功"})
     else:
         return render(request,'createhost.html')
@@ -250,6 +251,10 @@ def updateteam(request):
     else:
         return render(request,'createteam.html',{"language":language,"hostall":hostall,"nginxhost":nhost})
 
-def user(request):
-    #TODO
-    pass
+def issuper(request):
+    if request.method=="POST":
+        isuser=User.objects.get(username=request.user)
+        if isuser.is_superuser:
+            return HttpResponse('1')
+        else:
+            return HttpResponse("2")

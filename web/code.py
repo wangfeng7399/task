@@ -108,10 +108,11 @@ class nginx:
         self.code.status=status
         self.code.save()
         self.ssh.close()
-def curl(code,ip):
+def curl(code,ip,port):
     import urllib.request
+    print(code,ip,port)
     try:
-        urllib.request.urlopen('{0}/{1}'.format(ip,code.url))
+        urllib.request.urlopen('{0}:{1}/{2}'.format(ip,port,code.url))
         status=Status.objects.get(status="等待测试")
         code.status=status
         code.save()
@@ -218,7 +219,7 @@ def release(request):
             p.apply_async(up.backup(table.cell(r,0).value,table.cell(r,1).value))
         p.close()
         p.join()
-        if curl(code,w.host.hostip):
+        if curl(code,w.host.hostip,code.team.teamport):
             content="您发布的{0}项目的一台主机{1}，已经测试通过，在等待您的确认，请通过绑定host的方式去测试您的发布正确与否，测试通过，请前往发布系统确认，以便可以发布后续机器，谢谢！".format(code.team.groupname,w.host.hostip)
         else:
             content="您发布的{0}项目的一台主机{1}，发布失败,请重新发布！"

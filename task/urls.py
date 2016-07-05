@@ -47,6 +47,7 @@ urlpatterns = [
     url(r'^backall/$',code.backall,name='backall'),
     url(r'^tree/(?P<id>[0-9]+)$',code.tree,name='tree'),
     url(r'^retype/$',code.retype,name='retype'),
+    url(r'^issuper/$',user.issuper,name='issuper'),
     url(r'^reuser/(?P<id>[0-9]+)$',user.reuser,name='reuser'),
     url(r'^reteam/(?P<id>[0-9]+)$',user.reteam,name='reteam'),
     url(r'^goback/(?P<id>[0-9]+)$',code.goback,name='goback'),

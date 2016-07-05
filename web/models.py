@@ -16,6 +16,7 @@ class HostStatus(models.Model):
     status=models.CharField(max_length=50)
 
 class Host(models.Model):
+    hostname=models.CharField(max_length=200)
     hostip=models.GenericIPAddressField()
     hostpwd=models.CharField(max_length=200,null=True,blank=True)
     user=models.CharField(max_length=200,default='root')
@@ -25,6 +26,7 @@ class Host(models.Model):
         return self.hostip
 
 class NginxHost(models.Model):
+    hostname=models.CharField(max_length=200)
     hostip=models.GenericIPAddressField()
     hostpwd=models.CharField(max_length=200,null=True,blank=True)
     user=models.CharField(max_length=200,default='root')
