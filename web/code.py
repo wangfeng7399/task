@@ -109,16 +109,18 @@ class nginx:
         self.code.save()
         self.ssh.close()
 def curl(code,ip,port):
-    import urllib.request
+    import os
     if port=="":
        port=80
-    print('{0}:{1}/{2})'.format(ip,port,code.url))
     try:
-        urllib.request.urlopen('{0}:{1}{2}'.format(ip,port,code.url))
-        status=Status.objects.get(status="等待测试")
-        code.status=status
-        code.save()
-        return True
+        req=os.system('curl {0}:{1}{2}'.format(ip,port,code.url))
+        if req==0:
+            status=Status.objects.get(status="等待测试")
+            code.status=status
+            code.save()
+            return True
+        else:
+            return False
     except:
         return False
 @login_required(login_url=reverse_lazy('login'))
