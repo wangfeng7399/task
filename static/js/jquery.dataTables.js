@@ -7915,7 +7915,7 @@
 		 *    } );
 		 */
 		"aaSorting": [[1,'desc']],
-
+		//以第几行以什么方式做排序，从0开始计数，asc为升序，desc为降序排列
 
 		/**
 		 * This parameter is basically identical to the aaSorting parameter, but
@@ -9852,7 +9852,7 @@
 		 *    } );
 		 */
 		"asSorting": [ 'asc', 'desc' ],
-
+		//控制表头是否显示上下排序箭头
 
 		/**
 		 * Enable or disable filtering on the data in this column.
