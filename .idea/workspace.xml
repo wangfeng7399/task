@@ -592,8 +592,11 @@
         <entry file="file://$PROJECT_DIR$/templates/log.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.18989547">
-              <caret line="75" column="24" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
-              <folding />
+              <caret line="75" column="56" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
+              <folding>
+                <element signature="e#2678#2699#0#HTML" expanded="true" />
+                <element signature="e#2727#2759#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1795,8 +1798,11 @@
     <entry file="file://$PROJECT_DIR$/templates/log.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18989547">
-          <caret line="75" column="24" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
-          <folding />
+          <caret line="75" column="56" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
+          <folding>
+            <element signature="e#2678#2699#0#HTML" expanded="true" />
+            <element signature="e#2727#2759#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
