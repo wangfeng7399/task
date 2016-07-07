@@ -591,8 +591,8 @@
       <file leaf-file-name="log.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/log.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.13763066">
-              <caret line="73" column="37" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.3466899">
+              <caret line="81" column="39" selection-start-line="81" selection-start-column="39" selection-end-line="81" selection-end-column="39" />
               <folding>
                 <element signature="e#2705#2774#0#HTML" expanded="true" />
               </folding>
@@ -1781,8 +1781,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/log.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13763066">
-          <caret line="73" column="37" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.3466899">
+          <caret line="81" column="39" selection-start-line="81" selection-start-column="39" selection-end-line="81" selection-end-column="39" />
           <folding>
             <element signature="e#2705#2774#0#HTML" expanded="true" />
           </folding>
