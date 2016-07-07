@@ -535,7 +535,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/master/master.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/.~lock.test.xls#" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/jquery.dataTables.js" afterPath="$PROJECT_DIR$/static/js/jquery.dataTables.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/codedetail.html" afterPath="$PROJECT_DIR$/templates/codedetail.html" />
     </list>
     <ignored path="task.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -581,18 +581,18 @@
       <file leaf-file-name="updateall.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/updateall.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.625">
-              <caret line="156" column="60" selection-start-line="156" selection-start-column="60" selection-end-line="156" selection-end-column="60" />
+            <state vertical-scroll-proportion="4.2083335">
+              <caret line="180" column="25" selection-start-line="180" selection-start-column="25" selection-end-line="180" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery.dataTables.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="jquery.dataTables.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/jquery.dataTables.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29205176">
-              <caret line="7917" column="46" selection-start-line="7917" selection-start-column="46" selection-end-line="7917" selection-end-column="46" />
+            <state vertical-scroll-proportion="-6.8125">
+              <caret line="7996" column="25" selection-start-line="7996" selection-start-column="25" selection-end-line="7996" selection-end-column="25" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <marker date="1467880287279" expanded="true" signature="148283:148355" placeholder="..." />
@@ -618,9 +618,12 @@
       <file leaf-file-name="log.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/log.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="10.458333">
-              <caret line="75" column="44" selection-start-line="75" selection-start-column="44" selection-end-line="75" selection-end-column="44" />
-              <folding />
+            <state vertical-scroll-proportion="27.958334">
+              <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="77" selection-end-column="18" />
+              <folding>
+                <element signature="e#2652#2813#0#HTML" expanded="false" />
+                <element signature="e#2705#2761#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -628,9 +631,21 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/master/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="206.70833">
+            <state vertical-scroll-proportion="234.83333">
               <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="codedetail.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.66027874">
+              <caret line="160" column="134" selection-start-line="160" selection-start-column="134" selection-end-line="160" selection-end-column="134" />
+              <folding>
+                <element signature="e#5710#5779#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -681,7 +696,6 @@
         <option value="$PROJECT_DIR$/templates/userall.html" />
         <option value="$PROJECT_DIR$/templates/backall.html" />
         <option value="$PROJECT_DIR$/web/tests.py" />
-        <option value="$PROJECT_DIR$/templates/codedetail.html" />
         <option value="$PROJECT_DIR$/web/urls.py" />
         <option value="$PROJECT_DIR$/web/views.py" />
         <option value="$PROJECT_DIR$/web/base.py" />
@@ -702,6 +716,7 @@
         <option value="$PROJECT_DIR$/templates/log.html" />
         <option value="$PROJECT_DIR$/templates/updateall.html" />
         <option value="$PROJECT_DIR$/static/js/jquery.dataTables.js" />
+        <option value="$PROJECT_DIR$/templates/codedetail.html" />
       </list>
     </option>
   </component>
@@ -1514,14 +1529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.625">
-          <caret line="144" column="63" selection-start-line="144" selection-start-column="63" selection-end-line="144" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1648,14 +1655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="230" column="30" selection-start-line="230" selection-start-column="30" selection-end-line="230" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logs/a">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
@@ -1705,14 +1704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/log.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.458333">
-          <caret line="75" column="44" selection-start-line="75" selection-start-column="44" selection-end-line="75" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/table-editable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32608697">
@@ -1735,20 +1726,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/master/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="206.70833">
-          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/upload.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="21.25">
           <caret line="66" column="77" selection-start-line="66" selection-start-column="77" selection-end-line="66" selection-end-column="77" />
           <folding>
             <element signature="e#4299#4317#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/jquery.dataTables.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.8125">
+          <caret line="7996" column="25" selection-start-line="7996" selection-start-column="25" selection-end-line="7996" selection-end-column="25" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1467880287279" expanded="true" signature="148283:148355" placeholder="..." />
+            <marker date="1467880287279" expanded="true" signature="148378:148445" placeholder="..." />
+            <marker date="1467880287279" expanded="true" signature="148489:148513" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1763,23 +1759,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/updateall.html">
+    <entry file="file://$PROJECT_DIR$/web/user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625">
-          <caret line="156" column="60" selection-start-line="156" selection-start-column="60" selection-end-line="156" selection-end-column="60" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="230" column="30" selection-start-line="230" selection-start-column="30" selection-end-line="230" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/jquery.dataTables.js">
+    <entry file="file://$PROJECT_DIR$/templates/log.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29205176">
-          <caret line="7917" column="46" selection-start-line="7917" selection-start-column="46" selection-end-line="7917" selection-end-column="46" />
+        <state vertical-scroll-proportion="27.958334">
+          <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="77" selection-end-column="18" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1467880287279" expanded="true" signature="148283:148355" placeholder="..." />
-            <marker date="1467880287279" expanded="true" signature="148378:148445" placeholder="..." />
-            <marker date="1467880287279" expanded="true" signature="148489:148513" placeholder="..." />
+            <element signature="e#2652#2813#0#HTML" expanded="false" />
+            <element signature="e#2705#2761#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/updateall.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.2083335">
+          <caret line="180" column="25" selection-start-line="180" selection-start-column="25" selection-end-line="180" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/master/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="234.83333">
+          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.66027874">
+          <caret line="160" column="134" selection-start-line="160" selection-start-column="134" selection-end-line="160" selection-end-column="134" />
+          <folding>
+            <element signature="e#5710#5779#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
