@@ -9851,7 +9851,7 @@
 		 *      } );
 		 *    } );
 		 */
-		"asSorting": [ 'desc', 'desc' ],
+		"asSorting": [ 'asc', 'desc' ],
 
 
 		/**

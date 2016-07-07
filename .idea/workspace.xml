@@ -591,13 +591,13 @@
       <file leaf-file-name="jquery.dataTables.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/jquery.dataTables.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7031802">
-              <caret line="7916" column="0" selection-start-line="7916" selection-start-column="0" selection-end-line="7917" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.43816254">
+              <caret line="9850" column="20" selection-start-line="9850" selection-start-column="20" selection-end-line="9850" selection-end-column="20" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1467878198306" expanded="true" signature="148283:148355" placeholder="..." />
-                <marker date="1467878198306" expanded="true" signature="148378:148445" placeholder="..." />
-                <marker date="1467878198306" expanded="true" signature="148489:148513" placeholder="..." />
+                <marker date="1467878490749" expanded="true" signature="148283:148355" placeholder="..." />
+                <marker date="1467878490749" expanded="true" signature="148378:148445" placeholder="..." />
+                <marker date="1467878490749" expanded="true" signature="148489:148513" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -1773,13 +1773,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/jquery.dataTables.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7031802">
-          <caret line="7916" column="0" selection-start-line="7916" selection-start-column="0" selection-end-line="7917" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.43816254">
+          <caret line="9850" column="20" selection-start-line="9850" selection-start-column="20" selection-end-line="9850" selection-end-column="20" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1467878198306" expanded="true" signature="148283:148355" placeholder="..." />
-            <marker date="1467878198306" expanded="true" signature="148378:148445" placeholder="..." />
-            <marker date="1467878198306" expanded="true" signature="148489:148513" placeholder="..." />
+            <marker date="1467878490749" expanded="true" signature="148283:148355" placeholder="..." />
+            <marker date="1467878490749" expanded="true" signature="148378:148445" placeholder="..." />
+            <marker date="1467878490749" expanded="true" signature="148489:148513" placeholder="..." />
           </folding>
         </state>
       </provider>
