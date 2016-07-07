@@ -642,7 +642,7 @@
         <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.4773519">
-              <caret line="267" column="30" selection-start-line="267" selection-start-column="30" selection-end-line="267" selection-end-column="30" />
+              <caret line="267" column="26" selection-start-line="267" selection-start-column="26" selection-end-line="267" selection-end-column="26" />
               <folding>
                 <element signature="e#5710#5779#0#HTML" expanded="true" />
               </folding>
@@ -1797,7 +1797,7 @@
     <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4773519">
-          <caret line="267" column="30" selection-start-line="267" selection-start-column="30" selection-end-line="267" selection-end-column="30" />
+          <caret line="267" column="26" selection-start-line="267" selection-start-column="26" selection-end-line="267" selection-end-column="26" />
           <folding>
             <element signature="e#5710#5779#0#HTML" expanded="true" />
           </folding>
