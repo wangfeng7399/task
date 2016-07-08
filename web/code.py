@@ -9,7 +9,7 @@ from .models import Team,Status,Code,Relat,Host
 from .base import dc,send_mail
 import paramiko,random
 import time
-import os
+import os,shutil
 import xlrd
 from multiprocessing import Pool
 
@@ -82,6 +82,10 @@ class update:
         time.sleep(3)
         #self.sftp.get('/opt/json.json','/data/pycharm/django/task/static/json/json.json')
         self.sftp.get('/opt/json.json','/usr/local/task/static/json/json.json')
+    def delfile(self,filename):
+        command='rm -rf {0}/{1}'.format("/update",filename)
+        print(command)
+        self.ssh.exec_command(command)
 class nginx:
     def __init__(self,host,upstream,nginxconf,code):
         self.upstream=upstream
@@ -223,10 +227,13 @@ def release(request):
             p.apply_async(up.backup(table.cell(r,0).value,table.cell(r,1).value))
         p.close()
         p.join()
-        if curl(code,w.host.hostip,code.team.teamport):
-            content="您发布的{0}项目的一台主机{1}，已经测试通过，在等待您的确认，请通过绑定host的方式去测试您的发布正确与否，测试通过，请前往发布系统确认，以便可以发布后续机器，谢谢！".format(code.team.groupname,w.host.hostip)
-        else:
-            content="您发布的{0}项目的一台主机{1}，发布失败,请重新发布！".format(code.team.groupname,w.host.hostip)
+        urls=table.sheets()[1]
+        urows=urls.nrows#TODO
+        for url in urls:
+            if curl(code,w.host.hostip,code.team.teamport):
+                content="您发布的{0}项目的一台主机{1}，已经测试通过，在等待您的确认，请通过绑定host的方式去测试您的发布正确与否，测试通过，请前往发布系统确认，以便可以发布后续机器，谢谢！".format(code.team.groupname,w.host.hostip)
+            else:
+                content="您发布的{0}项目的一台主机{1}，发布失败,请重新发布！".format(code.team.groupname,w.host.hostip)
         send_mail(userid.email,"发布平台通知",content)
             #发送邮件
         return HttpResponse('OK')
@@ -300,4 +307,26 @@ def goback(request,id):
     code.save()
     task.status=backstatus
     task.save()
+    return redirect('updateall')
+
+def delfile(request,id):
+    code=Code.objects.get(id=id)
+    p=Pool(5)
+    path='{0}/{1}/{2}/{3}'.format('/opt',code.team.groupname,request.user,code.date)
+    xls=xlrd.open_workbook("{0}/{1}".format(path,"readme.xls"))
+    table=xls.sheets()[0]
+    nrows=table.nrows
+    rmstatus=Status.objects.get(status='已删除')
+    for host in code.team.host.all():
+        delssh=update(host.hostip,host.port,host.user,dc(host.hostpwd),'','','','')
+        for r in range(nrows):
+            p.apply_async(delssh.delfile(table.cell(r,0).value,))
+        p.close()
+        p.join()
+        relat=Relat.objects.get(code=code,host=host)
+        relat.status=rmstatus
+        relat.save()
+    code.status=rmstatus
+    code.save()
+    shutil.rmtree(path)
     return redirect('updateall')
