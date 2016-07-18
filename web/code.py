@@ -112,12 +112,13 @@ class nginx:
         self.code.status=status
         self.code.save()
         self.ssh.close()
-def curl(code,ip,port):
+def curl(code,ip,port,url):
     import os
     if port=="":
        port=80
     try:
-        req=os.system('curl {0}:{1}{2}'.format(ip,port,code.url))
+        req=os.system('curl {0}:{1}{2}'.format(ip,port,url))
+
         if req==0:
             status=Status.objects.get(status="等待测试")
             code.status=status
@@ -228,12 +229,13 @@ def release(request):
         p.close()
         p.join()
         urls=table.sheets()[1]
-        urows=urls.nrows#TODO
-        for url in urls:
-            if curl(code,w.host.hostip,code.team.teamport):
-                content="您发布的{0}项目的一台主机{1}，已经测试通过，在等待您的确认，请通过绑定host的方式去测试您的发布正确与否，测试通过，请前往发布系统确认，以便可以发布后续机器，谢谢！".format(code.team.groupname,w.host.hostip)
+        urows=urls.nrows
+        content=[]
+        for url in range(urows):
+            if curl(code,w.host.hostip,code.team.teamport,table.cell(url,0).value):
+                content.append("您发布的{0}项目的一台主机{1}的url为{2}，已经测试通过，在等待您的确认，请通过绑定host的方式去测试您的发布正确与否，测试通过，请前往发布系统确认，以便可以发布后续机器，谢谢！".format(code.team.groupname,w.host.hostip,table.cell(url,0).value))
             else:
-                content="您发布的{0}项目的一台主机{1}，发布失败,请重新发布！".format(code.team.groupname,w.host.hostip)
+                content.append("您发布的{0}项目的一台主机{1}的url为{2}，发布失败,请重新发布！".format(code.team.groupname,w.host.hostip,table.cell(url,0).value))
         send_mail(userid.email,"发布平台通知",content)
             #发送邮件
         return HttpResponse('OK')
@@ -309,6 +311,8 @@ def goback(request,id):
     task.save()
     return redirect('updateall')
 
+
+@login_required(login_url=reverse_lazy('login'))
 def delfile(request,id):
     code=Code.objects.get(id=id)
     p=Pool(5)
@@ -330,3 +334,38 @@ def delfile(request,id):
     code.save()
     shutil.rmtree(path)
     return redirect('updateall')
+
+@login_required(login_url=reverse_lazy('login'))
+def svncode(request):
+    userid=User.objects.get(username=request.user)
+    teamall=Team.objects.filter(userid=userid).all()
+    if request.method=="POST":
+        teamname=request.POST.get('teanname')
+        version=request.POST.get('version')
+
+    return render(request,'svn.html',{"teamall":teamall})
+
+
+@login_required(login_url=reverse_lazy('login'))
+def upyun(request):
+    userid=User.objects.get(username=request.user)
+    teamall=Team.objects.filter(userid=userid).all()
+    if request.method =="POST":
+        list=[]
+        filename=request.FILES.getlist('files[]')
+        teamname=request.POST.get('teamname')
+        url=request.POST.get('url')
+        teamhost=Team.objects.get(id=teamname)
+        datetime=time.strftime("%Y-%m-%d-%H-%M",time.localtime())
+        path='{0}/{1}/{2}/{3}'.format('/opt',teamhost.groupname,request.user,datetime)
+        if not os.path.exists(path):
+            os.makedirs(path)
+        for file in filename:
+            pathname='{0}/{1}'.format(path,file.name)
+            with open(pathname,'wb+') as f:
+                for chunk in file.chunks():
+                    f.write(chunk)
+            if file.name != "readme.xls":
+                list.append(file.name)
+        #上传到upyun
+    return render(request,'upyunupload.html',{"teamall":teamall})

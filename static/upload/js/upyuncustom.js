@@ -61,7 +61,7 @@ $(document).ready(function(){
             },
             dragDrop: {},
             uploadFile: {
-                url: "{% url 'code' %}",
+                url: "{% url 'upyun' %}",
                 data: {},
                 type: 'POST',
                 enctype: 'multipart/form-data',
