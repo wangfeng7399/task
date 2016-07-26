@@ -231,7 +231,7 @@ def release(request):
         urows=urls.nrows#TODO
         content=[]
         for url in range(urows):
-            if curl(code,w.host.hostip,code.team.teamport,table.cell(url,0).value):
+            if curl(code,w.host.hostip,code.team.teamport,urls.cell(url,0).value):
                 content.append("您发布的{0}项目的一台主机{1}的url为{2}，已经测试通过，在等待您的确认，请通过绑定host的方式去测试您的发布正确与否，测试通过，请前往发布系统确认，以便可以发布后续机器，谢谢！".format(code.team.groupname,w.host.hostip,table.cell(url,0).value))
             else:
                 content.append("您发布的{0}项目的一台主机{1}的url为{2}，发布失败,请重新发布！".format(code.team.groupname,w.host.hostip,table.cell(url,0).value))
