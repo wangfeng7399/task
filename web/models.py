@@ -63,7 +63,7 @@ class Code(models.Model):
     status=models.ForeignKey(Status)
     update_date=models.DateTimeField(auto_now=True)
     dir=models.CharField(max_length=100)
-    url=models.CharField(max_length=2000)
+    #url=models.CharField(max_length=2000)
 
 class Relat(models.Model):
     code=models.ForeignKey(Code)

@@ -19,7 +19,7 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from web import views
-from web import user,code
+from web import user,code,property
 app_name="web"
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -49,6 +49,7 @@ urlpatterns = [
     url(r'^retype/$',code.retype,name='retype'),
     url(r'^svncode/$',code.svncode,name='svncode'),
     url(r'^upyun/$',code.upyun,name='upyun'),
+    url(r'^download/$',code.downloadxls,name='downloadxls'),
     url(r'^issuper/$',user.issuper,name='issuper'),
     url(r'^reuser/(?P<id>[0-9]+)$',user.reuser,name='reuser'),
     url(r'^del/(?P<id>[0-9]+)$',code.delfile,name='delfile'),
@@ -58,4 +59,6 @@ urlpatterns = [
     url(r'^logs/(?P<id>[0-9]+)/(?P<hostid>[0-9]+)$',code.log,name='log'),
     url(r'^updateuser/$',user.updateuser,name='updateuser'),
     url(r'^updateteam/$',user.updateteam,name='updateteam'),
+    url(r'^wapkahu/$',property.wapkaku,name='wapkahu'),
+    url(r'^a/$',property.a,name='a'),
 ]

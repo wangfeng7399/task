@@ -118,7 +118,6 @@ def curl(code,ip,port,url):
        port=80
     try:
         req=os.system('curl {0}:{1}{2}'.format(ip,port,url))
-
         if req==0:
             status=Status.objects.get(status="等待测试")
             code.status=status
@@ -156,7 +155,7 @@ def code(request):
             p.close()
             p.join()
         status=Status.objects.get(status='等待更新')
-        Code.objects.get_or_create(team=teamhost,path=list,status=status,user=userid,date=datetime,dir=path,url=url)
+        Code.objects.get_or_create(team=teamhost,path=list,status=status,user=userid,date=datetime,dir=path)
         code=Code.objects.get(team=teamhost,path=list,status=status,user=userid,date=datetime)
         for host in teamhost.host.all():
             Relat.objects.create(code=code,host=host,status=status)
@@ -228,8 +227,8 @@ def release(request):
             p.apply_async(up.backup(table.cell(r,0).value,table.cell(r,1).value))
         p.close()
         p.join()
-        urls=table.sheets()[1]
-        urows=urls.nrows
+        urls=data.sheets()[1]
+        urows=urls.nrows#TODO
         content=[]
         for url in range(urows):
             if curl(code,w.host.hostip,code.team.teamport,table.cell(url,0).value):
@@ -368,4 +367,11 @@ def upyun(request):
             if file.name != "readme.xls":
                 list.append(file.name)
         #上传到upyun
+        #TODO
+
     return render(request,'upyunupload.html',{"teamall":teamall})
+
+def downloadxls(request):
+    with open('/data/pycharm/django/task/templates/readme.xls') as f:
+        c=f.read()
+    return HttpResponse(c)
