@@ -19,7 +19,7 @@ def send_mail(to_list,sub,content):
     mail_postfix='pop.51credit.com'
     me= mail_user+"<"+mail_user+"@"+mail_postfix+">"
     #msg=MIMEText(content,_charset="utf-8")
-    msg=MIMEText(content,)
+    msg=MIMEText(str(content),_charset="utf-8")
     msg["Subject"] =sub
     msg["From"] =me
     msg["To"]=to_list
