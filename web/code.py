@@ -245,6 +245,18 @@ def retype(request):
     if request.method=="POST":
         id=request.POST.get("id")
         code=Code.objects.get(id=id)
+        status=Status.objects.get(status="测试通过")
+        nginxhosts=code.team.nginxhost.all()#所有nginx
+        nginxconf=code.team.nginxconf #nginx的配置文件
+        testok=Relat.objects.filter(code=code,status=status) #项目所有测试通过的主机
+        for t in testok:
+            upstream='{0}:{1}'.format(t.host.hostip,code.team.teamport)
+            p=Pool(5)
+            for nginxhost in nginxhosts:
+                ng=nginx(nginxhost,upstream,nginxconf,code)
+                p.apply_async(ng.upteam())
+            p.close()
+            p.join()
         status=Status.objects.get(status='等待更新')
         waitupdate=Relat.objects.filter(code=code,status=status)
         if waitupdate.count()==0:
@@ -258,18 +270,6 @@ def retype(request):
         update=Relat.objects.get(code=code,status=waitstatus)
         update.status=status
         update.save()
-        status=Status.objects.get(status="测试通过")
-        nginxhosts=code.team.nginxhost.all()#所有nginx
-        nginxconf=code.team.nginxconf #nginx的配置文件
-        testok=Relat.objects.filter(code=code,status=status) #项目所有测试通过的主机
-        for t in testok:
-            upstream='{0}:{1}'.format(t.host.hostip,code.team.teamport)
-            p=Pool(5)
-            for nginxhost in nginxhosts:
-                ng=nginx(nginxhost,upstream,nginxconf,code)
-                p.apply_async(ng.upteam())
-            p.close()
-            p.join()
         return HttpResponse("ok")
 
 @login_required(login_url=reverse_lazy('login'))
