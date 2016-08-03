@@ -60,5 +60,4 @@ urlpatterns = [
     url(r'^updateuser/$',user.updateuser,name='updateuser'),
     url(r'^updateteam/$',user.updateteam,name='updateteam'),
     url(r'^wapkahu/$',property.wapkaku,name='wapkahu'),
-    url(r'^a/$',property.a,name='a'),
 ]

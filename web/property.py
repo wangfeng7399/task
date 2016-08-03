@@ -6,13 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 
 def wapkaku(request):
-    return render(request,'property.html')
-
-def a(request):
-    #data=[{"name":"衬衫","num":10},{"name":"羊毛衫","num":24},{"name":"学房山","num":15},{"name":"裤子","num":34},{"name":"高跟鞋","num":11},{"name":"袜子","num":12}]
-    data=[{"categories":["1","2","3","4","5","6","7"],"data":[{"name":"邮件营销","type":"line","stack":'总量',"areaStyle":{"normal":{}},"data":[1,2,3,4,5,6,7]},
-                                                          {"name":'联盟广告',"type":"line","stack": '总量',"areaStyle":{"normal":{}},"data":[12,23,32,42,51,62,71]},
-                                                          {"name":'视频广告',"type":"line","stack": '总量',"areaStyle":{"normal":{}},"data":[12,23,32,42,51,62,71]},
-                                                          {"name":'直接访问',"type":"line","stack": '总量',"areaStyle":{"normal":{}},"data":[12,23,32,42,51,62,71]},
-                                                          {"name":'搜索引擎',"type":"line","stack": '总量',"areaStyle":{"normal":{}},"data":[11,22,31,3,43,62,7]},]}]
-    return HttpResponse(data)
+    data={"title":["邮件营销","联盟广告","视频广告","直接访问","搜索引擎"],"xAxis":["周一","周二","周三","周四","周五","周六","周日"],
+          "youjian":[120, 132, 101, 134, 90, 230, 210],"lianmeng":[220, 182, 191, 234, 290, 330, 310],"shipin":[150, 232, 201, 154, 190, 330, 410],
+          "zhijie":[320, 332, 301, 334, 390, 330, 320],"sousuo":[820, 932, 901, 934, 1290, 1330, 1320]}
+    return render(request,'property.html',{"data":data})

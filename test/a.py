@@ -68,10 +68,16 @@ z.login('wangsh','wodehao123')
 # for hg in z.hostgroup.get(output="extend"):
 #     print(hg)
 #获取主机
+sum=0
 for h in z.host.get(output="extend"):
-    #print(h["hostid"],h["name"])
-    if '10.10.1.9' in h["name"]:
-        print(h["hostid"])
+    if h["hostid"] != "10084" and h["hostid"]!="10217" and h["hostid"]!="10214" and h["hostid"]!="10206":
+        for it in z.item.get(output="extend",hostids=h):
+            print('id为{0}的{1}的监控项有{2},id为{3}'.format(h["hostid"],h["name"],it["name"],it["itemid"]))
+            sum+=1
+print(sum)
+    #print(h['hostid'],h['name'])
+    # if '10.10.1.9' in h["name"]:
+    #     print(h["hostid"])
 
 #获取item
 # for it in z.item.get(output="extend",hostids="10110"):

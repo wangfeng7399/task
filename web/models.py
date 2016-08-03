@@ -70,3 +70,14 @@ class Relat(models.Model):
     host=models.ForeignKey(Host)
     status=models.ForeignKey(Status)
     update_date=models.DateTimeField(auto_now=True)
+
+# 1代表cpu 2代表 disk 3 代表 network 4 代表nginx 5 代表db 6代表进程数 7代表mem
+class Type(models.Model):
+    name=models.CharField(max_length=200)
+
+class Monitor(models.Model):
+    ip=models.CharField(max_length=200)
+    type=models.ForeignKey(Type)
+    num=models.IntegerField()
+    name=models.CharField(max_length=2000)
+    #zabbixid=models.CharField(max_length=200)
