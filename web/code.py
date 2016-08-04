@@ -14,17 +14,23 @@ import xlrd
 from multiprocessing import Pool
 
 class update:
-    def __init__(self,hostip,port,username,password,datapath,path,code,host):
+    def __init__(self,hostip,port,username,datapath,path,code,host):
+        key_file='/root/.ssh/id_rsa'
+        key=paramiko.RSAKey.from_private_key_file(key_file)
         self.datapath=datapath
         self.code=code
         self.path=path
         self.host=host #relat表中的数据
         self.t=paramiko.Transport(hostip,port)
-        self.t.connect(username=username,password=password)
+        #self.t.load_system_host_keys()
+        #self.t.connect(username=username,password=password)
+        self.t.connect(username=username,pkey=key)
         self.sftp=paramiko.SFTPClient.from_transport(self.t)
         self.ssh=paramiko.SSHClient()
+        self.ssh.load_system_host_keys()
         self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        self.ssh.connect(hostip,port,username,password)
+        #self.ssh.connect(hostip,port,username,password)
+        self.ssh.connect(hostip,port,username,pkey=key)
     def update(self,updatefile,filename):
         try:
             self.sftp.mkdir('/update',mode=0o777)
@@ -51,6 +57,7 @@ class update:
     #替换文件
     def replace(self,update,filename):
         command='cp -rf {0}/{1} {2}{3}'.format("/update",update,self.datapath,filename)
+        print(command)
         self.ssh.exec_command(command)
         self.reload()
     #备份
@@ -88,12 +95,16 @@ class update:
         self.ssh.exec_command(command)
 class nginx:
     def __init__(self,host,upstream,nginxconf,code):
+        key_file='/root/.ssh/id_rsa'
+        key=paramiko.RSAKey.from_private_key_file(key_file)
         self.upstream=upstream
         self.nginxconf=nginxconf
         self.code=code
         self.ssh=paramiko.SSHClient()
+        self.ssh.load_system_host_keys()
         self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        self.ssh.connect(hostname=host.hostip,port=host.port,username=host.user,password=dc(host.hostpwd))
+        #self.ssh.connect(hostname=host.hostip,port=host.port,username=host.user,password=dc(host.hostpwd))
+        self.ssh.connect(hostname=host.hostip,port=host.port,username=host.user,pkey=key)
     def downteam(self):
         command=r"sed -i 's/\({0}.*;\)'/#\1/g {1}".format(self.upstream,self.nginxconf)
         #command="touch /tmp/a.txt"
@@ -150,7 +161,7 @@ def code(request):
                 list.append(file.name)
             p=Pool(5)
             for host in teamhost.host.all():
-                u=update(host.hostip,host.port,host.user,dc(host.hostpwd),'','','','')
+                u=update(host.hostip,host.port,host.user,'','','','')
                 p.apply_async(u.update(pathname,file.name))
             p.close()
             p.join()
@@ -165,7 +176,6 @@ def code(request):
 
 @login_required(login_url=reverse_lazy('login'))
 def status(request):
-
     return render(request, 'status.html')
 
 @login_required(login_url=reverse_lazy('login'))
@@ -188,7 +198,7 @@ def backall(request):
 def tree(request,id):
     team=Team.objects.get(id=id)
     hostid=team.host.all()[0]
-    u=update(hostid.hostip,hostid.port,hostid.user,dc(hostid.hostpwd),'',team.path,'','')
+    u=update(hostid.hostip,hostid.port,hostid.user,'',team.path,'','')
     u.tree()
     return render(request,'tree.html')
 
@@ -219,7 +229,7 @@ def release(request):
         #上面摘除了一台机器
         #下面进行升级替换
         p=Pool(5)
-        up=update(w.host.hostip,w.host.port,w.host.user,dc(w.host.hostpwd),code.team.datapath,code.team.path,code,w)
+        up=update(w.host.hostip,w.host.port,w.host.user,code.team.datapath,code.team.path,code,w)
         data=xlrd.open_workbook("{0}/{1}".format(code.dir,"readme.xls"))
         table=data.sheets()[0]
         nrows=table.nrows
@@ -232,7 +242,7 @@ def release(request):
         content=[]
         for url in range(urows):
             if curl(code,w.host.hostip,code.team.teamport,urls.cell(url,0).value):
-                content.append("您发布的{0}项目的一台主机{1}的url为{2}，已经测试通过，在等待您的确认，请通过绑定host的方式去测试您的发布正确与否，测试通过，请前往发布系统确认，以便可以发布后续机器，谢谢！".format(code.team.groupname,w.host.hostip,table.cell(url,0).value))
+                content.append("您发布的{0}项目的一台主机{1}的url为{2}，已经测试通过，在等待您的确认，请通过绑定host的方式去测试您的发布正确与否，测试通过，请前往发布系统确认，以便可以发布后续机器，谢谢！\n".format(code.team.groupname,w.host.hostip,urls.cell(url,0).value))
             else:
                 content.append("您发布的{0}项目的一台主机{1}的url为{2}，发布失败,请重新发布！".format(code.team.groupname,w.host.hostip,table.cell(url,0).value))
         send_mail(userid.email,"发布平台通知",content)
@@ -281,7 +291,7 @@ def detail(request,id):
 @login_required(login_url=reverse_lazy('login'))
 def log(request,id,hostid):
     host=Host.objects.get(id=hostid)
-    u=update(host.hostip,host.port,host.user,dc(host.hostpwd),'','','','')
+    u=update(host.hostip,host.port,host.user,'','','','')
     u.log(id)
     with open("/usr/local/task/logs/{0}.log".format(id),'r+') as f:
         data=f.read()
@@ -294,7 +304,7 @@ def goback(request,id):
     status=Status.objects.get(status='等待测试')
     task=Relat.objects.get(code=code,status=status)
     p=Pool(5)
-    back=update(task.host.hostip,task.host.port,task.host.user,dc(task.host.hostpwd),code.team.datapath,'','','')
+    back=update(task.host.hostip,task.host.port,task.host.user,code.team.datapath,'','','')
     path='{0}/{1}/{2}/{3}'.format('/opt',code.team.groupname,request.user,code.date)
     xls=xlrd.open_workbook("{0}/{1}".format(path,"readme.xls"))
     table=xls.sheets()[0]
@@ -321,7 +331,7 @@ def delfile(request,id):
     nrows=table.nrows
     rmstatus=Status.objects.get(status='已删除')
     for host in code.team.host.all():
-        delssh=update(host.hostip,host.port,host.user,dc(host.hostpwd),'','','','')
+        delssh=update(host.hostip,host.port,host.user,'','','','')
         for r in range(nrows):
             p.apply_async(delssh.delfile(table.cell(r,0).value,))
         p.close()

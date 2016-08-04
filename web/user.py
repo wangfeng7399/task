@@ -57,22 +57,27 @@ def createhost(request):
     if request.method=='POST':
         hostname=request.POST.get('hostname')
         hostip=request.POST.get('hostip')
-        hostpwd=request.POST.get('hostpwd')
+        #hostpwd=request.POST.get('hostpwd')
         hostuser=request.POST.get('hostuser')
         hostport=request.POST.get('hostport')
         nginxhost=request.POST.get('nginxhost')
-        encodepwd=ec(hostpwd)
+        #encodepwd=ec(hostpwd)
         hoststuts=HostStatus.objects.get(status='在线')
         if nginxhost =="0":
             if hostport == "":
-                Host.objects.create(hostname=hostname,hostip=hostip,hostpwd=encodepwd,user=hostuser,status=hoststuts)
+                #Host.objects.create(hostname=hostname,hostip=hostip,hostpwd=encodepwd,user=hostuser,status=hoststuts)
+                Host.objects.create(hostname=hostname,hostip=hostip,user=hostuser,status=hoststuts)
             else:
-                Host.objects.create(hostname=hostname,hostip=hostip,hostpwd=encodepwd,user=hostuser,port=int(hostport),status=hoststuts)
+                #Host.objects.create(hostname=hostname,hostip=hostip,hostpwd=encodepwd,user=hostuser,port=int(hostport),status=hoststuts)
+                Host.objects.create(hostname=hostname,hostip=hostip,user=hostuser,port=int(hostport),status=hoststuts)
         else:
             if hostport == "":
-                NginxHost.objects.create(hostname=hostname,hostip=hostip,hostpwd=encodepwd,user=hostuser,status=hoststuts)
+                #NginxHost.objects.create(hostname=hostname,hostip=hostip,hostpwd=encodepwd,user=hostuser,status=hoststuts)
+                NginxHost.objects.create(hostname=hostname,hostip=hostip,user=hostuser,status=hoststuts)
             else:
-                NginxHost.objects.create(hostname=hostname,hostip=hostip,hostpwd=encodepwd,user=hostuser,port=int(hostport),status=hoststuts)
+                #NginxHost.objects.create(hostname=hostname,hostip=hostip,hostpwd=encodepwd,user=hostuser,port=int(hostport),status=hoststuts)
+                NginxHost.objects.create(hostname=hostname,hostip=hostip,user=hostuser,port=int(hostport),status=hoststuts)
+
         return render(request,'createhost.html',{"msg":"新增成功"})
     else:
         return render(request,'createhost.html')

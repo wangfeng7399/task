@@ -18,7 +18,7 @@ class HostStatus(models.Model):
 class Host(models.Model):
     hostname=models.CharField(max_length=200)
     hostip=models.GenericIPAddressField()
-    hostpwd=models.CharField(max_length=200,null=True,blank=True)
+    #hostpwd=models.CharField(max_length=200,null=True,blank=True)
     user=models.CharField(max_length=200,default='root')
     port=models.IntegerField(default=22)
     status=models.ForeignKey(HostStatus)
@@ -28,7 +28,7 @@ class Host(models.Model):
 class NginxHost(models.Model):
     hostname=models.CharField(max_length=200)
     hostip=models.GenericIPAddressField()
-    hostpwd=models.CharField(max_length=200,null=True,blank=True)
+    #hostpwd=models.CharField(max_length=200,null=True,blank=True)
     user=models.CharField(max_length=200,default='root')
     port=models.IntegerField(default=22)
     status=models.ForeignKey(HostStatus)

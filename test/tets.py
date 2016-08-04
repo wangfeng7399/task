@@ -127,16 +127,16 @@ ws.write(2,1,1)
 ws.write(2,2,xlwt.Formula("A3+B3"))
 wb.save("test.xls")
 '''
-'''
+
 import xlrd
 data=xlrd.open_workbook("test.xls")
-table=data.sheets()[0]
+table=data.sheets()[1]
 nrows=table.nrows
 ncols=table.ncols
 for r in range(nrows):
     for c in range(ncols):
         print("{0}行{1}列的数据为{2},值的类型{3} ".format(r+1,c+1,table.cell(r,c).value,type(table.cell(r,c).value)))
-'''
+
 '''
 from os.path import basename,isdir
 from os import listdir
@@ -150,7 +150,7 @@ def tra(path):
     return list
 print(tra('/data/pycharm/django/task'))
 '''
-import base64
-l={"bucket":"demobucket","expiration":1409200758,"save-key":'/img.jpg'}
-a=base64.b64encode(str(l))
-print(a)
+# import base64
+# l={"bucket":"demobucket","expiration":1409200758,"save-key":'/img.jpg'}
+# a=base64.b64encode(str(l))
+# print(a)
