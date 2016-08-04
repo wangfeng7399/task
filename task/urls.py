@@ -60,4 +60,5 @@ urlpatterns = [
     url(r'^updateuser/$',user.updateuser,name='updateuser'),
     url(r'^updateteam/$',user.updateteam,name='updateteam'),
     url(r'^wapkahu/$',property.wapkaku,name='wapkahu'),
+    url(r'^zabbix/(?P<codeid>[0-9]+)/(?P<hostid>[0-9]+)$',property.proprty,name='zabbix')
 ]
