@@ -534,10 +534,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/theme.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/master/master.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/urls.py" afterPath="$PROJECT_DIR$/task/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/codedetail.html" afterPath="$PROJECT_DIR$/templates/codedetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/property.py" afterPath="$PROJECT_DIR$/web/property.py" />
     </list>
     <ignored path="task.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -590,12 +587,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="property.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="property.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/property.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-112.041664">
-              <caret line="1065" column="31" selection-start-line="1065" selection-start-column="31" selection-end-line="1065" selection-end-column="31" />
-              <folding />
+            <state vertical-scroll-proportion="-4.043554">
+              <caret line="896" column="4" selection-start-line="896" selection-start-column="4" selection-end-line="896" selection-end-column="53" />
+              <folding>
+                <element signature="e#2730#2763#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -620,12 +619,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="codedetail.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="codedetail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3989547">
-              <caret line="278" column="57" selection-start-line="278" selection-start-column="57" selection-end-line="278" selection-end-column="57" />
-              <folding />
+            <state vertical-scroll-proportion="-20.166666">
+              <caret line="392" column="28" selection-start-line="392" selection-start-column="28" selection-end-line="392" selection-end-column="28" />
+              <folding>
+                <element signature="e#5897#5929#0#HTML" expanded="true" />
+                <element signature="e#5989#6021#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -646,7 +648,7 @@
         <entry file="file://$PROJECT_DIR$/web/property.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+              <caret line="22" column="62" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="62" />
               <folding>
                 <element signature="e#37#94#0" expanded="true" />
               </folding>
@@ -898,7 +900,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.general" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ace" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="138" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="138" />
@@ -1723,10 +1725,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/property.html">
+    <entry file="file:///usr/local/python34/lib/python3.4/site-packages/django/http/response.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-112.041664">
-          <caret line="1065" column="31" selection-start-line="1065" selection-start-column="31" selection-end-line="1065" selection-end-column="31" />
+        <state vertical-scroll-proportion="-0.04347826">
+          <caret line="272" column="6" selection-start-line="272" selection-start-column="6" selection-end-line="272" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1736,24 +1738,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="255" column="33" selection-start-line="255" selection-start-column="33" selection-end-line="255" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/python34/lib/python3.4/site-packages/django/http/response.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.04347826">
-          <caret line="272" column="6" selection-start-line="272" selection-start-column="6" selection-end-line="272" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/property.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding>
-            <element signature="e#37#94#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1767,11 +1751,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/property.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="62" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="62" />
+          <folding>
+            <element signature="e#37#94#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3989547">
-          <caret line="278" column="57" selection-start-line="278" selection-start-column="57" selection-end-line="278" selection-end-column="57" />
-          <folding />
+        <state vertical-scroll-proportion="-20.166666">
+          <caret line="392" column="28" selection-start-line="392" selection-start-column="28" selection-end-line="392" selection-end-column="28" />
+          <folding>
+            <element signature="e#5897#5929#0#HTML" expanded="true" />
+            <element signature="e#5989#6021#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/property.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.043554">
+          <caret line="896" column="4" selection-start-line="896" selection-start-column="4" selection-end-line="896" selection-end-column="53" />
+          <folding>
+            <element signature="e#2730#2763#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
