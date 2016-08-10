@@ -5,7 +5,7 @@ from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
-from .models import Team,Status,Code,Relat,Host
+from .models import Team,Status,Code,Relat,Host,HostStatus
 from .base import dc,send_mail
 import paramiko,random
 import time
@@ -211,23 +211,31 @@ def release(request):
         status=Status.objects.get(status="正在发布")
         code.status=status
         code.save()
-        #涉及灰度发布
-        #摘nginx
-        nginxhosts=code.team.nginxhost.all()#所有nginx
-        nginxconf=code.team.nginxconf #nginx的配置文件
+        hoststatus=HostStatus.objects.get(status="准生产")
         status=Status.objects.get(status='等待更新')
-        waitupdate=Relat.objects.filter(code=code,status=status) #项目所有在等待更新状态的主机
-        rd=random.randint(0,int(waitupdate.count())-1)#任选一台
-        w=waitupdate[rd]
-        upstream='{0}:{1}'.format(w.host.hostip,code.team.teamport)
-        p=Pool(5)
-        for nginxhost in nginxhosts:
-            ng=nginx(nginxhost,upstream,nginxconf,code)
-            p.apply_async(ng.downteam())
-        p.close()
-        p.join()
-        #上面摘除了一台机器
-        #下面进行升级替换
+        host=code.team.host.get(status=hoststatus)
+        test=Relat.objects.filter(code=code,host=host,status=status)
+        if test.count() != 0:
+            w=Relat.objects.get(code=code,host=host,status=status)
+            print(w.host)
+        else:
+            #涉及灰度发布
+            #摘nginx
+            nginxhosts=code.team.nginxhost.all()#所有nginx
+            nginxconf=code.team.nginxconf #nginx的配置文件
+            status=Status.objects.get(status='等待更新')
+            waitupdate=Relat.objects.filter(code=code,status=status) #项目所有在等待更新状态的主机
+            rd=random.randint(0,int(waitupdate.count())-1)#任选一台
+            w=waitupdate[rd]
+            upstream='{0}:{1}'.format(w.host.hostip,code.team.teamport)
+            p=Pool(5)
+            for nginxhost in nginxhosts:
+                ng=nginx(nginxhost,upstream,nginxconf,code)
+                p.apply_async(ng.downteam())
+            p.close()
+            p.join()
+            #上面摘除了一台机器
+            #下面进行升级替换
         p=Pool(5)
         up=update(w.host.hostip,w.host.port,w.host.user,code.team.datapath,code.team.path,code,w)
         data=xlrd.open_workbook("{0}/{1}".format(code.dir,"readme.xls"))
@@ -238,7 +246,7 @@ def release(request):
         p.close()
         p.join()
         urls=data.sheets()[1]
-        urows=urls.nrows#TODO
+        urows=urls.nrows
         content=[]
         for url in range(urows):
             if curl(code,w.host.hostip,code.team.teamport,urls.cell(url,0).value):

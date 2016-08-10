@@ -61,22 +61,24 @@ def createhost(request):
         hostuser=request.POST.get('hostuser')
         hostport=request.POST.get('hostport')
         nginxhost=request.POST.get('nginxhost')
+        dev=request.POST.get("dev")
+        print(dev)
         #encodepwd=ec(hostpwd)
-        hoststuts=HostStatus.objects.get(status='在线')
+        hoststatus=HostStatus.objects.get(id=dev)
         if nginxhost =="0":
             if hostport == "":
                 #Host.objects.create(hostname=hostname,hostip=hostip,hostpwd=encodepwd,user=hostuser,status=hoststuts)
-                Host.objects.create(hostname=hostname,hostip=hostip,user=hostuser,status=hoststuts)
+                Host.objects.create(hostname=hostname,hostip=hostip,user=hostuser,status=hoststatus)
             else:
                 #Host.objects.create(hostname=hostname,hostip=hostip,hostpwd=encodepwd,user=hostuser,port=int(hostport),status=hoststuts)
-                Host.objects.create(hostname=hostname,hostip=hostip,user=hostuser,port=int(hostport),status=hoststuts)
+                Host.objects.create(hostname=hostname,hostip=hostip,user=hostuser,port=int(hostport),status=hoststatus)
         else:
             if hostport == "":
                 #NginxHost.objects.create(hostname=hostname,hostip=hostip,hostpwd=encodepwd,user=hostuser,status=hoststuts)
-                NginxHost.objects.create(hostname=hostname,hostip=hostip,user=hostuser,status=hoststuts)
+                NginxHost.objects.create(hostname=hostname,hostip=hostip,user=hostuser,status=hoststatus)
             else:
                 #NginxHost.objects.create(hostname=hostname,hostip=hostip,hostpwd=encodepwd,user=hostuser,port=int(hostport),status=hoststuts)
-                NginxHost.objects.create(hostname=hostname,hostip=hostip,user=hostuser,port=int(hostport),status=hoststuts)
+                NginxHost.objects.create(hostname=hostname,hostip=hostip,user=hostuser,port=int(hostport),status=hoststatus)
 
         return render(request,'createhost.html',{"msg":"新增成功"})
     else:
