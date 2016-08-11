@@ -59,15 +59,15 @@ except urllib.error.URLError as e:
     print(e.reason)
 '''
 
-# from pyzabbix import ZabbixAPI
-# z=ZabbixAPI("http://10.10.0.50/zabbix")
-# z.login('wangsh','wodehao123')
-# print(z.api_version())
-
-#获取主机组
+from pyzabbix import ZabbixAPI
+z=ZabbixAPI("http://10.10.0.50/zabbix")
+z.login('wangsh','wodehao123')
+print(z.api_version())
+import time
+# 获取主机组
 # for hg in z.hostgroup.get(output="extend"):
 #     print(hg)
-#获取主机
+# 获取主机
 # sum=0
 # for h in z.host.get(output="extend"):
 #     if h["hostid"] != "10084" and h["hostid"]!="10217" and h["hostid"]!="10214" and h["hostid"]!="10206":
@@ -75,23 +75,23 @@ except urllib.error.URLError as e:
 #             print('id为{0}的{1}的监控项有{2},id为{3}'.format(h["hostid"],h["name"],it["name"],it["itemid"]))
 #             sum+=1
 # print(sum)
-    #print(h['hostid'],h['name'])
-    # if '10.10.1.9' in h["name"]:
-    #     print(h["hostid"])
-
-#获取item
+#     print(h['hostid'],h['name'])
+#     if '10.10.1.9' in h["name"]:
+#         print(h["hostid"])
+#
+# 获取item
 # for it in z.item.get(output="extend",hostids="10110"):
 #     print(it["itemid"],it["name"])
-#获取前15次数值
-# for a in z.history.get(output="extend",history=0,itemids="23944",limit=15):
-#     print(a)
-
-import paramiko
-key_file='/root/.ssh/id_rsa'
-key=paramiko.RSAKey.from_private_key_file(key_file)
-ssh=paramiko.SSHClient()
-ssh.load_system_host_keys()
-ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-ssh.connect("10.10.3.56",22,'root',pkey=key)
-stdit,stdou,_=ssh.exec_command("df")
-print(stdou.read())
+# 获取前15次数值
+for a in z.history.get(output="extend",history=0,itemids="23944",limit=1):
+    print(a)
+    print(time.strftime("%m-%d %H:%M",time.localtime(int(a["clock"]))))
+# import paramiko
+# key_file='/root/.ssh/id_rsa'
+# key=paramiko.RSAKey.from_private_key_file(key_file)
+# ssh=paramiko.SSHClient()
+# ssh.load_system_host_keys()
+# ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+# ssh.connect("10.10.3.56",22,'root',pkey=key)
+# stdit,stdou,_=ssh.exec_command("df")
+# print(stdou.read())

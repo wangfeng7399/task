@@ -63,7 +63,12 @@ def proprty(request,codeid,hostid):
             list.append(history["value"])
             xAxis.append(time.strftime("%m-%d %H:%M",time.localtime(int(history["clock"]))))
         cpudict["xAxis"]=xAxis
-        cpudict[cpu.name]=list
+        if cpu.name=="1分钟的load值":
+            cpudict["cpuone"]=list
+        elif cpu.name=="5分钟的load值":
+            cpudict["cpufive"]=list
+        elif cpu.name=="15分钟的load值":
+            cpudict["cpufivten"]=list
     cpudict["title"]=cputitle
     all["cpu"]=cpudict
         #data["cpu"]["itemid"]=list
@@ -76,7 +81,10 @@ def proprty(request,codeid,hostid):
         for history in z.history.get(output="extend",history=3,itemids=disk.num,limit=1,):
             list.append(history["value"])
             xAxis.append(time.strftime("%m-%d %H:%M",time.localtime(int(history["clock"]))))
-        diskdict[disk.name]=list
+        if disk.name=="根的已用总容量":
+            diskdict["userdisk"]=list
+        elif disk.name=="根的总容量":
+            diskdict["disk"]=list
         diskdict["xAxis"]=xAxis
     diskdict["title"]=disktitle
     all["disk"]=diskdict
@@ -89,34 +97,36 @@ def proprty(request,codeid,hostid):
             list.append(history["value"])
             xAxis.append(time.strftime("%m-%d %H:%M",time.localtime(int(history["clock"]))))
         networkdict["xAxis"]=xAxis
-        networkdict[network.name]=list
+        if network.name=="em1 进入的流量":
+            networkdict["networkin"]=list
+        if network.name=="em1 流出的流量":
+            networkdict["networkout"]=list
     networkdict["title"]=networktitle
     all["network"]=networkdict
-    nginxdict={}
-    for nginx in nginxall:
-        list=[]
-        xAxis=[]
-        nginxtitle.append(nginx.name)
-        for history in z.history.get(output="extend",history=3,itemids=nginx.num,limit=10,):
-            list.append(history["value"])
-            xAxis.append(time.strftime("%m-%d %H:%M",time.localtime(int(history["clock"]))))
-        nginxdict["xAxis"]=xAxis
-        nginxdict[nginx.name]=list
-    nginxdict["title"]=nginxtitle
-    all["nginx"]=nginxdict
-    dbdict={}
-    for db in dball:
-        list=[]
-        xAxis=[]
-        dbtitle.append(db.name)
-        for history in z.history.get(output="extend",history=3,itemids=db.num,limit=10,):
-            list.append(history["value"])
-            xAxis.append(time.strftime("%m-%d %H:%M",time.localtime(int(history["clock"]))))
-        dbdict["xAxis"]=xAxis
-
-        dbdict[db.name]=list
-    dbdict["title"]=dbtitle
-    all["db"]=dbdict
+    # nginxdict={}
+    # for nginx in nginxall:
+    #     list=[]
+    #     xAxis=[]
+    #     nginxtitle.append(nginx.name)
+    #     for history in z.history.get(output="extend",history=3,itemids=nginx.num,limit=10,):
+    #         list.append(history["value"])
+    #         xAxis.append(time.strftime("%m-%d %H:%M",time.localtime(int(history["clock"]))))
+    #     nginxdict["xAxis"]=xAxis
+    #     nginxdict[nginx.name]=list
+    # nginxdict["title"]=nginxtitle
+    # all["nginx"]=nginxdict
+    # dbdict={}
+    # for db in dball:
+    #     list=[]
+    #     xAxis=[]
+    #     dbtitle.append(db.name)
+    #     for history in z.history.get(output="extend",history=3,itemids=db.num,limit=10,):
+    #         list.append(history["value"])
+    #         xAxis.append(time.strftime("%m-%d %H:%M",time.localtime(int(history["clock"]))))
+    #     dbdict["xAxis"]=xAxis
+    #     dbdict[db.name]=list
+    # dbdict["title"]=dbtitle
+    # all["db"]=dbdict
     processdict={}
     for process in processall:
         list=[]
@@ -126,8 +136,12 @@ def proprty(request,codeid,hostid):
             list.append(history["value"])
             xAxis.append(time.strftime("%m-%d %H:%M",time.localtime(int(history["clock"]))))
         processdict["xAxis"]=xAxis
-
-        processdict[process.name]=list
+        if process.name=="最大进程数":
+            processdict["max"]=list
+        elif process.name=="正在运行的进程数":
+            processdict["new"]=list
+        elif process.name=="当前进程数":
+            processdict["all"]=list
     processdict["title"]=processtitle
     all["process"]=processdict
     memdict={}
@@ -139,10 +153,12 @@ def proprty(request,codeid,hostid):
             list.append(history["value"])
             xAxis.append(time.strftime("%m-%d %H:%M",time.localtime(int(history["clock"]))))
         memdict["xAxis"]=xAxis
-        memdict[mem.name]=list
+        if mem.name=="可用内存":
+            memdict["mem"]=list
     memdict["title"]=memtitle
     all["mem"]=memdict
     data.append(all)
+    print(data)
     # print(time.strftime("%m-%d %H:%M:%S",time.localtime(1470034355)))
     # #获取前15次数值
     # for a in z.history.get(output="extend",history=0,itemids="23944",limit=15):
