@@ -59,10 +59,10 @@ except urllib.error.URLError as e:
     print(e.reason)
 '''
 
-from pyzabbix import ZabbixAPI
-z=ZabbixAPI("http://10.10.0.50/zabbix")
-z.login('wangsh','wodehao123')
-print(z.api_version())
+# from pyzabbix import ZabbixAPI
+# z=ZabbixAPI("http://10.10.0.50/zabbix")
+# z.login('wangsh','wodehao123')
+# print(z.api_version())
 import time
 # 获取主机组
 # for hg in z.hostgroup.get(output="extend"):
@@ -82,10 +82,10 @@ import time
 # 获取item
 # for it in z.item.get(output="extend",hostids="10110"):
 #     print(it["itemid"],it["name"])
-# 获取前15次数值
-for a in z.history.get(output="extend",history=0,itemids="23944",sortfield="clock",sortorder="DESC",limit=10):
-    print(a)
-    print(time.strftime("%m-%d %H:%M",time.localtime(int(a["clock"]))))
+# # 获取前15次数值
+# for a in z.history.get(output="extend",history=0,itemids="23944",sortfield="clock",sortorder="DESC",limit=10):
+#     print(a)
+#     print(time.strftime("%m-%d %H:%M",time.localtime(int(a["clock"]))))
 # import paramiko
 # key_file='/root/.ssh/id_rsa'
 # key=paramiko.RSAKey.from_private_key_file(key_file)

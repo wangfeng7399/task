@@ -96,7 +96,7 @@ def proprty(request,codeid,hostid):
         xAxis=[]
         networktitle.append(network.name)
         for history in z.history.get(output="extend",history=3,itemids=network.num,sortfield="clock",sortorder="DESC",limit=10,):
-            list.append(history["value"])
+            list.append(int(history["value"])/1024//1024)
             xAxis.append(time.strftime("%m-%d %H:%M",time.localtime(int(history["clock"]))))
         networkdict["xAxis"]=xAxis
         if network.name=="em1 进入的流量":
