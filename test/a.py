@@ -83,7 +83,7 @@ import time
 # for it in z.item.get(output="extend",hostids="10110"):
 #     print(it["itemid"],it["name"])
 # 获取前15次数值
-for a in z.history.get(output="extend",history=0,itemids="23944",limit=1):
+for a in z.history.get(output="extend",history=0,itemids="23944",sortfield="clock",sortorder="DESC",limit=10):
     print(a)
     print(time.strftime("%m-%d %H:%M",time.localtime(int(a["clock"]))))
 # import paramiko

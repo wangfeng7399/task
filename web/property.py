@@ -59,7 +59,7 @@ def proprty(request,codeid,hostid):
         list=[]
         xAxis=[]
         cputitle.append(cpu.name)
-        for history in z.history.get(output="extend",history=0,itemids=cpu.num,limit=10,):
+        for history in z.history.get(output="extend",history=0,itemids=cpu.num,sortfield="clock",sortorder="DESC",limit=10,):
             list.append(history["value"])
             xAxis.append(time.strftime("%m-%d %H:%M",time.localtime(int(history["clock"]))))
         cpudict["xAxis"]=xAxis
@@ -74,26 +74,28 @@ def proprty(request,codeid,hostid):
         #data["cpu"]["itemid"]=list
     #print(data)
     diskdict={}
+    userlist=[]
     for disk in diskall:
         list=[]
         xAxis=[]
         disktitle.append(disk.name)
-        for history in z.history.get(output="extend",history=3,itemids=disk.num,limit=1,):
-            list.append(history["value"])
+        for history in z.history.get(output="extend",history=3,itemids=disk.num,sortfield="clock",sortorder="DESC",limit=1,):
+            if disk.name=="根的已用总容量":
+                diskdict["userdisk"]=int(history["value"])/1024/1024//1024
+            elif disk.name=="根的总容量":
+                diskdict["disk"]=int(history["value"])/1024/1024//1024
             xAxis.append(time.strftime("%m-%d %H:%M",time.localtime(int(history["clock"]))))
-        if disk.name=="根的已用总容量":
-            diskdict["userdisk"]=list
-        elif disk.name=="根的总容量":
-            diskdict["disk"]=list
         diskdict["xAxis"]=xAxis
+    diskdict["freedisk"]=diskdict["disk"]-diskdict["userdisk"]
     diskdict["title"]=disktitle
+    diskdict["data"]=[{"name":"根的已用总容量","value":diskdict["userdisk"]},{"name":"根的剩余容量","value":diskdict["freedisk"]}]
     all["disk"]=diskdict
     networkdict={}
     for network in networkall:
         list=[]
         xAxis=[]
         networktitle.append(network.name)
-        for history in z.history.get(output="extend",history=3,itemids=network.num,limit=10,):
+        for history in z.history.get(output="extend",history=3,itemids=network.num,sortfield="clock",sortorder="DESC",limit=10,):
             list.append(history["value"])
             xAxis.append(time.strftime("%m-%d %H:%M",time.localtime(int(history["clock"]))))
         networkdict["xAxis"]=xAxis
@@ -108,7 +110,7 @@ def proprty(request,codeid,hostid):
     #     list=[]
     #     xAxis=[]
     #     nginxtitle.append(nginx.name)
-    #     for history in z.history.get(output="extend",history=3,itemids=nginx.num,limit=10,):
+    #     for history in z.history.get(output="extend",history=3,itemids=nginx.num,sortfield="clock",sortorder="DESC",limit=10,):
     #         list.append(history["value"])
     #         xAxis.append(time.strftime("%m-%d %H:%M",time.localtime(int(history["clock"]))))
     #     nginxdict["xAxis"]=xAxis
@@ -120,7 +122,7 @@ def proprty(request,codeid,hostid):
     #     list=[]
     #     xAxis=[]
     #     dbtitle.append(db.name)
-    #     for history in z.history.get(output="extend",history=3,itemids=db.num,limit=10,):
+    #     for history in z.history.get(output="extend",history=3,itemids=db.num,sortfield="clock",sortorder="DESC",limit=10,):
     #         list.append(history["value"])
     #         xAxis.append(time.strftime("%m-%d %H:%M",time.localtime(int(history["clock"]))))
     #     dbdict["xAxis"]=xAxis
@@ -132,7 +134,7 @@ def proprty(request,codeid,hostid):
         list=[]
         xAxis=[]
         processtitle.append(process.name)
-        for history in z.history.get(output="extend",history=3,itemids=process.num,limit=10,):
+        for history in z.history.get(output="extend",history=3,itemids=process.num,sortfield="clock",sortorder="DESC",limit=10,):
             list.append(history["value"])
             xAxis.append(time.strftime("%m-%d %H:%M",time.localtime(int(history["clock"]))))
         processdict["xAxis"]=xAxis
@@ -149,14 +151,14 @@ def proprty(request,codeid,hostid):
         list=[]
         xAxis=[]
         memtitle.append(mem.name)
-        for history in z.history.get(output="extend",history=3,itemids=mem.num,limit=10,):
-            list.append(history["value"])
+        for history in z.history.get(output="extend",history=3,itemids=mem.num,sortfield="clock",sortorder="DESC",limit=10,):
+            list.append(int(history["value"])/1024/1024//1024)
             xAxis.append(time.strftime("%m-%d %H:%M",time.localtime(int(history["clock"]))))
         memdict["xAxis"]=xAxis
         if mem.name=="可用内存":
-            memdict["mem"]=list
+            memdict["freemem"]=list
     memdict["title"]=memtitle
-    all["mem"]=memdict
+    all["member"]=memdict
     data.append(all)
     print(data)
     # print(time.strftime("%m-%d %H:%M:%S",time.localtime(1470034355)))
