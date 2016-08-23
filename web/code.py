@@ -94,7 +94,7 @@ class update:
             command="tail -50 {0}/logs/catalina.out > /tmp/{1}.log".format(self.code.team.path,id)
             self.ssh.exec_command(command)
             time.sleep(5)
-            self.sftp.get('/tmp/{0}.log'.format(id),'/usr/local/task/logs/{0}.log'.format(id))
+            self.sftp.get('/tmp/{0}.log'.format(id),'/tmp/{0}.log'.format(id))
     #取目录
     def tree(self):
         #self.sftp.put('/data/pycharm/django/task/web/tree.py','/opt/tree.py')
@@ -316,7 +316,7 @@ def log(request,id,hostid):
     code=Code.objects.get(id=id)
     u=update(host.hostip,host.port,host.user,'','',code,'')
     u.log(id)
-    with open("/usr/local/task/logs/{0}.log".format(id),'r+') as f:
+    with open("/tmp/{0}.log".format(id),'r+') as f:
         data=f.read()
     #return render(request,'log.html',{'data':data})
     return HttpResponse(data)
