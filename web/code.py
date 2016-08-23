@@ -92,8 +92,8 @@ class update:
             self.sftp.get('/tmp/{0}.log'.format(id),'/usr/local/task/logs/{0}.log'.format(id))
         elif self.code.team.language_id.language=="tomcat":
             command="tail -50 {0}/logs/catalina.out > /tmp/{1}.log".format(self.code.team.path,id)
-            print(command)
             self.ssh.exec_command(command)
+            time.sleep(5)
             self.sftp.get('/tmp/{0}.log'.format(id),'/usr/local/task/logs/{0}.log'.format(id))
     #取目录
     def tree(self):
