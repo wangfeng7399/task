@@ -41,11 +41,19 @@ class update:
 
     #重启JAVA服务
     def reload(self):
-        if self.code.team.language_id.language=="java":
+        if self.code.team.language_id.language=="resin":
             stopcommand="/etc/init.d/resin stop"
             self.ssh.exec_command(stopcommand)
             time.sleep(5)
             startcommand='/etc/init.d/resin start'
+            print(startcommand)
+            self.ssh.exec_command(startcommand)
+        elif self.code.team.language_id.language=="tomcat":
+            stopcommand="kill -9 `ps -ef|grep {0}|grep -v grep`".format(self.path)
+            print(stopcommand)
+            self.ssh.exec_command(stopcommand)
+            time.sleep(3)
+            startcommand="bash {0}/bin/startup.sh".format(self.path)
             print(startcommand)
             self.ssh.exec_command(startcommand)
         status=Status.objects.get(status="灰度发布中")
@@ -78,9 +86,15 @@ class update:
         self.ssh.exec_command(command)
     #取日志
     def log(self,id):
-        command='tail -50 /data/logs/resin/s0/jvm-app-0.log >/tmp/{0}.log'.format(id)
-        self.ssh.exec_command(command)
-        self.sftp.get('/tmp/{0}.log'.format(id),'/usr/local/task/logs/{0}.log'.format(id))
+        if self.code.team.language_id.language=="resin":
+            command='tail -50 /data/logs/resin/s0/jvm-app-0.log >/tmp/{0}.log'.format(id)
+            self.ssh.exec_command(command)
+            self.sftp.get('/tmp/{0}.log'.format(id),'/usr/local/task/logs/{0}.log'.format(id))
+        elif self.code.team.language_id.language=="tomcat":
+            command="tail -50 {0}/logs/catalina.out > /tmp/{1}.log".format(self.code.team.path,id)
+            print(command)
+            self.ssh.exec_command(command)
+            self.sftp.get('/tmp/{0}.log'.format(id),'/usr/local/task/logs/{0}.log'.format(id))
     #取目录
     def tree(self):
         #self.sftp.put('/data/pycharm/django/task/web/tree.py','/opt/tree.py')
@@ -299,7 +313,8 @@ def detail(request,id):
 @login_required(login_url=reverse_lazy('login'))
 def log(request,id,hostid):
     host=Host.objects.get(id=hostid)
-    u=update(host.hostip,host.port,host.user,'','','','')
+    code=Code.objects.get(id=id)
+    u=update(host.hostip,host.port,host.user,'','',code,'')
     u.log(id)
     with open("/usr/local/task/logs/{0}.log".format(id),'r+') as f:
         data=f.read()
