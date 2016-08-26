@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse,reverse_lazy
 from django.contrib.auth.models import User
 from .models import Team,Status,Code,Relat,Host,HostStatus
-from .base import dc,send_mail
+from .base import send_mail
 import paramiko,random
 import time
 import os,shutil
@@ -404,7 +404,9 @@ def upyun(request):
 
     return render(request,'upyunupload.html',{"teamall":teamall})
 
+
+@login_required(login_url=reverse_lazy('login'))
 def downloadxls(request):
-    with open('/data/pycharm/django/task/templates/readme.xls') as f:
+    with open('/data/pycharm/django/task/templates/readme.xls',) as f:
         c=f.read()
     return HttpResponse(c)
