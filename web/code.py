@@ -89,11 +89,12 @@ class update:
         if self.code.team.language_id.language=="resin":
             command='tail -50 /data/logs/resin/s0/jvm-app-0.log >/tmp/{0}.log'.format(id)
             self.ssh.exec_command(command)
+            time.sleep(3)
             self.sftp.get('/tmp/{0}.log'.format(id),'/tmp/{0}.log'.format(id))
         elif self.code.team.language_id.language=="tomcat":
             command="tail -50 {0}/logs/catalina.out > /tmp/{1}.log".format(self.code.team.path,id)
             self.ssh.exec_command(command)
-            time.sleep(5)
+            time.sleep(3)
             self.sftp.get('/tmp/{0}.log'.format(id),'/tmp/{0}.log'.format(id))
     #取目录
     def tree(self):
