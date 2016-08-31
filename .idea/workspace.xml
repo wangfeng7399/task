@@ -573,12 +573,12 @@
         <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.4773519">
-              <caret line="241" column="213" selection-start-line="241" selection-start-column="213" selection-end-line="241" selection-end-column="213" />
+              <caret line="241" column="175" selection-start-line="241" selection-start-column="175" selection-end-line="241" selection-end-column="175" />
               <folding>
                 <element signature="e#5700#5721#0#HTML" expanded="true" />
                 <element signature="e#8381#8414#0#HTML" expanded="true" />
                 <element signature="e#8858#8891#0#HTML" expanded="true" />
-                <element signature="e#15488#15557#0#HTML" expanded="true" />
+                <element signature="e#15486#15555#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1691,12 +1691,12 @@
     <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4773519">
-          <caret line="241" column="213" selection-start-line="241" selection-start-column="213" selection-end-line="241" selection-end-column="213" />
+          <caret line="241" column="175" selection-start-line="241" selection-start-column="175" selection-end-line="241" selection-end-column="175" />
           <folding>
             <element signature="e#5700#5721#0#HTML" expanded="true" />
             <element signature="e#8381#8414#0#HTML" expanded="true" />
             <element signature="e#8858#8891#0#HTML" expanded="true" />
-            <element signature="e#15488#15557#0#HTML" expanded="true" />
+            <element signature="e#15486#15555#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
