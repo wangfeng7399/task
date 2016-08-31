@@ -536,7 +536,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/.~lock.test.xls#" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/codedetail.html" afterPath="$PROJECT_DIR$/templates/codedetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/code.py" afterPath="$PROJECT_DIR$/web/code.py" />
     </list>
     <ignored path="task.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -573,13 +572,13 @@
       <file leaf-file-name="codedetail.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6088561">
-              <caret line="266" column="62" selection-start-line="266" selection-start-column="62" selection-end-line="266" selection-end-column="62" />
+            <state vertical-scroll-proportion="0.6918819">
+              <caret line="272" column="52" selection-start-line="272" selection-start-column="52" selection-end-line="272" selection-end-column="52" />
               <folding>
                 <element signature="e#5700#5721#0#HTML" expanded="true" />
                 <element signature="e#8381#8414#0#HTML" expanded="true" />
                 <element signature="e#8858#8891#0#HTML" expanded="true" />
-                <element signature="e#15086#15155#0#HTML" expanded="true" />
+                <element signature="e#15025#15094#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1715,13 +1714,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6088561">
-          <caret line="266" column="62" selection-start-line="266" selection-start-column="62" selection-end-line="266" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.6918819">
+          <caret line="272" column="52" selection-start-line="272" selection-start-column="52" selection-end-line="272" selection-end-column="52" />
           <folding>
             <element signature="e#5700#5721#0#HTML" expanded="true" />
             <element signature="e#8381#8414#0#HTML" expanded="true" />
             <element signature="e#8858#8891#0#HTML" expanded="true" />
-            <element signature="e#15086#15155#0#HTML" expanded="true" />
+            <element signature="e#15025#15094#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
