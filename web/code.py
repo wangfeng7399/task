@@ -309,7 +309,7 @@ def retype(request):
 def detail(request,id):
     code=Code.objects.get(id=id)
     retail=Relat.objects.filter(code=code)
-    return render(request,'codedetail.html',{"code":code,"retail":retail})
+    return render(request,'codedetail.html',{"code":code,"retail":retail,"name":code.team.groupname})
 
 @login_required(login_url=reverse_lazy('login'))
 def log(request,id,hostid):

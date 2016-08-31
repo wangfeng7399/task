@@ -536,6 +536,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/.~lock.test.xls#" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/codedetail.html" afterPath="$PROJECT_DIR$/templates/codedetail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/code.py" afterPath="$PROJECT_DIR$/web/code.py" />
     </list>
     <ignored path="task.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -572,13 +573,13 @@
       <file leaf-file-name="codedetail.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4773519">
-              <caret line="241" column="175" selection-start-line="241" selection-start-column="175" selection-end-line="241" selection-end-column="175" />
+            <state vertical-scroll-proportion="0.6088561">
+              <caret line="266" column="62" selection-start-line="266" selection-start-column="62" selection-end-line="266" selection-end-column="62" />
               <folding>
                 <element signature="e#5700#5721#0#HTML" expanded="true" />
                 <element signature="e#8381#8414#0#HTML" expanded="true" />
                 <element signature="e#8858#8891#0#HTML" expanded="true" />
-                <element signature="e#15486#15555#0#HTML" expanded="true" />
+                <element signature="e#15086#15155#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -599,11 +600,21 @@
       <file leaf-file-name="code.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/code.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="97" column="78" selection-start-line="97" selection-start-column="78" selection-end-line="97" selection-end-column="78" />
+            <state vertical-scroll-proportion="-5.875">
+              <caret line="311" column="99" selection-start-line="311" selection-start-column="99" selection-end-line="311" selection-end-column="99" />
               <folding>
                 <element signature="e#39#96#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -789,6 +800,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="task" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="task" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="task" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1616,14 +1641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2040133">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/db.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1668,6 +1685,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/property.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1680,8 +1705,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/code.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="97" column="78" selection-start-line="97" selection-start-column="78" selection-end-line="97" selection-end-column="78" />
+        <state vertical-scroll-proportion="-5.875">
+          <caret line="311" column="99" selection-start-line="311" selection-start-column="99" selection-end-line="311" selection-end-column="99" />
           <folding>
             <element signature="e#39#96#0" expanded="true" />
           </folding>
@@ -1690,13 +1715,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4773519">
-          <caret line="241" column="175" selection-start-line="241" selection-start-column="175" selection-end-line="241" selection-end-column="175" />
+        <state vertical-scroll-proportion="0.6088561">
+          <caret line="266" column="62" selection-start-line="266" selection-start-column="62" selection-end-line="266" selection-end-column="62" />
           <folding>
             <element signature="e#5700#5721#0#HTML" expanded="true" />
             <element signature="e#8381#8414#0#HTML" expanded="true" />
             <element signature="e#8858#8891#0#HTML" expanded="true" />
-            <element signature="e#15486#15555#0#HTML" expanded="true" />
+            <element signature="e#15086#15155#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
