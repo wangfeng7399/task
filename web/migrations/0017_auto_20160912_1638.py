@@ -15,6 +15,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='slow',
             name='insql',
-            field=models.CharField(max_length=20000),
+            field=models.TextField(max_length=20000),
         ),
     ]

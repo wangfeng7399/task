@@ -29,10 +29,10 @@ for i in os.listdir(t):
                     sqlall=re.findall("((select|insert|SELECT).*?\\\\G)",line,re.S)
                     if sqlall:
                         sql=list(set(sqlall))[0][0].strip()
-                    insertsql='insert into web_slow(date,datab,maxtime,avgtime,mintime,insql,count) VALUES("{0}","{1}","{2}","{3}","{4}","{5}",{6})'.\
-                                format(insettime,database,times[8],times[9],times[7],sql,times[0])
+                    insertsql='insert into web_slow(date,datab,maxtime,avgtime,mintime,insql,count) VALUES("{0}","{1}",{2},{3},{4},"{5}",{6})'.\
+                                format(insettime,database,times[8][0],times[9][0],times[7][0],sql,times[0])
                     print(insertsql)
-                    mysqlinsert(insertsql)
+                    #mysqlinsert(insertsql)
 
     except Exception:
         with open("{0}/{1}".format(t,i),"r+",encoding="gbk")as f:
@@ -45,7 +45,7 @@ for i in os.listdir(t):
                     sqlall=re.findall("((select|insert|SELECT).*?\\\\G)",line,re.S)
                     if sqlall:
                         sql=list(set(sqlall))[0][0].strip()
-                    insertsql='insert into web_slow(date,datab,maxtime,avgtime,mintime,insql,count) VALUES("{0}","{1}","{2}","{3}","{4}","{5}",{6})'.\
-                                format(insettime,database,times[8],times[9],times[7],sql,times[0])
+                    insertsql='insert into web_slow(date,datab,maxtime,avgtime,mintime,insql,count) VALUES("{0}","{1}",{2},{3},{4},"{5}",{6})'.\
+                                format(insettime,database,times[8][0],times[9][0],times[7][0],sql,times[0])
                     print(insertsql)
-                    mysqlinsert(insertsql)
+                    #mysqlinsert(insertsql)

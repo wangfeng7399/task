@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7da08bf5-c66f-48f1-895a-d8b81e5f6c44" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/sqlall.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/log.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/mysql.py" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/javascripts/graphDemo.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/javascripts/html5.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/bootstrap/css/bootstrap.css" afterPath="" />
@@ -539,11 +536,8 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/master/master.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/.~lock.test.xls#" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/readme.xls" afterPath="$PROJECT_DIR$/templates/readme.xls" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/urls.py" afterPath="$PROJECT_DIR$/task/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/codedetail.html" afterPath="$PROJECT_DIR$/templates/codedetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/master/index.html" afterPath="$PROJECT_DIR$/templates/master/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/log.py" afterPath="$PROJECT_DIR$/test/log.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/migrations/0017_auto_20160912_1638.py" afterPath="$PROJECT_DIR$/web/migrations/0017_auto_20160912_1638.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/models.py" afterPath="$PROJECT_DIR$/web/models.py" />
     </list>
     <ignored path="task.iws" />
@@ -562,7 +556,7 @@
     <SUITE FILE_PATH="coverage/task$base.coverage" NAME="base Coverage Results" MODIFIED="1464083451527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
     <SUITE FILE_PATH="coverage/task$Test__templates_createhost_html.coverage" NAME="Test: templates.createhost.html Coverage Results" MODIFIED="1463635216912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/task$a.coverage" NAME="a Coverage Results" MODIFIED="1470989257732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/task$log.coverage" NAME="log Coverage Results" MODIFIED="1473668082177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/task$log.coverage" NAME="log Coverage Results" MODIFIED="1473737075197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/task$property.coverage" NAME="property Coverage Results" MODIFIED="1470637379274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
     <SUITE FILE_PATH="coverage/task$manage.coverage" NAME="manage Coverage Results" MODIFIED="1463539178113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/task$tets.coverage" NAME="tets Coverage Results" MODIFIED="1470295366576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
@@ -609,6 +603,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="90" column="31" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="sqlall.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/sqlall.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -625,21 +629,31 @@
       <file leaf-file-name="log.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/log.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.37959865">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.3614035">
+              <caret line="39" column="51" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
               <folding>
                 <element signature="e#34#44#0" expanded="true" />
-                <marker date="1473736083175" expanded="true" signature="1022:1104" placeholder="insert into web_slow... " />
-                <marker date="1473736083175" expanded="true" signature="1022:1128" placeholder="insert into web_slow... " />
-                <marker date="1473736083175" expanded="true" signature="1022:1132" placeholder="insert into web_slow... " />
-                <marker date="1473736083175" expanded="true" signature="1022:1138" placeholder="insert into web_slow... " />
-                <marker date="1473736083175" expanded="true" signature="1022:1240" placeholder="insert into web_slow... " />
-                <marker date="1473736083175" expanded="true" signature="1022:2166" placeholder="insert into web_slow... " />
-                <marker date="1473736083175" expanded="true" signature="1868:1974" placeholder="insert into web_slow... " />
-                <marker date="1473736083175" expanded="true" signature="1868:1978" placeholder="insert into web_slow... " />
-                <marker date="1473736083175" expanded="true" signature="1868:1984" placeholder="insert into web_slow... " />
-                <marker date="1473736083175" expanded="true" signature="1868:2166" placeholder="insert into web_slow... " />
+                <marker date="1473737075193" expanded="true" signature="1022:1104" placeholder="insert into web_slow... " />
+                <marker date="1473737075193" expanded="true" signature="1022:1122" placeholder="insert into web_slow... " />
+                <marker date="1473737075193" expanded="true" signature="1022:1126" placeholder="insert into web_slow... " />
+                <marker date="1473737075193" expanded="true" signature="1022:1132" placeholder="insert into web_slow... " />
+                <marker date="1473737075193" expanded="true" signature="1022:1243" placeholder="insert into web_slow... " />
+                <marker date="1473737075193" expanded="true" signature="1022:2174" placeholder="insert into web_slow... " />
+                <marker date="1473737075193" expanded="true" signature="1872:1972" placeholder="insert into web_slow... " />
+                <marker date="1473737075193" expanded="true" signature="1872:1976" placeholder="insert into web_slow... " />
+                <marker date="1473737075193" expanded="true" signature="1872:1982" placeholder="insert into web_slow... " />
+                <marker date="1473737075193" expanded="true" signature="1872:2174" placeholder="insert into web_slow... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="0017_auto_20160912_1638.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/migrations/0017_auto_20160912_1638.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="34" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -672,7 +686,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/createstatus.html" />
         <option value="$PROJECT_DIR$/templates/createlanguage.html" />
         <option value="$PROJECT_DIR$/templates/layout_ajax.html" />
         <option value="$PROJECT_DIR$/static/css/default.css" />
@@ -719,9 +732,10 @@
         <option value="$PROJECT_DIR$/templates/master/index.html" />
         <option value="$PROJECT_DIR$/test/2016-09-06/2016-09-05_10.10.2.6_23306_slow.txt" />
         <option value="$PROJECT_DIR$/templates/codedetail.html" />
-        <option value="$PROJECT_DIR$/web/models.py" />
         <option value="$PROJECT_DIR$/web/mysql.py" />
         <option value="$PROJECT_DIR$/templates/sqlall.html" />
+        <option value="$PROJECT_DIR$/web/migrations/0017_auto_20160912_1638.py" />
+        <option value="$PROJECT_DIR$/web/models.py" />
         <option value="$PROJECT_DIR$/test/log.py" />
       </list>
     </option>
@@ -829,39 +843,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="task" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2016-09-12" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1311,7 +1297,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25078124" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3974359" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5016026" sideWeight="0.490625" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5016026" sideWeight="0.490625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5016026" sideWeight="0.509375" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1691,14 +1677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82441473">
-          <caret line="91" column="43" selection-start-line="91" selection-start-column="43" selection-end-line="91" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/code.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.8561873">
@@ -1754,22 +1732,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/migrations/0017_auto_20160912_1638.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="34" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="31" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/log.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.37959865">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.3614035">
+          <caret line="39" column="51" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
           <folding>
             <element signature="e#34#44#0" expanded="true" />
-            <marker date="1473736083175" expanded="true" signature="1022:1104" placeholder="insert into web_slow... " />
-            <marker date="1473736083175" expanded="true" signature="1022:1128" placeholder="insert into web_slow... " />
-            <marker date="1473736083175" expanded="true" signature="1022:1132" placeholder="insert into web_slow... " />
-            <marker date="1473736083175" expanded="true" signature="1022:1138" placeholder="insert into web_slow... " />
-            <marker date="1473736083175" expanded="true" signature="1022:1240" placeholder="insert into web_slow... " />
-            <marker date="1473736083175" expanded="true" signature="1022:2166" placeholder="insert into web_slow... " />
-            <marker date="1473736083175" expanded="true" signature="1868:1974" placeholder="insert into web_slow... " />
-            <marker date="1473736083175" expanded="true" signature="1868:1978" placeholder="insert into web_slow... " />
-            <marker date="1473736083175" expanded="true" signature="1868:1984" placeholder="insert into web_slow... " />
-            <marker date="1473736083175" expanded="true" signature="1868:2166" placeholder="insert into web_slow... " />
+            <marker date="1473737075193" expanded="true" signature="1022:1104" placeholder="insert into web_slow... " />
+            <marker date="1473737075193" expanded="true" signature="1022:1122" placeholder="insert into web_slow... " />
+            <marker date="1473737075193" expanded="true" signature="1022:1126" placeholder="insert into web_slow... " />
+            <marker date="1473737075193" expanded="true" signature="1022:1132" placeholder="insert into web_slow... " />
+            <marker date="1473737075193" expanded="true" signature="1022:1243" placeholder="insert into web_slow... " />
+            <marker date="1473737075193" expanded="true" signature="1022:2174" placeholder="insert into web_slow... " />
+            <marker date="1473737075193" expanded="true" signature="1872:1972" placeholder="insert into web_slow... " />
+            <marker date="1473737075193" expanded="true" signature="1872:1976" placeholder="insert into web_slow... " />
+            <marker date="1473737075193" expanded="true" signature="1872:1982" placeholder="insert into web_slow... " />
+            <marker date="1473737075193" expanded="true" signature="1872:2174" placeholder="insert into web_slow... " />
           </folding>
         </state>
       </provider>
