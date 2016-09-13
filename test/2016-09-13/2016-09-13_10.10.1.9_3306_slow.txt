@@ -1,0 +1,1862 @@
+
+# 950ms user time, 30ms system time, 27.96M rss, 214.18M vsz
+# Current date: Tue Sep 13 05:00:07 2016
+# Hostname: 26
+# Files: /tmp/2016-09-13_10.10.1.9_3306_slow.log
+# Overall: 2.07k total, 45 unique, 0 QPS, 0x concurrency _________________
+# Attribute          total     min     max     avg     95%  stddev  median
+# ============     ======= ======= ======= ======= ======= ======= =======
+# Exec time         25362s      1s    137s     12s     39s     13s      7s
+# Lock time          348ms       0     6ms   167us   224us   404us   113us
+# Rows sent        755.96k       0 725.74k  373.24    7.70  15.76k       0
+# Rows examine      91.29M       0   1.48M  45.07k 150.54k 118.84k  15.20k
+# Query size       448.06k      27   1.04k  221.22  329.68  144.57  246.02
+# Bytes            448.06k      27   1.04k  221.22  329.68  144.57  246.02
+# hostname          52.66k      26      26      26      26       0      26
+
+# Profile
+# Rank Query ID           Response time   Calls R/Call  V/M   Item
+# ==== ================== =============== ===== ======= ===== ============
+#    1 0x608767CA84F75EA3 9862.9434 38.9%   748 13.1858 13.88 UPDATE push_notification_?
+#    2 0xB0D0F50D79F99C56 9580.8434 37.8%   768 12.4751 13.54 SELECT record_creditcard
+#    3 0x6B96DC0EC6E9FA34 2630.6741 10.4%   216 12.1790 15.97 SELECT record_creditcard
+#    4 0x504A8DA2E43C8065 1133.5924  4.5%   106 10.6943 12.92 SELECT push_notification_?
+#    5 0xDDE4ECA18FA2DBA6  500.9030  2.0%    26 19.2655 17.86 SELECT p_organizationcredit
+#    6 0x8033D59654398028  373.9966  1.5%    33 11.3332  9.97 INSERT push_notification_?
+#    7 0xB7F1AD9CDF1B7A1F  228.0315  0.9%    18 12.6684 16.13 SELECT p_bankinfo p_organizationcredit
+#    8 0xF7EC75ABC910F86B  118.3816  0.5%    12  9.8651 13.83 INSERT bbs_search_history_?
+#    9 0xEC335A0DE6CD3270  107.4903  0.4%    14  7.6779  5.09 INSERT record_loan
+#   10 0xD10E3513DC2AF72C  107.4197  0.4%     3 35.8066  7.18 SELECT SYS_ACCEPT_IP
+#   11 0xFE8A8AC827A533BF   84.8910  0.3%     8 10.6114 30.69 SELECT QRTZ_SCHEDULER_STATE
+#   12 0xBC0D73255B986812   71.9033  0.3%     5 14.3807  2.32 SELECT record_loan
+#   13 0x6174EAE9DDD22B81   66.7295  0.3%     6 11.1216  3.29 SELECT lc_xyb_temp
+#   14 0x2A26ECCB550BF773   64.8466  0.3%     5 12.9693  9.35 SELECT QRTZ_TRIGGERS
+#   15 0xF628B645098E201F   60.0338  0.2%     7  8.5763  2.92 SELECT record_creditcard
+#   16 0xC70E57BD5A904BD1   56.8501  0.2%     5 11.3700 12.15 SELECT push_notification_?
+#   17 0xE27E089E29AD2FB7   56.8453  0.2%     9  6.3161  2.56 SELECT record_jimu_loan
+#   18 0xBFC5B0A4D7296282   55.3274  0.2%    11  5.0298  7.80 UPDATE record_jimu_loan
+#   19 0xF87A30B38FB67CD3   26.8331  0.1%     4  6.7083  1.88 UPDATE QRTZ_SCHEDULER_STATE
+#   20 0x140CA8548191FD47   22.4112  0.1%     1 22.4112  0.00 SELECT cms_site_menu_content
+#   21 0x6FDE6D9F3810680E   21.6563  0.1%    20  1.0828  0.01 SELECT record_creditcard record_promotion
+#   22 0x2FA88567FD32BAB6   20.2598  0.1%     4  5.0649  6.92 INSERT record_jimu_loan
+#   23 0x3D0698630068524D   16.2178  0.1%     2  8.1089  3.48 UPDATE record_creditcard
+#   24 0xEB0AB9D1A13BE50B   15.3358  0.1%     1 15.3358  0.00 SELECT cms_site_menu_content cms_site_menu
+#   25 0x7E8EF115EE70FD8D   14.1441  0.1%     2  7.0720  6.49 SELECT QRTZ_TRIGGERS
+#   26 0x86E74EA54BDF172C   10.6620  0.0%     2  5.3310  3.22 SELECT SYS_FILE
+#   27 0x040B6D66E46611D6    7.6310  0.0%     6  1.2718  0.08 SELECT lc_tag
+#   28 0xCEEB08B8606767CF    5.5365  0.0%     2  2.7683  1.92 SELECT record_promotion
+#   29 0xB183309995C88AC8    5.3625  0.0%     5  1.0725  0.00 SELECT record_creditcard record_promotion
+#   30 0x4A3AD8357FAD5B00    4.7530  0.0%     4  1.1883  0.03 SELECT lc_article lc_tag lc_channel
+#   31 0xAA13BE0E0599F06D    4.3441  0.0%     4  1.0860  0.00 SELECT record_creditcard record_promotion
+#   32 0x72D9015902EF45ED    4.0545  0.0%     1  4.0545  0.00 SELECT SYS_PAUR
+#   33 0x67A347A2812914DF    2.6238  0.0%     2  1.3119  0.11 SELECT record_creditcard
+#   34 0x2542F2DC1913352E    2.0996  0.0%     2  1.0498  0.00 SELECT record_creditcard record_promotion
+#   35 0xA4C306FAF9663F21    2.0871  0.0%     1  2.0871  0.00 SELECT T_User_ApplyLeader T_User t_area t_user_safe
+#   36 0xB2E6598C498D9E09    2.0604  0.0%     2  1.0302  0.00 SELECT lc_xyb_temp
+#   37 0xE11DFCB9B14800D6    1.7980  0.0%     1  1.7980  0.00 SELECT push_notification_?
+#   38 0x3BEE1E7FF561C3F3    1.6184  0.0%     1  1.6184  0.00 SELECT record_creditcard record_promotion
+#   39 0x4F002AEAD6DCE469    1.4381  0.0%     1  1.4381  0.00 UPDATE record_jimu_loan
+#   40 0xB9B2FA3CFE2F0C16    1.3977  0.0%     1  1.3977  0.00 SELECT record_creditcard record_promotion
+#   41 0x48E93019F9C41520    1.3802  0.0%     1  1.3802  0.00 SELECT record_creditcard
+#   42 0x309289EABBDED695    1.3647  0.0%     1  1.3647  0.00 SELECT record_loan record_promotion
+#   43 0xA146061CB7917BA8    1.3344  0.0%     1  1.3344  0.00 SELECT record_creditcard record_promotion
+#   44 0xC09042D973C71BCD    1.1757  0.0%     1  1.1757  0.00 UPDATE lc_article
+#   45 0xDB859E65A288A66B    1.1568  0.0%     1  1.1568  0.00 SELECT record_loan record_promotion
+
+# Query 1: 0 QPS, 0x concurrency, ID 0x608767CA84F75EA3 at byte 553790 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 13.88
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         36     748
+# Exec time     38   9863s      1s    137s     13s     40s     14s      8s
+# Lock time     15    53ms    31us   172us    70us   119us    26us    60us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0      21       0       1    0.03       0    0.16       0
+# Query size    17  79.93k     105     113  109.43  107.34    0.71  107.34
+# Bytes         17  79.93k     105     113  109.43  107.34    0.71  107.34
+# hostname      36  18.99k      26      26      26      26       0      26
+# String:
+# Databases    message
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  #####################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `message` LIKE 'push_notification_7'\G
+#    SHOW CREATE TABLE `message`.`push_notification_7`\G
+update push_notification_7 set is_read=1 
+		 WHERE user_id=1011824753
+			
+				and id in
+				(
+					'p829'
+				)\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select  is_read=1 from push_notification_7 where  user_id=1011824753
+			
+				and id in
+				(
+					'p829'
+				)\G
+
+# Query 2: 0 QPS, 0x concurrency, ID 0xB0D0F50D79F99C56 at byte 518481 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 13.54
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         37     768
+# Exec time     37   9581s      1s     97s     12s     39s     13s      8s
+# Lock time     40   140ms    59us     4ms   182us   224us   185us   167us
+# Rows sent      0     139       0       1    0.18    0.99    0.38       0
+# Rows examine  35  32.52M     225  49.16k  43.36k  49.01k  13.83k  49.01k
+# Query size    46 209.44k     272     294  279.25  284.79    5.13  271.23
+# Bytes         46 209.44k     272     294  279.25  284.79    5.13  271.23
+# hostname      37  19.50k      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  ############################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_creditcard'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_creditcard`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from record_creditcard where 
+    	status=0
+    	 
+    			and (user_id='3822715' or device_id='040B0D4D-D026-4551-A1FD-336E94D7260C')
+    		 
+    	 and create_time>='2016-08-30 00:00:00' and create_time<='2016-09-09 00:00:00'
+    	order by create_time desc limit 0,1\G
+
+# Query 3: 0 QPS, 0x concurrency, ID 0x6B96DC0EC6E9FA34 at byte 529438 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 15.97
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         10     216
+# Exec time     10   2631s      1s     99s     12s     37s     14s      7s
+# Lock time     10    38ms    57us     3ms   174us   224us   194us   159us
+# Rows sent      0      42       0       1    0.19    0.99    0.39       0
+# Rows examine  10   9.13M     322  49.16k  43.31k  49.01k  13.59k  49.01k
+# Query size    11  53.73k     251     268  254.71  258.32    4.63  246.02
+# Bytes         11  53.73k     251     268  254.71  258.32    4.63  246.02
+# hostname      10   5.48k      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  #######################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_creditcard'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_creditcard`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from record_creditcard where 
+    	status=0
+    	 
+    			and device_id='9009C57E-6AAE-4ECE-B039-D8A8FC62A511'
+    		 
+    	 and create_time>='2016-08-30 00:00:00' and create_time<='2016-09-09 00:00:00'
+    	order by create_time desc limit 0,1\G
+
+# Query 4: 0 QPS, 0x concurrency, ID 0x504A8DA2E43C8065 at byte 532743 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 12.92
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          5     106
+# Exec time      4   1134s      1s     61s     11s     35s     12s      6s
+# Lock time      3    13ms    55us   252us   125us   194us    47us   113us
+# Rows sent      0     693       0      10    6.54    9.83    4.45    9.83
+# Rows examine  18  16.55M 148.48k 170.88k 159.88k 165.97k   6.99k 150.54k
+# Query size     3  16.71k     159     163  161.47  158.58       0  158.58
+# Bytes          3  16.71k     159     163  161.47  158.58       0  158.58
+# hostname       5   2.69k      26      26      26      26       0      26
+# String:
+# Databases    message
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  ###############################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `message` LIKE 'push_notification_9'\G
+#    SHOW CREATE TABLE `message`.`push_notification_9`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select id as mid,type,title,content,time,bid,is_read as `read` from push_notification_9 
+		 WHERE user_id=4025669 and deleted=0 
+		order by time desc limit 0,10\G
+
+# Query 5: 0 QPS, 0x concurrency, ID 0xDDE4ECA18FA2DBA6 at byte 578218 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 17.86
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          1      26
+# Exec time      1    501s      1s     76s     19s     45s     19s     15s
+# Lock time      0     3ms    58us   165us   126us   159us    28us   128us
+# Rows sent      0      26       1       1       1       1       0       1
+# Rows examine   0      26       1       1       1       1       0       1
+# Query size     1   4.57k     180     180     180     180       0     180
+# Bytes          1   4.57k     180     180     180     180       0     180
+# hostname       1     676      26      26      26      26       0      26
+# String:
+# Databases    partner (15/57%), partner_ne... (11/42%)
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  #################################
+#  10s+  ################################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `partner_new` LIKE 'p_organizationcredit'\G
+#    SHOW CREATE TABLE `partner_new`.`p_organizationcredit`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select poc_orgCRId,poc_applyUrl,credit.po_orgId as orgId  from  p_organizationcredit credit ,p_organization org    where org.po_orgId = credit.po_orgId and credit.poc_orgCId='2030'\G
+
+# Query 6: 0 QPS, 0x concurrency, ID 0x8033D59654398028 at byte 648722 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 9.97
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          1      33
+# Exec time      1    374s      1s     48s     11s     26s     11s      7s
+# Lock time      1     5ms    93us   218us   159us   204us    37us   159us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     2  11.29k     310     370  350.24  363.48   15.99  346.17
+# Bytes          2  11.29k     310     370  350.24  363.48   15.99  346.17
+# hostname       1     858      26      26      26      26       0      26
+# String:
+# Databases    message
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  #########################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `message` LIKE 'push_notification_5'\G
+#    SHOW CREATE TABLE `message`.`push_notification_5`\G
+insert into push_notification_5 (user_id,type,jpush_id,ios_jpush_id,title,content,is_read,bid,deleted,device    ,os,version,udid,channel,token,city_id,buid,anony,valid_code)    values(3924072,1,0,0,'回帖提醒','kashen02591874在主题帖'大鸡三平台20蛋的什么价位？'回复了您',0,'2921700',0,null    ,null,null,null,null,null,0,null,0,0)\G
+
+# Query 7: 0 QPS, 0x concurrency, ID 0xB7F1AD9CDF1B7A1F at byte 637022 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 16.13
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      18
+# Exec time      0    228s      2s     51s     13s     49s     14s      8s
+# Lock time      1     6ms   193us   404us   306us   366us    66us   316us
+# Rows sent      0     178       8      10    9.89    9.83    0.49    9.83
+# Rows examine   0   5.80k      68     503  329.83  487.09  109.26  329.68
+# Query size     4  18.78k   1.04k   1.04k   1.04k   1.04k       0   1.04k
+# Bytes          4  18.78k   1.04k   1.04k   1.04k   1.04k       0   1.04k
+# hostname       0     468      26      26      26      26       0      26
+# String:
+# Databases    partner
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  ########################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `partner` LIKE 'p_bankinfo'\G
+#    SHOW CREATE TABLE `partner`.`p_bankinfo`\G
+#    SHOW TABLE STATUS FROM `partner` LIKE 'p_organizationcredit'\G
+#    SHOW CREATE TABLE `partner`.`p_organizationcredit`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select credit.poc_orgCId,credit.po_orgId,credit.po_pageId,credit.poc_orgType,credit.poc_orgCMId,credit.poc_orgCMName,   credit.poc_orgCRId,credit.poc_orgCRName,credit.po_partnerType,credit.poc_showName,credit.poc_applyNum,credit.poc_applyUrl,   credit.poc_bankId,credit.poc_sort,credit.poc_gradeId,substring_index(credit.poc_specialinfo,'<br/>',1) as poc_specialinfo,   credit.poc_imagePath,credit.poc_imageName,credit.poc_orderFlag,credit.poc_status,credit.poc_offlineTime,credit.poc_offlineRemark,   credit.poc_creatTime,credit.poc_modifyTime,org.po_orgName as orgName,org.po_partnerType as type ,org.po_orgShortName as orgShortName,   (select bankName from p_bankinfo bank where bank.ID=credit.poc_bankId) as bankName,   (select bankENSignName from p_bankinfo bank where bank.ID=credit.poc_bankId) as bankENSignName   from  p_organizationcredit credit ,p_organization org     where org.po_orgId = credit.po_orgId and credit.po_orgId='15'                        and         poc_status = '1'                   order by credit.poc_orderFlag                 limit 50,10\G
+
+# Query 8: 0 QPS, 0x concurrency, ID 0xF7EC75ABC910F86B at byte 241822 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 13.83
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      12
+# Exec time      0    118s      1s     42s     10s     23s     12s      4s
+# Lock time      0     1ms    51us   176us   117us   159us    33us   119us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     1   4.99k     373     475  426.08  441.81   26.23  420.77
+# Bytes          1   4.99k     373     475  426.08  441.81   26.23  420.77
+# hostname       0     312      26      26      26      26       0      26
+# String:
+# Databases    licai
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  ################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `licai` LIKE 'bbs_search_history_201609'\G
+#    SHOW CREATE TABLE `licai`.`bbs_search_history_201609`\G
+insert into `bbs_search_history_201609`(`buid`, `referer`, `os`, `search_key`, `search_key_expression`, `channel`, `orderby`, `cityid`, `version`, `token`, `user_id`, `udid`, `device`) values('Mxl3UXpM44FiRuSj5lZukg==', 1, '1', '微粒贷', 'title:微粒贷 intro:微粒贷', '360', '', '330600', '5.3.1', '99c8e8e1a7fb4fb98dfaddd8841ada3b', '4214458', 'a-866479020802475-84:73:03:03:02:1a-1958737a9bae5fb2', 'x600')\G
+
+# Query 9: 0 QPS, 0x concurrency, ID 0xEC335A0DE6CD3270 at byte 280633 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 5.09
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      14
+# Exec time      0    107s      1s     19s      8s     19s      6s      5s
+# Lock time      0     1ms    59us   129us    93us   119us    20us    93us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0   3.24k     227     251  236.71  246.02    9.07  234.30
+# Bytes          0   3.24k     227     251  236.71  246.02    9.07  234.30
+# hostname       0     364      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  ###################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_loan'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_loan`\G
+insert into record_loan (
+		user_id,
+		loan_id,
+		device_id,
+		city_id,
+		loan_time,
+		version,
+		os
+		)
+		values (
+		3043475,
+		10,
+		'6835A963-0FC4-41A4-8AB7-32C129C52F49',
+		110100,
+		'2016-09-12 16:47:48.985',
+		'5.3.1',
+		0
+		)\G
+
+# Query 10: 0 QPS, 0x concurrency, ID 0xD10E3513DC2AF72C at byte 340826 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 7.18
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       3
+# Exec time      0    107s     21s     59s     36s     57s     16s     26s
+# Lock time      0   253us    50us   107us    84us   103us    23us    93us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0      81      27      27      27      27       0      27
+# Bytes          0      81      27      27      27      27       0      27
+# hostname       0      78      26      26      26      26       0      26
+# String:
+# Databases    crowdfunding
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s
+#  10s+  ################################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 'SYS_ACCEPT_IP'\G
+#    SHOW CREATE TABLE `crowdfunding`.`SYS_ACCEPT_IP`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select 1 from SYS_ACCEPT_IP\G
+
+# Query 11: 0 QPS, 0x concurrency, ID 0xFE8A8AC827A533BF at byte 641980 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 30.69
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       8
+# Exec time      0     85s      1s     59s     11s     57s     18s      4s
+# Lock time      0   849us    46us   126us   106us   125us    23us   113us
+# Rows sent      0       8       1       1       1       1       0       1
+# Rows examine   0       8       1       1       1       1       0       1
+# Query size     0     520      65      65      65      65       0      65
+# Bytes          0     520      65      65      65      65       0      65
+# hostname       0     208      26      26      26      26       0      26
+# String:
+# Databases    crowdfunding
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  #####################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 'QRTZ_SCHEDULER_STATE'\G
+#    SHOW CREATE TABLE `crowdfunding`.`QRTZ_SCHEDULER_STATE`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM QRTZ_SCHEDULER_STATE WHERE SCHED_NAME = 'scheduler'\G
+
+# Query 12: 0 QPS, 0x concurrency, ID 0xBC0D73255B986812 at byte 327183 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 2.32
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       5
+# Exec time      0     72s      5s     22s     14s     21s      6s     15s
+# Lock time      0   667us    50us   256us   133us   247us    64us   119us
+# Rows sent      0       5       1       1       1       1       0       1
+# Rows examine   0       5       1       1       1       1       0       1
+# Query size     0     355      71      71      71      71       0      71
+# Bytes          0     355      71      71      71      71       0      71
+# hostname       0     130      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################
+#  10s+  ################################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_loan'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_loan`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select  id,user_id,loan_id,device_id,city_id from record_loan   limit 1\G
+
+# Query 13: 0 QPS, 0x concurrency, ID 0x6174EAE9DDD22B81 at byte 469906 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 3.29
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       6
+# Exec time      0     67s      3s     23s     11s     23s      6s     12s
+# Lock time      0   394us    35us   140us    65us   138us    36us    71us
+# Rows sent      0      18       3       3       3       3       0       3
+# Rows examine   0      18       3       3       3       3       0       3
+# Query size     0     192      32      32      32      32       0      32
+# Bytes          0     192      32      32      32      32       0      32
+# hostname       0     156      26      26      26      26       0      26
+# String:
+# Databases    licai
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################
+#  10s+  ################################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `licai` LIKE 'lc_xyb_temp'\G
+#    SHOW CREATE TABLE `licai`.`lc_xyb_temp`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select name,url from lc_xyb_temp\G
+
+# Query 14: 0 QPS, 0x concurrency, ID 0x2A26ECCB550BF773 at byte 534491 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 9.35
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       5
+# Exec time      0     65s      1s     33s     13s     32s     11s      7s
+# Lock time      0   749us    90us   194us   149us   185us    43us   176us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0   1.49k     305     305     305     305       0     305
+# Bytes          0   1.49k     305     305     305     305       0     305
+# hostname       0     130      26      26      26      26       0      26
+# String:
+# Databases    crowdfunding
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  ##########################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 'QRTZ_TRIGGERS'\G
+#    SHOW CREATE TABLE `crowdfunding`.`QRTZ_TRIGGERS`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT TRIGGER_NAME, TRIGGER_GROUP, NEXT_FIRE_TIME, PRIORITY FROM QRTZ_TRIGGERS WHERE SCHED_NAME = 'scheduler' AND TRIGGER_STATE = 'WAITING' AND NEXT_FIRE_TIME <= 1473670204366 AND (MISFIRE_INSTR = -1 OR (MISFIRE_INSTR != -1 AND NEXT_FIRE_TIME >= 1473670114367)) ORDER BY NEXT_FIRE_TIME ASC, PRIORITY DESC\G
+
+# Query 15: 0 QPS, 0x concurrency, ID 0xF628B645098E201F at byte 555242 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 2.92
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       7
+# Exec time      0     60s      2s     17s      9s     16s      5s      6s
+# Lock time      0   740us    61us   151us   105us   144us    28us   108us
+# Rows sent      0       7       1       1       1       1       0       1
+# Rows examine   0       7       1       1       1       1       0       1
+# Query size     0     350      50      50      50      50       0      50
+# Bytes          0     350      50      50      50      50       0      50
+# hostname       0     182      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  ################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_creditcard'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_creditcard`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from record_creditcard where id='2078151'\G
+
+# Query 16: 0 QPS, 0x concurrency, ID 0xC70E57BD5A904BD1 at byte 683594 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 12.15
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       5
+# Exec time      0     57s      3s     34s     11s     33s     12s      3s
+# Lock time      0   361us    44us   127us    72us   125us    30us    52us
+# Rows sent      0       5       1       1       1       1       0       1
+# Rows examine   0       5       1       1       1       1       0       1
+# Query size     0     365      73      73      73      73       0      73
+# Bytes          0     365      73      73      73      73       0      73
+# hostname       0     130      26      26      26      26       0      26
+# String:
+# Databases    message
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  ##########################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `message` LIKE 'push_notification_1'\G
+#    SHOW CREATE TABLE `message`.`push_notification_1`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select  id,user_id,type,jpush_id,title from push_notification_1   limit 1\G
+
+# Query 17: 0 QPS, 0x concurrency, ID 0xE27E089E29AD2FB7 at byte 432557 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 2.56
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       9
+# Exec time      0     57s      1s     13s      6s     13s      4s      7s
+# Lock time      0     2ms   128us   260us   192us   247us    34us   194us
+# Rows sent      0       7       0       1    0.78    0.99    0.41    0.99
+# Rows examine   0 123.09k     175  42.24k  13.68k  40.32k  18.37k  174.84
+# Query size     0   3.32k     378     378     378     378       0     378
+# Bytes          0   3.32k     378     378     378     378       0     378
+# hostname       0     234      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  ##################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_jimu_loan'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_jimu_loan`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select id, user_id userId, mobile, name, id_no idNo,
+		urgent_name urgentName, urgent_phone urgentPhone,
+		urgent_relation
+		urgentRelation, city_id cityId, detail_address detailAddress,
+		loan_time loanTime, agree_amount agreeAmount, cycle, status,
+		agree_time agreeTime, auth_code authCode, source
+		from record_jimu_loan
+		where mobile='13462244885' ORDER BY id desc limit 1\G
+
+# Query 18: 0 QPS, 0x concurrency, ID 0xBFC5B0A4D7296282 at byte 677355 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 7.80
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      11
+# Exec time      0     55s      1s     22s      5s     12s      6s      2s
+# Lock time      0     1ms    53us   126us   101us   125us    24us   113us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0      11       1       1       1       1       0       1
+# Query size     0   1.81k     165     171  168.82  166.51       3  166.51
+# Bytes          0   1.81k     165     171  168.82  166.51       3  166.51
+# hostname       0     286      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  ##############
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_jimu_loan'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_jimu_loan`\G
+update record_jimu_loan
+		 SET loan_time='2016-09-12 10:37:21',
+			
+			
+				apply_amount=10000,
+			
+			
+				agree_amount=0,
+			
+			
+			
+				status=100 
+		 WHERE id = 43075\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select  loan_time='2016-09-12 10:37:21',
+			
+			
+				apply_amount=10000,
+			
+			
+				agree_amount=0,
+			
+			
+			
+				status=100 from record_jimu_loan where  id = 43075\G
+
+# Query 19: 0 QPS, 0x concurrency, ID 0xF87A30B38FB67CD3 at byte 314291 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 1.88
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       4
+# Exec time      0     27s      1s     10s      7s     10s      4s     10s
+# Lock time      0   226us    46us    65us    56us    63us     7us    61us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       4       1       1       1       1       0       1
+# Query size     0     612     153     153     153     153       0     153
+# Bytes          0     612     153     153     153     153       0     153
+# hostname       0     104      26      26      26      26       0      26
+# String:
+# Databases    crowdfunding
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  ################################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 'QRTZ_SCHEDULER_STATE'\G
+#    SHOW CREATE TABLE `crowdfunding`.`QRTZ_SCHEDULER_STATE`\G
+UPDATE QRTZ_SCHEDULER_STATE SET LAST_CHECKIN_TIME = 1473670126411 WHERE SCHED_NAME = 'scheduler' AND INSTANCE_NAME = 'localhost.localdomain1468220334637'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select  LAST_CHECKIN_TIME = 1473670126411 from QRTZ_SCHEDULER_STATE where  SCHED_NAME = 'scheduler' AND INSTANCE_NAME = 'localhost.localdomain1468220334637'\G
+
+# Query 20: 0 QPS, 0x concurrency, ID 0x140CA8548191FD47 at byte 365251 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0     22s     22s     22s     22s     22s       0     22s
+# Lock time      0   102us   102us   102us   102us   102us       0   102us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0       1       1       1       1       1       0       1
+# Query size     0     384     384     384     384     384       0     384
+# Bytes          0     384     384     384     384     384       0     384
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    crowdfunding
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s
+#  10s+  ################################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 'cms_site_menu_content'\G
+#    SHOW CREATE TABLE `crowdfunding`.`cms_site_menu_content`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT  
+		site_menu_content_id,site_menu_id,content_title,content_text,content_fileIds,content_isurl,content_url,content_min_title,content_tag,content_summary,content_author,content_sort,content_create_date,content_update_date,content_templet,content_notice_object,content_notice_type,content_if_publish
+	 
+		FROM cms_site_menu_content
+		WHERE
+		site_menu_content_id = 10000031221390\G
+
+# Query 21: 0 QPS, 0x concurrency, ID 0x6FDE6D9F3810680E at byte 39006 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.01
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      20
+# Exec time      0     22s      1s      1s      1s      1s    74ms      1s
+# Lock time     14    49ms   191us     6ms     2ms     6ms     2ms   690us
+# Rows sent      0     162       1      11    8.10   10.84    2.91    8.91
+# Rows examine  18  16.65M 852.54k 853.06k 852.66k 830.38k       0 830.38k
+# Query size     4  18.00k     921     922  921.60  918.49       0  918.49
+# Bytes          4  18.00k     921     922  921.60  918.49       0  918.49
+# hostname       0     520      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_creditcard'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_creditcard`\G
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_promotion'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_promotion`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT    t.bank_id   as bankId ,count(1)  as bankCount     from record_creditcard t    left JOIN (select DISTINCT  idfa    from record_promotion where source =1) tt      on t.device_id = tt.idfa        where                            DATE_FORMAT(t.create_time,'%Y-%m-%d')='2016-09-09'                                and         t.channel_id  = '6'                                           and         t.bank_id  in     (              '22'          ,              '23'          ,              '24'          ,              '26'          ,              '29'          ,              '30'          ,              '31'          ,              '33'          ,              '53747'          ,              '53750'          ,              '65'          ,              '81'          ,              '9'          )                                          group by   DATE_FORMAT(t.create_time,'%Y-%m-%d') , t.channel_id ,t.bank_id\G
+
+# Query 22: 0 QPS, 0x concurrency, ID 0x2FA88567FD32BAB6 at byte 361765 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 6.92
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       4
+# Exec time      0     20s      1s     15s      5s     15s      6s      9s
+# Lock time      0   454us    75us   164us   113us   159us    32us   139us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0   1.43k     361     370  366.50  363.48    4.50  363.48
+# Bytes          0   1.43k     361     370  366.50  363.48    4.50  363.48
+# hostname       0     104      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  #####################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_jimu_loan'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_jimu_loan`\G
+insert into
+		record_jimu_loan(user_id, mobile, name, id_no, urgent_name,
+		urgent_phone,
+		urgent_relation, city_id, detail_address, loan_time,
+		cycle, status,
+		source)
+		values(1013163927, '13709172287', '张恬', '610302198801220521',
+		'马振', '18609170737',
+		1, 610300,
+		'渭滨区高新三路左岸新城22号楼', '2016-09-12 16:48:18.87', null,
+		null, 3)\G
+
+# Query 23: 0 QPS, 0x concurrency, ID 0x3D0698630068524D at byte 393888 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 3.48
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0     16s      4s     12s      8s     12s      5s      8s
+# Lock time      0   189us    86us   103us    94us   103us    12us    94us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       2       1       1       1       1       0       1
+# Query size     0     117      58      59   58.50      59    0.71   58.50
+# Bytes          0     117      58      59   58.50      59    0.71   58.50
+# hostname       0      52      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  ################################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_creditcard'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_creditcard`\G
+update record_creditcard set status='0' where id='2102558'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select  status='0' from record_creditcard where  id='2102558'\G
+
+# Query 24: 0 QPS, 0x concurrency, ID 0xEB0AB9D1A13BE50B at byte 416688 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0     15s     15s     15s     15s     15s       0     15s
+# Lock time      0   157us   157us   157us   157us   157us       0   157us
+# Rows sent      0     375     375     375     375     375       0     375
+# Rows examine   0     777     777     777     777     777       0     777
+# Query size     0     541     541     541     541     541       0     541
+# Bytes          0     541     541     541     541     541       0     541
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    crowdfunding
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s
+#  10s+  ################################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 'cms_site_menu_content'\G
+#    SHOW CREATE TABLE `crowdfunding`.`cms_site_menu_content`\G
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 'cms_site_menu'\G
+#    SHOW CREATE TABLE `crowdfunding`.`cms_site_menu`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT  
+		site_menu_content_id,site_menu_id,content_title,content_text,content_fileIds,content_isurl,content_url,content_min_title,content_tag,content_summary,content_author,content_sort,content_create_date,content_update_date,content_templet,content_notice_object,content_notice_type,content_if_publish
+	 
+		FROM cms_site_menu_content   
+		WHERE 1=1  
+		 
+		AND site_menu_id =(SELECT site_menu_id FROM cms_site_menu WHERE menu_path='HYZX') and content_if_publish=1
+		 
+		 
+		order by ifNull(content_sort,9999) asc,content_create_date  desc\G
+
+# Query 25: 0 QPS, 0x concurrency, ID 0x7E8EF115EE70FD8D at byte 552716 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 6.49
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0     14s      2s     12s      7s     12s      7s      7s
+# Lock time      0   287us   107us   180us   143us   180us    51us   143us
+# Rows sent      0       2       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0     340     170     170     170     170       0     170
+# Bytes          0     340     170     170     170     170       0     170
+# hostname       0      52      26      26      26      26       0      26
+# String:
+# Databases    crowdfunding
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  ################################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 'QRTZ_TRIGGERS'\G
+#    SHOW CREATE TABLE `crowdfunding`.`QRTZ_TRIGGERS`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT COUNT(TRIGGER_NAME) FROM QRTZ_TRIGGERS WHERE SCHED_NAME = 'scheduler' AND NOT (MISFIRE_INSTR = -1) AND NEXT_FIRE_TIME < 1473670143157 AND TRIGGER_STATE = 'WAITING'\G
+
+# Query 26: 0 QPS, 0x concurrency, ID 0x86E74EA54BDF172C at byte 455333 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 3.22
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0     11s      2s      8s      5s      8s      4s      5s
+# Lock time      0   150us    68us    82us    75us    82us     9us    75us
+# Rows sent      0       2       1       1       1       1       0       1
+# Rows examine   0       2       1       1       1       1       0       1
+# Query size     0     414     207     207     207     207       0     207
+# Bytes          0     414     207     207     207     207       0     207
+# hostname       0      52      26      26      26      26       0      26
+# String:
+# Databases    crowdfunding
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 'SYS_FILE'\G
+#    SHOW CREATE TABLE `crowdfunding`.`SYS_FILE`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT  
+		fileId,typeId,fileName,filePath,createtime,ext,fileType,note,creatorId,creator,totalBytes,delFlag
+	 
+		FROM SYS_FILE s
+		WHERE
+		s.fileId in
+		 (  
+                        10000031221388
+        )\G
+
+# Query 27: 0 QPS, 0x concurrency, ID 0x040B6D66E46611D6 at byte 45745 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.08
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       6
+# Exec time      0      8s      1s      2s      1s      2s   321ms      1s
+# Lock time      0   260us    28us    55us    43us    54us     8us    46us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0     222      37      37      37      37       0      37
+# Bytes          0     222      37      37      37      37       0      37
+# hostname       0     156      26      26      26      26       0      26
+# String:
+# Databases    licai
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `licai` LIKE 'lc_tag'\G
+#    SHOW CREATE TABLE `licai`.`lc_tag`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from `lc_tag` where `id` = 0\G
+
+# Query 28: 0 QPS, 0x concurrency, ID 0xCEEB08B8606767CF at byte 648372 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 1.92
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0      6s      1s      4s      3s      4s      2s      3s
+# Lock time      0   277us   109us   168us   138us   168us    41us   138us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0 122.54k  61.27k  61.27k  61.27k  61.27k       0  61.27k
+# Query size     0     450     225     225     225     225       0     225
+# Bytes          0     450     225     225     225     225       0     225
+# hostname       0      52      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_promotion'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_promotion`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select id,idfa,mac,source,version,report_time as reportTime,callback_url as callbackUrl,activity_time as activityTime,callback_time as callbackTime  from record_promotion 
+		 WHERE  idfa='8FEE310F-01F8-4939-B9E0-50E349C3CD5A'\G
+
+# Query 29: 0 QPS, 0x concurrency, ID 0xB183309995C88AC8 at byte 24392 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       5
+# Exec time      0      5s      1s      1s      1s      1s    51ms      1s
+# Lock time      0     2ms   285us   333us   319us   332us    19us   316us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   4   4.17M 853.34k 857.32k 854.86k 830.38k       0 830.38k
+# Query size     0   4.47k     915     915     915     915       0     915
+# Bytes          0   4.47k     915     915     915     915       0     915
+# hostname       0     130      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_creditcard'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_creditcard`\G
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_promotion'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_promotion`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select temp.createTime ,  temp.channelId , count(1) as  approveCardCount ,count(distinct  temp.user_id) as userCount      from    (SELECT   DATE_FORMAT(t.create_time,'%Y-%m-%d') as createTime ,    CASE 1 WHEN tt.idfa is null  THEN  t.channel_id  WHEN  tt.idfa is not  null  THEN 999999    END     as channelId ,         t.user_id ,t.id ,tt.idfa  from     record_creditcard t      left  JOIN (select DISTINCT  idfa    from record_promotion where source =1) tt      on t.device_id = tt.idfa            where                    DATE_FORMAT(t.create_time,'%Y-%m-%d') >= '2016-09-10'                  and          DATE_FORMAT(t.create_time,'%Y-%m-%d')  <= '2016-09-10'                                                              ) temp          where                                  temp.channelId = '55'                                         group by    temp.createTime ,temp.channelId    order by createTime   desc\G
+
+# Query 30: 0 QPS, 0x concurrency, ID 0x4A3AD8357FAD5B00 at byte 5392 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.03
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       4
+# Exec time      0      5s      1s      2s      1s      1s   177ms      1s
+# Lock time      0   666us   113us   244us   166us   236us    53us   210us
+# Rows sent      0       4       1       1       1       1       0       1
+# Rows examine   0       4       1       1       1       1       0       1
+# Query size     0     856     214     214     214     214       0     214
+# Bytes          0     856     214     214     214     214       0     214
+# hostname       0     104      26      26      26      26       0      26
+# String:
+# Databases    licai
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `licai` LIKE 'lc_article'\G
+#    SHOW CREATE TABLE `licai`.`lc_article`\G
+#    SHOW TABLE STATUS FROM `licai` LIKE 'lc_tag'\G
+#    SHOW CREATE TABLE `licai`.`lc_tag`\G
+#    SHOW TABLE STATUS FROM `licai` LIKE 'lc_channel'\G
+#    SHOW CREATE TABLE `licai`.`lc_channel`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select article.*,tag.name name,channel.e_name e_name from lc_article article left join lc_tag tag on article.tag_id = tag.id  left join lc_channel channel on article.channel_id = channel.id  where article.id = 1658\G
+
+# Query 31: 0 QPS, 0x concurrency, ID 0xAA13BE0E0599F06D at byte 35275 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       4
+# Exec time      0      4s      1s      1s      1s      1s    23ms      1s
+# Lock time      3    11ms   177us     6ms     3ms     5ms     2ms     4ms
+# Rows sent      0      44      11      11      11      11       0      11
+# Rows examine   3   3.34M 853.36k 856.97k 854.26k 830.38k       0 830.38k
+# Query size     0   3.52k     900     900     900     900       0     900
+# Bytes          0   3.52k     900     900     900     900       0     900
+# hostname       0     104      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_creditcard'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_creditcard`\G
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_promotion'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_promotion`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT    t.bank_id   as bankId ,count(1)  as bankCount     from record_creditcard t    left JOIN (select DISTINCT  idfa    from record_promotion where source =1) tt      on t.device_id = tt.idfa        where                    DATE_FORMAT(t.create_time,'%Y-%m-%d') >= '2016-09-11'                  and          DATE_FORMAT(t.create_time,'%Y-%m-%d')  <= '2016-09-11'                                                           and         t.bank_id  in     (              '22'          ,              '23'          ,              '24'          ,              '26'          ,              '29'          ,              '30'          ,              '31'          ,              '33'          ,              '53747'          ,              '53750'          ,              '65'          ,              '81'          ,              '9'          )                                          group by   t.bank_id\G
+
+# Query 32: 0 QPS, 0x concurrency, ID 0x72D9015902EF45ED at byte 431695 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      4s      4s      4s      4s      4s       0      4s
+# Lock time      0   117us   117us   117us   117us   117us       0   117us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0       2       2       2       2       2       0       2
+# Query size     0     113     113     113     113     113       0     113
+# Bytes          0     113     113     113     113     113       0     113
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    crowdfunding
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 'SYS_PAUR'\G
+#    SHOW CREATE TABLE `crowdfunding`.`SYS_PAUR`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT  
+		PAURID,PAURNAME,ALIASNAME,PAURVALUE,USERID
+	 
+		FROM SYS_PAUR   
+		WHERE USERID=0 AND ALIASNAME='skin'\G
+
+# Query 33: 0 QPS, 0x concurrency, ID 0x67A347A2812914DF at byte 0 _______
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.11
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0      3s      1s      2s      1s      2s   376ms      1s
+# Lock time      0       0       0       0       0       0       0       0
+# Rows sent     99 752.05k  26.31k 725.74k 376.02k 725.74k 494.58k 376.02k
+# Rows examine   0 752.05k  26.31k 725.74k 376.02k 725.74k 494.58k 376.02k
+# Query size     0     112      54      58      56      58    2.83      56
+# Bytes          0     112      54      58      56      58    2.83      56
+# hostname       0      52      26      26      26      26       0      26
+# String:
+# Databases    crowdfunding
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `1` LIKE 'record_creditcard'\G
+#    SHOW CREATE TABLE `1`.`record_creditcard`\G
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `record_creditcard`\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `record_creditcard`\G
+
+# Query 34: 0 QPS, 0x concurrency, ID 0x2542F2DC1913352E at byte 5720 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0      2s      1s      1s      1s      1s     9ms      1s
+# Lock time      2     9ms     5ms     5ms     5ms     5ms    77us     5ms
+# Rows sent      0     263     115     148  131.50     148   23.33  131.50
+# Rows examine   1   1.67M 853.56k 857.23k 855.40k 857.23k   2.59k 855.40k
+# Query size     0   1.72k     883     883     883     883       0     883
+# Bytes          0   1.72k     883     883     883     883       0     883
+# hostname       0      52      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_creditcard'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_creditcard`\G
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_promotion'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_promotion`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT    t.bank_id   as bankId ,count(1)  as bankCount     from record_creditcard t    left JOIN (select DISTINCT  idfa    from record_promotion where source =1) tt      on t.device_id = tt.idfa        where                            DATE_FORMAT(t.create_time,'%Y-%m-%d')='2016-09-09'                                                                    and         t.bank_id  in     (              '22'          ,              '23'          ,              '24'          ,              '26'          ,              '29'          ,              '30'          ,              '31'          ,              '33'          ,              '53747'          ,              '53750'          ,              '65'          ,              '81'          ,              '9'          )                                          group by   DATE_FORMAT(t.create_time,'%Y-%m-%d') , t.channel_id ,t.bank_id\G
+
+# Query 35: 0 QPS, 0x concurrency, ID 0xA4C306FAF9663F21 at byte 36284 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      2s      2s      2s      2s      2s       0      2s
+# Lock time      0   110us   110us   110us   110us   110us       0   110us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0      57      57      57      57      57       0      57
+# Query size     0     480     480     480     480     480       0     480
+# Bytes          0     480     480     480     480     480       0     480
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    crowdfunding
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 'T_User_ApplyLeader'\G
+#    SHOW CREATE TABLE `crowdfunding`.`T_User_ApplyLeader`\G
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 'T_User'\G
+#    SHOW CREATE TABLE `crowdfunding`.`T_User`\G
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 't_area'\G
+#    SHOW CREATE TABLE `crowdfunding`.`t_area`\G
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 't_user_safe'\G
+#    SHOW CREATE TABLE `crowdfunding`.`t_user_safe`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT al.*,tu.RealName,tu.MyPhoto,tu.ContactName,tu.Remarks as personalRemark,ta.area_name as provincesName,tar.area_name as cityName,tu.IsLeader,tu.IsAskPrice,tu.IsCompany,tus.Bind_Id_no as bindIdno
+		FROM T_User_ApplyLeader al
+		left join T_User tu on al.user_id=tu.user_id
+		left join t_area ta on tu.ProvincesID=ta.area_id
+		left join t_area tar on tu.CityID=tar.area_id
+		left join t_user_safe tus on tus.user_id=tu.user_id
+		WHERE al.user_id=14565781096895 and al.IsCheck=1\G
+
+# Query 36: 0 QPS, 0x concurrency, ID 0xB2E6598C498D9E09 at byte 30516 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0      2s      1s      1s      1s      1s    23ms      1s
+# Lock time      0   163us    48us   115us    81us   115us    47us    81us
+# Rows sent      0       6       3       3       3       3       0       3
+# Rows examine   0      12       6       6       6       6       0       6
+# Query size     0     126      63      63      63      63       0      63
+# Bytes          0     126      63      63      63      63       0      63
+# hostname       0      52      26      26      26      26       0      26
+# String:
+# Databases    licai
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `licai` LIKE 'lc_xyb_temp'\G
+#    SHOW CREATE TABLE `licai`.`lc_xyb_temp`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from lc_xyb_temp order by rate desc,term asc limit 0,3\G
+
+# Query 37: 0 QPS, 0x concurrency, ID 0xE11DFCB9B14800D6 at byte 202723 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      2s      2s      2s      2s      2s       0      2s
+# Lock time      0    89us    89us    89us    89us    89us       0    89us
+# Rows sent      0      10      10      10      10      10       0      10
+# Rows examine   0 155.96k 155.96k 155.96k 155.96k 155.96k       0 155.96k
+# Query size     0     225     225     225     225     225       0     225
+# Bytes          0     225     225     225     225     225       0     225
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    message
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `message` LIKE 'push_notification_5'\G
+#    SHOW CREATE TABLE `message`.`push_notification_5`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select id as mid,type,title,content,time,bid,is_read as `read` from push_notification_5 
+		 WHERE user_id=1000463770 and deleted=0 
+			
+			
+				and type in 
+				(
+					'1'
+				,
+					'2'
+				) 
+		order by time desc limit 0,10\G
+
+# Query 38: 0 QPS, 0x concurrency, ID 0x3BEE1E7FF561C3F3 at byte 4723 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      2s      2s      2s      2s      2s       0      2s
+# Lock time      0     2ms     2ms     2ms     2ms     2ms       0     2ms
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   1   1.24M   1.24M   1.24M   1.24M   1.24M       0   1.24M
+# Query size     0     201     201     201     201     201       0     201
+# Bytes          0     201     201     201     201     201       0     201
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_creditcard'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_creditcard`\G
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_promotion'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_promotion`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT count(DISTINCT t.user_id)  from record_creditcard t      left JOIN (select DISTINCT  idfa    from record_promotion where source =1) tt      on t.device_id = tt.idfa   WHERE 1=1 and  user_id <>-1\G
+
+# Query 39: 0 QPS, 0x concurrency, ID 0x4F002AEAD6DCE469 at byte 19900 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      1s      1s      1s      1s      1s       0      1s
+# Lock time      0   117us   117us   117us   117us   117us       0   117us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       1       1       1       1       1       0       1
+# Query size     0     127     127     127     127     127       0     127
+# Bytes          0     127     127     127     127     127       0     127
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_jimu_loan'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_jimu_loan`\G
+update record_jimu_loan
+		 SET agree_amount=8000,
+			
+			
+			
+			
+				agree_time='2016-09-12 09:58:50.097' 
+		 WHERE id = 42821\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select  agree_amount=8000,
+			
+			
+			
+			
+				agree_time='2016-09-12 09:58:50.097' from record_jimu_loan where  id = 42821\G
+
+# Query 40: 0 QPS, 0x concurrency, ID 0xB9B2FA3CFE2F0C16 at byte 3679 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      1s      1s      1s      1s      1s       0      1s
+# Lock time      0   174us   174us   174us   174us   174us       0   174us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   1   1.24M   1.24M   1.24M   1.24M   1.24M       0   1.24M
+# Query size     0     181     181     181     181     181       0     181
+# Bytes          0     181     181     181     181     181       0     181
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_creditcard'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_creditcard`\G
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_promotion'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_promotion`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT count(1)  from record_creditcard t left JOIN (select DISTINCT  idfa    from record_promotion where source =1) tt      on t.device_id = tt.idfa     WHERE 1=1 and  user_id <>-1\G
+
+# Query 41: 0 QPS, 0x concurrency, ID 0x48E93019F9C41520 at byte 53502 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      1s      1s      1s      1s      1s       0      1s
+# Lock time      0   335us   335us   335us   335us   335us       0   335us
+# Rows sent      0   1.93k   1.93k   1.93k   1.93k   1.93k       0   1.93k
+# Rows examine   1   1.48M   1.48M   1.48M   1.48M   1.48M       0   1.48M
+# Query size     0     838     838     838     838     838       0     838
+# Bytes          0     838     838     838     838     838       0     838
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_creditcard'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_creditcard`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select DISTINCT tt.card_id as cardId ,  DATE_FORMAT(tt.create_time,'%Y-%m-%d') as  dateTime  , tt.bank_id as  bankId ,bb.approveCount       from record_creditcard  tt  ,   (select   t.card_id  ,  count(1) as approveCount , DATE_FORMAT(t.create_time,'%Y-%m-%d') as  dateTime                  from record_creditcard  t     where            DATE_FORMAT(t.create_time,'%Y-%m-%d')  >= '2016-09-01'              and      DATE_FORMAT(t.create_time,'%Y-%m-%d')  <= '2016-09-12'                 group by t.card_id  ,dateTime) bb   where tt.card_id = bb.card_id    and  DATE_FORMAT(tt.create_time,'%Y-%m-%d') = bb.dateTime       and     DATE_FORMAT(tt.create_time,'%Y-%m-%d')  >= '2016-09-01'            and       DATE_FORMAT(tt.create_time,'%Y-%m-%d')  <= '2016-09-12'                 order by bb.dateTime desc ,tt.bank_id  desc , tt.card_id  desc\G
+
+# Query 42: 0 QPS, 0x concurrency, ID 0x309289EABBDED695 at byte 2231 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      1s      1s      1s      1s      1s       0      1s
+# Lock time      0   375us   375us   375us   375us   375us       0   375us
+# Rows sent      0      20      20      20      20      20       0      20
+# Rows examine   0 513.41k 513.41k 513.41k 513.41k 513.41k       0 513.41k
+# Query size     0     538     538     538     538     538       0     538
+# Bytes          0     538     538     538     538     538       0     538
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_loan'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_loan`\G
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_promotion'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_promotion`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT user_id as userId,loan_id as loanId,CASE 1 WHEN tt.idfa is null  THEN  channel_id  WHEN  tt.idfa is not  null  THEN 999999    END     as channelId  ,os,version,register,loan_time as loanTime,agree_time as agreeTime,agree_amount as agreeAmount ,tt.idfa  from record_loan    left JOIN (select DISTINCT  idfa    from record_promotion where source =1) tt      on  device_id = tt.idfa    WHERE 1=1 and  user_id <>-1                                                                                    order by loan_time desc    limit 0,20\G
+
+# Query 43: 0 QPS, 0x concurrency, ID 0xA146061CB7917BA8 at byte 51528 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      1s      1s      1s      1s      1s       0      1s
+# Lock time      0   215us   215us   215us   215us   215us       0   215us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0 853.34k 853.34k 853.34k 853.34k 853.34k       0 853.34k
+# Query size     0     857     857     857     857     857       0     857
+# Bytes          0     857     857     857     857     857       0     857
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_creditcard'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_creditcard`\G
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_promotion'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_promotion`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT  count(1) as  approveCardCount ,count(distinct  t.user_id) as userCount    from     record_creditcard t    left JOIN (select DISTINCT  idfa    from record_promotion where source =1) tt      on t.device_id = tt.idfa        where                    DATE_FORMAT(t.create_time,'%Y-%m-%d') >= '2016-09-09'                  and          DATE_FORMAT(t.create_time,'%Y-%m-%d')  <= '2016-09-09'                                                    and         t.bank_id  in     (              '22'          ,              '23'          ,              '24'          ,              '26'          ,              '29'          ,              '30'          ,              '31'          ,              '33'          ,              '53747'          ,              '53750'          ,              '65'          ,              '81'          ,              '9'          )\G
+
+# Query 44: 0 QPS, 0x concurrency, ID 0xC09042D973C71BCD at byte 47074 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      1s      1s      1s      1s      1s       0      1s
+# Lock time      0    62us    62us    62us    62us    62us       0    62us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       1       1       1       1       1       0       1
+# Query size     0      62      62      62      62      62       0      62
+# Bytes          0      62      62      62      62      62       0      62
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    licai
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `licai` LIKE 'lc_article'\G
+#    SHOW CREATE TABLE `licai`.`lc_article`\G
+update `lc_article` set `click_count` = 897  where `id` = 2884\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select  `click_count` = 897 from `lc_article` where  `id` = 2884\G
+
+# Query 45: 0 QPS, 0x concurrency, ID 0xDB859E65A288A66B at byte 1395 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      1s      1s      1s      1s      1s       0      1s
+# Lock time      0     3ms     3ms     3ms     3ms     3ms       0     3ms
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0 834.02k 834.02k 834.02k 834.02k 834.02k       0 834.02k
+# Query size     0     186     186     186     186     186       0     186
+# Bytes          0     186     186     186     186     186       0     186
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bussinesslog
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_loan'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_loan`\G
+#    SHOW TABLE STATUS FROM `bussinesslog` LIKE 'record_promotion'\G
+#    SHOW CREATE TABLE `bussinesslog`.`record_promotion`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT count(DISTINCT user_id) from record_loan  left JOIN (select DISTINCT  idfa    from record_promotion where source =1) tt      on  device_id = tt.idfa    WHERE 1=1 and  user_id <>-1\G

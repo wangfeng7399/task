@@ -1,0 +1,194 @@
+
+# 380ms user time, 20ms system time, 26.24M rss, 211.00M vsz
+# Current date: Mon Sep  5 05:00:09 2016
+# Hostname: 26
+# Files: /tmp/2016-09-05_10.10.3.10_13306_slow.log
+# Overall: 10 total, 5 unique, 0 QPS, 0x concurrency _____________________
+# Attribute          total     min     max     avg     95%  stddev  median
+# ============     ======= ======= ======= ======= ======= ======= =======
+# Exec time            30s      2s      5s      3s      3s   786ms      3s
+# Lock time          669us    37us   137us    66us    93us    26us    57us
+# Rows sent              6       0       6    0.60       0    1.72       0
+# Rows examine       6.25M       0   2.08M 640.19k   2.05M 959.97k   6.31k
+# Query size         3.07k      77   1.33k  314.80  363.48  366.33  174.84
+# Bytes              3.07k      77   1.33k  314.80  363.48  366.33  174.84
+# hostname             260      26      26      26      26       0      26
+
+# Profile
+# Rank Query ID           Response time Calls R/Call V/M   Item
+# ==== ================== ============= ===== ====== ===== ===============
+#    1 0xD60EC3B94FD889C4 11.8638 39.1%     4 2.9659  0.48 SELECT pre_home_notification
+#    2 0x28EA7E16C3916EB9  8.9727 29.6%     3 2.9909  0.03 SELECT pre_forum_thread
+#    3 0x8F4D6EF0B1BC34C9  3.3043 10.9%     1 3.3043  0.00 UPDATE pre_forum_threadaddviews
+#    4 0x2B9B263F9198D97B  3.2021 10.6%     1 3.2021  0.00 REPLACE pre_common_cache
+#    5 0xC6E83D2D23B205EB  2.9753  9.8%     1 2.9753  0.00 DELETE pre_common_session
+
+# Query 1: 0 QPS, 0x concurrency, ID 0xD60EC3B94FD889C4 at byte 3999 _____
+# Scores: V/M = 0.48
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         40       4
+# Exec time     39     12s      2s      5s      3s      5s      1s      4s
+# Lock time     31   212us    46us    63us    53us    60us     5us    56us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0  14.71k   1.52k   6.60k   3.68k   6.31k   1.90k   5.29k
+# Query size    13     432     108     108     108     108       0     108
+# Bytes         13     432     108     108     108     108       0     108
+# hostname      40     104      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_home_notification'\G
+#    SHOW CREATE TABLE `pre_home_notification`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT id,from_num FROM pre_home_notification where from_id=31557787 AND from_idtype='quote' AND uid=1051667\G
+
+# Query 2: 0 QPS, 0x concurrency, ID 0x28EA7E16C3916EB9 at byte 0 ________
+# Scores: V/M = 0.03
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         30       3
+# Exec time     29      9s      3s      3s      3s      3s   316ms      3s
+# Lock time     43   293us    60us   137us    97us   131us    30us    93us
+# Rows sent    100       6       0       6       2    5.75    2.71       0
+# Rows examine  99   6.23M   2.08M   2.08M   2.08M   2.08M       0   2.08M
+# Query size    34   1.07k     366     366     366     366       0     366
+# Bytes         34   1.07k     366     366     366     366       0     366
+# hostname      30      78      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_forum_thread'\G
+#    SHOW CREATE TABLE `pre_forum_thread`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT t.fid,t.tid,t.subject,t.icon,t.replies,t.dateline as dateline,t.authorid,t.author,
+				t.displayorder,t.digest,t.attachment,t.posttableid,t.views,t.closed,t.isgroup,t.lastpost 
+				FROM pre_forum_thread t WHERE 1=1 AND t.fid NOT IN(248,267) AND t.closed=0 AND t.displayorder >= 0 AND t.heats>50 AND t.lastpost>1467763164 ORDER BY t.dateline DESC LIMIT 610, 10\G
+
+# Query 3: 0 QPS, 0x concurrency, ID 0x8F4D6EF0B1BC34C9 at byte 3391 _____
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         10       1
+# Exec time     10      3s      3s      3s      3s      3s       0      3s
+# Lock time      5    37us    37us    37us    37us    37us       0    37us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       1       1       1       1       1       0       1
+# Query size     2      77      77      77      77      77       0      77
+# Bytes          2      77      77      77      77      77       0      77
+# hostname      10      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_forum_threadaddviews'\G
+#    SHOW CREATE TABLE `pre_forum_threadaddviews`\G
+UPDATE pre_forum_threadaddviews SET `addviews`=`addviews`+1 WHERE tid=2389378\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select  `addviews`=`addviews`+1 from pre_forum_threadaddviews where  tid=2389378\G
+
+# Query 4: 0 QPS, 0x concurrency, ID 0x2B9B263F9198D97B at byte 1922 _____
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         10       1
+# Exec time     10      3s      3s      3s      3s      3s       0      3s
+# Lock time     10    68us    68us    68us    68us    68us       0    68us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size    43   1.33k   1.33k   1.33k   1.33k   1.33k       0   1.33k
+# Bytes         43   1.33k   1.33k   1.33k   1.33k   1.33k       0   1.33k
+# hostname      10      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_common_cache'\G
+#    SHOW CREATE TABLE `pre_common_cache`\G
+REPLACE INTO pre_common_cache SET `cachekey`='threadclasscount_11' , `cachevalue`='a:1:{s:6:\"typeid\";a:50:{i:190;s:5:\"27093\";i:193;s:4:\"1799\";i:210;s:4:\"1582\";i:211;s:3:\"130\";i:213;s:4:\"4655\";i:191;s:4:\"1468\";i:199;s:4:\"2196\";i:192;s:4:\"3338\";i:197;s:4:\"7964\";i:206;s:3:\"288\";i:196;s:4:\"4010\";i:195;s:4:\"2269\";i:208;s:3:\"737\";i:198;s:3:\"836\";i:200;s:4:\"2011\";i:214;s:3:\"348\";i:203;s:3:\"175\";i:201;s:4:\"1249\";i:202;s:3:\"592\";i:204;s:2:\"36\";i:194;s:3:\"232\";i:209;s:2:\"86\";i:212;s:2:\"92\";i:207;s:4:\"1696\";i:205;s:2:\"72\";i:215;s:1:\"7\";s:6:\"191??p\";s:4:\"1186\";s:6:\"190??p\";s:5:\"16019\";s:6:\"197??p\";s:4:\"4248\";s:6:\"199??p\";s:4:\"1561\";s:6:\"195??p\";s:4:\"2119\";s:6:\"198??p\";s:3:\"715\";s:5:\"206\\\'\";s:3:\"114\";s:5:\"201\\\'\";s:4:\"1198\";s:9:\"202\\\'-\\\'1\";s:3:\"471\";s:28:\"208 Result: unknown problem;\";s:3:\"433\";s:4:\"196\n\";s:4:\"2977\";s:5:\"202-1\";s:3:\"471\";s:42:\"208 Result: не нашлось формы для отправки;\";s:3:\"433\";s:11:\"192onclick=\";s:4:\"2720\";s:6:\"190ss=\";s:5:\"20410\";s:4:\"193	\";s:4:\"1565\";s:4:\"197	\";s:4:\"5218\";s:4:\"207	\";s:3:\"868\";s:4:\"212	\";s:2:\"81\";s:14:\"197favicon.ico\";s:4:\"5523\";s:4:\"190 \";s:5:\"25265\";s:4:\"211x\";s:3:\"125\";s:26:\"190thread-2805022-1-1.html\";s:5:\"26728\";s:26:\"197thread-2813257-1-1.html\";s:4:\"7646\";}}'\G
+
+# Query 5: 0 QPS, 0x concurrency, ID 0xC6E83D2D23B205EB at byte 1640 _____
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         10       1
+# Exec time      9      3s      3s      3s      3s      3s       0      3s
+# Lock time      8    59us    59us    59us    59us    59us       0    59us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0  10.64k  10.64k  10.64k  10.64k  10.64k       0  10.64k
+# Query size     5     175     175     175     175     175       0     175
+# Bytes          5     175     175     175     175     175       0     175
+# hostname      10      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_common_session'\G
+#    SHOW CREATE TABLE `pre_common_session`\G
+DELETE FROM pre_common_session WHERE  sid='qVw5Ww'  OR lastactivity<1472973847  OR (uid='0' AND ip1='222' AND ip2='73' AND ip3='149' AND ip4='165' AND lastactivity>1472974687)\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  pre_common_session WHERE  sid='qVw5Ww'  OR lastactivity<1472973847  OR (uid='0' AND ip1='222' AND ip2='73' AND ip3='149' AND ip4='165' AND lastactivity>1472974687)\G

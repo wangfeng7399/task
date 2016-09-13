@@ -1,0 +1,904 @@
+
+# 1.3s user time, 30ms system time, 26.78M rss, 211.64M vsz
+# Current date: Mon Sep  5 05:00:11 2016
+# Hostname: 26
+# Files: /tmp/2016-09-05_10.10.3.9_13307_slow.log
+# Overall: 1.15k total, 25 unique, 0 QPS, 0x concurrency _________________
+# Attribute          total     min     max     avg     95%  stddev  median
+# ============     ======= ======= ======= ======= ======= ======= =======
+# Exec time          1513s      1s      4s      1s      2s   342ms      1s
+# Lock time          138ms    34us     2ms   120us   214us    87us    98us
+# Rows sent         60.47k       0   9.77k   54.03   19.46  511.22    0.99
+# Rows examine       2.69M       0  95.85k   2.40k   1.46k  11.90k    4.96
+# Query size       223.70k      60     395  199.88  346.17   77.14  166.51
+# Bytes            223.70k      60     395  199.88  346.17   77.14  166.51
+# hostname          29.10k      26      26      26      26       0      26
+
+# Profile
+# Rank Query ID           Response time  Calls R/Call V/M   Item
+# ==== ================== ============== ===== ====== ===== ==============
+#    1 0xFBA954DF7FB9BBA0 707.5953 46.8%   539 1.3128  0.08 SELECT tag_cardassociationtags
+#    2 0xBDA779B2A84EE444 222.4828 14.7%   165 1.3484  0.11 SELECT tag_tagrelevancecategory tag_taginitial
+#    3 0xD5659FC88B5540E0 120.4992  8.0%    94 1.2819  0.06 SELECT tag_tagcategory tag_taginitial tag_tagrelevancecategory
+#    4 0xFBF7C633A43DDBD5  95.6327  6.3%    68 1.4064  0.12 SELECT tag_cardassociationmoretags tag_taginitial
+#    5 0x5C4A18FF2A817254  92.2593  6.1%    69 1.3371  0.08 SELECT tag_taginitial
+#    6 0xEF3F8814CFEEC487  83.4534  5.5%    64 1.3040  0.10 SELECT tag_taginitial
+#    7 0x5A9BF93D4C526A4C  30.0665  2.0%    24 1.2528  0.04 SELECT tag_tagcategory
+#    8 0x83094EEF932D1FEA  25.5339  1.7%    22 1.1606  0.01 SELECT ask_info answer_info
+#    9 0xC4FA9C73CEF5EBCA  23.3787  1.5%    17 1.3752  0.08 SELECT tag_cardassociationtags
+#   10 0x2997FB25B4F917FA  20.8656  1.4%    14 1.4904  0.14 SELECT tag_preferentiaseriesmoretags
+#   11 0x2ACCD45082220F13  16.4039  1.1%    12 1.3670  0.25 SELECT tag_cardseriesassociationmoretags
+#   12 0x3A77399D5A94AD60  16.2228  1.1%    13 1.2479  0.09 SELECT tag_cardseriesassociationtags
+#   13 0xB3FF7923EEC39F7C  10.8636  0.7%     9 1.2071  0.04 SELECT tag_cardassociationmoretags
+#   14 0x04585178CB5572CE  10.2992  0.7%     8 1.2874  0.03 SELECT tag_cardseriesassociationtags
+#   15 0xEDCDF61FEF216C6A  10.0726  0.7%     7 1.4389  0.05 SELECT tag_cardseriesassociationtags
+#   16 0x61D1BF80A8FB1A7B   5.4127  0.4%     4 1.3532  0.05 SELECT tag_cardseriesassociationtags
+#   17 0x3B9D8EB9BAABDEB1   4.9978  0.3%     4 1.2495  0.03 SELECT tag_cardseriesassociationtags
+#   18 0xC8E5D099BEE7386F   3.7845  0.3%     3 1.2615  0.01 SELECT tag_taginitial
+#   19 0x98E582E2E972C0C0   3.4841  0.2%     3 1.1614  0.01 SELECT tag_cardseriesassociationtags
+#   20 0xD9ECEA75F3AC6385   2.6716  0.2%     2 1.3358  0.10 SELECT tag_cardseriesassociationtags
+#   21 0x4F2A8F9D1930951D   2.1867  0.1%     1 2.1867  0.00 SELECT tag_cardseriesassociationtags
+#   22 0xDBF198C2F5FD8C35   1.2225  0.1%     1 1.2225  0.00 SELECT tag_cardseriesassociationtags
+#   23 0xF0EB488E9CCF2534   1.2194  0.1%     1 1.2194  0.00 SELECT tag_cardseriesassociationtags
+#   24 0x8672CF9D29FCB77B   1.1518  0.1%     1 1.1518  0.00 SELECT tag_cardseriesassociationtags
+#   25 0xB87C417CDAF5DBF2   1.0973  0.1%     1 1.0973  0.00 SELECT tag_taginitial
+
+# Query 1: 0 QPS, 0x concurrency, ID 0xFBA954DF7FB9BBA0 at byte 242860 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.08
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         47     539
+# Exec time     46    708s      1s      3s      1s      2s   331ms      1s
+# Lock time     42    59ms    42us     1ms   108us   159us    90us    89us
+# Rows sent      1     788       1      14    1.46    3.89    1.18    0.99
+# Rows examine  20 560.80k       1   2.26k   1.04k   1.46k  692.27   1.46k
+# Query size    40  89.67k     170     176  170.36  166.51    0.36  166.51
+# Bytes         40  89.67k     170     176  170.36  166.51    0.36  166.51
+# hostname      47  13.69k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_cardassociationtags'\G
+#    SHOW CREATE TABLE `tag_cardassociationtags`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select tc.cardId from tag_cardassociationtags tc          where 1=1          and        match (moreTags) against ('+1184'in boolean mode)                and cardPId = 1548\G
+
+# Query 2: 0 QPS, 0x concurrency, ID 0xBDA779B2A84EE444 at byte 16181 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.11
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         14     165
+# Exec time     14    222s      1s      4s      1s      2s   387ms      1s
+# Lock time     17    24ms    59us   412us   148us   224us    47us   138us
+# Rows sent      2   1.70k       0      68   10.53   65.89   16.18    6.98
+# Rows examine   0   4.80k       0     155   29.82  151.03   39.81   19.46
+# Query size    25  56.34k     349     350  349.64  346.17    0.00  346.17
+# Bytes         25  56.34k     349     350  349.64  346.17    0.00  346.17
+# hostname      14   4.19k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_tagrelevancecategory'\G
+#    SHOW CREATE TABLE `tag_tagrelevancecategory`\G
+#    SHOW TABLE STATUS LIKE 'tag_taginitial'\G
+#    SHOW CREATE TABLE `tag_taginitial`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select ttarc.id,ttarc.tagCategoryId,ttarc.addTime,ttarc.updateTime,tag.tagId,tag.tagName,         tag.associated,tag.tagLogoId,tag.tagLevel,tag.tagURL,tag.tagerId ,tag.tagOrderFlag      from tag_tagrelevancecategory ttarc LEFT JOIN tag_taginitial tag ON tag.tagerId=ttarc.tagId   WHERE ttarc.tagCategoryId=8 and ttarc.tagId >0  and tag.associated >0\G
+
+# Query 3: 0 QPS, 0x concurrency, ID 0xD5659FC88B5540E0 at byte 85331 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.06
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          8      94
+# Exec time      7    120s      1s      2s      1s      2s   268ms      1s
+# Lock time      9    14ms    64us   447us   143us   214us    54us   138us
+# Rows sent      0      94       1       1       1       1       0       1
+# Rows examine   0     188       2       2       2       2       0       2
+# Query size    10  22.49k     245     245     245     245       0     245
+# Bytes         10  22.49k     245     245     245     245       0     245
+# hostname       8   2.39k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_tagcategory'\G
+#    SHOW CREATE TABLE `tag_tagcategory`\G
+#    SHOW TABLE STATUS LIKE 'tag_taginitial'\G
+#    SHOW CREATE TABLE `tag_taginitial`\G
+#    SHOW TABLE STATUS LIKE 'tag_tagrelevancecategory'\G
+#    SHOW CREATE TABLE `tag_tagrelevancecategory`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select (select ttc.tagCategoryName from tag_tagcategory ttc where ttc.tagCategoryId = ttrc.tagCategoryId) as tagCategoryName  from tag_taginitial tt left join tag_tagrelevancecategory ttrc  on tt.tagerId = ttrc.tagId where 1=1 and tt.tagId =1161\G
+
+# Query 4: 0 QPS, 0x concurrency, ID 0xFBF7C633A43DDBD5 at byte 231107 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.12
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          5      68
+# Exec time      6     96s      1s      3s      1s      2s   406ms      1s
+# Lock time      6     8ms    51us   253us   124us   185us    41us   119us
+# Rows sent      0      19       0       1    0.28    0.99    0.45       0
+# Rows examine   0      19       0       1    0.28    0.99    0.45       0
+# Query size     5  12.27k     184     185  184.81  183.58       0  183.58
+# Bytes          5  12.27k     184     185  184.81  183.58       0  183.58
+# hostname       5   1.73k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_cardassociationmoretags'\G
+#    SHOW CREATE TABLE `tag_cardassociationmoretags`\G
+#    SHOW TABLE STATUS LIKE 'tag_taginitial'\G
+#    SHOW CREATE TABLE `tag_taginitial`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select ts.cardId,ts.tagId,tl.tagName from tag_cardassociationmoretags ts,tag_taginitial tl   where ts.tagId=tl.tagId    and   ts.tagId = '7044'    and ts.cardId='1387' group by ts.tagId\G
+
+# Query 5: 0 QPS, 0x concurrency, ID 0x5C4A18FF2A817254 at byte 295823 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.08
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          6      69
+# Exec time      6     92s      1s      2s      1s      2s   326ms      1s
+# Lock time      5     8ms    46us   674us   115us   138us    72us   103us
+# Rows sent      0      18       0       1    0.26    0.99    0.44       0
+# Rows examine   0      18       0       1    0.26    0.99    0.44       0
+# Query size     5  11.46k     170     170     170     170       0     170
+# Bytes          5  11.46k     170     170     170     170       0     170
+# hostname       6   1.75k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_taginitial'\G
+#    SHOW CREATE TABLE `tag_taginitial`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select tl.logoName as tagLogoName ,tt.tagName ,tl.logoCHName as tagLogoCHName    from  tag_taginitial tt ,tag_logoimage tl   where tt.tagLogoId = tl.id and tt.tagId =1003\G
+
+# Query 6: 0 QPS, 0x concurrency, ID 0xEF3F8814CFEEC487 at byte 80875 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.10
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          5      64
+# Exec time      5     83s      1s      3s      1s      2s   370ms      1s
+# Lock time      3     5ms    34us   524us    75us    98us    59us    69us
+# Rows sent      0      64       1       1       1       1       0       1
+# Rows examine   0      64       1       1       1       1       0       1
+# Query size     1   3.75k      60      60      60      60       0      60
+# Bytes          1   3.75k      60      60      60      60       0      60
+# hostname       5   1.62k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_taginitial'\G
+#    SHOW CREATE TABLE `tag_taginitial`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select tagName from  tag_taginitial tt  where tt.tagId =6929\G
+
+# Query 7: 0 QPS, 0x concurrency, ID 0x5A9BF93D4C526A4C at byte 135317 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.04
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          2      24
+# Exec time      1     30s      1s      2s      1s      1s   220ms      1s
+# Lock time      1     2ms    44us   157us    96us   138us    30us    95us
+# Rows sent      0     480      20      20      20      20       0      20
+# Rows examine   0   1.55k      66      66      66      66       0      66
+# Query size     1   2.77k     118     118     118     118       0     118
+# Bytes          1   2.77k     118     118     118     118       0     118
+# hostname       2     624      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_tagcategory'\G
+#    SHOW CREATE TABLE `tag_tagcategory`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select *  from  tag_tagcategory where 1=1   and tagCategoryFlag BETWEEN 0 AND 2          ORDER BY tagCategoryOrderFlag\G
+
+# Query 8: 0 QPS, 0x concurrency, ID 0x83094EEF932D1FEA at byte 4226 _____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.01
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          1      22
+# Exec time      1     26s      1s      1s      1s      1s    98ms      1s
+# Lock time      2     4ms    96us   260us   171us   224us    44us   159us
+# Rows sent     71  42.97k       0   9.77k   1.95k   9.33k   2.99k  964.41
+# Rows examine  71   1.91M  75.93k  95.85k  89.03k  92.42k   6.01k  88.02k
+# Query size     2   5.81k     267     272  270.55  258.32    2.50  258.32
+# Bytes          2   5.81k     267     272  270.55  258.32    2.50  258.32
+# hostname       1     572      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'ask_info'\G
+#    SHOW CREATE TABLE `ask_info`\G
+#    SHOW TABLE STATUS LIKE 'answer_info'\G
+#    SHOW CREATE TABLE `answer_info`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select ask.title,ans.answerinfo,ask.publishdate,ask.id,ask.type from ask_info ask,answer_info ans     where ask.id = ans.askid and ask.state = 2 and length(ans.answerinfo) <> char_length(ans.answerinfo)     GROUP BY ask.title order by ans.createTime desc limit 11000,1000\G
+
+# Query 9: 0 QPS, 0x concurrency, ID 0xC4FA9C73CEF5EBCA at byte 70412 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.08
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          1      17
+# Exec time      1     23s      1s      2s      1s      2s   334ms      1s
+# Lock time      0     1ms    47us   115us    77us    98us    19us    76us
+# Rows sent      0      34       1       6       2    3.89    1.18    1.96
+# Rows examine   0      34       1       6       2    3.89    1.18    1.96
+# Query size     0   1.69k     101     102  101.65   97.36       0   97.36
+# Bytes          0   1.69k     101     102  101.65   97.36       0   97.36
+# hostname       1     442      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_cardassociationtags'\G
+#    SHOW CREATE TABLE `tag_cardassociationtags`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select tc.cardId from tag_cardassociationtags tc          where 1=1                 and cardPId = 2009\G
+
+# Query 10: 0 QPS, 0x concurrency, ID 0x2997FB25B4F917FA at byte 284621 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.14
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          1      14
+# Exec time      1     21s      1s      3s      1s      2s   454ms      2s
+# Lock time      0     1ms    48us   143us    97us   119us    19us    93us
+# Rows sent      0      38       0       4    2.71    3.89    1.74    3.89
+# Rows examine   0      11       0       1    0.79    0.99    0.41    0.99
+# Query size     0   1.85k     135     138  135.64  136.99    1.50  130.47
+# Bytes          0   1.85k     135     138  135.64  136.99    1.50  130.47
+# hostname       1     364      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_preferentiaseriesmoretags'\G
+#    SHOW CREATE TABLE `tag_preferentiaseriesmoretags`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select detailId from  tag_preferentiaseriesmoretags tt ,tag_tagerbank tb          where  tt.tagId = tb.tagId and tb.bankId =33  limit 4\G
+
+# Query 11: 0 QPS, 0x concurrency, ID 0x2ACCD45082220F13 at byte 19781 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.25
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          1      12
+# Exec time      1     16s      1s      3s      1s      2s   590ms      1s
+# Lock time      0     1ms    57us   180us    99us   125us    33us    98us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   3 101.04k   8.42k   8.42k   8.42k   8.42k       0   8.42k
+# Query size     0   1.20k     102     103  102.67  102.22    0.50  102.22
+# Bytes          0   1.20k     102     103  102.67  102.22    0.50  102.22
+# hostname       1     312      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_cardseriesassociationmoretags'\G
+#    SHOW CREATE TABLE `tag_cardseriesassociationmoretags`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT tagId  FROM tag_cardseriesassociationmoretags WHERE cardSerieId = 869    and tagCategoryId = 36\G
+
+# Query 12: 0 QPS, 0x concurrency, ID 0x3A77399D5A94AD60 at byte 144326 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.09
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          1      13
+# Exec time      1     16s      1s      2s      1s      2s   327ms      1s
+# Lock time      1     2ms   103us   345us   169us   204us    58us   152us
+# Rows sent     19  12.03k     337   1.12k  947.77   1.09k  331.47   1.09k
+# Rows examine   3  90.07k   2.60k   8.29k   6.93k   8.06k   2.31k   8.06k
+# Query size     1   4.18k     329     329     329     329       0     329
+# Bytes          1   4.18k     329     329     329     329       0     329
+# hostname       1     338      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_cardseriesassociationtags'\G
+#    SHOW CREATE TABLE `tag_cardseriesassociationtags`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select GROUP_CONCAT(distinct (tcs.cardSerieId)) as cardSerieId ,tcs.type,tcs.moreTags     from tag_cardseriesassociationtags tcs ,tag_cardassociationtags tc      where 1=1 and tcs.cardSerieId = tc.cardPId          and   match (tc.moreTags) against ('+1183'in boolean mode)       GROUP BY tcs.cardSerieId   order by orderFlag desc\G
+
+# Query 13: 0 QPS, 0x concurrency, ID 0xB3FF7923EEC39F7C at byte 209736 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.04
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       9
+# Exec time      0     11s      1s      2s      1s      2s   208ms      1s
+# Lock time      1     2ms    42us     2ms   251us     2ms   473us    84us
+# Rows sent      0       9       1       1       1       1       0       1
+# Rows examine   0      29       1       5    3.22    4.96    1.97    4.96
+# Query size     0     800      88      89   88.89   88.31    0.50   88.31
+# Bytes          0     800      88      89   88.89   88.31    0.50   88.31
+# hostname       0     234      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_cardassociationmoretags'\G
+#    SHOW CREATE TABLE `tag_cardassociationmoretags`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT tagId FROM tag_cardassociationmoretags  WHERE cardId = 2972 and tagCategoryId = 15\G
+
+# Query 14: 0 QPS, 0x concurrency, ID 0x04585178CB5572CE at byte 330485 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.03
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       8
+# Exec time      0     10s      1s      2s      1s      2s   194ms      1s
+# Lock time      0     1ms    76us   245us   158us   236us    53us   176us
+# Rows sent      0       1       0       1    0.12    0.99    0.33       0
+# Rows examine   0     668       2     440   83.50  420.77  132.67   43.20
+# Query size     1   2.68k     342     347  343.25  346.17    2.50  329.68
+# Bytes          1   2.68k     342     347  343.25  346.17    2.50  329.68
+# hostname       0     208      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_cardseriesassociationtags'\G
+#    SHOW CREATE TABLE `tag_cardseriesassociationtags`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select distinct(tcs.cardSerieId),tcs.type,tcs.moreTags     from tag_cardseriesassociationtags tcs ,tag_cardassociationtags tc      where 1=1 and tcs.cardSerieId = tc.cardPId     and   match (tcs.moreTags) against ('+5722'in boolean mode)        and   match (tc.moreTags) against ('+1202,1180'in boolean mode)      order by orderFlag desc limit 0,5\G
+
+# Query 15: 0 QPS, 0x concurrency, ID 0xEDCDF61FEF216C6A at byte 329620 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.05
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       7
+# Exec time      0     10s      1s      2s      1s      2s   264ms      1s
+# Lock time      0     1ms   122us   206us   158us   204us    33us   152us
+# Rows sent      0      20       1       5    2.86    4.96    1.71    2.90
+# Rows examine   0     149       4      74   21.29   72.65   23.47   11.95
+# Query size     0   1.91k     280     280     280     280       0     280
+# Bytes          0   1.91k     280     280     280     280       0     280
+# hostname       0     182      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_cardseriesassociationtags'\G
+#    SHOW CREATE TABLE `tag_cardseriesassociationtags`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select distinct(tcs.cardSerieId),tcs.type,tcs.moreTags     from tag_cardseriesassociationtags tcs ,tag_cardassociationtags tc      where 1=1 and tcs.cardSerieId = tc.cardPId     and   match (tcs.moreTags) against ('+1102'in boolean mode)          order by orderFlag desc limit 0,5\G
+
+# Query 16: 0 QPS, 0x concurrency, ID 0x61D1BF80A8FB1A7B at byte 110951 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.05
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       4
+# Exec time      0      5s      1s      2s      1s      2s   261ms      2s
+# Lock time      0   522us    91us   197us   130us   194us    39us   113us
+# Rows sent      0       4       1       1       1       1       0       1
+# Rows examine   0      49       2      20   12.25   19.46    7.37   19.00
+# Query size     0     892     223     223     223     223       0     223
+# Bytes          0     892     223     223     223     223       0     223
+# hostname       0     104      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_cardseriesassociationtags'\G
+#    SHOW CREATE TABLE `tag_cardseriesassociationtags`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select count(distinct(tcs.cardSerieId))      from tag_cardseriesassociationtags tcs ,tag_cardassociationtags tc      where 1=1 and tcs.cardSerieId = tc.cardPId     and   match (tcs.moreTags) against ('+5778'in boolean mode)\G
+
+# Query 17: 0 QPS, 0x concurrency, ID 0x3B9D8EB9BAABDEB1 at byte 26723 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.03
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       4
+# Exec time      0      5s      1s      1s      1s      1s   187ms      1s
+# Lock time      0   614us   102us   199us   153us   194us    34us   177us
+# Rows sent      0      12       1       5       3    4.96    1.99    4.96
+# Rows examine   0     166       4      95   41.50   92.72   37.57   76.24
+# Query size     0   1.10k     280     285  281.25  284.79    2.50  271.23
+# Bytes          0   1.10k     280     285  281.25  284.79    2.50  271.23
+# hostname       0     104      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_cardseriesassociationtags'\G
+#    SHOW CREATE TABLE `tag_cardseriesassociationtags`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select distinct(tcs.cardSerieId),tcs.type,tcs.moreTags     from tag_cardseriesassociationtags tcs ,tag_cardassociationtags tc      where 1=1 and tcs.cardSerieId = tc.cardPId          and   match (tc.moreTags) against ('+1200'in boolean mode)      order by orderFlag desc limit 0,5\G
+
+# Query 18: 0 QPS, 0x concurrency, ID 0xC8E5D099BEE7386F at byte 101734 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.01
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       3
+# Exec time      0      4s      1s      1s      1s      1s   132ms      1s
+# Lock time      0   348us    95us   150us   116us   144us    23us    98us
+# Rows sent      0       3       1       1       1       1       0       1
+# Rows examine   0  18.21k   6.07k   6.07k   6.07k   6.07k       0   6.07k
+# Query size     0     279      91      94      93   92.72    1.50   92.72
+# Bytes          0     279      91      94      93   92.72    1.50   92.72
+# hostname       0      78      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_taginitial'\G
+#    SHOW CREATE TABLE `tag_taginitial`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT tagId,tagerId,tagName from tag_taginitial WHERE 1=1    and     tagName = '中国银行'\G
+
+# Query 19: 0 QPS, 0x concurrency, ID 0x98E582E2E972C0C0 at byte 199032 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.01
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       3
+# Exec time      0      3s      1s      1s      1s      1s   112ms      1s
+# Lock time      0   317us    69us   128us   105us   125us    26us   119us
+# Rows sent      0       3       1       1       1       1       0       1
+# Rows examine   0      30       3      20      10   19.46    7.04    6.98
+# Query size     0     875     290     295  291.67  284.79       0  284.79
+# Bytes          0     875     290     295  291.67  284.79       0  284.79
+# hostname       0      78      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_cardseriesassociationtags'\G
+#    SHOW CREATE TABLE `tag_cardseriesassociationtags`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select count(distinct(tcs.cardSerieId))      from tag_cardseriesassociationtags tcs ,tag_cardassociationtags tc      where 1=1 and tcs.cardSerieId = tc.cardPId     and   match (tcs.moreTags) against ('+1101'in boolean mode)        and    match (tc.moreTags) against ('+1174'in boolean mode)\G
+
+# Query 20: 0 QPS, 0x concurrency, ID 0xD9ECEA75F3AC6385 at byte 72909 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.10
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0      3s      1s      2s      1s      2s   365ms      1s
+# Lock time      0   219us    93us   126us   109us   126us    23us   109us
+# Rows sent      0       2       1       1       1       1       0       1
+# Rows examine   0     114      44      70      57      70   18.38      57
+# Query size     0     456     228     228     228     228       0     228
+# Bytes          0     456     228     228     228     228       0     228
+# hostname       0      52      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_cardseriesassociationtags'\G
+#    SHOW CREATE TABLE `tag_cardseriesassociationtags`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select count(distinct(tcs.cardSerieId))      from tag_cardseriesassociationtags tcs ,tag_cardassociationtags tc      where 1=1 and tcs.cardSerieId = tc.cardPId          and    match (tc.moreTags) against ('+1177'in boolean mode)\G
+
+# Query 21: 0 QPS, 0x concurrency, ID 0x4F2A8F9D1930951D at byte 12112 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      2s      2s      2s      2s      2s       0      2s
+# Lock time      0   532us   532us   532us   532us   532us       0   532us
+# Rows sent      2   1.54k   1.54k   1.54k   1.54k   1.54k       0   1.54k
+# Rows examine   0   2.97k   2.97k   2.97k   2.97k   2.97k       0   2.97k
+# Query size     0     327     327     327     327     327       0     327
+# Bytes          0     327     327     327     327     327       0     327
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_cardseriesassociationtags'\G
+#    SHOW CREATE TABLE `tag_cardseriesassociationtags`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select tc.cardId  from tag_cardseriesassociationtags tcs ,tag_cardassociationtags tc  where 1=1 and tcs.cardSerieId = tc.cardPId and tc.moreTags is not null           and       match (tcs.moreTags) against ('1003,1001,1011,1012,1002,1006,1010,1013,1004,6848,1005,1108' in boolean mode)                   order by orderFlag desc\G
+
+# Query 22: 0 QPS, 0x concurrency, ID 0xDBF198C2F5FD8C35 at byte 39430 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      1s      1s      1s      1s      1s       0      1s
+# Lock time      0   135us   135us   135us   135us   135us       0   135us
+# Rows sent      0       5       5       5       5       5       0       5
+# Rows examine   0   4.94k   4.94k   4.94k   4.94k   4.94k       0   4.94k
+# Query size     0     218     218     218     218     218       0     218
+# Bytes          0     218     218     218     218     218       0     218
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_cardseriesassociationtags'\G
+#    SHOW CREATE TABLE `tag_cardseriesassociationtags`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select distinct(tcs.cardSerieId),tcs.type,tcs.moreTags     from tag_cardseriesassociationtags tcs ,tag_cardassociationtags tc      where 1=1 and tcs.cardSerieId = tc.cardPId            order by orderFlag desc limit 0,5\G
+
+# Query 23: 0 QPS, 0x concurrency, ID 0xF0EB488E9CCF2534 at byte 213712 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      1s      1s      1s      1s      1s       0      1s
+# Lock time      0   175us   175us   175us   175us   175us       0   175us
+# Rows sent      0       2       2       2       2       2       0       2
+# Rows examine   0      22      22      22      22      22       0      22
+# Query size     0     330     330     330     330     330       0     330
+# Bytes          0     330     330     330     330     330       0     330
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_cardseriesassociationtags'\G
+#    SHOW CREATE TABLE `tag_cardseriesassociationtags`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select GROUP_CONCAT(distinct (tcs.cardSerieId)) as cardSerieId ,tcs.type,tcs.moreTags     from tag_cardseriesassociationtags tcs ,tag_cardassociationtags tc      where 1=1 and tcs.cardSerieId = tc.cardPId     and    match (tcs.moreTags) against ('+7039'in boolean mode)           GROUP BY tcs.cardSerieId   order by orderFlag desc\G
+
+# Query 24: 0 QPS, 0x concurrency, ID 0x8672CF9D29FCB77B at byte 12548 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      1s      1s      1s      1s      1s       0      1s
+# Lock time      0   129us   129us   129us   129us   129us       0   129us
+# Rows sent      1     689     689     689     689     689       0     689
+# Rows examine   0   2.97k   2.97k   2.97k   2.97k   2.97k       0   2.97k
+# Query size     0     395     395     395     395     395       0     395
+# Bytes          0     395     395     395     395     395       0     395
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_cardseriesassociationtags'\G
+#    SHOW CREATE TABLE `tag_cardseriesassociationtags`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select tc.cardId  from tag_cardseriesassociationtags tcs ,tag_cardassociationtags tc  where 1=1 and tcs.cardSerieId = tc.cardPId and tc.moreTags is not null           and       match (tcs.moreTags) against ('1003,1001,1011,1012,1002,1006,1010,1013,1004,6848,1005,1108' in boolean mode)               and       match (tc.moreTags) against ('1184' in boolean mode)          order by orderFlag desc\G
+
+# Query 25: 0 QPS, 0x concurrency, ID 0xB87C417CDAF5DBF2 at byte 336579 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      1s      1s      1s      1s      1s       0      1s
+# Lock time      0    77us    77us    77us    77us    77us       0    77us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0   6.07k   6.07k   6.07k   6.07k   6.07k       0   6.07k
+# Query size     0      63      63      63      63      63       0      63
+# Bytes          0      63      63      63      63      63       0      63
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'tag_taginitial'\G
+#    SHOW CREATE TABLE `tag_taginitial`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select tagId from tag_taginitial where tagName = '大新银行'\G

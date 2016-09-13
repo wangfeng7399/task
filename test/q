@@ -1,0 +1,16 @@
+select  temp1.loanTime , temp1.channelId ,temp1.loanId , count(*)  as loanCount ,   count(DISTINCT temp1.user_id) as
+loanUserCount ,SUM(temp1.agree_amount) as  loanAmount  from   ( SELECT   DATE_FORMAT(t.loan_time,'%Y-%m-%d') as loanTime ,
+ CASE 1 WHEN ttt.idfa is null  THEN  t.channel_id    WHEN  ttt.idfa is not  null  THEN 999999    END     as channelId  ,
+  t.loan_id  as loanId  ,  t.user_id ,t.agree_amount     from record_loan t  left JOIN (select DISTINCT  idfa
+  from record_promotion where source =1) ttt      on t.device_id = ttt.idfa      where
+  DATE_FORMAT(t.loan_time,'%Y-%m-%d')  = '2016-09-05'                and        t.loan_id   = 9
+      ) temp1      where                          temp1.channelId = -1                                     group by
+      temp1.loanTime , temp1.channelId  ,temp1.loanId     order by temp1.loanTime   desc;
+select  temp1.loanTime , temp1.channelId ,temp1.loanId , count(*)  as loanCount ,   count(DISTINCT temp1.user_id) as
+loanUserCount ,SUM(temp1.agree_amount) as  loanAmount  from   ( SELECT   DATE_FORMAT(t.loan_time,'%Y-%m-%d') as loanTime ,
+CASE 1 WHEN ttt.idfa is null  THEN  t.channel_id    WHEN  ttt.idfa is not  null  THEN 999999    END     as channelId  ,
+t.loan_id  as loanId  ,  t.user_id ,t.agree_amount     from record_loan t  left JOIN (select DISTINCT  idfa
+from record_promotion where source =1) ttt      on t.device_id = ttt.idfa      where
+ DATE_FORMAT(t.loan_time,'%Y-%m-%d')  = '2016-09-05'                and        t.loan_id   = 8
+  ) temp1      where                          temp1.channelId = -1                                     group by
+   temp1.loanTime , temp1.channelId  ,temp1.loanId     order by temp1.loanTime   desc;

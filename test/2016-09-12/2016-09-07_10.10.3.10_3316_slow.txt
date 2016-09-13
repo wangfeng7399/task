@@ -1,0 +1,2039 @@
+
+# 3.2s user time, 40ms system time, 28.62M rss, 213.48M vsz
+# Current date: Wed Sep  7 05:00:25 2016
+# Hostname: 26
+# Files: /tmp/2016-09-07_10.10.3.10_3316_slow.log
+# Overall: 9.10k total, 39 unique, 0 QPS, 0x concurrency _________________
+# Attribute          total     min     max     avg     95%  stddev  median
+# ============     ======= ======= ======= ======= ======= ======= =======
+# Exec time          4484s   103ms     18s   493ms   609ms   338ms   477ms
+# Lock time             2s       0    10ms   204us   348us   193us   176us
+# Rows sent         38.50M       0   7.23M   4.33k    0.99  95.72k       0
+# Rows examine       3.96G       0   7.23M 456.71k 440.37k 177.59k 440.37k
+# Query size       735.47k       6   2.62k   82.80   80.10   75.29   80.10
+# Bytes            735.47k       6   2.62k   82.80   80.10   75.29   80.10
+# hostname         230.95k      26      26      26      26       0      26
+
+# Profile
+# Rank Query ID           Response time   Calls R/Call  V/M   Item
+# ==== ================== =============== ===== ======= ===== ============
+#    1 0x61CEBA4A96696688 4255.7727 94.9%  8930  0.4766  0.03 SELECT user_source_?
+#    2 0x67A347A2812914DF   92.1585  2.1%    86  1.0716  4.09 SELECT user_login_his_temp
+#    3 0xE8C37A66ACC5B853   12.7402  0.3%    19  0.6705  0.03 SELECT user_source_?
+#    4 0x8102DC5C8D30BDA3   11.3362  0.3%     1 11.3362  0.00 DELETE ods_user_info
+#    5 0x648997FC8BBF2309   10.0148  0.2%     1 10.0148  0.00 DELETE ods_record_user_integral
+#    6 0xBF4491DEA5A0862B    7.5866  0.2%     1  7.5866  0.00 DELETE ods_user_source
+#    7 0x813031B8BBC3B329    7.4585  0.2%     8  0.9323  1.66 COMMIT
+#    8 0x6D3655C2E372AA75    5.6987  0.1%     1  5.6987  0.00 SELECT UNION user_source_?
+#    9 0xCD86A8646C0F2BF9    5.6965  0.1%     1  5.6965  0.00 SELECT UNION user_source_?
+#   10 0x59DDD01BB616AFC3    5.6938  0.1%     1  5.6938  0.00 SELECT UNION user_source_?
+#   11 0x71B4D7008FC93565    5.6825  0.1%     1  5.6825  0.00 SELECT UNION user_source_?
+#   12 0xE342952A76A718F1    5.6736  0.1%     1  5.6736  0.00 SELECT UNION user_source_?
+#   13 0x325BF758F75A95AF    5.6329  0.1%     1  5.6329  0.00 SELECT UNION user_source_?
+#   14 0x59D8620149C9F2C7    5.0252  0.1%     1  5.0252  0.00 SELECT UNION user_source_?
+#   15 0xAF26CF98ED4F4221    4.8982  0.1%     1  4.8982  0.00 SELECT UNION user_source_?
+#   16 0x8981C36F037CC2E7    4.7672  0.1%     8  0.5959  0.00 SELECT user_source_?
+#   17 0xDA022C80E92D2007    4.6244  0.1%     1  4.6244  0.00 SELECT UNION user_source_?
+#   18 0x9DC68BDEACC5348B    4.5336  0.1%     1  4.5336  0.00 SELECT UNION user_source_?
+#   19 0x56DF4E6E44DDEB43    4.5124  0.1%     1  4.5124  0.00 SELECT UNION user_source_?
+#   20 0x13D79C1D9F08E19C    4.1621  0.1%     3  1.3874  0.00 SELECT user_?
+#   21 0x9AFBB67E4234B491    3.8504  0.1%     1  3.8504  0.00 INSERT record_user_operate_?
+#   22 0x34F10BC9DADDEF3D    1.8698  0.0%     1  1.8698  0.00 DELETE ods_record_creditcard
+#   23 0x70244A6A089883C0    1.7930  0.0%     4  0.4483  0.21 INSERT record_user_integral_?
+#   24 0x4C9D76007C8A72E8    1.7577  0.0%     1  1.7577  0.00 SELECT UNION user_source_?
+#   25 0x6570F6E0756E5FB9    1.4835  0.0%     1  1.4835  0.00 SELECT UNION user_source_?
+#   26 0x3562C8ECB99CB543    1.4146  0.0%     2  0.7073  0.89 INSERT record_user_task_?
+#   27 0x0CD30E158F3DC1C1    1.1318  0.0%     1  1.1318  0.00 DELETE ods_record_loan
+#   28 0x3B144298B0C9AADE    1.0582  0.0%     1  1.0582  0.00 SELECT user_source_?
+#   29 0x4DA6E095FE9D2108    0.8430  0.0%     1  0.8430  0.00 SELECT user_source_?
+#   30 0x98204EB05621D6CB    0.8284  0.0%     1  0.8284  0.00 DELETE ods_record_user_binding_card
+#   31 0xD23D053EF6E64153    0.8000  0.0%     1  0.8000  0.00 SELECT user_source_?
+#   32 0x921019A278388ECA    0.6997  0.0%     1  0.6997  0.00 SELECT user_source_?
+#   33 0x87E466EDFA19DC6A    0.6648  0.0%     1  0.6648  0.00 DELETE dm_mobile
+#   34 0xBE0E14F21FDEFB01    0.5084  0.0%     3  0.1695  0.02 SELECT user_?
+#   35 0x822DAF4B820188DE    0.4621  0.0%     4  0.1155  0.00 SELECT record_user_binding_card_?
+#   36 0x165E662C1C7E317A    0.4142  0.0%     1  0.4142  0.00 SELECT user_source_?
+#   37 0x2ADEFD29115C1578    0.2758  0.0%     1  0.2758  0.00 DELETE ods_record_promotion
+#   38 0x9932B79CEE2472A5    0.1587  0.0%     1  0.1587  0.00 DELETE ods_record_jimu_loan
+#   39 0x79E895C55CA19C8D    0.1303  0.0%     1  0.1303  0.00 CREATE TABLE sheng_loan_record `sheng_loan_record`
+
+# Query 1: 0 QPS, 0x concurrency, ID 0x61CEBA4A96696688 at byte 1616406 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.03
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         98    8930
+# Exec time     94   4256s   289ms      3s   477ms   609ms   115ms   477ms
+# Lock time     97      2s    56us     2ms   202us   332us   116us   176us
+# Rows sent      0     634       0       1    0.07    0.99    0.25       0
+# Rows examine  97   3.85G 450.56k 453.38k 451.75k 440.37k       0 440.37k
+# Query size    95 699.34k      60      82   80.19   80.10    5.43   80.10
+# Bytes         95 699.34k      60      82   80.19   80.10    5.43   80.10
+# hostname      98 226.74k      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        10.10.1.61 (3140/35%), 10.10.2.61 (2990/33%)... 1 more
+# Time         2016-09-05... (2/0%), 2016-09-05... (2/0%)... 8926 more
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s  #
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM user_source_0 WHERE open_id = 'sina0DEA386A25ECE295E0521C73F58C09CF'\G
+
+# Query 2: 0 QPS, 0x concurrency, ID 0x67A347A2812914DF at byte 1785795 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 4.09
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      86
+# Exec time      2     92s   111ms     18s      1s      2s      2s   552ms
+# Lock time      0       0       0       0       0       0       0       0
+# Rows sent     99  38.42M  21.49k   7.23M 457.43k 440.37k 879.59k 440.37k
+# Rows examine   0  38.42M  21.49k   7.23M 457.43k 440.37k 879.59k 440.37k
+# Query size     0   5.00k      47      67   59.48   65.89    6.83   62.76
+# Bytes          0   5.00k      47      67   59.48   65.89    6.83   62.76
+# hostname       0   2.18k      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        10.10.3.10
+# Time         2016-09-06... (1/1%), 2016-09-06... (1/1%)... 84 more
+# Users        mysqldump
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s  #############################
+#  10s+  #
+# Review information
+#    first_seen: 2016-09-06 16:20:06
+#     last_seen: 2016-09-06 16:20:36
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_login_his_temp'\G
+#    SHOW CREATE TABLE `passport`.`user_login_his_temp`\G
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `user_login_his_temp`\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `user_login_his_temp`\G
+
+# Query 3: 0 QPS, 0x concurrency, ID 0xE8C37A66ACC5B853 at byte 682497 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.03
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      19
+# Exec time      0     13s   329ms   868ms   671ms   857ms   150ms   640ms
+# Lock time      0     5ms   109us   587us   244us   348us    96us   236us
+# Rows sent      0  18.55k    1000    1000    1000    1000       0    1000
+# Rows examine   0   8.56M 452.72k 470.31k 461.51k 462.39k   8.79k 440.37k
+# Query size     0   1.29k      66      70   69.32   69.19    1.65   65.89
+# Bytes          0   1.29k      66      70   69.32   69.19    1.65   65.89
+# hostname       0     494      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06... (1/5%), 2016-09-06... (1/5%)... 17 more
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM `user_source_0` ORDER BY `source` DESC LIMIT 13000, 1000\G
+
+# Query 4: 0 QPS, 0x concurrency, ID 0x8102DC5C8D30BDA3 at byte 38282 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0     11s     11s     11s     11s     11s       0     11s
+# Lock time      0    77us    77us    77us    77us    77us       0    77us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0   4.38M   4.38M   4.38M   4.38M   4.38M       0   4.38M
+# Query size     0      55      55      55      55      55       0      55
+# Bytes          0      55      55      55      55      55       0      55
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-05T16:32:02.397781Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s
+#  10s+  ################################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_info'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_info`\G
+DELETE FROM ods_user_info
+WHERE etl_date = '2016-09-05'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_user_info
+WHERE etl_date = '2016-09-05'\G
+
+# Query 5: 0 QPS, 0x concurrency, ID 0x648997FC8BBF2309 at byte 43310 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0     10s     10s     10s     10s     10s       0     10s
+# Lock time      0   115us   115us   115us   115us   115us       0   115us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0   4.29M   4.29M   4.29M   4.29M   4.29M       0   4.29M
+# Query size     0      66      66      66      66      66       0      66
+# Bytes          0      66      66      66      66      66       0      66
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-05T16:35:48.792186Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s
+#  10s+  ################################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_user_integral'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_user_integral`\G
+DELETE FROM ods_record_user_integral
+WHERE etl_date = '2016-09-05'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_record_user_integral
+WHERE etl_date = '2016-09-05'\G
+
+# Query 6: 0 QPS, 0x concurrency, ID 0xBF4491DEA5A0862B at byte 38555 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      8s      8s      8s      8s      8s       0      8s
+# Lock time      0    74us    74us    74us    74us    74us       0    74us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0   4.38M   4.38M   4.38M   4.38M   4.38M       0   4.38M
+# Query size     0      57      57      57      57      57       0      57
+# Bytes          0      57      57      57      57      57       0      57
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-05T16:32:34.606966Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_source'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_source`\G
+DELETE FROM ods_user_source
+WHERE etl_date = '2016-09-05'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_user_source
+WHERE etl_date = '2016-09-05'\G
+
+# Query 7: 0 QPS, 0x concurrency, ID 0x813031B8BBC3B329 at byte 1624272 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 1.66
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       8
+# Exec time      0      7s   116ms      3s   932ms      3s      1s   293ms
+# Lock time      0       0       0       0       0       0       0       0
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0      48       6       6       6       6       0       6
+# Bytes          0      48       6       6       6       6       0       6
+# hostname       0     208      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        10.10.1.56 (4/50%), 10.10.2.61 (4/50%)
+# Time         2016-09-06... (1/12%), 2016-09-06... (1/12%)... 6 more
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s  #####################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+commit\G
+
+# Query 8: 0 QPS, 0x concurrency, ID 0x6D3655C2E372AA75 at byte 786509 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      6s      6s      6s      6s      6s       0      6s
+# Lock time      0     2ms     2ms     2ms     2ms     2ms       0     2ms
+# Rows sent      0       3       3       3       3       3       0       3
+# Rows examine   0   4.41M   4.41M   4.41M   4.41M   4.41M       0   4.41M
+# Query size     0   2.55k   2.55k   2.55k   2.55k   2.55k       0   2.55k
+# Bytes          0   2.55k   2.55k   2.55k   2.55k   2.55k       0   2.55k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06T03:28:56.629249Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_1'\G
+#    SHOW CREATE TABLE `passport`.`user_source_1`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_2'\G
+#    SHOW CREATE TABLE `passport`.`user_source_2`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_3'\G
+#    SHOW CREATE TABLE `passport`.`user_source_3`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_4'\G
+#    SHOW CREATE TABLE `passport`.`user_source_4`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_5'\G
+#    SHOW CREATE TABLE `passport`.`user_source_5`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_6'\G
+#    SHOW CREATE TABLE `passport`.`user_source_6`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_7'\G
+#    SHOW CREATE TABLE `passport`.`user_source_7`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_8'\G
+#    SHOW CREATE TABLE `passport`.`user_source_8`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_9'\G
+#    SHOW CREATE TABLE `passport`.`user_source_9`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT c.source as source , SUM(c.count) , c.total from ( select CASE WHEN  a.source  LIKE "%qq%" then "qq"  WHEN a.source  LIKE "%weixin%" or a.source  LIKE "%wechat%" then "wechat" WHEN a.source  LIKE "%sina%" then "sina" end source , sum(a.count) as count , (select sum(b.count) from (SELECT COUNT(1) as count from user_source_0 UNION
+SELECT COUNT(1) as count from user_source_1 UNION
+SELECT COUNT(1) as count from user_source_2 UNION
+SELECT COUNT(1) as count from user_source_3 UNION
+SELECT COUNT(1) as count from user_source_4 UNION
+SELECT COUNT(1) as count from user_source_5 UNION
+SELECT COUNT(1) as count from user_source_6 UNION
+SELECT COUNT(1) as count from user_source_7 UNION
+SELECT COUNT(1) as count from user_source_8 UNION
+SELECT COUNT(1) as count from user_source_9 ) b ) as total from  (SELECT source ,count(1) as count from user_source_0 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_1 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_2 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_3 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_4 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_5 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_6 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_7 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_8 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_9 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source ) as a GROUP BY a.source) as c GROUP BY c.source\G
+
+# Query 9: 0 QPS, 0x concurrency, ID 0xCD86A8646C0F2BF9 at byte 789336 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      6s      6s      6s      6s      6s       0      6s
+# Lock time      0     2ms     2ms     2ms     2ms     2ms       0     2ms
+# Rows sent      0       3       3       3       3       3       0       3
+# Rows examine   0   4.41M   4.41M   4.41M   4.41M   4.41M       0   4.41M
+# Query size     0   2.59k   2.59k   2.59k   2.59k   2.59k       0   2.59k
+# Bytes          0   2.59k   2.59k   2.59k   2.59k   2.59k       0   2.59k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06T03:29:54.502569Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_1'\G
+#    SHOW CREATE TABLE `passport`.`user_source_1`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_2'\G
+#    SHOW CREATE TABLE `passport`.`user_source_2`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_3'\G
+#    SHOW CREATE TABLE `passport`.`user_source_3`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_4'\G
+#    SHOW CREATE TABLE `passport`.`user_source_4`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_5'\G
+#    SHOW CREATE TABLE `passport`.`user_source_5`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_6'\G
+#    SHOW CREATE TABLE `passport`.`user_source_6`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_7'\G
+#    SHOW CREATE TABLE `passport`.`user_source_7`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_8'\G
+#    SHOW CREATE TABLE `passport`.`user_source_8`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_9'\G
+#    SHOW CREATE TABLE `passport`.`user_source_9`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT c.source as source , SUM(c.count) as count , c.total , (SUM(c.count)/c.total) as p from ( select CASE WHEN  a.source  LIKE "%qq%" then "qq"  WHEN a.source  LIKE "%weixin%" or a.source  LIKE "%wechat%" then "wechat" WHEN a.source  LIKE "%sina%" then "sina" end source , sum(a.count) as count , (select sum(b.count) from (SELECT COUNT(1) as count from user_source_0 UNION
+SELECT COUNT(1) as count from user_source_1 UNION
+SELECT COUNT(1) as count from user_source_2 UNION
+SELECT COUNT(1) as count from user_source_3 UNION
+SELECT COUNT(1) as count from user_source_4 UNION
+SELECT COUNT(1) as count from user_source_5 UNION
+SELECT COUNT(1) as count from user_source_6 UNION
+SELECT COUNT(1) as count from user_source_7 UNION
+SELECT COUNT(1) as count from user_source_8 UNION
+SELECT COUNT(1) as count from user_source_9 ) b ) as total from  (SELECT source ,count(1) as count from user_source_0 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_1 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_2 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_3 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_4 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_5 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_6 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_7 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_8 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_9 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source ) as a GROUP BY a.source) as c GROUP BY c.source\G
+
+# Query 10: 0 QPS, 0x concurrency, ID 0x59DDD01BB616AFC3 at byte 806802 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      6s      6s      6s      6s      6s       0      6s
+# Lock time      0     2ms     2ms     2ms     2ms     2ms       0     2ms
+# Rows sent      0       3       3       3       3       3       0       3
+# Rows examine   0   4.41M   4.41M   4.41M   4.41M   4.41M       0   4.41M
+# Query size     0   2.62k   2.62k   2.62k   2.62k   2.62k       0   2.62k
+# Bytes          0   2.62k   2.62k   2.62k   2.62k   2.62k       0   2.62k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06T03:30:56.882814Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_1'\G
+#    SHOW CREATE TABLE `passport`.`user_source_1`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_2'\G
+#    SHOW CREATE TABLE `passport`.`user_source_2`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_3'\G
+#    SHOW CREATE TABLE `passport`.`user_source_3`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_4'\G
+#    SHOW CREATE TABLE `passport`.`user_source_4`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_5'\G
+#    SHOW CREATE TABLE `passport`.`user_source_5`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_6'\G
+#    SHOW CREATE TABLE `passport`.`user_source_6`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_7'\G
+#    SHOW CREATE TABLE `passport`.`user_source_7`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_8'\G
+#    SHOW CREATE TABLE `passport`.`user_source_8`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_9'\G
+#    SHOW CREATE TABLE `passport`.`user_source_9`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT c.source as "来源" , SUM(c.count) as "数量" , c.total as "总数" , (SUM(c.count)/c.total*100) as "占比（%）" from ( select CASE WHEN  a.source  LIKE "%qq%" then "qq"  WHEN a.source  LIKE "%weixin%" or a.source  LIKE "%wechat%" then "wechat" WHEN a.source  LIKE "%sina%" then "sina" end source , sum(a.count) as count , (select sum(b.count) from (SELECT COUNT(1) as count from user_source_0 UNION
+SELECT COUNT(1) as count from user_source_1 UNION
+SELECT COUNT(1) as count from user_source_2 UNION
+SELECT COUNT(1) as count from user_source_3 UNION
+SELECT COUNT(1) as count from user_source_4 UNION
+SELECT COUNT(1) as count from user_source_5 UNION
+SELECT COUNT(1) as count from user_source_6 UNION
+SELECT COUNT(1) as count from user_source_7 UNION
+SELECT COUNT(1) as count from user_source_8 UNION
+SELECT COUNT(1) as count from user_source_9 ) b ) as total from  (SELECT source ,count(1) as count from user_source_0 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_1 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_2 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_3 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_4 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_5 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_6 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_7 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_8 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_9 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source ) as a GROUP BY a.source) as c GROUP BY c.source\G
+
+# Query 11: 0 QPS, 0x concurrency, ID 0x71B4D7008FC93565 at byte 758171 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      6s      6s      6s      6s      6s       0      6s
+# Lock time      0    10ms    10ms    10ms    10ms    10ms       0    10ms
+# Rows sent      0      10      10      10      10      10       0      10
+# Rows examine   0   4.41M   4.41M   4.41M   4.41M   4.41M       0   4.41M
+# Query size     0   2.30k   2.30k   2.30k   2.30k   2.30k       0   2.30k
+# Bytes          0   2.30k   2.30k   2.30k   2.30k   2.30k       0   2.30k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06T03:20:59.451433Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_1'\G
+#    SHOW CREATE TABLE `passport`.`user_source_1`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_2'\G
+#    SHOW CREATE TABLE `passport`.`user_source_2`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_3'\G
+#    SHOW CREATE TABLE `passport`.`user_source_3`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_4'\G
+#    SHOW CREATE TABLE `passport`.`user_source_4`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_5'\G
+#    SHOW CREATE TABLE `passport`.`user_source_5`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_6'\G
+#    SHOW CREATE TABLE `passport`.`user_source_6`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_7'\G
+#    SHOW CREATE TABLE `passport`.`user_source_7`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_8'\G
+#    SHOW CREATE TABLE `passport`.`user_source_8`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_9'\G
+#    SHOW CREATE TABLE `passport`.`user_source_9`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select a.source , sum(a.count) , (select sum(b.count) from (SELECT COUNT(1) as count from user_source_0 UNION
+SELECT COUNT(1) as count from user_source_1 UNION
+SELECT COUNT(1) as count from user_source_2 UNION
+SELECT COUNT(1) as count from user_source_3 UNION
+SELECT COUNT(1) as count from user_source_4 UNION
+SELECT COUNT(1) as count from user_source_5 UNION
+SELECT COUNT(1) as count from user_source_6 UNION
+SELECT COUNT(1) as count from user_source_7 UNION
+SELECT COUNT(1) as count from user_source_8 UNION
+SELECT COUNT(1) as count from user_source_9 ) b ) from  (SELECT source ,count(1) as count from user_source_0 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_1 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_2 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_3 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_4 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_5 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_6 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_7 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_8 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_9 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source ) as a GROUP BY a.source\G
+
+# Query 12: 0 QPS, 0x concurrency, ID 0xE342952A76A718F1 at byte 777923 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      6s      6s      6s      6s      6s       0      6s
+# Lock time      0     2ms     2ms     2ms     2ms     2ms       0     2ms
+# Rows sent      0      10      10      10      10      10       0      10
+# Rows examine   0   4.41M   4.41M   4.41M   4.41M   4.41M       0   4.41M
+# Query size     0   2.47k   2.47k   2.47k   2.47k   2.47k       0   2.47k
+# Bytes          0   2.47k   2.47k   2.47k   2.47k   2.47k       0   2.47k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06T03:27:08.470118Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_1'\G
+#    SHOW CREATE TABLE `passport`.`user_source_1`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_2'\G
+#    SHOW CREATE TABLE `passport`.`user_source_2`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_3'\G
+#    SHOW CREATE TABLE `passport`.`user_source_3`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_4'\G
+#    SHOW CREATE TABLE `passport`.`user_source_4`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_5'\G
+#    SHOW CREATE TABLE `passport`.`user_source_5`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_6'\G
+#    SHOW CREATE TABLE `passport`.`user_source_6`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_7'\G
+#    SHOW CREATE TABLE `passport`.`user_source_7`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_8'\G
+#    SHOW CREATE TABLE `passport`.`user_source_8`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_9'\G
+#    SHOW CREATE TABLE `passport`.`user_source_9`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select CASE WHEN  a.source  LIKE "%qq%" then "qq"  WHEN a.source  LIKE "%weixin%" or a.source  LIKE "%wechat%" then "wechat" WHEN a.source  LIKE "%sina%" then "sina" end source , sum(a.count) as count , (select sum(b.count) from (SELECT COUNT(1) as count from user_source_0 UNION
+SELECT COUNT(1) as count from user_source_1 UNION
+SELECT COUNT(1) as count from user_source_2 UNION
+SELECT COUNT(1) as count from user_source_3 UNION
+SELECT COUNT(1) as count from user_source_4 UNION
+SELECT COUNT(1) as count from user_source_5 UNION
+SELECT COUNT(1) as count from user_source_6 UNION
+SELECT COUNT(1) as count from user_source_7 UNION
+SELECT COUNT(1) as count from user_source_8 UNION
+SELECT COUNT(1) as count from user_source_9 ) b ) as total from  (SELECT source ,count(1) as count from user_source_0 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_1 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_2 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_3 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_4 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_5 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_6 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_7 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_8 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_9 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source ) as a GROUP BY a.source\G
+
+# Query 13: 0 QPS, 0x concurrency, ID 0x325BF758F75A95AF at byte 763658 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      6s      6s      6s      6s      6s       0      6s
+# Lock time      0     2ms     2ms     2ms     2ms     2ms       0     2ms
+# Rows sent      0      10      10      10      10      10       0      10
+# Rows examine   0   4.41M   4.41M   4.41M   4.41M   4.41M       0   4.41M
+# Query size     0   2.32k   2.32k   2.32k   2.32k   2.32k       0   2.32k
+# Bytes          0   2.32k   2.32k   2.32k   2.32k   2.32k       0   2.32k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06T03:21:47.997361Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_1'\G
+#    SHOW CREATE TABLE `passport`.`user_source_1`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_2'\G
+#    SHOW CREATE TABLE `passport`.`user_source_2`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_3'\G
+#    SHOW CREATE TABLE `passport`.`user_source_3`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_4'\G
+#    SHOW CREATE TABLE `passport`.`user_source_4`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_5'\G
+#    SHOW CREATE TABLE `passport`.`user_source_5`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_6'\G
+#    SHOW CREATE TABLE `passport`.`user_source_6`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_7'\G
+#    SHOW CREATE TABLE `passport`.`user_source_7`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_8'\G
+#    SHOW CREATE TABLE `passport`.`user_source_8`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_9'\G
+#    SHOW CREATE TABLE `passport`.`user_source_9`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select a.source , sum(a.count) as count , (select sum(b.count) from (SELECT COUNT(1) as count from user_source_0 UNION
+SELECT COUNT(1) as count from user_source_1 UNION
+SELECT COUNT(1) as count from user_source_2 UNION
+SELECT COUNT(1) as count from user_source_3 UNION
+SELECT COUNT(1) as count from user_source_4 UNION
+SELECT COUNT(1) as count from user_source_5 UNION
+SELECT COUNT(1) as count from user_source_6 UNION
+SELECT COUNT(1) as count from user_source_7 UNION
+SELECT COUNT(1) as count from user_source_8 UNION
+SELECT COUNT(1) as count from user_source_9 ) b ) as total from  (SELECT source ,count(1) as count from user_source_0 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_1 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_2 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_3 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_4 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_5 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_6 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_7 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_8 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_9 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source ) as a GROUP BY a.source\G
+
+# Query 14: 0 QPS, 0x concurrency, ID 0x59D8620149C9F2C7 at byte 715703 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      5s      5s      5s      5s      5s       0      5s
+# Lock time      0    10ms    10ms    10ms    10ms    10ms       0    10ms
+# Rows sent      0      10      10      10      10      10       0      10
+# Rows examine   0   4.41M   4.41M   4.41M   4.41M   4.41M       0   4.41M
+# Query size     0   1.75k   1.75k   1.75k   1.75k   1.75k       0   1.75k
+# Bytes          0   1.75k   1.75k   1.75k   1.75k   1.75k       0   1.75k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06T03:08:38.971222Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_1'\G
+#    SHOW CREATE TABLE `passport`.`user_source_1`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_2'\G
+#    SHOW CREATE TABLE `passport`.`user_source_2`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_3'\G
+#    SHOW CREATE TABLE `passport`.`user_source_3`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_4'\G
+#    SHOW CREATE TABLE `passport`.`user_source_4`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_5'\G
+#    SHOW CREATE TABLE `passport`.`user_source_5`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_6'\G
+#    SHOW CREATE TABLE `passport`.`user_source_6`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_7'\G
+#    SHOW CREATE TABLE `passport`.`user_source_7`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_8'\G
+#    SHOW CREATE TABLE `passport`.`user_source_8`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_9'\G
+#    SHOW CREATE TABLE `passport`.`user_source_9`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  (SELECT source ,count(1) as count from user_source_0 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_1 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_2 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_3 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_4 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_5 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_6 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_7 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_8 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_9 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source ) as a GROUP BY a.source\G
+
+# Query 15: 0 QPS, 0x concurrency, ID 0xAF26CF98ED4F4221 at byte 734341 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      5s      5s      5s      5s      5s       0      5s
+# Lock time      0     1ms     1ms     1ms     1ms     1ms       0     1ms
+# Rows sent      0      10      10      10      10      10       0      10
+# Rows examine   0   4.41M   4.41M   4.41M   4.41M   4.41M       0   4.41M
+# Query size     0   1.77k   1.77k   1.77k   1.77k   1.77k       0   1.77k
+# Bytes          0   1.77k   1.77k   1.77k   1.77k   1.77k       0   1.77k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06T03:12:27.362108Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_1'\G
+#    SHOW CREATE TABLE `passport`.`user_source_1`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_2'\G
+#    SHOW CREATE TABLE `passport`.`user_source_2`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_3'\G
+#    SHOW CREATE TABLE `passport`.`user_source_3`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_4'\G
+#    SHOW CREATE TABLE `passport`.`user_source_4`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_5'\G
+#    SHOW CREATE TABLE `passport`.`user_source_5`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_6'\G
+#    SHOW CREATE TABLE `passport`.`user_source_6`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_7'\G
+#    SHOW CREATE TABLE `passport`.`user_source_7`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_8'\G
+#    SHOW CREATE TABLE `passport`.`user_source_8`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_9'\G
+#    SHOW CREATE TABLE `passport`.`user_source_9`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select a.source , sum(a.count) from  (SELECT source ,count(1) as count from user_source_0 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_1 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_2 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_3 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_4 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_5 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_6 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_7 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_8 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_9 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source ) as a GROUP BY a.source\G
+
+# Query 16: 0 QPS, 0x concurrency, ID 0x8981C36F037CC2E7 at byte 675854 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       8
+# Exec time      0      5s   495ms   682ms   596ms   672ms    52ms   580ms
+# Lock time      0     2ms   192us   643us   312us   626us   129us   287us
+# Rows sent      0  62.32k       0  43.21k   7.79k  42.34k  14.42k  258.60
+# Rows examine   0   3.53M 451.63k 451.75k 451.73k 440.37k       0 440.37k
+# Query size     0     421      51      56   52.62   54.21    1.26   51.63
+# Bytes          0     421      51      56   52.62   54.21    1.26   51.63
+# hostname       0     208      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06... (1/12%), 2016-09-06... (1/12%)... 6 more
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * from user_source_0 where source LIKE "%QQ%"\G
+
+# Query 17: 0 QPS, 0x concurrency, ID 0xDA022C80E92D2007 at byte 713737 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      5s      5s      5s      5s      5s       0      5s
+# Lock time      0     1ms     1ms     1ms     1ms     1ms       0     1ms
+# Rows sent      0      84      84      84      84      84       0      84
+# Rows examine   0   4.41M   4.41M   4.41M   4.41M   4.41M       0   4.41M
+# Query size     0   1.71k   1.71k   1.71k   1.71k   1.71k       0   1.71k
+# Bytes          0   1.71k   1.71k   1.71k   1.71k   1.71k       0   1.71k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06T03:07:15.510707Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_1'\G
+#    SHOW CREATE TABLE `passport`.`user_source_1`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_2'\G
+#    SHOW CREATE TABLE `passport`.`user_source_2`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_3'\G
+#    SHOW CREATE TABLE `passport`.`user_source_3`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_4'\G
+#    SHOW CREATE TABLE `passport`.`user_source_4`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_5'\G
+#    SHOW CREATE TABLE `passport`.`user_source_5`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_6'\G
+#    SHOW CREATE TABLE `passport`.`user_source_6`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_7'\G
+#    SHOW CREATE TABLE `passport`.`user_source_7`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_8'\G
+#    SHOW CREATE TABLE `passport`.`user_source_8`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_9'\G
+#    SHOW CREATE TABLE `passport`.`user_source_9`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT source ,count(1) as count from user_source_0 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_1 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_2 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_3 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_4 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_5 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_6 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_7 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_8 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_9 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source\G
+
+# Query 18: 0 QPS, 0x concurrency, ID 0x9DC68BDEACC5348B at byte 708941 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      5s      5s      5s      5s      5s       0      5s
+# Lock time      0   954us   954us   954us   954us   954us       0   954us
+# Rows sent      0      84      84      84      84      84       0      84
+# Rows examine   0   4.41M   4.41M   4.41M   4.41M   4.41M       0   4.41M
+# Query size     0   1.62k   1.62k   1.62k   1.62k   1.62k       0   1.62k
+# Bytes          0   1.62k   1.62k   1.62k   1.62k   1.62k       0   1.62k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06T03:06:22.131182Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_1'\G
+#    SHOW CREATE TABLE `passport`.`user_source_1`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_2'\G
+#    SHOW CREATE TABLE `passport`.`user_source_2`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_3'\G
+#    SHOW CREATE TABLE `passport`.`user_source_3`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_4'\G
+#    SHOW CREATE TABLE `passport`.`user_source_4`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_5'\G
+#    SHOW CREATE TABLE `passport`.`user_source_5`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_6'\G
+#    SHOW CREATE TABLE `passport`.`user_source_6`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_7'\G
+#    SHOW CREATE TABLE `passport`.`user_source_7`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_8'\G
+#    SHOW CREATE TABLE `passport`.`user_source_8`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_9'\G
+#    SHOW CREATE TABLE `passport`.`user_source_9`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT source ,count(1) from user_source_0 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) from user_source_1 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) from user_source_2 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) from user_source_3 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) from user_source_4 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) from user_source_5 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) from user_source_6 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) from user_source_7 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) from user_source_8 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) from user_source_9 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source\G
+
+# Query 19: 0 QPS, 0x concurrency, ID 0x56DF4E6E44DDEB43 at byte 726470 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      5s      5s      5s      5s      5s       0      5s
+# Lock time      0   987us   987us   987us   987us   987us       0   987us
+# Rows sent      0      10      10      10      10      10       0      10
+# Rows examine   0   4.41M   4.41M   4.41M   4.41M   4.41M       0   4.41M
+# Query size     0   1.77k   1.77k   1.77k   1.77k   1.77k       0   1.77k
+# Bytes          0   1.77k   1.77k   1.77k   1.77k   1.77k       0   1.77k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06T03:10:45.616105Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_1'\G
+#    SHOW CREATE TABLE `passport`.`user_source_1`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_2'\G
+#    SHOW CREATE TABLE `passport`.`user_source_2`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_3'\G
+#    SHOW CREATE TABLE `passport`.`user_source_3`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_4'\G
+#    SHOW CREATE TABLE `passport`.`user_source_4`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_5'\G
+#    SHOW CREATE TABLE `passport`.`user_source_5`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_6'\G
+#    SHOW CREATE TABLE `passport`.`user_source_6`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_7'\G
+#    SHOW CREATE TABLE `passport`.`user_source_7`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_8'\G
+#    SHOW CREATE TABLE `passport`.`user_source_8`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_9'\G
+#    SHOW CREATE TABLE `passport`.`user_source_9`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select a.source , count(a.count) from  (SELECT source ,count(1) as count from user_source_0 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_1 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_2 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_3 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_4 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_5 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_6 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_7 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_8 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source UNION
+SELECT source ,count(1) as count from user_source_9 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source ) as a GROUP BY a.source\G
+
+# Query 20: 0 QPS, 0x concurrency, ID 0x13D79C1D9F08E19C at byte 43582 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       3
+# Exec time      0      4s      1s      1s      1s      1s    31ms      1s
+# Lock time      0   705us   170us   319us   235us   316us    62us   214us
+# Rows sent      0   1.81k     605     633  616.67  621.67   13.96  592.07
+# Rows examine   0   1.32M 451.11k 452.02k 451.57k 440.37k       0 440.37k
+# Query size     0     321     107     107     107     107       0     107
+# Bytes          0     321     107     107     107     107       0     107
+# hostname       0      78      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.73
+# Time         2016-09-05... (1/33%), 2016-09-05... (1/33%)... 1 more
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_8'\G
+#    SHOW CREATE TABLE `passport`.`user_8`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from user_8  where create_time between '2016-09-02' and '2016-09-05'     and is_mobile_binding = 1\G
+
+# Query 21: 0 QPS, 0x concurrency, ID 0x9AFBB67E4234B491 at byte 1615878 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      4s      4s      4s      4s      4s       0      4s
+# Lock time      0   168us   168us   168us   168us   168us       0   168us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0     112     112     112     112     112       0     112
+# Bytes          0     112     112     112     112     112       0     112
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        10.10.2.61
+# Time         2016-09-06T08:19:07.892656Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'record_user_operate_201609'\G
+#    SHOW CREATE TABLE `passport`.`record_user_operate_201609`\G
+insert into record_user_operate_201609 (id, user_id, type,remark) values(1012349232, 3253128, 3, '用户登陆')\G
+
+# Query 22: 0 QPS, 0x concurrency, ID 0x34F10BC9DADDEF3D at byte 42513 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      2s      2s      2s      2s      2s       0      2s
+# Lock time      0    82us    82us    82us    82us    82us       0    82us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0 680.36k 680.36k 680.36k 680.36k 680.36k       0 680.36k
+# Query size     0      63      63      63      63      63       0      63
+# Bytes          0      63      63      63      63      63       0      63
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-05T16:35:08.269708Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_creditcard'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_creditcard`\G
+DELETE FROM ods_record_creditcard
+WHERE etl_date = '2016-09-05'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_record_creditcard
+WHERE etl_date = '2016-09-05'\G
+
+# Query 23: 0 QPS, 0x concurrency, ID 0x70244A6A089883C0 at byte 491591 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.21
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       4
+# Exec time      0      2s   196ms   986ms   448ms   945ms   304ms   651ms
+# Lock time      0   773us   102us   307us   193us   301us    72us   243us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0     571     142     145  142.75  143.84    1.50  136.99
+# Bytes          0     571     142     145  142.75  143.84    1.50  136.99
+# hostname       0     104      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        10.10.1.56 (2/50%), 10.10.1.61 (1/25%)... 1 more
+# Time         2016-09-06... (1/25%), 2016-09-06... (1/25%)... 2 more
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'record_user_integral_1'\G
+#    SHOW CREATE TABLE `passport`.`record_user_integral_1`\G
+insert into record_user_integral_1 (id, user_id, source_name,source_id,integral) values(1012292435, 2473735, '每天开启app', 'unop_app', 5)\G
+
+# Query 24: 0 QPS, 0x concurrency, ID 0x4C9D76007C8A72E8 at byte 757431 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      2s      2s      2s      2s      2s       0      2s
+# Lock time      0   602us   602us   602us   602us   602us       0   602us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0      20      20      20      20      20       0      20
+# Query size     0     532     532     532     532     532       0     532
+# Bytes          0     532     532     532     532     532       0     532
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06T03:20:22.256277Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_1'\G
+#    SHOW CREATE TABLE `passport`.`user_source_1`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_2'\G
+#    SHOW CREATE TABLE `passport`.`user_source_2`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_3'\G
+#    SHOW CREATE TABLE `passport`.`user_source_3`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_4'\G
+#    SHOW CREATE TABLE `passport`.`user_source_4`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_5'\G
+#    SHOW CREATE TABLE `passport`.`user_source_5`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_6'\G
+#    SHOW CREATE TABLE `passport`.`user_source_6`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_7'\G
+#    SHOW CREATE TABLE `passport`.`user_source_7`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_8'\G
+#    SHOW CREATE TABLE `passport`.`user_source_8`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_9'\G
+#    SHOW CREATE TABLE `passport`.`user_source_9`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select sum(b.count) from (SELECT COUNT(1) as count from user_source_0 UNION
+SELECT COUNT(1) as count from user_source_1 UNION
+SELECT COUNT(1) as count from user_source_2 UNION
+SELECT COUNT(1) as count from user_source_3 UNION
+SELECT COUNT(1) as count from user_source_4 UNION
+SELECT COUNT(1) as count from user_source_5 UNION
+SELECT COUNT(1) as count from user_source_6 UNION
+SELECT COUNT(1) as count from user_source_7 UNION
+SELECT COUNT(1) as count from user_source_8 UNION
+SELECT COUNT(1) as count from user_source_9 ) b\G
+
+# Query 25: 0 QPS, 0x concurrency, ID 0x6570F6E0756E5FB9 at byte 756810 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      1s      1s      1s      1s      1s       0      1s
+# Lock time      0   709us   709us   709us   709us   709us       0   709us
+# Rows sent      0      10      10      10      10      10       0      10
+# Rows examine   0      10      10      10      10      10       0      10
+# Query size     0     412     412     412     412     412       0     412
+# Bytes          0     412     412     412     412     412       0     412
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06T03:18:23.233763Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_1'\G
+#    SHOW CREATE TABLE `passport`.`user_source_1`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_2'\G
+#    SHOW CREATE TABLE `passport`.`user_source_2`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_3'\G
+#    SHOW CREATE TABLE `passport`.`user_source_3`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_4'\G
+#    SHOW CREATE TABLE `passport`.`user_source_4`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_5'\G
+#    SHOW CREATE TABLE `passport`.`user_source_5`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_6'\G
+#    SHOW CREATE TABLE `passport`.`user_source_6`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_7'\G
+#    SHOW CREATE TABLE `passport`.`user_source_7`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_8'\G
+#    SHOW CREATE TABLE `passport`.`user_source_8`\G
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_9'\G
+#    SHOW CREATE TABLE `passport`.`user_source_9`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT COUNT(1) from user_source_0 UNION
+SELECT COUNT(1) from user_source_1 UNION
+SELECT COUNT(1) from user_source_2 UNION
+SELECT COUNT(1) from user_source_3 UNION
+SELECT COUNT(1) from user_source_4 UNION
+SELECT COUNT(1) from user_source_5 UNION
+SELECT COUNT(1) from user_source_6 UNION
+SELECT COUNT(1) from user_source_7 UNION
+SELECT COUNT(1) from user_source_8 UNION
+SELECT COUNT(1) from user_source_9\G
+
+# Query 26: 0 QPS, 0x concurrency, ID 0x3562C8ECB99CB543 at byte 1623941 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.89
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0      1s   147ms      1s   707ms      1s   792ms   707ms
+# Lock time      0   398us   190us   208us   199us   208us    12us   199us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0     258     126     132     129     132    4.24     129
+# Bytes          0     258     126     132     129     132    4.24     129
+# hostname       0      52      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        10.10.1.61 (1/50%), 10.10.2.61 (1/50%)
+# Time         2016-09-06... (1/50%), 2016-09-06... (1/50%)
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'record_user_task_8'\G
+#    SHOW CREATE TABLE `passport`.`record_user_task_8`\G
+insert into record_user_task_8 (id, user_id, source_name,source_id) values(1012349417, 3316989, '每天开启app', 'unop_app')\G
+
+# Query 27: 0 QPS, 0x concurrency, ID 0x0CD30E158F3DC1C1 at byte 41966 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      1s      1s      1s      1s      1s       0      1s
+# Lock time      0    88us    88us    88us    88us    88us       0    88us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0 372.55k 372.55k 372.55k 372.55k 372.55k       0 372.55k
+# Query size     0      57      57      57      57      57       0      57
+# Bytes          0      57      57      57      57      57       0      57
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-05T16:34:39.906647Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_loan'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_loan`\G
+DELETE FROM ods_record_loan
+WHERE etl_date = '2016-09-05'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_record_loan
+WHERE etl_date = '2016-09-05'\G
+
+# Query 28: 0 QPS, 0x concurrency, ID 0x3B144298B0C9AADE at byte 684207 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      1s      1s      1s      1s      1s       0      1s
+# Lock time      0   186us   186us   186us   186us   186us       0   186us
+# Rows sent      0      73      73      73      73      73       0      73
+# Rows examine   0 451.89k 451.89k 451.89k 451.89k 451.89k       0 451.89k
+# Query size     0      43      43      43      43      43       0      43
+# Bytes          0      43      43      43      43      43       0      43
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06T03:00:15.801405Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * from user_source_0 GROUP BY source\G
+
+# Query 29: 0 QPS, 0x concurrency, ID 0x4DA6E095FE9D2108 at byte 684463 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   843ms   843ms   843ms   843ms   843ms       0   843ms
+# Lock time      0   234us   234us   234us   234us   234us       0   234us
+# Rows sent      0      73      73      73      73      73       0      73
+# Rows examine   0 451.89k 451.89k 451.89k 451.89k 451.89k       0 451.89k
+# Query size     0      58      58      58      58      58       0      58
+# Bytes          0      58      58      58      58      58       0      58
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06T03:00:41.271584Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT source ,count(1) from user_source_0 GROUP BY source\G
+
+# Query 30: 0 QPS, 0x concurrency, ID 0x98204EB05621D6CB at byte 42239 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   828ms   828ms   828ms   828ms   828ms       0   828ms
+# Lock time      0   116us   116us   116us   116us   116us       0   116us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0 221.87k 221.87k 221.87k 221.87k 221.87k       0 221.87k
+# Query size     0      70      70      70      70      70       0      70
+# Bytes          0      70      70      70      70      70       0      70
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-05T16:34:55.729361Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_user_binding_card'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_user_binding_card`\G
+DELETE FROM ods_record_user_binding_card
+WHERE etl_date = '2016-09-05'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_record_user_binding_card
+WHERE etl_date = '2016-09-05'\G
+
+# Query 31: 0 QPS, 0x concurrency, ID 0xD23D053EF6E64153 at byte 708570 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   800ms   800ms   800ms   800ms   800ms       0   800ms
+# Lock time      0   275us   275us   275us   275us   275us       0   275us
+# Rows sent      0       9       9       9       9       9       0       9
+# Rows examine   0 451.77k 451.77k 451.77k 451.77k 451.77k       0 451.77k
+# Query size     0     159     159     159     159     159       0     159
+# Bytes          0     159     159     159     159     159       0     159
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06T03:05:09.412561Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT source ,count(1) from user_source_0 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" OR source LIKE "%sina%" GROUP BY source\G
+
+# Query 32: 0 QPS, 0x concurrency, ID 0x921019A278388ECA at byte 702603 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   700ms   700ms   700ms   700ms   700ms       0   700ms
+# Lock time      0   226us   226us   226us   226us   226us       0   226us
+# Rows sent      0       6       6       6       6       6       0       6
+# Rows examine   0 451.76k 451.76k 451.76k 451.76k 451.76k       0 451.76k
+# Query size     0     135     135     135     135     135       0     135
+# Bytes          0     135     135     135     135     135       0     135
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06T03:03:44.171321Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT source ,count(1) from user_source_0 where source LIKE "%qq%" OR source LIKE "%weixin%" OR source LIKE "%wechat%" GROUP BY source\G
+
+# Query 33: 0 QPS, 0x concurrency, ID 0x87E466EDFA19DC6A at byte 38817 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   665ms   665ms   665ms   665ms   665ms       0   665ms
+# Lock time      0   122us   122us   122us   122us   122us       0   122us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0 250.83k 250.83k 250.83k 250.83k 250.83k       0 250.83k
+# Query size     0      51      51      51      51      51       0      51
+# Bytes          0      51      51      51      51      51       0      51
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-05T16:33:54.262600Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_mobile'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_mobile`\G
+DELETE FROM dm_mobile
+WHERE etl_date = '2016-09-05'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  dm_mobile
+WHERE etl_date = '2016-09-05'\G
+
+# Query 34: 0 QPS, 0x concurrency, ID 0xBE0E14F21FDEFB01 at byte 1615435 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.02
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       3
+# Exec time      0   508ms   114ms   257ms   169ms   253ms    62ms   134ms
+# Lock time      0   718us   211us   286us   239us   273us    30us   214us
+# Rows sent      0       1       0       1    0.33    0.99    0.47       0
+# Rows examine   0       1       0       1    0.33    0.99    0.47       0
+# Query size     0     706     231     238  235.33  234.30    3.50  234.30
+# Bytes          0     706     231     238  235.33  234.30    3.50  234.30
+# hostname       0      78      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        10.10.2.61 (2/66%), 10.10.1.56 (1/33%)
+# Time         2016-09-05... (1/33%), 2016-09-06... (1/33%)... 1 more
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_0'\G
+#    SHOW CREATE TABLE `passport`.`user_0`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT id, mobile, email, username, password , nickname, face, is_email_binding, is_mobile_binding, real_name_certification , credit_corn, integral, level_id, create_time, update_time , status FROM user_0 WHERE username = 'kashen00985937'\G
+
+# Query 35: 0 QPS, 0x concurrency, ID 0x822DAF4B820188DE at byte 2228205 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       4
+# Exec time      0   462ms   103ms   132ms   116ms   128ms    12ms   125ms
+# Lock time      0     1ms   268us   356us   296us   348us    36us   317us
+# Rows sent      0   3.91k    1000    1000    1000    1000       0    1000
+# Rows examine   0 110.50k  24.70k  29.58k  27.63k  28.66k   1.89k  27.29k
+# Query size     0     332      83      83      83      83       0      83
+# Bytes          0     332      83      83      83      83       0      83
+# hostname       0     104      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06... (1/25%), 2016-09-06... (1/25%)... 2 more
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'record_user_binding_card_0'\G
+#    SHOW CREATE TABLE `passport`.`record_user_binding_card_0`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM `record_user_binding_card_0` ORDER BY `card_no` DESC LIMIT 5000, 1000\G
+
+# Query 36: 0 QPS, 0x concurrency, ID 0x165E662C1C7E317A at byte 699334 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   414ms   414ms   414ms   414ms   414ms       0   414ms
+# Lock time      0   291us   291us   291us   291us   291us       0   291us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0 451.75k 451.75k 451.75k 451.75k 451.75k       0 451.75k
+# Query size     0     137     137     137     137     137       0     137
+# Bytes          0     137     137     137     137     137       0     137
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-06T03:03:30.343399Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `passport`.`user_source_0`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT source ,count(1) from user_source_0 where source LIKE "%qq%" AND source LIKE "%weixin%" AND source LIKE "%wechat%" GROUP BY source\G
+
+# Query 37: 0 QPS, 0x concurrency, ID 0x2ADEFD29115C1578 at byte 43045 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   276ms   276ms   276ms   276ms   276ms       0   276ms
+# Lock time      0    73us    73us    73us    73us    73us       0    73us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0  61.27k  61.27k  61.27k  61.27k  61.27k       0  61.27k
+# Query size     0      62      62      62      62      62       0      62
+# Bytes          0      62      62      62      62      62       0      62
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-05T16:35:29.444051Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_promotion'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_promotion`\G
+DELETE FROM ods_record_promotion
+WHERE etl_date = '2016-09-05'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_record_promotion
+WHERE etl_date = '2016-09-05'\G
+
+# Query 38: 0 QPS, 0x concurrency, ID 0x9932B79CEE2472A5 at byte 42780 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   159ms   159ms   159ms   159ms   159ms       0   159ms
+# Lock time      0    75us    75us    75us    75us    75us       0    75us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0  37.80k  37.80k  37.80k  37.80k  37.80k       0  37.80k
+# Query size     0      62      62      62      62      62       0      62
+# Bytes          0      62      62      62      62      62       0      62
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-05T16:35:17.756782Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_jimu_loan'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_jimu_loan`\G
+DELETE FROM ods_record_jimu_loan
+WHERE etl_date = '2016-09-05'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_record_jimu_loan
+WHERE etl_date = '2016-09-05'\G
+
+# Query 39: 0 QPS, 0x concurrency, ID 0x79E895C55CA19C8D at byte 1549803 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   130ms   130ms   130ms   130ms   130ms       0   130ms
+# Lock time      0       0       0       0       0       0       0       0
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0   1.70k   1.70k   1.70k   1.70k   1.70k       0   1.70k
+# Bytes          0   1.70k   1.70k   1.70k   1.70k   1.70k       0   1.70k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        localhost
+# Time         2016-09-06T07:54:41.558456Z
+# Users        root
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+create table `sheng_loan_record` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `trans_amt` double DEFAULT NULL COMMENT '借款金额',
+  `instalment_to_talcount` tinyint(1) DEFAULT NULL COMMENT '分期总数',
+  `bank_card_no` varchar(4)   DEFAULT NULL COMMENT '借款银行卡号（后4位）',
+  `bank_card_type` char(1)   DEFAULT NULL COMMENT '银行卡类型("1":储蓄卡,"2":信用卡)',
+  `bank_code` varchar(8)   DEFAULT NULL COMMENT '借款银行',
+  `loan_type` char(1)   DEFAULT NULL COMMENT '借款类型(2 - 余额代偿)',
+  `loan_status` char(1)   DEFAULT NULL COMMENT '借款状态 00-未处理,01-打款中,02-已打款,03-打款失败',
+  `repay_amt_by_period` double DEFAULT NULL COMMENT '每期还款总额',
+  `repay_capital_by_period` double DEFAULT NULL COMMENT '每期还款本金',
+  `repay_fee_by_period` double DEFAULT NULL COMMENT '每期还款手续费',
+  `trans_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '申请时间',
+  `pay_time` datetime DEFAULT NULL COMMENT '打款时间',
+  `capital_amount` double DEFAULT NULL COMMENT '每期本金',
+  `fee_amount` double DEFAULT 0 COMMENT '每期费用',
+  `total_fee_amount` double DEFAULT 0 COMMENT '总费用',
+  `total_service_charge_fee_amount` double DEFAULT 0 COMMENT '总服务费',
+  `total_couponfee_amount` double DEFAULT 0 COMMENT '总优惠手续费',
+  `total_free_fee_count` tinyint(1) DEFAULT 0 COMMENT '总优惠期数',
+  `credit_coupon_amount` double DEFAULT 0 COMMENT '比信用卡优惠金额',
+  `credit_coupon_percent` double DEFAULT 0 COMMENT '比信用卡优惠百分百比',
+  `bank_name` varchar(32)   DEFAULT NULL COMMENT '放款银行',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8\G

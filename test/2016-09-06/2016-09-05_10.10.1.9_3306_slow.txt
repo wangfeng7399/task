@@ -1,0 +1,616 @@
+
+# 290ms user time, 10ms system time, 26.33M rss, 211.13M vsz
+# Current date: Mon Sep  5 05:00:16 2016
+# Hostname: 26
+# Files: /tmp/2016-09-05_10.10.1.9_3306_slow.log
+# Overall: 16 total, 10 unique, 0 QPS, 0x concurrency ____________________
+# Attribute          total     min     max     avg     95%  stddev  median
+# ============     ======= ======= ======= ======= ======= ======= =======
+# Exec time            24s      1s      2s      1s      2s   309ms      1s
+# Lock time            2ms    39us   208us   116us   176us    50us   108us
+# Rows sent          2.06k       0     861  131.81  833.10  280.49    0.99
+# Rows examine       8.81k       0   2.54k  563.81   2.50k  833.40   54.21
+# Query size         6.02k      32   1.78k  385.12  621.67  411.23  246.02
+# Bytes              6.02k      32   1.78k  385.12  621.67  411.23  246.02
+# hostname             416      26      26      26      26       0      26
+
+# Profile
+# Rank Query ID           Response time Calls R/Call V/M   Item
+# ==== ================== ============= ===== ====== ===== ===============
+#    1 0x86E74EA54BDF172C  5.9235 24.8%     4 1.4809  0.00 SELECT SYS_FILE
+#    2 0x79D6028A54A3B0FC  4.0908 17.1%     3 1.3636  0.14 SELECT t_user t_user_funds t_user_safe
+#    3 0x2393714A61F7469A  3.3683 14.1%     2 1.6842  0.07 SELECT t_user T_User_Safe
+#    4 0x608767CA84F75EA3  1.9371  8.1%     1 1.9371  0.00 UPDATE push_notification_?
+#    5 0x485CA1996287BB7E  1.9049  8.0%     1 1.9049  0.00 SELECT t_c_project
+#    6 0x650D1DB6AF9B36E0  1.6787  7.0%     1 1.6787  0.00 SELECT t_c_project
+#    7 0xEB0AB9D1A13BE50B  1.4690  6.1%     1 1.4690  0.00 SELECT cms_site_menu_content cms_site_menu
+#    8 0x317C78672A03CD0A  1.3600  5.7%     1 1.3600  0.00 SELECT t_c_project_order
+#    9 0xF7EC75ABC910F86B  1.1140  4.7%     1 1.1140  0.00 INSERT bbs_search_history_?
+#   10 0x445AE0CBF8E841B8  1.0403  4.4%     1 1.0403  0.00 INSERT T_User_Safe
+
+# Query 1: 0 QPS, 0x concurrency, ID 0x86E74EA54BDF172C at byte 5750 _____
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         25       4
+# Exec time     24      6s      1s      2s      1s      2s    62ms      1s
+# Lock time     20   383us    47us   185us    95us   176us    50us   126us
+# Rows sent      0       4       1       1       1       1       0       1
+# Rows examine   0       4       1       1       1       1       0       1
+# Query size    13     828     207     207     207     207       0     207
+# Bytes         13     828     207     207     207     207       0     207
+# hostname      25     104      26      26      26      26       0      26
+# String:
+# Databases    crowdfunding
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 'SYS_FILE'\G
+#    SHOW CREATE TABLE `crowdfunding`.`SYS_FILE`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT  
+		fileId,typeId,fileName,filePath,createtime,ext,fileType,note,creatorId,creator,totalBytes,delFlag
+	 
+		FROM SYS_FILE s
+		WHERE
+		s.fileId in
+		 (  
+                        10000031351617
+        )\G
+
+# Query 2: 0 QPS, 0x concurrency, ID 0x79D6028A54A3B0FC at byte 6906 _____
+# Scores: V/M = 0.14
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         18       3
+# Exec time     17      4s      1s      2s      1s      2s   435ms      1s
+# Lock time     25   477us    91us   208us   159us   204us    48us   176us
+# Rows sent      0       1       0       1    0.33    0.99    0.47       0
+# Rows examine  29   2.59k     883     884  883.33  874.75       0  874.75
+# Query size    12     750     250     250     250     250       0     250
+# Bytes         12     750     250     250     250     250       0     250
+# hostname      18      78      26      26      26      26       0      26
+# String:
+# Databases    crowdfunding
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 't_user'\G
+#    SHOW CREATE TABLE `crowdfunding`.`t_user`\G
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 't_user_funds'\G
+#    SHOW CREATE TABLE `crowdfunding`.`t_user_funds`\G
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 't_user_safe'\G
+#    SHOW CREATE TABLE `crowdfunding`.`t_user_safe`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select u.*,
+		uf.PayMark 
+		from t_user u 
+		left join t_user_funds uf  on u.user_id=uf.user_id
+		left join t_user_safe s on s.user_id=u.user_id
+		where u.IsDel = 0 AND
+		(LoginName = '13327456789'  or s.EMail='13327456789' or s.Mobile='13327456789')\G
+
+# Query 3: 0 QPS, 0x concurrency, ID 0x2393714A61F7469A at byte 0 ________
+# Scores: V/M = 0.07
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         12       2
+# Exec time     14      3s      1s      2s      2s      2s   335ms      2s
+# Lock time     13   251us    92us   159us   125us   159us    47us   125us
+# Rows sent     81   1.68k     861     861     861     861       0     861
+# Rows examine  57   5.09k   2.54k   2.54k   2.54k   2.54k       0   2.54k
+# Query size    21   1.27k     650     650     650     650       0     650
+# Bytes         21   1.27k     650     650     650     650       0     650
+# hostname      12      52      26      26      26      26       0      26
+# String:
+# Databases    crowdfunding
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 't_user'\G
+#    SHOW CREATE TABLE `crowdfunding`.`t_user`\G
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 'T_User_Safe'\G
+#    SHOW CREATE TABLE `crowdfunding`.`T_User_Safe`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT us.*,sa.id_no,sa.Email,sa.Mobile,sa.Bind_Id_no as bindIdno
+		FROM t_user us LEFT JOIN T_User_Safe sa on us.user_id=sa.user_id
+		WHERE 1=1 AND us.IsDel =0
+
+
+		 
+		 
+		 			
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+		    
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+		    
+	        
+	        
+	        
+	        
+	        
+	        
+		    
+		    
+		    
+		    
+		     
+		     
+		      
+	 
+		GROUP BY us.user_id
+		 
+		 
+		order by us.RegisterTime  desc\G
+
+# Query 4: 0 QPS, 0x concurrency, ID 0x608767CA84F75EA3 at byte 7261 _____
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          6       1
+# Exec time      8      2s      2s      2s      2s      2s       0      2s
+# Lock time      6   113us   113us   113us   113us   113us       0   113us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       1       1       1       1       1       0       1
+# Query size     1     110     110     110     110     110       0     110
+# Bytes          1     110     110     110     110     110       0     110
+# hostname       6      26      26      26      26      26       0      26
+# String:
+# Databases    message
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `message` LIKE 'push_notification_5'\G
+#    SHOW CREATE TABLE `message`.`push_notification_5`\G
+update push_notification_5 set is_read=1 
+		 WHERE user_id=3605301
+			
+				and id in
+				(
+					'164713'
+				)\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select  is_read=1 from push_notification_5 where  user_id=3605301
+			
+				and id in
+				(
+					'164713'
+				)\G
+
+# Query 5: 0 QPS, 0x concurrency, ID 0x485CA1996287BB7E at byte 777 ______
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          6       1
+# Exec time      7      2s      2s      2s      2s      2s       0      2s
+# Lock time      9   170us   170us   170us   170us   170us       0   170us
+# Rows sent      0       9       9       9       9       9       0       9
+# Rows examine   0      55      55      55      55      55       0      55
+# Query size    29   1.78k   1.78k   1.78k   1.78k   1.78k       0   1.78k
+# Bytes         29   1.78k   1.78k   1.78k   1.78k   1.78k       0   1.78k
+# hostname       6      26      26      26      26      26       0      26
+# String:
+# Databases    crowdfunding
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 't_c_project'\G
+#    SHOW CREATE TABLE `crowdfunding`.`t_c_project`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT   
+		P_LeaderID,P_SharesPercent,P_InvestMinLeader,P_InvestMinFollow,Project_id,P_Name,
+		P_StateID,P_ViewLimit,P_TypeID,P_Industry,P_CityID,P_ProvincesID,P_FoundedYear,
+		P_FoundedMonth,P_Label,P_Stage,P_IsHaveOther,P_CompanyName,P_Address,P_Detail,
+		P_FinancingAmount,P_InvestAmount,P_Complete,P_PayWay,P_Setup,P_ViewCount,P_FavoritesCount,
+		P_InvestCount,P_AskPriceCount,P_Pic,P_Video,P_OpenDate,P_CloseDate,P_IsRecommended,
+		P_OpenDays,P_InvestMax,P_InvestMin,Creator,CreateTime,IsDel,P_IsFull,P_FullTime,P_IsCheck,
+		P_Checker,P_CheckTime,P_IsPay,P_PayTime,P_DealRate,P_DealFees,P_FinalGetPay,P_IsBreak,
+		P_BreakTime,P_Break_remark,P_CheckRemark,P_CheckTimes,P_HavedPay,P_PayPercent,P_CityIName,
+		P_ProvincesName,P_Current,P_EmployeesCount,UpdateTime,P_ValuationFinal,P_InvestMaxLeader,P_OPENING_COUNT_DOWN, 
+		P_IS_WARMED_UP_PRO,P_ANPOINTMENT_PERSON_COUNT,P_ANPOINTMENT_PERSON_TOTALMONEY,P_PROJECT_SINGLE_INVEST,P_FINANCING_SIDE_CONTRIBUTIVE
+	 
+		FROM t_c_project   
+		WHERE 1=1 
+		 	
+			 
+			 
+			 
+			 		
+	        
+	        
+	        AND P_StateID = '3' 
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+		    
+	        
+		    
+	        
+	        
+	        
+	        
+	        
+	        
+		    
+	        
+	        
+	        
+		    
+	        
+	        
+	        
+		    
+	        
+	        
+		    
+	        
+	        
+	        
+	        
+	        
+		    
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	       
+	       
+	 
+		 
+		 
+		order by P_OpenDate  desc\G
+
+# Query 6: 0 QPS, 0x concurrency, ID 0x650D1DB6AF9B36E0 at byte 6060 _____
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          6       1
+# Exec time      7      2s      2s      2s      2s      2s       0      2s
+# Lock time      2    39us    39us    39us    39us    39us       0    39us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0      46      46      46      46      46       0      46
+# Query size     0      32      32      32      32      32       0      32
+# Bytes          0      32      32      32      32      32       0      32
+# hostname       6      26      26      26      26      26       0      26
+# String:
+# Databases    crowdfunding
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 't_c_project'\G
+#    SHOW CREATE TABLE `crowdfunding`.`t_c_project`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select count(1) from t_c_project\G
+
+# Query 7: 0 QPS, 0x concurrency, ID 0xEB0AB9D1A13BE50B at byte 5102 _____
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          6       1
+# Exec time      6      1s      1s      1s      1s      1s       0      1s
+# Lock time      7   136us   136us   136us   136us   136us       0   136us
+# Rows sent     17     371     371     371     371     371       0     371
+# Rows examine   8     769     769     769     769     769       0     769
+# Query size     8     541     541     541     541     541       0     541
+# Bytes          8     541     541     541     541     541       0     541
+# hostname       6      26      26      26      26      26       0      26
+# String:
+# Databases    crowdfunding
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 'cms_site_menu_content'\G
+#    SHOW CREATE TABLE `crowdfunding`.`cms_site_menu_content`\G
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 'cms_site_menu'\G
+#    SHOW CREATE TABLE `crowdfunding`.`cms_site_menu`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT  
+		site_menu_content_id,site_menu_id,content_title,content_text,content_fileIds,content_isurl,content_url,content_min_title,content_tag,content_summary,content_author,content_sort,content_create_date,content_update_date,content_templet,content_notice_object,content_notice_type,content_if_publish
+	 
+		FROM cms_site_menu_content   
+		WHERE 1=1  
+		 
+		AND site_menu_id =(SELECT site_menu_id FROM cms_site_menu WHERE menu_path='HYZX') and content_if_publish=1
+		 
+		 
+		order by ifNull(content_sort,9999) asc,content_create_date  desc\G
+
+# Query 8: 0 QPS, 0x concurrency, ID 0x317C78672A03CD0A at byte 3630 _____
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          6       1
+# Exec time      5      1s      1s      1s      1s      1s       0      1s
+# Lock time      2    54us    54us    54us    54us    54us       0    54us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   3     286     286     286     286     286       0     286
+# Query size     0      47      47      47      47      47       0      47
+# Bytes          0      47      47      47      47      47       0      47
+# hostname       6      26      26      26      26      26       0      26
+# String:
+# Databases    crowdfunding
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 't_c_project_order'\G
+#    SHOW CREATE TABLE `crowdfunding`.`t_c_project_order`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select sum(Order_Amount) from t_c_project_order\G
+
+# Query 9: 0 QPS, 0x concurrency, ID 0xF7EC75ABC910F86B at byte 3782 _____
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          6       1
+# Exec time      4      1s      1s      1s      1s      1s       0      1s
+# Lock time      7   146us   146us   146us   146us   146us       0   146us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     6     430     430     430     430     430       0     430
+# Bytes          6     430     430     430     430     430       0     430
+# hostname       6      26      26      26      26      26       0      26
+# String:
+# Databases    licai
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `licai` LIKE 'bbs_search_history_201609'\G
+#    SHOW CREATE TABLE `licai`.`bbs_search_history_201609`\G
+insert into `bbs_search_history_201609`(`buid`, `referer`, `os`, `search_key`, `search_key_expression`, `channel`, `orderby`, `cityid`, `version`, `token`, `user_id`, `udid`, `device`) values('JSiw4igxqMqP5XnBC4+2A61sW8pRQcFp', 1, '0', '消费地区', 'title:消费地区 intro:消费地区', 'appstore', '', '110100', '5.3.1', 'c991727b218da8554d8100913526bf83', '1008270153', '13405598-0D0E-45AB-A8F0-22FD84B1AFFC', 'iPhone8,2')\G
+
+# Query 10: 0 QPS, 0x concurrency, ID 0x445AE0CBF8E841B8 at byte 7487 ____
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          6       1
+# Exec time      4      1s      1s      1s      1s      1s       0      1s
+# Lock time      4    88us    88us    88us    88us    88us       0    88us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     4     305     305     305     305     305       0     305
+# Bytes          4     305     305     305     305     305       0     305
+# hostname       6      26      26      26      26      26       0      26
+# String:
+# Databases    crowdfunding
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `crowdfunding` LIKE 'T_User_Safe'\G
+#    SHOW CREATE TABLE `crowdfunding`.`T_User_Safe`\G
+insert into
+		T_User_Safe
+		(
+		 user_id, 
+		 Mobile, 
+		 Bind_Mobile, 
+		 
+		 Bind_EMail, 
+		 
+		 Bind_Id_no, 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		
+		 
+		 
+		Safe_id
+		)
+		VALUES
+		(
+		 10000031411460, 
+		 '13327456789', 
+		 1, 
+		 
+		 0, 
+		 
+		 0, 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		
+		 
+		 
+		10000031411461
+		)\G

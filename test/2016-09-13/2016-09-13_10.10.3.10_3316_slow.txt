@@ -1,0 +1,3573 @@
+
+# 3.1s user time, 20ms system time, 29.21M rss, 214.07M vsz
+# Current date: Tue Sep 13 05:00:17 2016
+# Hostname: 26
+# Files: /tmp/2016-09-13_10.10.3.10_3316_slow.log
+# Overall: 9.98k total, 61 unique, 0 QPS, 0x concurrency _________________
+# Attribute          total     min     max     avg     95%  stddev  median
+# ============     ======= ======= ======= ======= ======= ======= =======
+# Exec time          5028s   102ms     52s   504ms   609ms   664ms   477ms
+# Lock time             2s       0    23ms   206us   348us   296us   176us
+# Rows sent         56.72M       0   7.23M   5.82k    0.99 127.10k       0
+# Rows examine       4.33G       0   7.23M 455.00k 440.37k 193.89k 440.37k
+# Query size       828.83k       6   6.96k   85.03   80.10   98.79   80.10
+# Bytes            828.83k       6   6.96k   85.03   80.10   98.79   80.10
+# hostname         253.45k      26      26      26      26       0      26
+
+# Profile
+# Rank Query ID           Response time   Calls R/Call  V/M   Item
+# ==== ================== =============== ===== ======= ===== ============
+#    1 0x61CEBA4A96696688 4623.3977 92.0%  9660  0.4786  0.03 SELECT user_source_?
+#    2 0x67A347A2812914DF  192.7790  3.8%    87  2.2159 17.80 SELECT ods_user
+#    3 0xDF3CADF7CC55AC80   42.7510  0.9%   100  0.4275  0.08 SELECT ods_user_source
+#    4 0x813031B8BBC3B329   29.4382  0.6%    23  1.2799  1.10 COMMIT
+#    5 0x8102DC5C8D30BDA3   20.3573  0.4%     2 10.1787  0.01 DELETE ods_user_info
+#    6 0x648997FC8BBF2309   15.0245  0.3%     2  7.5123  0.04 DELETE ods_record_user_integral
+#    7 0xBF4491DEA5A0862B   13.8506  0.3%     2  6.9253  0.00 DELETE ods_user_source
+#    8 0x53470577D9D5DB88   13.7609  0.3%     3  4.5870  0.00 SELECT ods_user_source
+#    9 0x9AFBB67E4234B491   10.9936  0.2%     7  1.5705  0.92 INSERT record_user_operate_?
+#   10 0xA4AA59EEAAC9A4FC    9.1861  0.2%     2  4.5931  0.00 SELECT ods_user_source
+#   11 0x34F10BC9DADDEF3D    9.0434  0.2%     5  1.8087  0.03 DELETE ods_record_creditcard
+#   12 0x1B8DBE8CB24EFC4B    6.1181  0.1%     1  6.1181  0.00 SELECT UNION ods_user ods_user_source ods_record_creditcard
+#   13 0x9DDC4738CCCBE79E    5.8909  0.1%     1  5.8909  0.00 SELECT ods_user
+#   14 0x921F2ADFABA85476    4.7285  0.1%     3  1.5762  0.03 SELECT ods_record_jimu_loan ods_user dm_dict_city ods_user_source
+#   15 0x3562C8ECB99CB543    4.3825  0.1%     5  0.8765  0.48 INSERT record_user_task_?
+#   16 0x7C935CF0D7AEDD71    2.6755  0.1%     1  2.6755  0.00 SELECT ods_user_source
+#   17 0x0CD30E158F3DC1C1    1.9888  0.0%     2  0.9944  0.00 DELETE ods_record_loan
+#   18 0xE302005D30EC62B7    1.8249  0.0%     9  0.2028  0.00 SELECT sheng_repayment_plan
+#   19 0x2E7AA3A939A1CB43    1.7947  0.0%     1  1.7947  0.00 SELECT ods_user_source
+#   20 0x9C4FF248F13261D5    1.6584  0.0%     1  1.6584  0.00 SELECT ods_record_creditcard dm_creditcard dm_bankbranch
+#   21 0x98204EB05621D6CB    1.4677  0.0%     2  0.7338  0.00 DELETE ods_record_user_binding_card
+#   22 0x4C71101B7303F999    1.3041  0.0%     3  0.4347  0.18 SELECT sheng_loan_record ods_user sheng_user ods_user_info dm_dict_city ods_user_source
+#   23 0x87E466EDFA19DC6A    1.1918  0.0%     2  0.5959  0.00 DELETE dm_mobile
+#   24 0x1C1636FDCCF402EC    1.1820  0.0%     3  0.3940  0.19 SELECT sheng_loan_record ods_user sheng_user ods_user_info dm_dict_city ods_user_source
+#   25 0x61A3D2DBBAA059C4    1.1652  0.0%     3  0.3884  0.02 SELECT da_ag_loan_cold_hot_list
+#   26 0x5C0F33C68E082D72    0.9119  0.0%     3  0.3040  0.00 SELECT sheng_loan_record sheng_user sheng_loan_record
+#   27 0x4CAE3F82849824B6    0.6976  0.0%     6  0.1163  0.00 SELECT bi_ods.sheng_repayment_plan
+#   28 0x2ADEFD29115C1578    0.6964  0.0%     3  0.2321  0.00 DELETE ods_record_promotion
+#   29 0xBE0E14F21FDEFB01    0.6258  0.0%     4  0.1565  0.01 SELECT user_?
+#   30 0xD2AAEA52614613A0    0.4525  0.0%     2  0.2262  0.00 SELECT sheng_repayment_plan
+#   31 0xE0E620D8AA58704B    0.3631  0.0%     1  0.3631  0.00 SELECT sheng_loan_record sheng_user sheng_loan_record
+#   32 0x775ADF289621A61B    0.3180  0.0%     3  0.1060  0.00 SELECT bi_ods.ods_supersale_brand_details_?
+#   33 0xC7365E6FD4D32E34    0.3027  0.0%     1  0.3027  0.00 SELECT sheng_loan_record sheng_user sheng_loan_record
+#   34 0x1E35C2697B419130    0.3009  0.0%     1  0.3009  0.00 SELECT sheng_loan_record sheng_user sheng_loan_record
+#   35 0x9932B79CEE2472A5    0.3000  0.0%     2  0.1500  0.00 DELETE ods_record_jimu_loan
+#   36 0x4BFAA06DFECC6920    0.2947  0.0%     1  0.2947  0.00 SELECT sheng_loan_record sheng_user sheng_loan_record
+#   37 0x22F43272C87BA90E    0.2930  0.0%     1  0.2930  0.00 SELECT sheng_loan_record
+#   38 0x40DCA45242CE6E29    0.2909  0.0%     1  0.2909  0.00 SELECT sheng_loan_record sheng_user sheng_loan_record
+#   39 0xA60516BE2795A849    0.2904  0.0%     1  0.2904  0.00 SELECT sheng_loan_record
+#   40 0x0841E64F1732F2E5    0.2861  0.0%     1  0.2861  0.00 SELECT sheng_loan_record sheng_user sheng_loan_record
+#   41 0xD00CB7E0E0CCF500    0.2736  0.0%     1  0.2736  0.00 SELECT sheng_loan_record sheng_user sheng_loan_record
+#   42 0x808FDA0220E34C99    0.1882  0.0%     1  0.1882  0.00 SELECT sheng_loan_record sheng_user ods_user ods_user_info dm_dict_city
+#   43 0xB5B45C9B4E142D12    0.1876  0.0%     1  0.1876  0.00 SELECT sheng_repayment_plan
+#   44 0x54DAE9BD6DC25801    0.1803  0.0%     1  0.1803  0.00 SELECT sheng_loan_record sheng_user ods_user ods_user_info dm_dict_city
+#   45 0x8A79F4B305ED70DD    0.1797  0.0%     1  0.1797  0.00 SELECT sheng_loan_record sheng_user ods_user ods_user_info dm_dict_city
+#   46 0xAC7793FE6708F65D    0.1760  0.0%     1  0.1760  0.00 SELECT sheng_loan_record ods_user sheng_user ods_user_info dm_dict_city ods_user_source
+#   47 0x70244A6A089883C0    0.1676  0.0%     1  0.1676  0.00 INSERT record_user_integral_?
+#   48 0x8B7FE125EF1E886A    0.1665  0.0%     1  0.1665  0.00 SELECT sheng_loan_record sheng_user ods_user ods_user_info dm_dict_city
+#   49 0x932E4A305E08C352    0.1644  0.0%     1  0.1644  0.00 SELECT sheng_loan_record ods_user sheng_user ods_user_info dm_dict_city ods_user_source
+#   50 0x4AC1DB838EDD9E1D    0.1608  0.0%     1  0.1608  0.00 SELECT sheng_loan_record sheng_user ods_user ods_user_info dm_dict_city
+#   51 0x37F82431709E9958    0.1563  0.0%     1  0.1563  0.00 SELECT sheng_loan_record ods_user sheng_user ods_user_info dm_dict_city ods_user_source
+#   52 0x1F5FEC12AB38FC00    0.1518  0.0%     1  0.1518  0.00 SELECT sheng_loan_record sheng_user ods_user ods_user_info dm_dict_city
+#   53 0xB0E7A41F4A867E2E    0.1510  0.0%     1  0.1510  0.00 SELECT sheng_loan_record ods_user sheng_user ods_user_info dm_dict_city ods_user_source
+#   54 0x9AD724F61743B4D4    0.1456  0.0%     1  0.1456  0.00 SELECT sheng_loan_record sheng_user sheng_loan_record
+#   55 0x88C683B17B9C3426    0.1454  0.0%     1  0.1454  0.00 SELECT sheng_loan_record sheng_user sheng_loan_record
+#   56 0x87BA1E6A443447E8    0.1382  0.0%     1  0.1382  0.00 SELECT sheng_loan_record ods_user sheng_user ods_user_info dm_dict_city ods_user_source
+#   57 0x0CF6DE6C18C897F2    0.1333  0.0%     1  0.1333  0.00 SHOW TABLES
+#   58 0xDB670ED708895D61    0.1238  0.0%     1  0.1238  0.00 UPDATE user_?
+#   59 0x785D16710C2A328A    0.1220  0.0%     1  0.1220  0.00 SELECT sheng_loan_record ods_user sheng_user ods_user_info dm_dict_city ods_user_source
+#   60 0x3BFD44CAE14E7769    0.1102  0.0%     1  0.1102  0.00 DELETE ods_supersale_brand_details_?
+#   61 0xA9A2DFC12419D3B5    0.1042  0.0%     1  0.1042  0.00 SELECT sheng_repayment_plan
+
+# Query 1: 0 QPS, 0x concurrency, ID 0x61CEBA4A96696688 at byte 211545 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.03
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         96    9660
+# Exec time     91   4623s   293ms      1s   479ms   609ms   112ms   501ms
+# Lock time     94      2s    55us     2ms   201us   348us   109us   176us
+# Rows sent      0     662       0       2    0.07    0.99    0.25       0
+# Rows examine  96   4.17G 451.91k 454.69k 453.08k 440.37k       0 440.37k
+# Query size    92 762.77k      60      82   80.86   80.10    4.27   80.10
+# Bytes         92 762.77k      60      82   80.86   80.10    4.27   80.10
+# hostname      96 245.27k      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        10.10.1.56 (3410/35%), 10.10.2.61 (3220/33%)... 1 more
+# Time         2016-09-11... (1/0%), 2016-09-11... (1/0%)... 9658 more
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s  #
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_7'\G
+#    SHOW CREATE TABLE `passport`.`user_source_7`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM user_source_7 WHERE open_id = 'sina6B2D7558BB6EEF910A973F6578BC16AD'\G
+
+# Query 2: 0 QPS, 0x concurrency, ID 0x67A347A2812914DF at byte 255853 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 17.80
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      87
+# Exec time      3    193s   115ms     52s      2s      7s      6s   640ms
+# Lock time      0       0       0       0       0       0       0       0
+# Rows sent     98  56.10M  21.58k   7.23M 660.27k   4.06M   1.17M 440.37k
+# Rows examine   1  56.10M  21.58k   7.23M 660.27k   4.06M   1.17M 440.37k
+# Query size     0   4.97k      47      72   58.45   65.89    6.72   56.92
+# Bytes          0   4.97k      47      72   58.45   65.89    6.72   56.92
+# hostname       0   2.21k      26      26      26      26       0      26
+# String:
+# Databases    passport (72/82%), bi_ods (14/16%)... 1 more
+# Hosts        10.10.3.10
+# Time         2016-09-11... (1/1%), 2016-09-11... (1/1%)... 85 more
+# Users        mysqldump
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s  ###############################
+#  10s+  #####
+# Review information
+#    first_seen: 2016-09-12 03:55:10
+#     last_seen: 2016-09-13 05:00:12
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user`\G
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `ods_user`\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `ods_user`\G
+
+# Query 3: 0 QPS, 0x concurrency, ID 0xDF3CADF7CC55AC80 at byte 2559881 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.08
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          1     100
+# Exec time      0     43s   106ms   798ms   428ms   705ms   187ms   433ms
+# Lock time      0    20ms   113us   729us   198us   273us    77us   185us
+# Rows sent      0 488.28k   4.88k   4.88k   4.88k   4.88k       0   4.88k
+# Rows examine   0  29.71M  62.50k 545.90k 304.20k 509.78k 138.07k 298.06k
+# Query size     0   4.78k      48      49   48.91   46.83       0   46.83
+# Bytes          0   4.78k      48      49   48.91   46.83       0   46.83
+# hostname       1   2.54k      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12... (1/1%), 2016-09-12... (1/1%)... 98 more
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_source'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_source`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from ods_user_source
+ limit 469000, 5000\G
+
+# Query 4: 0 QPS, 0x concurrency, ID 0x813031B8BBC3B329 at byte 255627 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 1.10
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      23
+# Exec time      0     29s   102ms      4s      1s      3s      1s   640ms
+# Lock time      0       0       0       0       0       0       0       0
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0     138       6       6       6       6       0       6
+# Bytes          0     138       6       6       6       6       0       6
+# hostname       0     598      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        10.10.1.56 (10/43%), 10.10.2.61 (7/30%)... 1 more
+# Time         2016-09-11... (1/4%), 2016-09-11... (1/4%)... 21 more
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s  #################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+commit\G
+
+# Query 5: 0 QPS, 0x concurrency, ID 0x8102DC5C8D30BDA3 at byte 58464 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.01
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0     20s     10s     10s     10s     10s   284ms     10s
+# Lock time      0   215us    96us   119us   107us   119us    16us   107us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0   8.80M   4.40M   4.40M   4.40M   4.40M   1.47k   4.40M
+# Query size     0     110      55      55      55      55       0      55
+# Bytes          0     110      55      55      55      55       0      55
+# hostname       0      52      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-11... (1/50%), 2016-09-12... (1/50%)
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s
+#  10s+  ################################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_info'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_info`\G
+DELETE FROM ods_user_info
+WHERE etl_date = '2016-09-11'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_user_info
+WHERE etl_date = '2016-09-11'\G
+
+# Query 6: 0 QPS, 0x concurrency, ID 0x648997FC8BBF2309 at byte 2444925 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.04
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0     15s      7s      8s      8s      8s   516ms      8s
+# Lock time      0   195us    95us   100us    97us   100us     3us    97us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0   9.21M   4.58M   4.62M   4.60M   4.62M  27.75k   4.60M
+# Query size     0     132      66      66      66      66       0      66
+# Bytes          0     132      66      66      66      66       0      66
+# hostname       0      52      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-11... (1/50%), 2016-09-12... (1/50%)
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_user_integral'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_user_integral`\G
+DELETE FROM ods_record_user_integral
+WHERE etl_date = '2016-09-11'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_record_user_integral
+WHERE etl_date = '2016-09-11'\G
+
+# Query 7: 0 QPS, 0x concurrency, ID 0xBF4491DEA5A0862B at byte 2443069 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0     14s      7s      7s      7s      7s   170ms      7s
+# Lock time      0   171us    84us    87us    85us    87us     2us    85us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0   8.76M   4.38M   4.38M   4.38M   4.38M  155.56   4.38M
+# Query size     0     114      57      57      57      57       0      57
+# Bytes          0     114      57      57      57      57       0      57
+# hostname       0      52      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-11... (1/50%), 2016-09-12... (1/50%)
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_source'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_source`\G
+DELETE FROM ods_user_source
+WHERE etl_date = '2016-09-11'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_user_source
+WHERE etl_date = '2016-09-11'\G
+
+# Query 8: 0 QPS, 0x concurrency, ID 0x53470577D9D5DB88 at byte 2507304 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       3
+# Exec time      0     14s      4s      5s      5s      5s   101ms      5s
+# Lock time      0   684us   177us   254us   228us   247us    33us   247us
+# Rows sent      0   2.54k     868     868     868     868       0     868
+# Rows examine   0  13.14M   4.38M   4.38M   4.38M   4.38M       0   4.38M
+# Query size     0     207      69      69      69      69       0      69
+# Bytes          0     207      69      69      69      69       0      69
+# hostname       0      78      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12... (1/33%), 2016-09-12... (1/33%)... 1 more
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_source'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_source`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select  * from ods_user_source
+where source like '%@%'
+ LIMIT 0, 1000\G
+
+# Query 9: 0 QPS, 0x concurrency, ID 0x9AFBB67E4234B491 at byte 207050 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.92
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       7
+# Exec time      0     11s   110ms      4s      2s      4s      1s      1s
+# Lock time      0     1ms    67us   215us   174us   214us    47us   185us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0     799     112     115  114.14  112.70    1.50  112.70
+# Bytes          0     799     112     115  114.14  112.70    1.50  112.70
+# hostname       0     182      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        10.10.1.61 (4/57%), 10.10.2.61 (2/28%)... 1 more
+# Time         2016-09-11... (1/14%), 2016-09-11... (1/14%)... 5 more
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  #########################
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'record_user_operate_201609'\G
+#    SHOW CREATE TABLE `passport`.`record_user_operate_201609`\G
+insert into record_user_operate_201609 (id, user_id, type,remark) values(1013086719, 1013086714, 3, '用户登陆')\G
+
+# Query 10: 0 QPS, 0x concurrency, ID 0xA4AA59EEAAC9A4FC at byte 2529304 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0      9s      5s      5s      5s      5s    49ms      5s
+# Lock time      0   547us   216us   331us   273us   331us    81us   273us
+# Rows sent      0      32      16      16      16      16       0      16
+# Rows examine   0   8.76M   4.38M   4.38M   4.38M   4.38M       0   4.38M
+# Query size     0     160      80      80      80      80       0      80
+# Bytes          0     160      80      80      80      80       0      80
+# hostname       0      52      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12... (1/50%), 2016-09-12... (1/50%)
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_source'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_source`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select  count(*) ,etl_date from ods_user_source
+group by etl_date
+ LIMIT 0, 1000\G
+
+# Query 11: 0 QPS, 0x concurrency, ID 0x34F10BC9DADDEF3D at byte 59794 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.03
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       5
+# Exec time      0      9s      1s      2s      2s      2s   219ms      2s
+# Lock time      0   483us    81us   109us    96us   108us     8us    93us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0   3.54M 714.90k 730.15k 724.05k 717.31k   7.63k 717.31k
+# Query size     0     315      63      63      63      63       0      63
+# Bytes          0     315      63      63      63      63       0      63
+# hostname       0     130      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-11... (1/20%), 2016-09-12... (1/20%)... 3 more
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_creditcard'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_creditcard`\G
+DELETE FROM ods_record_creditcard
+WHERE etl_date = '2016-09-11'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_record_creditcard
+WHERE etl_date = '2016-09-11'\G
+
+# Query 12: 0 QPS, 0x concurrency, ID 0x1B8DBE8CB24EFC4B at byte 1455325 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      6s      6s      6s      6s      6s       0      6s
+# Lock time      0    11ms    11ms    11ms    11ms    11ms       0    11ms
+# Rows sent      0     181     181     181     181     181       0     181
+# Rows examine   0   5.16M   5.16M   5.16M   5.16M   5.16M       0   5.16M
+# Query size     0   6.96k   6.96k   6.96k   6.96k   6.96k       0   6.96k
+# Bytes          0   6.96k   6.96k   6.96k   6.96k   6.96k       0   6.96k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12T06:50:57.079241Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_source'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_source`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_creditcard'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_creditcard`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select T329.DATE as F331,T329.source as F332,T329.reg_cnt as F333,T329.card_cnt as F334,T329.person_cnt as F335,T329.zx_cnt as F336,T329.zh_cnt as F337,T329.gd_cnt as F338,T329.jh_cnt as F339,T329.gf_cnt as F340,T329.nh_cnt as F341,T329.pf_cnt as F342,T329.pa_cnt as F343,T329.hx_cnt as F344,T329.hq_cnt as F345,T329.gz_cnt as F346,T329.xy_cnt as F347,T329.zd_cnt as F348  from (SELECT 
+    DATE AS DATE
+    ,source AS source
+    ,SUM(reg_cnt) AS reg_cnt
+    ,SUM(card_cnt) AS card_cnt
+    ,SUM(person_cnt) AS person_cnt
+    ,SUM(zx_cnt) AS zx_cnt
+    ,SUM(zh_cnt) AS zh_cnt
+    ,SUM(gd_cnt) AS gd_cnt
+    ,SUM(jh_cnt) AS jh_cnt
+    ,SUM(gf_cnt) AS gf_cnt
+    ,SUM(nh_cnt) AS nh_cnt
+    ,SUM(pf_cnt) AS pf_cnt
+    ,SUM(pa_cnt) AS pa_cnt
+    ,SUM(hx_cnt) AS hx_cnt
+    ,SUM(hq_cnt) AS hq_cnt
+    ,SUM(gz_cnt) AS gz_cnt
+    ,SUM(xy_cnt) AS xy_cnt
+    ,SUM(zd_cnt) AS zd_cnt
+FROM
+(
+SELECT 
+    DATE_FORMAT(a.`create_time`,'%Y-%m-%d') AS DATE
+    ,CASE WHEN b.source='360' THEN '360'
+          WHEN b.source='anzhi' THEN '安智'
+          WHEN b.source='anzhifeiwo' THEN '安智飞沃'
+          WHEN b.source='appstore' THEN 'appstore'
+          WHEN b.source='baidu' THEN '百度'
+          WHEN b.source='chezhuwuyou' THEN '车主无忧'
+          WHEN b.source='guanwang' THEN '官网pc'
+          WHEN b.source='gwwap' THEN 'wap'
+          WHEN b.source='GXHD' THEN '光线互动'
+          WHEN b.source='huawei' THEN '华为'
+          WHEN b.source='jinli' THEN '金立'
+          WHEN b.source='leshi' THEN '乐视'
+          WHEN b.source='lianxiang' THEN '联想'
+          WHEN b.source='meizu' THEN '魅族'
+          WHEN b.source='oppo' THEN 'OPPO'
+          WHEN b.source='pp' THEN 'UC PP助手'
+          WHEN b.source='sogouzhushou' THEN '搜狗助手'
+          WHEN b.source='wandoujia' THEN '豌豆荚'
+          WHEN b.source='xiaomi' THEN '小米'
+          WHEN b.source='yingyongbao' THEN '应用宝'
+          WHEN b.source='yingyongbao1' THEN '广点通'
+          WHEN b.source='yingyongbaoCPD' THEN '应用宝CPD' 
+     ELSE '其他' END AS source
+    ,COUNT(1) reg_cnt
+    ,0 AS card_cnt
+    ,0 AS person_cnt
+    ,0 AS zx_cnt
+    ,0 AS zh_cnt
+    ,0 AS gd_cnt
+    ,0 AS jh_cnt
+    ,0 AS gf_cnt
+    ,0 AS nh_cnt
+    ,0 AS pf_cnt
+    ,0 AS pa_cnt
+    ,0 AS hx_cnt
+    ,0 AS hq_cnt
+    ,0 AS gz_cnt
+    ,0 AS xy_cnt
+    ,0 AS zd_cnt
+    
+FROM ods_user a
+LEFT JOIN ods_user_source b ON a.`id`=b.`user_id`
+WHERE DATE_FORMAT(a.`create_time`,'%Y-%m-%d') >=  '2016-09-01' AND DATE_FORMAT(a.`create_time`,'%Y-%m-%d') <=   '2016-09-12' 
+             AND b.source not regexp '-|@|pc'
+GROUP BY DATE_FORMAT(a.`create_time`,'%Y-%m-%d')
+     ,CASE WHEN b.source='360' THEN '360'
+          WHEN b.source='anzhi' THEN '安智'
+          WHEN b.source='anzhifeiwo' THEN '安智飞沃'
+          WHEN b.source='appstore' THEN 'appstore'
+          WHEN b.source='baidu' THEN '百度'
+          WHEN b.source='chezhuwuyou' THEN '车主无忧'
+          WHEN b.source='guanwang' THEN '官网pc'
+          WHEN b.source='gwwap' THEN 'wap'
+          WHEN b.source='GXHD' THEN '光线互动'
+          WHEN b.source='huawei' THEN '华为'
+          WHEN b.source='jinli' THEN '金立'
+          WHEN b.source='leshi' THEN '乐视'
+          WHEN b.source='lianxiang' THEN '联想'
+          WHEN b.source='meizu' THEN '魅族'
+          WHEN b.source='oppo' THEN 'OPPO'
+          WHEN b.source='pp' THEN 'UC PP助手'
+          WHEN b.source='sogouzhushou' THEN '搜狗助手'
+          WHEN b.source='wandoujia' THEN '豌豆荚'
+          WHEN b.source='xiaomi' THEN '小米'
+          WHEN b.source='yingyongbao' THEN '应用宝'
+          WHEN b.source='yingyongbao1' THEN '广点通'
+          WHEN b.source='yingyongbaoCPD' THEN '应用宝CPD' 
+     ELSE '其他' END
+
+
+UNION ALL
+
+
+SELECT 
+    DATE_FORMAT(b.`create_time`,'%Y-%m-%d') AS DATE
+    ,CASE WHEN b.`channel_id`=7 THEN '360'
+          WHEN b.`channel_id`=5 THEN '安智'
+          WHEN b.`channel_id`=40 THEN '安智飞沃'
+          WHEN b.`channel_id`=1 THEN 'appstore'
+          WHEN b.`channel_id`=10 THEN '百度'
+          WHEN b.`channel_id`=48 THEN '车主无忧'
+          WHEN b.`channel_id`=20 THEN '官网pc'
+          WHEN b.`channel_id`=23 THEN 'wap'
+          WHEN b.`channel_id`=55 THEN '光线互动'
+          WHEN b.`channel_id`=15 THEN '华为'
+          WHEN b.`channel_id`=27 THEN '金立'
+          WHEN b.`channel_id`=58 THEN '乐视'
+          WHEN b.`channel_id`=16 THEN '联想'
+          WHEN b.`channel_id`=18 THEN '魅族'
+          WHEN b.`channel_id`=14 THEN 'OPPO'
+          WHEN b.`channel_id`=37 THEN 'UC PP助手'
+          WHEN b.`channel_id`=39 THEN '搜狗助手'
+          WHEN b.`channel_id`=6 THEN '豌豆荚'
+          WHEN b.`channel_id`=8 THEN '小米'
+          WHEN b.`channel_id`=9 THEN '应用宝'
+          WHEN b.`channel_id`=53 THEN '广点通'
+          WHEN b.`channel_id`=56 THEN '应用宝CPD'
+     ELSE '其他' END AS source
+    ,0 AS reg_cnt
+    ,COUNT(1) AS card_cnt
+    ,COUNT(DISTINCT device_id) AS person_cnt
+    ,COUNT(CASE WHEN b.bank_id=29 THEN 1 END) AS zx_cnt
+    ,COUNT(CASE WHEN b.bank_id=22 THEN 1 END) AS zh_cnt
+    ,COUNT(CASE WHEN b.bank_id=23 THEN 1 END) AS gd_cnt
+    ,COUNT(CASE WHEN b.bank_id=26 THEN 1 END) AS jh_cnt
+    ,COUNT(CASE WHEN b.bank_id=30 THEN 1 END) AS gf_cnt
+    ,COUNT(CASE WHEN b.bank_id=9 THEN 1 END) AS nh_cnt
+    ,COUNT(CASE WHEN b.bank_id=33 THEN 1 END) AS pf_cnt
+    ,COUNT(CASE WHEN b.bank_id=65 THEN 1 END) AS pa_cnt
+    ,COUNT(CASE WHEN b.bank_id=31 THEN 1 END) AS hx_cnt
+    ,COUNT(CASE WHEN b.bank_id=53747 THEN 1 END) AS hq_cnt
+    ,COUNT(CASE WHEN b.bank_id=81 THEN 1 END) AS gz_cnt
+    ,COUNT(CASE WHEN b.bank_id=24 THEN 1 END) AS xy_cnt
+    ,COUNT(CASE WHEN b.bank_id=53750 THEN 1 END) AS zd_cnt
+FROM     ods_record_creditcard b 
+WHERE DATE_FORMAT(b.`create_time`,'%Y-%m-%d') >=  '2016-09-01' AND DATE_FORMAT(b.`create_time`,'%Y-%m-%d') <=  '2016-09-12'  
+GROUP BY DATE_FORMAT(b.`create_time`,'%Y-%m-%d')
+     ,CASE WHEN b.`channel_id`=7 THEN '360'
+          WHEN b.`channel_id`=5 THEN '安智'
+          WHEN b.`channel_id`=40 THEN '安智飞沃'
+          WHEN b.`channel_id`=1 THEN 'appstore'
+          WHEN b.`channel_id`=10 THEN '百度'
+          WHEN b.`channel_id`=48 THEN '车主无忧'
+          WHEN b.`channel_id`=20 THEN '官网pc'
+          WHEN b.`channel_id`=23 THEN 'wap'
+          WHEN b.`channel_id`=55 THEN '光线互动'
+          WHEN b.`channel_id`=15 THEN '华为'
+          WHEN b.`channel_id`=27 THEN '金立'
+          WHEN b.`channel_id`=58 THEN '乐视'
+          WHEN b.`channel_id`=16 THEN '联想'
+          WHEN b.`channel_id`=18 THEN '魅族'
+          WHEN b.`channel_id`=14 THEN 'OPPO'
+          WHEN b.`channel_id`=37 THEN 'UC PP助手'
+          WHEN b.`channel_id`=39 THEN '搜狗助手'
+          WHEN b.`channel_id`=6 THEN '豌豆荚'
+          WHEN b.`channel_id`=8 THEN '小米'
+          WHEN b.`channel_id`=9 THEN '应用宝'
+          WHEN b.`channel_id`=53 THEN '广点通'
+          WHEN b.`channel_id`=56 THEN '应用宝CPD'
+     ELSE '其他' END
+)  outside
+GROUP BY DATE
+     ,source) T329 limit 75001\G
+
+# Query 13: 0 QPS, 0x concurrency, ID 0x9DDC4738CCCBE79E at byte 2526068 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      6s      6s      6s      6s      6s       0      6s
+# Lock time      0   175us   175us   175us   175us   175us       0   175us
+# Rows sent      0       2       2       2       2       2       0       2
+# Rows examine   0   4.43M   4.43M   4.43M   4.43M   4.43M       0   4.43M
+# Query size     0      71      71      71      71      71       0      71
+# Bytes          0      71      71      71      71      71       0      71
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12T13:08:19.931482Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select count(*),etl_date from ods_user
+group by etl_date
+ LIMIT 0, 1000\G
+
+# Query 14: 0 QPS, 0x concurrency, ID 0x921F2ADFABA85476 at byte 763626 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.03
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       3
+# Exec time      0      5s      1s      2s      2s      2s   231ms      2s
+# Lock time      0     4ms     1ms     2ms     1ms     2ms   346us     1ms
+# Rows sent      0     932     302     315  310.67  313.99    6.50  313.99
+# Rows examine   0 374.97k 124.98k 125.00k 124.99k 123.85k       0 123.85k
+# Query size     0   6.84k   2.27k   2.31k   2.28k   2.27k   23.50   2.16k
+# Bytes          0   6.84k   2.27k   2.31k   2.28k   2.27k   23.50   2.16k
+# hostname       0      78      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12... (1/33%), 2016-09-12... (1/33%)... 1 more
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_jimu_loan'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_jimu_loan`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_dict_city'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_dict_city`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_source'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_source`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select T9.create_time as F11,T9.user_name as F12,T9.city_name as F13,T9.mobile as F14,T9.STATUS as F15,T9.apply_amount as F16,T9.agree_amount as F17,T9.agree_time as F18,T9.cycle as F19,T9.id_no as F20,T9.urgent_name as F21,T9.urgent_phone as F22,T9.urgent_relation as F23,T9.detail_address as F24,T9.source as F25  from (SELECT
+   DATE_FORMAT(b.`create_time`,'%Y-%m-%d %H:%i:%s') AS create_time
+    ,a.`name` AS user_name
+    ,c.`name` AS city_name
+    ,CONCAT(SUBSTRING(a.`mobile`,1,4),'*****',SUBSTR(a.mobile,9,3)) AS mobile
+    ,CASE WHEN a.`status`=0 THEN '没有申请'
+          WHEN a.`status`=100 THEN '资料填写中'
+          WHEN a.`status`=101 THEN '资料审核中'
+          WHEN a.`status`=102 THEN '审核通过，等待放款'
+          WHEN a.`status`=103 THEN '审核拒绝'
+          WHEN a.`status`=104 THEN '用户放弃'
+          WHEN a.`status`=105 THEN '资料审核通过，等待签约'
+     END AS STATUS
+     ,a.apply_amount AS apply_amount
+     ,a.agree_amount AS agree_amount
+     , DATE_FORMAT(a.agree_time,'%Y-%m-%d %H:%i:%s')  AS agree_time
+     ,a.cycle AS cycle
+     ,a.id_no AS id_no
+     ,a.urgent_name AS urgent_name
+     ,CONCAT(SUBSTRING(a.urgent_phone,1,4),'*****',SUBSTR(a.urgent_phone,9,3))  AS urgent_phone
+     ,CASE WHEN a.urgent_relation=0 THEN '父母'
+           WHEN a.urgent_relation=1 THEN '配偶'
+           WHEN a.urgent_relation=2 THEN '子女'
+           WHEN a.urgent_relation=3 THEN '兄弟姐妹'
+           WHEN a.urgent_relation=4 THEN '同事'
+           WHEN a.urgent_relation=5 THEN '同学'
+           WHEN a.urgent_relation=6 THEN '朋友' 
+       END AS urgent_relation
+     ,a.detail_address AS detail_address
+     ,CASE WHEN d.os=0 THEN '未知'
+           WHEN d.os=1 THEN 'www'
+           WHEN d.os=2 THEN 'm站'
+           WHEN d.os=3 THEN 'android'
+           WHEN d.os=4 THEN 'iOS'
+      END AS source
+FROM `ods_record_jimu_loan` a    
+LEFT JOIN ods_user b ON a.`user_id`=b.`id`
+LEFT JOIN `dm_dict_city` c ON a.`city_id`=c.`id`
+LEFT JOIN ods_user_source d ON a.user_id=d.user_id
+WHERE   DATE_FORMAT(b.`create_time`,'%Y-%m-%d') >=  '2016-09-11' AND DATE_FORMAT(b.`create_time`,'%Y-%m-%d') <=  '2016-09-11'  
+    AND  1=1   
+    AND   1=1 
+    AND   1=1 
+    AND   1=1 
+    AND  1=1 
+    AND   1=1 
+    AND   1=1 
+    AND  1=1) T9 limit 75001\G
+
+# Query 15: 0 QPS, 0x concurrency, ID 0x3562C8ECB99CB543 at byte 206712 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.48
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       5
+# Exec time      0      4s   128ms      2s   877ms      2s   648ms   816ms
+# Lock time      0   792us    80us   191us   158us   185us    40us   167us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0     642     126     132  128.40  130.47    2.49  124.25
+# Bytes          0     642     126     132  128.40  130.47    2.49  124.25
+# hostname       0     130      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        10.10.2.61 (3/60%), 10.10.1.56 (1/20%)... 1 more
+# Time         2016-09-11... (1/20%), 2016-09-11... (1/20%)... 3 more
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s  ##########################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'record_user_task_0'\G
+#    SHOW CREATE TABLE `passport`.`record_user_task_0`\G
+insert into record_user_task_0 (id, user_id, source_name,source_id) values(1013086720, 1214942, '每日签到', 'unop_registration')\G
+
+# Query 16: 0 QPS, 0x concurrency, ID 0x7C935CF0D7AEDD71 at byte 2471573 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      3s      3s      3s      3s      3s       0      3s
+# Lock time      0   321us   321us   321us   321us   321us       0   321us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0   4.38M   4.38M   4.38M   4.38M   4.38M       0   4.38M
+# Query size     0      56      56      56      56      56       0      56
+# Bytes          0      56      56      56      56      56       0      56
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12T12:50:28.767706Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_source'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_source`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select min(etl_date) from ods_user_source
+ LIMIT 0, 1000\G
+
+# Query 17: 0 QPS, 0x concurrency, ID 0x0CD30E158F3DC1C1 at byte 59257 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0      2s   985ms      1s   994ms      1s    14ms   994ms
+# Lock time      0   182us    79us   103us    91us   103us    16us    91us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0 777.01k 387.53k 389.48k 388.51k 389.48k   1.38k 388.51k
+# Query size     0     114      57      57      57      57       0      57
+# Bytes          0     114      57      57      57      57       0      57
+# hostname       0      52      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-11... (1/50%), 2016-09-12... (1/50%)
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_loan'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_loan`\G
+DELETE FROM ods_record_loan
+WHERE etl_date = '2016-09-11'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_record_loan
+WHERE etl_date = '2016-09-11'\G
+
+# Query 18: 0 QPS, 0x concurrency, ID 0xE302005D30EC62B7 at byte 2188723 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       9
+# Exec time      0      2s   187ms   252ms   203ms   241ms    17ms   189ms
+# Lock time      0     3ms   271us   372us   317us   366us    32us   301us
+# Rows sent      0   4.69k     534     534     534     534       0     534
+# Rows examine   0 752.01k  83.56k  83.56k  83.56k  83.56k       0  83.56k
+# Query size     0   1.28k     146     146     146     146       0     146
+# Bytes          0   1.28k     146     146     146     146       0     146
+# hostname       0     234      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12... (1/11%), 2016-09-12... (1/11%)... 7 more
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_repayment_plan'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_repayment_plan`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select k.*,from_unixtime(k.repayment_date,'%Y-%m-%d') from `sheng_repayment_plan` k
+where overdue_day > 0
+order by user_id,order_no
+ LIMIT 0, 1000\G
+
+# Query 19: 0 QPS, 0x concurrency, ID 0x2E7AA3A939A1CB43 at byte 2513762 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      2s      2s      2s      2s      2s       0      2s
+# Lock time      0   253us   253us   253us   253us   253us       0   253us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0      53      53      53      53      53       0      53
+# Bytes          0      53      53      53      53      53       0      53
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12T13:05:25.261668Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_source'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_source`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select  count(*)  from ods_user_source
+ LIMIT 0, 1000\G
+
+# Query 20: 0 QPS, 0x concurrency, ID 0x9C4FF248F13261D5 at byte 1462673 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      2s      2s      2s      2s      2s       0      2s
+# Lock time      0     2ms     2ms     2ms     2ms     2ms       0     2ms
+# Rows sent      0   1.28k   1.28k   1.28k   1.28k   1.28k       0   1.28k
+# Rows examine   0 787.80k 787.80k 787.80k 787.80k 787.80k       0 787.80k
+# Query size     0     644     644     644     644     644       0     644
+# Bytes          0     644     644     644     644     644       0     644
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12T06:51:11.233462Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_creditcard'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_creditcard`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_creditcard'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_creditcard`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_bankbranch'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_bankbranch`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select T349.DATE as F351,T349.NAME as F352,T349.card_id as F353,T349.card_name as F354,T349.cnt as F355  from (SELECT 
+    DATE_FORMAT(a.`create_time`,'%Y-%m-%d') AS DATE
+    ,c.name AS NAME
+    ,a.`card_id` AS card_id
+    ,b.card_name AS card_name
+    
+    ,COUNT(1) AS cnt
+FROM `ods_record_creditcard` a
+LEFT JOIN `dm_creditcard` b ON a.`card_id`=b.id
+LEFT JOIN `dm_bankbranch` c ON a.`bank_id`=c.id
+WHERE DATE_FORMAT(a.`create_time`,'%Y-%m-%d') >=   '2016-09-01' AND DATE_FORMAT(a.`create_time`,'%Y-%m-%d') <=  '2016-09-12'  
+GROUP BY DATE_FORMAT(a.`create_time`,'%Y-%m-%d')
+     ,c.name
+     ,a.`card_id`
+     ,b.card_name) T349 limit 75001\G
+
+# Query 21: 0 QPS, 0x concurrency, ID 0x98204EB05621D6CB at byte 59519 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0      1s   707ms   761ms   734ms   761ms    38ms   734ms
+# Lock time      0   169us    75us    94us    84us    94us    13us    84us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0 445.93k 222.88k 223.05k 222.96k 223.05k  124.45 222.96k
+# Query size     0     140      70      70      70      70       0      70
+# Bytes          0     140      70      70      70      70       0      70
+# hostname       0      52      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-11... (1/50%), 2016-09-12... (1/50%)
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_user_binding_card'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_user_binding_card`\G
+DELETE FROM ods_record_user_binding_card
+WHERE etl_date = '2016-09-11'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_record_user_binding_card
+WHERE etl_date = '2016-09-11'\G
+
+# Query 22: 0 QPS, 0x concurrency, ID 0x4C71101B7303F999 at byte 613126 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.18
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       3
+# Exec time      0      1s   237ms   826ms   435ms   816ms   277ms   230ms
+# Lock time      1    27ms     2ms    23ms     9ms    22ms    10ms     2ms
+# Rows sent      0   1.65k     564     564     564     564       0     564
+# Rows examine   0   9.30k   3.10k   3.10k   3.10k   3.10k       0   3.10k
+# Query size     0   4.63k   1.54k   1.54k   1.54k   1.54k       0   1.54k
+# Bytes          0   4.63k   1.54k   1.54k   1.54k   1.54k       0   1.54k
+# hostname       0      78      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12... (1/33%), 2016-09-12... (1/33%)... 1 more
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_info'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_info`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_dict_city'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_dict_city`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_source'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_source`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select T222.user_id as F225,T222.username as F226,T222.mobile as F227,T222.cityname as F228,T222.data_status as F229,T222.add_time as F230,T222.approval_time as F231,T222.credit_limit as F232,T222.trans_amt as F233,T222.instalment_to_talcount as F234,T222.trans_time as F235,T222.available_limit as F236,T222.OS as F237  from (SELECT
+    a.user_id AS user_id
+    ,b.`username` AS username
+    ,CONCAT(SUBSTR(c.mobile,1,3),'****',SUBSTR(c.mobile,8,4)) AS mobile
+    ,IFNULL(e.`name`,'未知') AS cityname
+    ,c.data_status AS data_status
+    ,DATE_FORMAT(c.add_time,'%Y-%m-%d %H:%i:%s') AS add_time
+    ,DATE_FORMAT(c.approval_time,'%Y-%m-%d %H:%i:%s') AS approval_time
+    ,c.credit_limit AS credit_limit
+    ,a.trans_amt AS trans_amt
+    ,a.instalment_to_talcount AS instalment_to_talcount
+    ,DATE_FORMAT(a.trans_time,'%Y-%m-%d %H:%i:%s')  AS trans_time
+    ,c.available_limit available_limit
+    
+    ,CASE WHEN f.`os`=4 THEN 'IOS'
+          WHEN f.`os`=3 THEN 'ANDROID'
+          WHEN f.`os`=0 THEN '未知'
+          WHEN f.`os`=1 THEN 'www'
+          WHEN f.`os`=2 THEN 'm站'
+     END AS OS
+FROM `sheng_loan_record` a
+ LEFT JOIN ods_user b ON a.user_id=b.`id`
+LEFT JOIN sheng_user c ON a.user_id=c.user_id
+LEFT JOIN ods_user_info d ON a.user_id=d.`user_id`
+LEFT JOIN dm_dict_city e ON d.`city`=e.code
+LEFT JOIN ods_user_source f ON a.user_id=f.`user_id`
+
+WHERE  1=1  
+    AND  1=1 
+    AND  1=1 
+    AND  1=1  
+    AND  1=1 
+    
+    AND  1=1     
+    AND  1=1 
+    AND  1=1 
+    AND  1=1 
+   AND  1=1 
+   AND  1=1 
+   AND  1=1 
+   AND  1=1 
+   AND  1=1) T222 limit 75001\G
+
+# Query 23: 0 QPS, 0x concurrency, ID 0x87E466EDFA19DC6A at byte 59001 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0      1s   594ms   598ms   596ms   598ms     3ms   596ms
+# Lock time      0   172us    74us    98us    86us    98us    16us    86us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0 501.66k 250.83k 250.83k 250.83k 250.83k       0 250.83k
+# Query size     0     102      51      51      51      51       0      51
+# Bytes          0     102      51      51      51      51       0      51
+# hostname       0      52      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-11... (1/50%), 2016-09-12... (1/50%)
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_mobile'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_mobile`\G
+DELETE FROM dm_mobile
+WHERE etl_date = '2016-09-11'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  dm_mobile
+WHERE etl_date = '2016-09-11'\G
+
+# Query 24: 0 QPS, 0x concurrency, ID 0x1C1636FDCCF402EC at byte 611796 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.19
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       3
+# Exec time      0      1s   201ms   779ms   394ms   777ms   273ms   198ms
+# Lock time      0    14ms   782us    12ms     5ms    12ms     5ms     2ms
+# Rows sent      0       3       1       1       1       1       0       1
+# Rows examine   0  13.74k   4.58k   4.58k   4.58k   4.58k       0   4.58k
+# Query size     0   3.27k   1.09k   1.09k   1.09k   1.09k       0   1.09k
+# Bytes          0   3.27k   1.09k   1.09k   1.09k   1.09k       0   1.09k
+# hostname       0      78      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12... (1/33%), 2016-09-12... (1/33%)... 1 more
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_info'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_info`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_dict_city'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_dict_city`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_source'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_source`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select T221.cnt as F238,T221.wj_cnt as F239,T221.tg_cnt as F240,T221.xy_sum as F241,T221.jkr_cnt as F242,T221.jk_sum as F243,T221.jk_cnt as F244  from (select 
+    sum(cnt) as cnt
+    ,sum(wj_cnt) as wj_cnt
+    ,sum(tg_cnt) as tg_cnt
+    ,sum(xy_sum/cnt) as xy_sum
+    ,sum(jkr_cnt) as jkr_cnt
+    ,sum(jk_sum) as jk_sum
+    ,sum(jk_cnt) as jk_cnt
+from (
+SELECT
+COUNT(1) AS cnt
+,COUNT(CASE WHEN c.data_status='YYYYY' THEN 1 END) AS wj_cnt
+,COUNT(CASE WHEN c.credit_limit > 0 THEN 1 END) AS tg_cnt
+,SUM(c.credit_limit) AS xy_sum
+,COUNT(DISTINCT a.user_id) AS jkr_cnt
+,SUM(trans_amt) AS jk_sum
+,COUNT(1) AS jk_cnt
+FROM `sheng_loan_record` a
+LEFT JOIN ods_user b ON a.user_id=b.`id`
+LEFT JOIN sheng_user c ON a.user_id=c.user_id
+LEFT JOIN ods_user_info d ON a.user_id=d.`user_id`
+LEFT JOIN dm_dict_city e ON d.`city`=e.code
+LEFT JOIN ods_user_source f ON a.user_id=f.`user_id`
+WHERE  1=1  
+    AND  1=1 
+    AND  1=1 
+    AND  1=1  
+    AND  1=1 
+    
+    AND  1=1     
+    AND  1=1 
+    AND  1=1 
+    AND  1=1 
+   AND  1=1 
+   AND  1=1 
+   AND  1=1 
+   AND  1=1 
+   AND  1=1 
+group by a.user_id
+) kk) T221 limit 75001\G
+
+# Query 25: 0 QPS, 0x concurrency, ID 0x61A3D2DBBAA059C4 at byte 751742 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.02
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       3
+# Exec time      0      1s   280ms   506ms   388ms   501ms    91ms   374ms
+# Lock time      0     1ms   285us   669us   460us   657us   158us   424us
+# Rows sent      0 123.99k  10.38k  56.81k  41.33k  56.74k  21.90k  56.74k
+# Rows examine   0 674.98k 224.99k 224.99k 224.99k 224.99k       0 224.99k
+# Query size     0     963     321     321     321     321       0     321
+# Bytes          0     963     321     321     321     321       0     321
+# hostname       0      78      26      26      26      26       0      26
+# String:
+# Databases    BI_DA
+# Hosts        10.10.0.32
+# Time         2016-09-12... (1/33%), 2016-09-12... (1/33%)... 1 more
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `BI_DA` LIKE 'da_ag_loan_cold_hot_list'\G
+#    SHOW CREATE TABLE `BI_DA`.`da_ag_loan_cold_hot_list`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select T312.user_id as F314,T312.mobile as F315,T312.city_id as F316,T312.channel as F317,T312.city_name as F318  from (SELECT 
+    id AS user_id
+    ,mobile AS mobile
+    ,city AS city_id
+    ,os AS channel
+    ,NAME AS city_name
+FROM `da_ag_loan_cold_hot_list`
+WHERE flag=11
+AND etl_date>='2016-08-19') T312 limit 75001\G
+
+# Query 26: 0 QPS, 0x concurrency, ID 0x5C0F33C68E082D72 at byte 674104 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       3
+# Exec time      0   912ms   291ms   327ms   304ms   323ms    18ms   293ms
+# Lock time      0     3ms   813us     1ms   938us     1ms   113us   881us
+# Rows sent      0       3       1       1       1       1       0       1
+# Rows examine   0 942.28k 314.09k 314.09k 314.09k 314.09k       0 314.09k
+# Query size     0   3.95k   1.32k   1.32k   1.32k   1.32k       0   1.32k
+# Bytes          0   3.95k   1.32k   1.32k   1.32k   1.32k       0   1.32k
+# hostname       0      78      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12... (1/33%), 2016-09-12... (1/33%)... 1 more
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select T286.DATE as F288,T286.reg_cnt as F289,T286.wj_cnt as F290,T286.sh_cnt as F291,T286.jkr_cnt as F292,T286.jk_cnt as F293,T286.jk_sum as F294,T286.first_cnt as F295,T286.second_cnt as F296  from (SELECT
+    DATE_FORMAT(a.trans_time,'%Y-%m-%d') AS DATE
+    ,COUNT(1) AS reg_cnt
+    ,COUNT(CASE WHEN b.data_status='YYYYY' THEN 1 END) AS wj_cnt
+    ,COUNT(CASE WHEN b.credit_limit > 0 THEN 1 END) AS sh_cnt
+    ,COUNT(DISTINCT a.`user_id`) AS jkr_cnt
+    ,COUNT(1) jk_cnt
+    ,SUM(a.trans_amt) AS jk_sum
+    ,COUNT(DISTINCT a.user_id) AS first_cnt
+    ,SUM(c.second_cnt) AS second_cnt
+FROM     sheng_loan_record a
+LEFT JOIN `sheng_user` b ON a.`user_id`=b.`user_id`
+LEFT JOIN 
+(
+SELECT 
+    user_id
+    ,SUM(flag) AS second_cnt
+
+FROM (
+
+SELECT 
+    
+    user_id
+    ,trans_amt
+    ,trans_time
+    ,CASE WHEN trans_amt>=3000 THEN 1 ELSE 0 END AS flag
+    ,(SELECT COUNT(*) FROM sheng_loan_record WHERE user_id=a.user_id AND trans_time < a.trans_time) +1 AS palce
+FROM sheng_loan_record a
+WHERE DATE_FORMAT(trans_time,'%Y-%m-%d')  >=   '2015-09-01' AND DATE_FORMAT(trans_time,'%Y-%m-%d') <=  '2016-09-12' 
+ORDER BY user_id
+) aa
+WHERE palce > 1
+GROUP BY user_id
+HAVING SUM(flag)>0
+) c ON a.`user_id`=c.user_id
+WHERE DATE_FORMAT(a.trans_time,'%Y-%m-%d')  >=   '2015-09-01'  AND DATE_FORMAT(a.trans_time,'%Y-%m-%d') <=   '2016-09-12') T286 limit 75001\G
+
+# Query 27: 0 QPS, 0x concurrency, ID 0x4CAE3F82849824B6 at byte 2174687 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       6
+# Exec time      0   698ms   103ms   136ms   116ms   134ms    11ms   110ms
+# Lock time      0     1ms   223us   283us   247us   273us    23us   260us
+# Rows sent      0   5.86k    1000    1000    1000    1000       0    1000
+# Rows examine   0 225.59k  32.23k  40.04k  37.60k  38.40k   2.87k  38.40k
+# Query size     0     378      63      63      63      63       0      63
+# Bytes          0     378      63      63      63      63       0      63
+# hostname       0     156      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12... (1/16%), 2016-09-12... (1/16%)... 4 more
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_repayment_plan'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_repayment_plan`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from `bi_ods`.`sheng_repayment_plan` limit 39000, 1000\G
+
+# Query 28: 0 QPS, 0x concurrency, ID 0x2ADEFD29115C1578 at byte 2450851 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       3
+# Exec time      0   696ms   193ms   274ms   232ms   266ms    32ms   219ms
+# Lock time      0   260us    76us    96us    86us    93us     8us    84us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0 183.80k  61.27k  61.27k  61.27k  61.27k       0  61.27k
+# Query size     0     186      62      62      62      62       0      62
+# Bytes          0     186      62      62      62      62       0      62
+# hostname       0      78      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-11... (1/33%), 2016-09-12... (1/33%)... 1 more
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_promotion'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_promotion`\G
+DELETE FROM ods_record_promotion
+WHERE etl_date = '2016-09-01'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_record_promotion
+WHERE etl_date = '2016-09-01'\G
+
+# Query 29: 0 QPS, 0x concurrency, ID 0xBE0E14F21FDEFB01 at byte 292375 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.01
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       4
+# Exec time      0   626ms   103ms   212ms   156ms   208ms    47ms   199ms
+# Lock time      0   604us   108us   224us   151us   214us    41us   176us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0     941     232     238  235.25  234.30       3  234.30
+# Bytes          0     941     232     238  235.25  234.30       3  234.30
+# hostname       0     104      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        10.10.1.56 (3/75%), 10.10.2.61 (1/25%)
+# Time         2016-09-11... (1/25%), 2016-09-11... (1/25%)... 2 more
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_3'\G
+#    SHOW CREATE TABLE `passport`.`user_3`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT id, mobile, email, username, password , nickname, face, is_email_binding, is_mobile_binding, real_name_certification , credit_corn, integral, level_id, create_time, update_time , status FROM user_3 WHERE username = 'c44304512'\G
+
+# Query 30: 0 QPS, 0x concurrency, ID 0xD2AAEA52614613A0 at byte 2178459 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0   452ms   214ms   238ms   226ms   238ms    17ms   226ms
+# Lock time      0   683us   250us   433us   341us   433us   129us   341us
+# Rows sent      0   1.04k     534     534     534     534       0     534
+# Rows examine   0 167.11k  83.56k  83.56k  83.56k  83.56k       0  83.56k
+# Query size     0     198      99      99      99      99       0      99
+# Bytes          0     198      99      99      99      99       0      99
+# hostname       0      52      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12... (1/50%), 2016-09-12... (1/50%)
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_repayment_plan'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_repayment_plan`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from `sheng_repayment_plan`
+where overdue_day > 0
+order by user_id,order_no
+ LIMIT 0, 1000\G
+
+# Query 31: 0 QPS, 0x concurrency, ID 0xE0E620D8AA58704B at byte 1400626 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   363ms   363ms   363ms   363ms   363ms       0   363ms
+# Lock time      0   935us   935us   935us   935us   935us       0   935us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0 314.15k 314.15k 314.15k 314.15k 314.15k       0 314.15k
+# Query size     0     959     959     959     959     959       0     959
+# Bytes          0     959     959     959     959     959       0     959
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12T06:37:12.759008Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT
+    COUNT(1) AS reg_cnt
+    ,COUNT(CASE WHEN b.data_status='YYYYY' THEN 1 END) AS wj_cnt
+    ,COUNT(CASE WHEN b.credit_limit > 0 THEN 1 END) AS sh_cnt
+    ,SUM(b.credit_limit) as xy_sum
+    ,COUNT(DISTINCT a.`user_id`) AS jkr_cnt
+    ,COUNT(1) jk_cnt
+    ,SUM(a.trans_amt) AS jk_sum
+    ,COUNT(DISTINCT a.user_id) AS first_cnt
+    ,SUM(c.second_cnt) AS second_cnt
+FROM     sheng_loan_record a
+LEFT JOIN `sheng_user` b ON a.`user_id`=b.`user_id`
+LEFT JOIN 
+(
+SELECT 
+    user_id
+    ,SUM(case when trans_amt >= 3000 then trans_amt else 0 end) AS second_cnt
+
+FROM (
+
+SELECT 
+    
+    user_id
+    ,trans_amt
+    ,trans_time
+    ,CASE WHEN trans_amt>=3000 THEN 1 ELSE 0 END AS flag
+    ,(SELECT COUNT(*) FROM sheng_loan_record WHERE user_id=a.user_id AND trans_time > a.trans_time) +1 AS palce
+FROM sheng_loan_record a
+
+
+ORDER BY user_id
+) aa
+WHERE palce > 1
+GROUP BY user_id
+) c ON a.`user_id`=c.user_id
+
+ LIMIT 0, 1000\G
+
+# Query 32: 0 QPS, 0x concurrency, ID 0x775ADF289621A61B at byte 1239998 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       3
+# Exec time      0   318ms   103ms   109ms   106ms   105ms     2ms   105ms
+# Lock time      0   495us   157us   175us   165us   167us     6us   159us
+# Rows sent      0   2.93k    1000    1000    1000    1000       0    1000
+# Rows examine   0 131.84k  39.06k  46.88k  43.95k  46.68k   3.50k  44.45k
+# Query size     0     222      74      74      74      74       0      74
+# Bytes          0     222      74      74      74      74       0      74
+# hostname       0      78      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12... (1/33%), 2016-09-12... (1/33%)... 1 more
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_supersale_brand_details_131'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_supersale_brand_details_131`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from `bi_ods`.`ods_supersale_brand_details_131` limit 47000, 1000\G
+
+# Query 33: 0 QPS, 0x concurrency, ID 0xC7365E6FD4D32E34 at byte 680043 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   303ms   303ms   303ms   303ms   303ms       0   303ms
+# Lock time      0   936us   936us   936us   936us   936us       0   936us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0 313.54k 313.54k 313.54k 313.54k 313.54k       0 313.54k
+# Query size     0   1.20k   1.20k   1.20k   1.20k   1.20k       0   1.20k
+# Bytes          0   1.20k   1.20k   1.20k   1.20k   1.20k       0   1.20k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12T02:21:19.265279Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select count(*) from (select T286.DATE as F288,T286.reg_cnt as F289,T286.wj_cnt as F290,T286.sh_cnt as F291,T286.jkr_cnt as F292,T286.jk_cnt as F293,T286.jk_sum as F294,T286.first_cnt as F295,T286.second_cnt as F296  from (SELECT     DATE_FORMAT(a.trans_time,'%Y-%m-%d') AS DATE     ,COUNT(1) AS reg_cnt     ,COUNT(CASE WHEN b.data_status='YYYYY' THEN 1 END) AS wj_cnt     ,COUNT(CASE WHEN b.credit_limit > 0 THEN 1 END) AS sh_cnt     ,COUNT(DISTINCT a.`user_id`) AS jkr_cnt     ,COUNT(1) jk_cnt     ,SUM(a.trans_amt) AS jk_sum     ,COUNT(DISTINCT a.user_id) AS first_cnt     ,SUM(c.second_cnt) AS second_cnt FROM     sheng_loan_record a LEFT JOIN `sheng_user` b ON a.`user_id`=b.`user_id` LEFT JOIN  ( SELECT      user_id     ,SUM(flag) AS second_cnt  FROM (  SELECT           user_id     ,trans_amt     ,trans_time     ,CASE WHEN trans_amt>=3000 THEN 1 ELSE 0 END AS flag     ,(SELECT COUNT(*) FROM sheng_loan_record WHERE user_id=a.user_id AND trans_time < a.trans_time) +1 AS palce FROM sheng_loan_record a WHERE DATE_FORMAT(trans_time,'%Y-%m-%d')  >=   '2015-09-01' AND DATE_FORMAT(trans_time,'%Y-%m-%d') <=  '2016-09-12'  ) aa WHERE palce > 1 GROUP BY user_id HAVING SUM(flag)>0 ) c ON a.`user_id`=c.user_id) T286) tcounttable\G
+
+# Query 34: 0 QPS, 0x concurrency, ID 0x1E35C2697B419130 at byte 687537 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   301ms   301ms   301ms   301ms   301ms       0   301ms
+# Lock time      0   794us   794us   794us   794us   794us       0   794us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0 313.54k 313.54k 313.54k 313.54k 313.54k       0 313.54k
+# Query size     0   1.33k   1.33k   1.33k   1.33k   1.33k       0   1.33k
+# Bytes          0   1.33k   1.33k   1.33k   1.33k   1.33k       0   1.33k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12T02:24:12.621220Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select count(*) from (select T286.DATE as F288,T286.reg_cnt as F289,T286.wj_cnt as F290,T286.sh_cnt as F291,T286.jkr_cnt as F292,T286.jk_cnt as F293,T286.jk_sum as F294,T286.first_cnt as F295,T286.second_cnt as F296  from (SELECT     DATE_FORMAT(a.trans_time,'%Y-%m-%d') AS DATE     ,COUNT(1) AS reg_cnt     ,COUNT(CASE WHEN b.data_status='YYYYY' THEN 1 END) AS wj_cnt     ,COUNT(CASE WHEN b.credit_limit > 0 THEN 1 END) AS sh_cnt     ,COUNT(DISTINCT a.`user_id`) AS jkr_cnt     ,COUNT(1) jk_cnt     ,SUM(a.trans_amt) AS jk_sum     ,COUNT(DISTINCT a.user_id) AS first_cnt     ,SUM(c.second_cnt) AS second_cnt FROM     sheng_loan_record a LEFT JOIN `sheng_user` b ON a.`user_id`=b.`user_id` LEFT JOIN  ( SELECT      user_id     ,SUM(flag) AS second_cnt  FROM (  SELECT           user_id     ,trans_amt     ,trans_time     ,CASE WHEN trans_amt>=3000 THEN 1 ELSE 0 END AS flag     ,(SELECT COUNT(*) FROM sheng_loan_record WHERE user_id=a.user_id AND trans_time < a.trans_time) +1 AS palce FROM sheng_loan_record a WHERE DATE_FORMAT(a.trans_time,'%Y-%m-%d')  >=  '2015-09-01'    AND DATE_FORMAT(a.trans_time,'%Y-%m-%d') <=    '2016-09-12'  ) aa WHERE palce > 1 GROUP BY user_id HAVING SUM(flag)>0 ) c ON a.`user_id`=c.user_id  WHERE DATE_FORMAT(a.trans_time,'%Y-%m-%d')  >=  '2015-09-01'    AND DATE_FORMAT(a.trans_time,'%Y-%m-%d') <=  '2016-09-12') T286) tcounttable\G
+
+# Query 35: 0 QPS, 0x concurrency, ID 0x9932B79CEE2472A5 at byte 2444393 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0   300ms   146ms   154ms   150ms   154ms     6ms   150ms
+# Lock time      0   179us    73us   106us    89us   106us    23us    89us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0  82.97k  41.24k  41.73k  41.49k  41.73k  354.97  41.49k
+# Query size     0     124      62      62      62      62       0      62
+# Bytes          0     124      62      62      62      62       0      62
+# hostname       0      52      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-11... (1/50%), 2016-09-12... (1/50%)
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_jimu_loan'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_jimu_loan`\G
+DELETE FROM ods_record_jimu_loan
+WHERE etl_date = '2016-09-11'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_record_jimu_loan
+WHERE etl_date = '2016-09-11'\G
+
+# Query 36: 0 QPS, 0x concurrency, ID 0x4BFAA06DFECC6920 at byte 681480 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   295ms   295ms   295ms   295ms   295ms       0   295ms
+# Lock time      0   826us   826us   826us   826us   826us       0   826us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0 313.54k 313.54k 313.54k 313.54k 313.54k       0 313.54k
+# Query size     0   1.32k   1.32k   1.32k   1.32k   1.32k       0   1.32k
+# Bytes          0   1.32k   1.32k   1.32k   1.32k   1.32k       0   1.32k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12T02:22:57.321694Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select count(*) from (select T286.DATE as F288,T286.reg_cnt as F289,T286.wj_cnt as F290,T286.sh_cnt as F291,T286.jkr_cnt as F292,T286.jk_cnt as F293,T286.jk_sum as F294,T286.first_cnt as F295,T286.second_cnt as F296  from (SELECT     DATE_FORMAT(a.trans_time,'%Y-%m-%d') AS DATE     ,COUNT(1) AS reg_cnt     ,COUNT(CASE WHEN b.data_status='YYYYY' THEN 1 END) AS wj_cnt     ,COUNT(CASE WHEN b.credit_limit > 0 THEN 1 END) AS sh_cnt     ,COUNT(DISTINCT a.`user_id`) AS jkr_cnt     ,COUNT(1) jk_cnt     ,SUM(a.trans_amt) AS jk_sum     ,COUNT(DISTINCT a.user_id) AS first_cnt     ,SUM(c.second_cnt) AS second_cnt FROM     sheng_loan_record a LEFT JOIN `sheng_user` b ON a.`user_id`=b.`user_id` LEFT JOIN  ( SELECT      user_id     ,SUM(flag) AS second_cnt  FROM (  SELECT           user_id     ,trans_amt     ,trans_time     ,CASE WHEN trans_amt>=3000 THEN 1 ELSE 0 END AS flag     ,(SELECT COUNT(*) FROM sheng_loan_record WHERE user_id=a.user_id AND trans_time < a.trans_time) +1 AS palce FROM sheng_loan_record a WHERE DATE_FORMAT(trans_time,'%Y-%m-%d')  >=  '2016-03-01'    AND DATE_FORMAT(trans_time,'%Y-%m-%d') <=    '2016-09-12'  ) aa WHERE palce > 1 GROUP BY user_id HAVING SUM(flag)>0 ) c ON a.`user_id`=c.user_id  WHERE DATE_FORMAT(trans_time,'%Y-%m-%d')  >=  '2016-03-01'    AND DATE_FORMAT(trans_time,'%Y-%m-%d') <=  '2016-09-12') T286) tcounttable\G
+
+# Query 37: 0 QPS, 0x concurrency, ID 0x22F43272C87BA90E at byte 2020153 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   293ms   293ms   293ms   293ms   293ms       0   293ms
+# Lock time      0   389us   389us   389us   389us   389us       0   389us
+# Rows sent      0     564     564     564     564     564       0     564
+# Rows examine   0 311.74k 311.74k 311.74k 311.74k 311.74k       0 311.74k
+# Query size     0     291     291     291     291     291       0     291
+# Bytes          0     291     291     291     291     291       0     291
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12T09:17:41.963960Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT 
+    
+    user_id
+    ,trans_amt
+    ,trans_time
+    ,CASE WHEN trans_amt>=3000 THEN 1 ELSE 0 END AS flag
+    ,(SELECT COUNT(*) FROM sheng_loan_record WHERE user_id=a.user_id AND trans_time < a.trans_time) +1 AS palce
+FROM sheng_loan_record a
+
+ORDER BY user_id
+ LIMIT 0, 1000\G
+
+# Query 38: 0 QPS, 0x concurrency, ID 0x40DCA45242CE6E29 at byte 689117 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   291ms   291ms   291ms   291ms   291ms       0   291ms
+# Lock time      0   843us   843us   843us   843us   843us       0   843us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0 314.09k 314.09k 314.09k 314.09k 314.09k       0 314.09k
+# Query size     0   1.32k   1.32k   1.32k   1.32k   1.32k       0   1.32k
+# Bytes          0   1.32k   1.32k   1.32k   1.32k   1.32k       0   1.32k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12T02:24:12.625653Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select T286.DATE as F288,T286.reg_cnt as F289,T286.wj_cnt as F290,T286.sh_cnt as F291,T286.jkr_cnt as F292,T286.jk_cnt as F293,T286.jk_sum as F294,T286.first_cnt as F295,T286.second_cnt as F296  from (SELECT
+    DATE_FORMAT(a.trans_time,'%Y-%m-%d') AS DATE
+    ,COUNT(1) AS reg_cnt
+    ,COUNT(CASE WHEN b.data_status='YYYYY' THEN 1 END) AS wj_cnt
+    ,COUNT(CASE WHEN b.credit_limit > 0 THEN 1 END) AS sh_cnt
+    ,COUNT(DISTINCT a.`user_id`) AS jkr_cnt
+    ,COUNT(1) jk_cnt
+    ,SUM(a.trans_amt) AS jk_sum
+    ,COUNT(DISTINCT a.user_id) AS first_cnt
+    ,SUM(c.second_cnt) AS second_cnt
+FROM     sheng_loan_record a
+LEFT JOIN `sheng_user` b ON a.`user_id`=b.`user_id`
+LEFT JOIN 
+(
+SELECT 
+    user_id
+    ,SUM(flag) AS second_cnt
+
+FROM (
+
+SELECT 
+    
+    user_id
+    ,trans_amt
+    ,trans_time
+    ,CASE WHEN trans_amt>=3000 THEN 1 ELSE 0 END AS flag
+    ,(SELECT COUNT(*) FROM sheng_loan_record WHERE user_id=a.user_id AND trans_time < a.trans_time) +1 AS palce
+FROM sheng_loan_record a
+WHERE DATE_FORMAT(a.trans_time,'%Y-%m-%d')  >=  '2015-09-01'    AND DATE_FORMAT(a.trans_time,'%Y-%m-%d') <=    '2016-09-12' 
+ORDER BY user_id
+) aa
+WHERE palce > 1
+GROUP BY user_id
+HAVING SUM(flag)>0
+) c ON a.`user_id`=c.user_id
+ WHERE DATE_FORMAT(a.trans_time,'%Y-%m-%d')  >=  '2015-09-01'    AND DATE_FORMAT(a.trans_time,'%Y-%m-%d') <=  '2016-09-12') T286 limit 1000\G
+
+# Query 39: 0 QPS, 0x concurrency, ID 0xA60516BE2795A849 at byte 2013766 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   290ms   290ms   290ms   290ms   290ms       0   290ms
+# Lock time      0   307us   307us   307us   307us   307us       0   307us
+# Rows sent      0     564     564     564     564     564       0     564
+# Rows examine   0 311.74k 311.74k 311.74k 311.74k 311.74k       0 311.74k
+# Query size     0     291     291     291     291     291       0     291
+# Bytes          0     291     291     291     291     291       0     291
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12T09:16:49.163827Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT 
+    
+    user_id
+    ,trans_amt
+    ,trans_time
+    ,CASE WHEN trans_amt>=3000 THEN 1 ELSE 0 END AS flag
+    ,(SELECT COUNT(*) FROM sheng_loan_record WHERE user_id=a.user_id AND trans_time > a.trans_time) +1 AS palce
+FROM sheng_loan_record a
+
+ORDER BY user_id
+ LIMIT 0, 1000\G
+
+# Query 40: 0 QPS, 0x concurrency, ID 0x0841E64F1732F2E5 at byte 683040 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   286ms   286ms   286ms   286ms   286ms       0   286ms
+# Lock time      0     1ms     1ms     1ms     1ms     1ms       0     1ms
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0 314.09k 314.09k 314.09k 314.09k 314.09k       0 314.09k
+# Query size     0   1.32k   1.32k   1.32k   1.32k   1.32k       0   1.32k
+# Bytes          0   1.32k   1.32k   1.32k   1.32k   1.32k       0   1.32k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12T02:22:57.324210Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select T286.DATE as F288,T286.reg_cnt as F289,T286.wj_cnt as F290,T286.sh_cnt as F291,T286.jkr_cnt as F292,T286.jk_cnt as F293,T286.jk_sum as F294,T286.first_cnt as F295,T286.second_cnt as F296  from (SELECT
+    DATE_FORMAT(a.trans_time,'%Y-%m-%d') AS DATE
+    ,COUNT(1) AS reg_cnt
+    ,COUNT(CASE WHEN b.data_status='YYYYY' THEN 1 END) AS wj_cnt
+    ,COUNT(CASE WHEN b.credit_limit > 0 THEN 1 END) AS sh_cnt
+    ,COUNT(DISTINCT a.`user_id`) AS jkr_cnt
+    ,COUNT(1) jk_cnt
+    ,SUM(a.trans_amt) AS jk_sum
+    ,COUNT(DISTINCT a.user_id) AS first_cnt
+    ,SUM(c.second_cnt) AS second_cnt
+FROM     sheng_loan_record a
+LEFT JOIN `sheng_user` b ON a.`user_id`=b.`user_id`
+LEFT JOIN 
+(
+SELECT 
+    user_id
+    ,SUM(flag) AS second_cnt
+
+FROM (
+
+SELECT 
+    
+    user_id
+    ,trans_amt
+    ,trans_time
+    ,CASE WHEN trans_amt>=3000 THEN 1 ELSE 0 END AS flag
+    ,(SELECT COUNT(*) FROM sheng_loan_record WHERE user_id=a.user_id AND trans_time < a.trans_time) +1 AS palce
+FROM sheng_loan_record a
+WHERE DATE_FORMAT(trans_time,'%Y-%m-%d')  >=  '2016-03-01'    AND DATE_FORMAT(trans_time,'%Y-%m-%d') <=    '2016-09-12' 
+ORDER BY user_id
+) aa
+WHERE palce > 1
+GROUP BY user_id
+HAVING SUM(flag)>0
+) c ON a.`user_id`=c.user_id
+ WHERE DATE_FORMAT(trans_time,'%Y-%m-%d')  >=  '2016-03-01'    AND DATE_FORMAT(trans_time,'%Y-%m-%d') <=  '2016-09-12') T286 limit 1000\G
+
+# Query 41: 0 QPS, 0x concurrency, ID 0xD00CB7E0E0CCF500 at byte 678601 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   274ms   274ms   274ms   274ms   274ms       0   274ms
+# Lock time      0   678us   678us   678us   678us   678us       0   678us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0 314.09k 314.09k 314.09k 314.09k 314.09k       0 314.09k
+# Query size     0   1.20k   1.20k   1.20k   1.20k   1.20k       0   1.20k
+# Bytes          0   1.20k   1.20k   1.20k   1.20k   1.20k       0   1.20k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12T02:21:18.948201Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select T286.DATE as F288,T286.reg_cnt as F289,T286.wj_cnt as F290,T286.sh_cnt as F291,T286.jkr_cnt as F292,T286.jk_cnt as F293,T286.jk_sum as F294,T286.first_cnt as F295,T286.second_cnt as F296  from (SELECT
+    DATE_FORMAT(a.trans_time,'%Y-%m-%d') AS DATE
+    ,COUNT(1) AS reg_cnt
+    ,COUNT(CASE WHEN b.data_status='YYYYY' THEN 1 END) AS wj_cnt
+    ,COUNT(CASE WHEN b.credit_limit > 0 THEN 1 END) AS sh_cnt
+    ,COUNT(DISTINCT a.`user_id`) AS jkr_cnt
+    ,COUNT(1) jk_cnt
+    ,SUM(a.trans_amt) AS jk_sum
+    ,COUNT(DISTINCT a.user_id) AS first_cnt
+    ,SUM(c.second_cnt) AS second_cnt
+FROM     sheng_loan_record a
+LEFT JOIN `sheng_user` b ON a.`user_id`=b.`user_id`
+LEFT JOIN 
+(
+SELECT 
+    user_id
+    ,SUM(flag) AS second_cnt
+
+FROM (
+
+SELECT 
+    
+    user_id
+    ,trans_amt
+    ,trans_time
+    ,CASE WHEN trans_amt>=3000 THEN 1 ELSE 0 END AS flag
+    ,(SELECT COUNT(*) FROM sheng_loan_record WHERE user_id=a.user_id AND trans_time < a.trans_time) +1 AS palce
+FROM sheng_loan_record a
+WHERE DATE_FORMAT(trans_time,'%Y-%m-%d')  >=   '2015-09-01' AND DATE_FORMAT(trans_time,'%Y-%m-%d') <=  '2016-09-12' 
+ORDER BY user_id
+) aa
+WHERE palce > 1
+GROUP BY user_id
+HAVING SUM(flag)>0
+) c ON a.`user_id`=c.user_id) T286 limit 1000\G
+
+# Query 42: 0 QPS, 0x concurrency, ID 0x808FDA0220E34C99 at byte 2062285 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   188ms   188ms   188ms   188ms   188ms       0   188ms
+# Lock time      0   545us   545us   545us   545us   545us       0   545us
+# Rows sent      0     564     564     564     564     564       0     564
+# Rows examine   0   2.55k   2.55k   2.55k   2.55k   2.55k       0   2.55k
+# Query size     0     318     318     318     318     318       0     318
+# Bytes          0     318     318     318     318     318       0     318
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12T09:30:14.807886Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_info'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_info`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_dict_city'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_dict_city`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select
+	c.`create_time`
+	,a.`user_id`
+	,c.`username`
+	,b.`mobile`
+	,e.`name`
+from `sheng_loan_record` a
+left join `sheng_user` b on a.`user_id`=b.`user_id`	
+left join ods_user c on a.`user_id`=c.`id`
+left join ods_user_info d on c.`id`=d.`user_id`
+left join dm_dict_city e on d.`city`=e.`code`
+ LIMIT 0, 1000\G
+
+# Query 43: 0 QPS, 0x concurrency, ID 0xB5B45C9B4E142D12 at byte 2184933 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   188ms   188ms   188ms   188ms   188ms       0   188ms
+# Lock time      0   244us   244us   244us   244us   244us       0   244us
+# Rows sent      0     534     534     534     534     534       0     534
+# Rows examine   0  83.56k  83.56k  83.56k  83.56k  83.56k       0  83.56k
+# Query size     0     135     135     135     135     135       0     135
+# Bytes          0     135     135     135     135     135       0     135
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12T10:18:24.297058Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_repayment_plan'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_repayment_plan`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select k.*,from_unixtime(k.repayment_date) from `sheng_repayment_plan` k
+where overdue_day > 0
+order by user_id,order_no
+ LIMIT 0, 1000\G
+
+# Query 44: 0 QPS, 0x concurrency, ID 0x54DAE9BD6DC25801 at byte 2064480 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   180ms   180ms   180ms   180ms   180ms       0   180ms
+# Lock time      0   461us   461us   461us   461us   461us       0   461us
+# Rows sent      0     564     564     564     564     564       0     564
+# Rows examine   0   2.55k   2.55k   2.55k   2.55k   2.55k       0   2.55k
+# Query size     0     388     388     388     388     388       0     388
+# Bytes          0     388     388     388     388     388       0     388
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12T09:33:15.590864Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_info'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_info`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_dict_city'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_dict_city`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select
+	c.`create_time`
+	,a.`user_id`
+	,c.`username`
+	,b.`mobile`
+	,e.`name`
+	,b.`credit_limit`
+	,a.`trans_amt`
+	,a.`instalment_to_talcount`
+	
+from `sheng_loan_record` a
+left join `sheng_user` b on a.`user_id`=b.`user_id`	
+left join ods_user c on a.`user_id`=c.`id`
+left join ods_user_info d on c.`id`=d.`user_id`
+left join dm_dict_city e on d.`city`=e.`code`
+ LIMIT 0, 1000\G
+
+# Query 45: 0 QPS, 0x concurrency, ID 0x8A79F4B305ED70DD at byte 2063917 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   180ms   180ms   180ms   180ms   180ms       0   180ms
+# Lock time      0   396us   396us   396us   396us   396us       0   396us
+# Rows sent      0     564     564     564     564     564       0     564
+# Rows examine   0   2.55k   2.55k   2.55k   2.55k   2.55k       0   2.55k
+# Query size     0     355     355     355     355     355       0     355
+# Bytes          0     355     355     355     355     355       0     355
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12T09:32:28.967160Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_info'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_info`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_dict_city'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_dict_city`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select
+	c.`create_time`
+	,a.`user_id`
+	,c.`username`
+	,b.`mobile`
+	,e.`name`
+	,b.`credit_limit`
+	,a.`trans_amt`
+from `sheng_loan_record` a
+left join `sheng_user` b on a.`user_id`=b.`user_id`	
+left join ods_user c on a.`user_id`=c.`id`
+left join ods_user_info d on c.`id`=d.`user_id`
+left join dm_dict_city e on d.`city`=e.`code`
+ LIMIT 0, 1000\G
+
+# Query 46: 0 QPS, 0x concurrency, ID 0xAC7793FE6708F65D at byte 636884 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   176ms   176ms   176ms   176ms   176ms       0   176ms
+# Lock time      0   837us   837us   837us   837us   837us       0   837us
+# Rows sent      0     406     406     406     406     406       0     406
+# Rows examine   0   2.64k   2.64k   2.64k   2.64k   2.64k       0   2.64k
+# Query size     0   1.60k   1.60k   1.60k   1.60k   1.60k       0   1.60k
+# Bytes          0   1.60k   1.60k   1.60k   1.60k   1.60k       0   1.60k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12T02:06:34.179901Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_info'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_info`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_dict_city'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_dict_city`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_source'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_source`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select T222.user_id as F225,T222.username as F226,T222.mobile as F227,T222.cityname as F228,T222.data_status as F229,T222.add_time as F230,T222.approval_time as F231,T222.credit_limit as F232,T222.trans_amt as F233,T222.instalment_to_talcount as F234,T222.trans_time as F235,T222.available_limit as F236,T222.OS as F237  from (SELECT
+    a.user_id AS user_id
+    ,b.`username` AS username
+    ,CONCAT(SUBSTR(c.mobile,1,3),'****',SUBSTR(c.mobile,8,4)) AS mobile
+    ,IFNULL(e.`name`,'未知') AS cityname
+    ,c.data_status AS data_status
+    ,DATE_FORMAT(c.add_time,'%Y-%m-%d %H:%i:%s') AS add_time
+    ,DATE_FORMAT(c.approval_time,'%Y-%m-%d %H:%i:%s') AS approval_time
+    ,c.credit_limit AS credit_limit
+    ,a.trans_amt AS trans_amt
+    ,a.instalment_to_talcount AS instalment_to_talcount
+    ,DATE_FORMAT(a.trans_time,'%Y-%m-%d %H:%i:%s')  AS trans_time
+    ,c.available_limit available_limit
+    
+    ,CASE WHEN f.`os`=4 THEN 'IOS'
+          WHEN f.`os`=3 THEN 'ANDROID'
+          WHEN f.`os`=0 THEN '未知'
+          WHEN f.`os`=1 THEN 'www'
+          WHEN f.`os`=2 THEN 'm站'
+     END AS OS
+FROM `sheng_loan_record` a
+ LEFT JOIN ods_user b ON a.user_id=b.`id`
+LEFT JOIN sheng_user c ON a.user_id=c.user_id
+LEFT JOIN ods_user_info d ON a.user_id=d.`user_id`
+LEFT JOIN dm_dict_city e ON d.`city`=e.code
+LEFT JOIN ods_user_source f ON a.user_id=f.`user_id`
+
+WHERE  1=1  
+    AND  1=1 
+    AND  1=1 
+    AND  1=1  
+    AND  1=1 
+    
+    AND  1=1     
+    AND  1=1 
+    AND  1=1 
+    AND DATE_FORMAT(c.add_time,'%Y-%m-%d %H:%i:%s') >=  '2016-01-01'
+   AND  1=1 
+   AND  1=1 
+   AND  1=1 
+   AND  1=1 
+   AND  1=1) T222 limit 75001\G
+
+# Query 47: 0 QPS, 0x concurrency, ID 0x70244A6A089883C0 at byte 215689 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   168ms   168ms   168ms   168ms   168ms       0   168ms
+# Lock time      0   122us   122us   122us   122us   122us       0   122us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0     145     145     145     145     145       0     145
+# Bytes          0     145     145     145     145     145       0     145
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        10.10.2.61
+# Time         2016-09-11T19:56:58.214168Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'record_user_integral_2'\G
+#    SHOW CREATE TABLE `passport`.`record_user_integral_2`\G
+insert into record_user_integral_2 (id, user_id, source_name,source_id,integral) values(1013087911, 1012847778, '每天开启app', 'unop_app', 5)\G
+
+# Query 48: 0 QPS, 0x concurrency, ID 0x8B7FE125EF1E886A at byte 2065969 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   167ms   167ms   167ms   167ms   167ms       0   167ms
+# Lock time      0   509us   509us   509us   509us   509us       0   509us
+# Rows sent      0     564     564     564     564     564       0     564
+# Rows examine   0   2.55k   2.55k   2.55k   2.55k   2.55k       0   2.55k
+# Query size     0     403     403     403     403     403       0     403
+# Bytes          0     403     403     403     403     403       0     403
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12T09:33:42.848867Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_info'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_info`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_dict_city'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_dict_city`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select
+	c.`create_time`
+	,a.`user_id`
+	,c.`username`
+	,b.`mobile`
+	,e.`name`
+	,b.`credit_limit`
+	,a.`trans_amt`
+	,a.`instalment_to_talcount`
+	,a.`trans_time`
+from `sheng_loan_record` a
+left join `sheng_user` b on a.`user_id`=b.`user_id`	
+left join ods_user c on a.`user_id`=c.`id`
+left join ods_user_info d on c.`id`=d.`user_id`
+left join dm_dict_city e on d.`city`=e.`code`
+ LIMIT 0, 1000\G
+
+# Query 49: 0 QPS, 0x concurrency, ID 0x932E4A305E08C352 at byte 619207 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   164ms   164ms   164ms   164ms   164ms       0   164ms
+# Lock time      0   860us   860us   860us   860us   860us       0   860us
+# Rows sent      0     405     405     405     405     405       0     405
+# Rows examine   0   2.64k   2.64k   2.64k   2.64k   2.64k       0   2.64k
+# Query size     0   1.56k   1.56k   1.56k   1.56k   1.56k       0   1.56k
+# Bytes          0   1.56k   1.56k   1.56k   1.56k   1.56k       0   1.56k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12T02:01:34.340731Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_info'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_info`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_dict_city'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_dict_city`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_source'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_source`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select T222.user_id as F225,T222.username as F226,T222.mobile as F227,T222.cityname as F228,T222.data_status as F229,T222.add_time as F230,T222.approval_time as F231,T222.credit_limit as F232,T222.trans_amt as F233,T222.instalment_to_talcount as F234,T222.trans_time as F235,T222.available_limit as F236,T222.OS as F237  from (SELECT
+    a.user_id AS user_id
+    ,b.`username` AS username
+    ,CONCAT(SUBSTR(c.mobile,1,3),'****',SUBSTR(c.mobile,8,4)) AS mobile
+    ,IFNULL(e.`name`,'未知') AS cityname
+    ,c.data_status AS data_status
+    ,DATE_FORMAT(c.add_time,'%Y-%m-%d %H:%i:%s') AS add_time
+    ,DATE_FORMAT(c.approval_time,'%Y-%m-%d %H:%i:%s') AS approval_time
+    ,c.credit_limit AS credit_limit
+    ,a.trans_amt AS trans_amt
+    ,a.instalment_to_talcount AS instalment_to_talcount
+    ,DATE_FORMAT(a.trans_time,'%Y-%m-%d %H:%i:%s')  AS trans_time
+    ,c.available_limit available_limit
+    
+    ,CASE WHEN f.`os`=4 THEN 'IOS'
+          WHEN f.`os`=3 THEN 'ANDROID'
+          WHEN f.`os`=0 THEN '未知'
+          WHEN f.`os`=1 THEN 'www'
+          WHEN f.`os`=2 THEN 'm站'
+     END AS OS
+FROM `sheng_loan_record` a
+ LEFT JOIN ods_user b ON a.user_id=b.`id`
+LEFT JOIN sheng_user c ON a.user_id=c.user_id
+LEFT JOIN ods_user_info d ON a.user_id=d.`user_id`
+LEFT JOIN dm_dict_city e ON d.`city`=e.code
+LEFT JOIN ods_user_source f ON a.user_id=f.`user_id`
+
+WHERE  1=1  
+    AND  1=1 
+    AND  1=1 
+    AND  1=1  
+    AND  1=1 
+    
+    AND  1=1     
+    AND  1=1 
+    AND  1=1 
+    AND  1=1 
+   AND c.add_time <=  '2016-09-01'
+   AND  1=1 
+   AND  1=1 
+   AND  1=1 
+   AND  1=1) T222 limit 75001\G
+
+# Query 50: 0 QPS, 0x concurrency, ID 0x4AC1DB838EDD9E1D at byte 2063368 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   161ms   161ms   161ms   161ms   161ms       0   161ms
+# Lock time      0   440us   440us   440us   440us   440us       0   440us
+# Rows sent      0     564     564     564     564     564       0     564
+# Rows examine   0   2.55k   2.55k   2.55k   2.55k   2.55k       0   2.55k
+# Query size     0     341     341     341     341     341       0     341
+# Bytes          0     341     341     341     341     341       0     341
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12T09:32:16.561509Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_info'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_info`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_dict_city'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_dict_city`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select
+	c.`create_time`
+	,a.`user_id`
+	,c.`username`
+	,b.`mobile`
+	,e.`name`
+	,b.`credit_limit`
+	
+from `sheng_loan_record` a
+left join `sheng_user` b on a.`user_id`=b.`user_id`	
+left join ods_user c on a.`user_id`=c.`id`
+left join ods_user_info d on c.`id`=d.`user_id`
+left join dm_dict_city e on d.`city`=e.`code`
+ LIMIT 0, 1000\G
+
+# Query 51: 0 QPS, 0x concurrency, ID 0x37F82431709E9958 at byte 625335 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   156ms   156ms   156ms   156ms   156ms       0   156ms
+# Lock time      0   836us   836us   836us   836us   836us       0   836us
+# Rows sent      0     395     395     395     395     395       0     395
+# Rows examine   0   2.60k   2.60k   2.60k   2.60k   2.60k       0   2.60k
+# Query size     0   1.59k   1.59k   1.59k   1.59k   1.59k       0   1.59k
+# Bytes          0   1.59k   1.59k   1.59k   1.59k   1.59k       0   1.59k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12T02:02:03.008270Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_info'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_info`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_dict_city'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_dict_city`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_source'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_source`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select T222.user_id as F225,T222.username as F226,T222.mobile as F227,T222.cityname as F228,T222.data_status as F229,T222.add_time as F230,T222.approval_time as F231,T222.credit_limit as F232,T222.trans_amt as F233,T222.instalment_to_talcount as F234,T222.trans_time as F235,T222.available_limit as F236,T222.OS as F237  from (SELECT
+    a.user_id AS user_id
+    ,b.`username` AS username
+    ,CONCAT(SUBSTR(c.mobile,1,3),'****',SUBSTR(c.mobile,8,4)) AS mobile
+    ,IFNULL(e.`name`,'未知') AS cityname
+    ,c.data_status AS data_status
+    ,DATE_FORMAT(c.add_time,'%Y-%m-%d %H:%i:%s') AS add_time
+    ,DATE_FORMAT(c.approval_time,'%Y-%m-%d %H:%i:%s') AS approval_time
+    ,c.credit_limit AS credit_limit
+    ,a.trans_amt AS trans_amt
+    ,a.instalment_to_talcount AS instalment_to_talcount
+    ,DATE_FORMAT(a.trans_time,'%Y-%m-%d %H:%i:%s')  AS trans_time
+    ,c.available_limit available_limit
+    
+    ,CASE WHEN f.`os`=4 THEN 'IOS'
+          WHEN f.`os`=3 THEN 'ANDROID'
+          WHEN f.`os`=0 THEN '未知'
+          WHEN f.`os`=1 THEN 'www'
+          WHEN f.`os`=2 THEN 'm站'
+     END AS OS
+FROM `sheng_loan_record` a
+ LEFT JOIN ods_user b ON a.user_id=b.`id`
+LEFT JOIN sheng_user c ON a.user_id=c.user_id
+LEFT JOIN ods_user_info d ON a.user_id=d.`user_id`
+LEFT JOIN dm_dict_city e ON d.`city`=e.code
+LEFT JOIN ods_user_source f ON a.user_id=f.`user_id`
+
+WHERE  1=1  
+    AND  1=1 
+    AND  1=1 
+    AND  1=1  
+    AND  1=1 
+    
+    AND  1=1     
+    AND  1=1 
+    AND  1=1 
+    AND  1=1 
+   AND c.add_time <=  '2016-09-01'
+   AND  1=1 
+   AND  1=1 
+   AND  1=1 
+   AND a.trans_time  <=  '2016-09-03') T222 limit 75001\G
+
+# Query 52: 0 QPS, 0x concurrency, ID 0x1F5FEC12AB38FC00 at byte 2062823 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   152ms   152ms   152ms   152ms   152ms       0   152ms
+# Lock time      0   432us   432us   432us   432us   432us       0   432us
+# Rows sent      0     564     564     564     564     564       0     564
+# Rows examine   0   2.55k   2.55k   2.55k   2.55k   2.55k       0   2.55k
+# Query size     0     337     337     337     337     337       0     337
+# Bytes          0     337     337     337     337     337       0     337
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12T09:30:26.140728Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_info'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_info`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_dict_city'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_dict_city`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select
+	c.`create_time`
+	,a.`user_id`
+	,c.`username`
+	,b.`mobile`
+	,e.`name`
+	,b.`data_status`
+from `sheng_loan_record` a
+left join `sheng_user` b on a.`user_id`=b.`user_id`	
+left join ods_user c on a.`user_id`=c.`id`
+left join ods_user_info d on c.`id`=d.`user_id`
+left join dm_dict_city e on d.`city`=e.`code`
+ LIMIT 0, 1000\G
+
+# Query 53: 0 QPS, 0x concurrency, ID 0xB0E7A41F4A867E2E at byte 635532 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   151ms   151ms   151ms   151ms   151ms       0   151ms
+# Lock time      0   600us   600us   600us   600us   600us       0   600us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0   3.71k   3.71k   3.71k   3.71k   3.71k       0   3.71k
+# Query size     0   1.11k   1.11k   1.11k   1.11k   1.11k       0   1.11k
+# Bytes          0   1.11k   1.11k   1.11k   1.11k   1.11k       0   1.11k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12T02:06:34.154890Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_info'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_info`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_dict_city'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_dict_city`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_source'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_source`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select T221.cnt as F238,T221.wj_cnt as F239,T221.tg_cnt as F240,T221.xy_sum as F241,T221.jkr_cnt as F242,T221.jk_sum as F243,T221.jk_cnt as F244  from (select 
+    sum(cnt) as cnt
+    ,sum(wj_cnt) as wj_cnt
+    ,sum(tg_cnt) as tg_cnt
+    ,sum(xy_sum/cnt) as xy_sum
+    ,sum(jkr_cnt) as jkr_cnt
+    ,sum(jk_sum) as jk_sum
+    ,sum(jk_cnt) as jk_cnt
+from (
+SELECT
+COUNT(1) AS cnt
+,COUNT(CASE WHEN c.data_status='YYYYY' THEN 1 END) AS wj_cnt
+,COUNT(CASE WHEN c.credit_limit > 0 THEN 1 END) AS tg_cnt
+,SUM(c.credit_limit) AS xy_sum
+,COUNT(DISTINCT a.user_id) AS jkr_cnt
+,SUM(trans_amt) AS jk_sum
+,COUNT(1) AS jk_cnt
+FROM `sheng_loan_record` a
+LEFT JOIN ods_user b ON a.user_id=b.`id`
+LEFT JOIN sheng_user c ON a.user_id=c.user_id
+LEFT JOIN ods_user_info d ON a.user_id=d.`user_id`
+LEFT JOIN dm_dict_city e ON d.`city`=e.code
+LEFT JOIN ods_user_source f ON a.user_id=f.`user_id`
+WHERE  1=1  
+    AND  1=1 
+    AND  1=1 
+    AND  1=1  
+    AND  1=1 
+    
+    AND  1=1     
+    AND  1=1 
+    AND  1=1 
+    AND c.add_time >=  '2016-01-01'
+   AND  1=1 
+   AND  1=1 
+   AND  1=1 
+   AND  1=1 
+   AND  1=1 
+group by a.user_id
+) kk) T221 limit 75001\G
+
+# Query 54: 0 QPS, 0x concurrency, ID 0x9AD724F61743B4D4 at byte 2031258 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   146ms   146ms   146ms   146ms   146ms       0   146ms
+# Lock time      0   991us   991us   991us   991us   991us       0   991us
+# Rows sent      0      66      66      66      66      66       0      66
+# Rows examine   0 154.13k 154.13k 154.13k 154.13k 154.13k       0 154.13k
+# Query size     0   1.47k   1.47k   1.47k   1.47k   1.47k       0   1.47k
+# Bytes          0   1.47k   1.47k   1.47k   1.47k   1.47k       0   1.47k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12T09:19:43.933317Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select T356.DATE as F359,T356.reg_cnt as F360,T356.wj_cnt as F361,T356.sh_cnt as F362,T356.xy_sum as F363,T356.jkr_cnt as F364,T356.jk_cnt as F365,T356.jk_sum as F366,T356.first_cnt as F367,T356.second_cnt as F368  from (SELECT
+    DATE_FORMAT(a.trans_time,'%Y-%m-%d') AS DATE
+    ,COUNT(1) AS reg_cnt
+    ,COUNT(CASE WHEN b.data_status='YYYYY' THEN 1 END) AS wj_cnt
+    ,COUNT(CASE WHEN b.credit_limit > 0 THEN 1 END) AS sh_cnt
+    ,SUM(b.credit_limit) as xy_sum
+    ,COUNT(DISTINCT a.`user_id`) AS jkr_cnt
+    ,COUNT(1) jk_cnt
+    ,SUM(a.trans_amt) AS jk_sum
+    ,COUNT(DISTINCT a.user_id) AS first_cnt
+    ,SUM(c.second_cnt) AS second_cnt
+FROM     sheng_loan_record a
+LEFT JOIN `sheng_user` b ON a.`user_id`=b.`user_id`
+LEFT JOIN 
+(
+SELECT 
+    user_id
+    ,SUM(case when trans_amt >= 3000 then trans_amt else 0 end) AS second_cnt
+
+FROM (
+
+SELECT 
+    
+    user_id
+    ,trans_amt
+    ,trans_time
+    ,CASE WHEN trans_amt>=3000 THEN 1 ELSE 0 END AS flag
+    ,(SELECT COUNT(*) FROM sheng_loan_record WHERE user_id=a.user_id AND trans_time < a.trans_time) +1 AS palce
+FROM sheng_loan_record a
+WHERE DATE_FORMAT(a.trans_time,'%Y-%m-%d')  >=  '2016-07-01'        AND DATE_FORMAT(a.trans_time,'%Y-%m-%d') <=    '2016-09-12'     
+ORDER BY user_id
+) aa
+WHERE palce > 1
+GROUP BY user_id
+) c ON a.`user_id`=c.user_id
+ WHERE DATE_FORMAT(a.trans_time,'%Y-%m-%d')  >=  '2016-07-01'        AND DATE_FORMAT(a.trans_time,'%Y-%m-%d') <=    '2016-09-12'     
+group by DATE_FORMAT(a.trans_time,'%Y-%m-%d')) T356 limit 75001\G
+
+# Query 55: 0 QPS, 0x concurrency, ID 0x88C683B17B9C3426 at byte 2029669 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   145ms   145ms   145ms   145ms   145ms       0   145ms
+# Lock time      0     1ms     1ms     1ms     1ms     1ms       0     1ms
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0 153.80k 153.80k 153.80k 153.80k 153.80k       0 153.80k
+# Query size     0   1.34k   1.34k   1.34k   1.34k   1.34k       0   1.34k
+# Bytes          0   1.34k   1.34k   1.34k   1.34k   1.34k       0   1.34k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12T09:19:43.932173Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select T260.reg_cnt as F262,T260.wj_cnt as F263,T260.sh_cnt as F264,T260.xy_sum as F265,T260.jkr_cnt as F266,T260.jk_cnt as F267,T260.jk_sum as F268,T260.first_cnt as F269,T260.second_cnt as F270  from (SELECT
+    COUNT(1) AS reg_cnt
+    ,COUNT(CASE WHEN b.data_status='YYYYY' THEN 1 END) AS wj_cnt
+    ,COUNT(CASE WHEN b.credit_limit > 0 THEN 1 END) AS sh_cnt
+    ,SUM(b.credit_limit) AS xy_sum
+    ,COUNT(DISTINCT a.`user_id`) AS jkr_cnt
+    ,COUNT(1) jk_cnt
+    ,SUM(a.trans_amt) AS jk_sum
+    ,COUNT(DISTINCT a.user_id) AS first_cnt
+    ,SUM(c.second_cnt) AS second_cnt
+FROM     sheng_loan_record a
+LEFT JOIN `sheng_user` b ON a.`user_id`=b.`user_id`
+LEFT JOIN 
+(
+SELECT 
+    user_id
+    ,SUM(CASE WHEN trans_amt >= 3000 THEN trans_amt ELSE 0 END) AS second_cnt
+
+FROM (
+
+SELECT 
+    
+    user_id
+    ,trans_amt
+    ,trans_time
+    ,CASE WHEN trans_amt>=3000 THEN 1 ELSE 0 END AS flag
+    ,(SELECT COUNT(*) FROM sheng_loan_record WHERE user_id=a.user_id AND trans_time < a.trans_time) +1 AS palce
+FROM sheng_loan_record a
+WHERE DATE_FORMAT(a.trans_time,'%Y-%m-%d') >=  '2016-07-01'    and DATE_FORMAT(a.trans_time,'%Y-%m-%d') <=    '2016-09-12' 
+
+ORDER BY user_id
+) aa
+WHERE palce > 1
+GROUP BY user_id
+) c ON a.`user_id`=c.user_id
+WHERE DATE_FORMAT(a.trans_time,'%Y-%m-%d') >=  '2016-07-01'    and DATE_FORMAT(a.trans_time,'%Y-%m-%d') <=  '2016-09-12') T260 limit 75001\G
+
+# Query 56: 0 QPS, 0x concurrency, ID 0x87BA1E6A443447E8 at byte 617855 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   138ms   138ms   138ms   138ms   138ms       0   138ms
+# Lock time      0     1ms     1ms     1ms     1ms     1ms       0     1ms
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0   3.71k   3.71k   3.71k   3.71k   3.71k       0   3.71k
+# Query size     0   1.11k   1.11k   1.11k   1.11k   1.11k       0   1.11k
+# Bytes          0   1.11k   1.11k   1.11k   1.11k   1.11k       0   1.11k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12T02:01:34.314280Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_info'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_info`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_dict_city'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_dict_city`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_source'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_source`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select T221.cnt as F238,T221.wj_cnt as F239,T221.tg_cnt as F240,T221.xy_sum as F241,T221.jkr_cnt as F242,T221.jk_sum as F243,T221.jk_cnt as F244  from (select 
+    sum(cnt) as cnt
+    ,sum(wj_cnt) as wj_cnt
+    ,sum(tg_cnt) as tg_cnt
+    ,sum(xy_sum/cnt) as xy_sum
+    ,sum(jkr_cnt) as jkr_cnt
+    ,sum(jk_sum) as jk_sum
+    ,sum(jk_cnt) as jk_cnt
+from (
+SELECT
+COUNT(1) AS cnt
+,COUNT(CASE WHEN c.data_status='YYYYY' THEN 1 END) AS wj_cnt
+,COUNT(CASE WHEN c.credit_limit > 0 THEN 1 END) AS tg_cnt
+,SUM(c.credit_limit) AS xy_sum
+,COUNT(DISTINCT a.user_id) AS jkr_cnt
+,SUM(trans_amt) AS jk_sum
+,COUNT(1) AS jk_cnt
+FROM `sheng_loan_record` a
+LEFT JOIN ods_user b ON a.user_id=b.`id`
+LEFT JOIN sheng_user c ON a.user_id=c.user_id
+LEFT JOIN ods_user_info d ON a.user_id=d.`user_id`
+LEFT JOIN dm_dict_city e ON d.`city`=e.code
+LEFT JOIN ods_user_source f ON a.user_id=f.`user_id`
+WHERE  1=1  
+    AND  1=1 
+    AND  1=1 
+    AND  1=1  
+    AND  1=1 
+    
+    AND  1=1     
+    AND  1=1 
+    AND  1=1 
+    AND  1=1 
+   AND c.add_time <=  '2016-09-01'
+   AND  1=1 
+   AND  1=1 
+   AND  1=1 
+   AND  1=1 
+group by a.user_id
+) kk) T221 limit 75001\G
+
+# Query 57: 0 QPS, 0x concurrency, ID 0x0CF6DE6C18C897F2 at byte 1901259 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   133ms   133ms   133ms   133ms   133ms       0   133ms
+# Lock time      0   188us   188us   188us   188us   188us       0   188us
+# Rows sent      0     100     100     100     100     100       0     100
+# Rows examine   0     100     100     100     100     100       0     100
+# Query size     0      43      43      43      43      43       0      43
+# Bytes          0      43      43      43      43      43       0      43
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        192.168.7.51
+# Time         2016-09-12T08:48:40.821571Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+SHOW FULL TABLES WHERE Table_type != 'VIEW'\G
+
+# Query 58: 0 QPS, 0x concurrency, ID 0xDB670ED708895D61 at byte 216040 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   124ms   124ms   124ms   124ms   124ms       0   124ms
+# Lock time      0   151us   151us   151us   151us   151us       0   151us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       1       1       1       1       1       0       1
+# Query size     0      68      68      68      68      68       0      68
+# Bytes          0      68      68      68      68      68       0      68
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        10.10.2.61
+# Time         2016-09-11T19:56:58.343757Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_2'\G
+#    SHOW CREATE TABLE `passport`.`user_2`\G
+update user_2 user SET integral = integral + 5 WHERE id = 1012847778\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select  integral = integral + 5 from user_2 user where  id = 1012847778\G
+
+# Query 59: 0 QPS, 0x concurrency, ID 0x785D16710C2A328A at byte 623958 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   122ms   122ms   122ms   122ms   122ms       0   122ms
+# Lock time      0   824us   824us   824us   824us   824us       0   824us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0   3.64k   3.64k   3.64k   3.64k   3.64k       0   3.64k
+# Query size     0   1.13k   1.13k   1.13k   1.13k   1.13k       0   1.13k
+# Bytes          0   1.13k   1.13k   1.13k   1.13k   1.13k       0   1.13k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-12T02:02:02.972557Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_loan_record'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_loan_record`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_user'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_user`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_info'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_info`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_dict_city'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_dict_city`\G
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_source'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_source`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select T221.cnt as F238,T221.wj_cnt as F239,T221.tg_cnt as F240,T221.xy_sum as F241,T221.jkr_cnt as F242,T221.jk_sum as F243,T221.jk_cnt as F244  from (select 
+    sum(cnt) as cnt
+    ,sum(wj_cnt) as wj_cnt
+    ,sum(tg_cnt) as tg_cnt
+    ,sum(xy_sum/cnt) as xy_sum
+    ,sum(jkr_cnt) as jkr_cnt
+    ,sum(jk_sum) as jk_sum
+    ,sum(jk_cnt) as jk_cnt
+from (
+SELECT
+COUNT(1) AS cnt
+,COUNT(CASE WHEN c.data_status='YYYYY' THEN 1 END) AS wj_cnt
+,COUNT(CASE WHEN c.credit_limit > 0 THEN 1 END) AS tg_cnt
+,SUM(c.credit_limit) AS xy_sum
+,COUNT(DISTINCT a.user_id) AS jkr_cnt
+,SUM(trans_amt) AS jk_sum
+,COUNT(1) AS jk_cnt
+FROM `sheng_loan_record` a
+LEFT JOIN ods_user b ON a.user_id=b.`id`
+LEFT JOIN sheng_user c ON a.user_id=c.user_id
+LEFT JOIN ods_user_info d ON a.user_id=d.`user_id`
+LEFT JOIN dm_dict_city e ON d.`city`=e.code
+LEFT JOIN ods_user_source f ON a.user_id=f.`user_id`
+WHERE  1=1  
+    AND  1=1 
+    AND  1=1 
+    AND  1=1  
+    AND  1=1 
+    
+    AND  1=1     
+    AND  1=1 
+    AND  1=1 
+    AND  1=1 
+   AND c.add_time <=  '2016-09-01'
+   AND  1=1 
+   AND  1=1 
+   AND  1=1 
+   AND a.trans_time  <=  '2016-09-03'
+group by a.user_id
+) kk) T221 limit 75001\G
+
+# Query 60: 0 QPS, 0x concurrency, ID 0x3BFD44CAE14E7769 at byte 55451 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   110ms   110ms   110ms   110ms   110ms       0   110ms
+# Lock time      0    71us    71us    71us    71us    71us       0    71us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0  39.27k  39.27k  39.27k  39.27k  39.27k       0  39.27k
+# Query size     0      73      73      73      73      73       0      73
+# Bytes          0      73      73      73      73      73       0      73
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-11T16:37:36.684417Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_supersale_brand_details_131'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_supersale_brand_details_131`\G
+DELETE FROM ods_supersale_brand_details_131
+WHERE etl_date = '2016-09-11'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_supersale_brand_details_131
+WHERE etl_date = '2016-09-11'\G
+
+# Query 61: 0 QPS, 0x concurrency, ID 0xA9A2DFC12419D3B5 at byte 2175233 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   104ms   104ms   104ms   104ms   104ms       0   104ms
+# Lock time      0   139us   139us   139us   139us   139us       0   139us
+# Rows sent      0     534     534     534     534     534       0     534
+# Rows examine   0  83.04k  83.04k  83.04k  83.04k  83.04k       0  83.04k
+# Query size     0      73      73      73      73      73       0      73
+# Bytes          0      73      73      73      73      73       0      73
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        192.168.7.134
+# Time         2016-09-12T10:13:35.816883Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'sheng_repayment_plan'\G
+#    SHOW CREATE TABLE `bi_ods`.`sheng_repayment_plan`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from `sheng_repayment_plan`
+where overdue_day > 0
+ LIMIT 0, 1000\G

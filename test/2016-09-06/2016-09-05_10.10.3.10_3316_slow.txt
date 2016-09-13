@@ -1,0 +1,653 @@
+
+# 2.4s user time, 40ms system time, 27.62M rss, 212.45M vsz
+# Current date: Mon Sep  5 05:00:15 2016
+# Hostname: 26
+# Files: /tmp/2016-09-05_10.10.3.10_3316_slow.log
+# Overall: 5.65k total, 15 unique, 0 QPS, 0x concurrency _________________
+# Attribute          total     min     max     avg     95%  stddev  median
+# ============     ======= ======= ======= ======= ======= ======= =======
+# Exec time          2805s   109ms     26s   497ms   609ms   542ms   501ms
+# Lock time             1s       0     3ms   193us   301us   100us   176us
+# Rows sent            416       0       1    0.07    0.99    0.26       0
+# Rows examine       2.44G       0   4.38M 452.66k 440.37k  90.61k 440.37k
+# Query size       442.86k       6     415   80.32   80.10    7.20   80.10
+# Bytes            442.86k       6     415   80.32   80.10    7.20   80.10
+# hostname         143.36k      26      26      26      26       0      26
+
+# Profile
+# Rank Query ID           Response time   Calls R/Call  V/M   Item
+# ==== ================== =============== ===== ======= ===== ============
+#    1 0x61CEBA4A96696688 2717.1324 96.9%  5630  0.4826  0.03 SELECT user_source_?
+#    2 0x8102DC5C8D30BDA3   26.0955  0.9%     1 26.0955  0.00 DELETE ods_user_info
+#    3 0x648997FC8BBF2309   23.7443  0.8%     1 23.7443  0.00 DELETE ods_record_user_integral
+#    4 0xBF4491DEA5A0862B   19.7679  0.7%     1 19.7679  0.00 DELETE ods_user_source
+#    5 0x813031B8BBC3B329    8.9242  0.3%     3  2.9747  0.55 COMMIT
+#    6 0x9AFBB67E4234B491    3.7704  0.1%     1  3.7704  0.00 INSERT record_user_operate_?
+#    7 0x34F10BC9DADDEF3D    1.6079  0.1%     1  1.6079  0.00 DELETE ods_record_creditcard
+#    8 0x0CD30E158F3DC1C1    1.3292  0.0%     1  1.3292  0.00 DELETE ods_record_loan
+#    9 0x98204EB05621D6CB    0.7724  0.0%     1  0.7724  0.00 DELETE ods_record_user_binding_card
+#   10 0x87E466EDFA19DC6A    0.6357  0.0%     1  0.6357  0.00 DELETE dm_mobile
+#   11 0x2ADEFD29115C1578    0.2361  0.0%     1  0.2361  0.00 DELETE ods_record_promotion
+#   12 0x9932B79CEE2472A5    0.1723  0.0%     1  0.1723  0.00 DELETE ods_record_jimu_loan
+#   13 0xBE0E14F21FDEFB01    0.1366  0.0%     1  0.1366  0.00 SELECT user_?
+#   14 0xDB670ED708895D61    0.1134  0.0%     1  0.1134  0.00 UPDATE user_?
+#   15 0x23414A2A42192EFC    0.1086  0.0%     1  0.1086  0.00 UPDATE user_info_?
+
+# Query 1: 0 QPS, 0x concurrency, ID 0x61CEBA4A96696688 at byte 1282126 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.03
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         99    5630
+# Exec time     96   2717s   289ms   846ms   483ms   609ms   114ms   501ms
+# Lock time     99      1s    57us     3ms   194us   301us   100us   176us
+# Rows sent    100     416       0       1    0.07    0.99    0.26       0
+# Rows examine  99   2.42G 450.15k 452.95k 451.30k 440.37k       0 440.37k
+# Query size    99 441.50k      60      82   80.30   80.10    5.12   80.10
+# Bytes         99 441.50k      60      82   80.30   80.10    5.12   80.10
+# hostname      99 142.95k      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        10.10.2.61 (2830/50%), 10.10.1.61 (2800/49%)
+# Time         2016-09-04... (2/0%), 2016-09-03... (1/0%)... 5627 more
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_source_6'\G
+#    SHOW CREATE TABLE `passport`.`user_source_6`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM user_source_6 WHERE open_id = 'sinaD9EEEFBDF51BA3464C566F16CD523800'\G
+
+# Query 2: 0 QPS, 0x concurrency, ID 0x8102DC5C8D30BDA3 at byte 41151 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0     26s     26s     26s     26s     26s       0     26s
+# Lock time      0    71us    71us    71us    71us    71us       0    71us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0   4.38M   4.38M   4.38M   4.38M   4.38M       0   4.38M
+# Query size     0      55      55      55      55      55       0      55
+# Bytes          0      55      55      55      55      55       0      55
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-03T16:31:56.043491Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s
+#  10s+  ################################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_info'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_info`\G
+DELETE FROM ods_user_info
+WHERE etl_date = '2016-09-03'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_user_info
+WHERE etl_date = '2016-09-03'\G
+
+# Query 3: 0 QPS, 0x concurrency, ID 0x648997FC8BBF2309 at byte 49140 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0     24s     24s     24s     24s     24s       0     24s
+# Lock time      0    75us    75us    75us    75us    75us       0    75us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0   4.20M   4.20M   4.20M   4.20M   4.20M       0   4.20M
+# Query size     0      66      66      66      66      66       0      66
+# Bytes          0      66      66      66      66      66       0      66
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-03T16:34:55.973033Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s
+#  10s+  ################################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_user_integral'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_user_integral`\G
+DELETE FROM ods_record_user_integral
+WHERE etl_date = '2016-09-03'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_record_user_integral
+WHERE etl_date = '2016-09-03'\G
+
+# Query 4: 0 QPS, 0x concurrency, ID 0xBF4491DEA5A0862B at byte 41424 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0     20s     20s     20s     20s     20s       0     20s
+# Lock time      0    89us    89us    89us    89us    89us       0    89us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0   4.38M   4.38M   4.38M   4.38M   4.38M       0   4.38M
+# Query size     0      57      57      57      57      57       0      57
+# Bytes          0      57      57      57      57      57       0      57
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-03T16:32:29.547517Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s
+#  10s+  ################################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_user_source'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_user_source`\G
+DELETE FROM ods_user_source
+WHERE etl_date = '2016-09-03'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_user_source
+WHERE etl_date = '2016-09-03'\G
+
+# Query 5: 0 QPS, 0x concurrency, ID 0x813031B8BBC3B329 at byte 976604 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.55
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       3
+# Exec time      0      9s      1s      4s      3s      4s      1s      3s
+# Lock time      0       0       0       0       0       0       0       0
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0      18       6       6       6       6       0       6
+# Bytes          0      18       6       6       6       6       0       6
+# hostname       0      78      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        10.10.2.61 (2/66%), 10.10.1.61 (1/33%)
+# Time         2016-09-04... (1/33%), 2016-09-04... (1/33%)... 1 more
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+commit\G
+
+# Query 6: 0 QPS, 0x concurrency, ID 0x9AFBB67E4234B491 at byte 977026 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      4s      4s      4s      4s      4s       0      4s
+# Lock time      0   241us   241us   241us   241us   241us       0   241us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0     112     112     112     112     112       0     112
+# Bytes          0     112     112     112     112     112       0     112
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        10.10.1.61
+# Time         2016-09-04T07:39:39.494025Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'record_user_operate_201609'\G
+#    SHOW CREATE TABLE `passport`.`record_user_operate_201609`\G
+insert into record_user_operate_201609 (id, user_id, type,remark) values(1012050447, 3020102, 3, '用户登陆')\G
+
+# Query 7: 0 QPS, 0x concurrency, ID 0x34F10BC9DADDEF3D at byte 48343 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      2s      2s      2s      2s      2s       0      2s
+# Lock time      0    73us    73us    73us    73us    73us       0    73us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0 680.36k 680.36k 680.36k 680.36k 680.36k       0 680.36k
+# Query size     0      63      63      63      63      63       0      63
+# Bytes          0      63      63      63      63      63       0      63
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-03T16:34:02.102856Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_creditcard'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_creditcard`\G
+DELETE FROM ods_record_creditcard
+WHERE etl_date = '2016-09-03'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_record_creditcard
+WHERE etl_date = '2016-09-03'\G
+
+# Query 8: 0 QPS, 0x concurrency, ID 0x0CD30E158F3DC1C1 at byte 47808 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      1s      1s      1s      1s      1s       0      1s
+# Lock time      0    88us    88us    88us    88us    88us       0    88us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0 367.79k 367.79k 367.79k 367.79k 367.79k       0 367.79k
+# Query size     0      57      57      57      57      57       0      57
+# Bytes          0      57      57      57      57      57       0      57
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-03T16:33:34.536761Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_loan'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_loan`\G
+DELETE FROM ods_record_loan
+WHERE etl_date = '2016-09-03'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_record_loan
+WHERE etl_date = '2016-09-03'\G
+
+# Query 9: 0 QPS, 0x concurrency, ID 0x98204EB05621D6CB at byte 48069 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   772ms   772ms   772ms   772ms   772ms       0   772ms
+# Lock time      0   174us   174us   174us   174us   174us       0   174us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0 221.46k 221.46k 221.46k 221.46k 221.46k       0 221.46k
+# Query size     0      70      70      70      70      70       0      70
+# Bytes          0      70      70      70      70      70       0      70
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-03T16:33:49.896844Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_user_binding_card'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_user_binding_card`\G
+DELETE FROM ods_record_user_binding_card
+WHERE etl_date = '2016-09-03'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_record_user_binding_card
+WHERE etl_date = '2016-09-03'\G
+
+# Query 10: 0 QPS, 0x concurrency, ID 0x87E466EDFA19DC6A at byte 47541 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   636ms   636ms   636ms   636ms   636ms       0   636ms
+# Lock time      0    99us    99us    99us    99us    99us       0    99us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0 250.83k 250.83k 250.83k 250.83k 250.83k       0 250.83k
+# Query size     0      51      51      51      51      51       0      51
+# Bytes          0      51      51      51      51      51       0      51
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-03T16:33:09.071876Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'dm_mobile'\G
+#    SHOW CREATE TABLE `bi_ods`.`dm_mobile`\G
+DELETE FROM dm_mobile
+WHERE etl_date = '2016-09-03'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  dm_mobile
+WHERE etl_date = '2016-09-03'\G
+
+# Query 11: 0 QPS, 0x concurrency, ID 0x2ADEFD29115C1578 at byte 48875 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   236ms   236ms   236ms   236ms   236ms       0   236ms
+# Lock time      0   102us   102us   102us   102us   102us       0   102us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0  61.27k  61.27k  61.27k  61.27k  61.27k       0  61.27k
+# Query size     0      62      62      62      62      62       0      62
+# Bytes          0      62      62      62      62      62       0      62
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-03T16:34:22.877039Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_promotion'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_promotion`\G
+DELETE FROM ods_record_promotion
+WHERE etl_date = '2016-09-03'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_record_promotion
+WHERE etl_date = '2016-09-03'\G
+
+# Query 12: 0 QPS, 0x concurrency, ID 0x9932B79CEE2472A5 at byte 48610 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   172ms   172ms   172ms   172ms   172ms       0   172ms
+# Lock time      0   132us   132us   132us   132us   132us       0   132us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0  36.57k  36.57k  36.57k  36.57k  36.57k       0  36.57k
+# Query size     0      62      62      62      62      62       0      62
+# Bytes          0      62      62      62      62      62       0      62
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    bi_ods
+# Hosts        10.10.0.32
+# Time         2016-09-03T16:34:11.475174Z
+# Users        BI_DAdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `bi_ods` LIKE 'ods_record_jimu_loan'\G
+#    SHOW CREATE TABLE `bi_ods`.`ods_record_jimu_loan`\G
+DELETE FROM ods_record_jimu_loan
+WHERE etl_date = '2016-09-03'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from  ods_record_jimu_loan
+WHERE etl_date = '2016-09-03'\G
+
+# Query 13: 0 QPS, 0x concurrency, ID 0xBE0E14F21FDEFB01 at byte 952806 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   137ms   137ms   137ms   137ms   137ms       0   137ms
+# Lock time      0   243us   243us   243us   243us   243us       0   243us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0     233     233     233     233     233       0     233
+# Bytes          0     233     233     233     233     233       0     233
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        10.10.2.61
+# Time         2016-09-04T07:13:41.106336Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_1'\G
+#    SHOW CREATE TABLE `passport`.`user_1`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT id, mobile, email, username, password , nickname, face, is_email_binding, is_mobile_binding, real_name_certification , credit_corn, integral, level_id, create_time, update_time , status FROM user_1 WHERE username = 'Nhdafajdf'\G
+
+# Query 14: 0 QPS, 0x concurrency, ID 0xDB670ED708895D61 at byte 5841 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   113ms   113ms   113ms   113ms   113ms       0   113ms
+# Lock time      0   138us   138us   138us   138us   138us       0   138us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       1       1       1       1       1       0       1
+# Query size     0      65      65      65      65      65       0      65
+# Bytes          0      65      65      65      65      65       0      65
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Hosts        10.10.2.61
+# Time         2016-09-03T16:10:45.291994Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'user_2'\G
+#    SHOW CREATE TABLE `user_2`\G
+update user_2 user SET integral = integral + 5 WHERE id = 2972950\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select  integral = integral + 5 from user_2 user where  id = 2972950\G
+
+# Query 15: 0 QPS, 0x concurrency, ID 0x23414A2A42192EFC at byte 346006 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   109ms   109ms   109ms   109ms   109ms       0   109ms
+# Lock time      0   477us   477us   477us   477us   477us       0   477us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0       1       1       1       1       1       0       1
+# Query size     0     415     415     415     415     415       0     415
+# Bytes          0     415     415     415     415     415       0     415
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Databases    passport
+# Hosts        10.10.2.61
+# Time         2016-09-04T01:39:43.187343Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_info_6'\G
+#    SHOW CREATE TABLE `passport`.`user_info_6`\G
+update user_info_6 user_info SET user_id = 1011369911,real_name = '',sex = '0',id_card = '',id_card_image_front = '',id_card_image_back = '',certification_time = '2016-08-30 17:11:05',birthday='2008-09-04 00:00:00',qq = '',wechat = '',weibo = '',education = 0,marital_status = 0,monthly_salary = 0,interest = '',office_phone = '',home_phone = '',province = null ,city = '110100' ,county = null WHERE id = 1011369912\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select  user_id = 1011369911,real_name = '',sex = '0',id_card = '',id_card_image_front = '',id_card_image_back = '',certification_time = '2016-08-30 17:11:05',birthday='2008-09-04 00:00:00',qq = '',wechat = '',weibo = '',education = 0,marital_status = 0,monthly_salary = 0,interest = '',office_phone = '',home_phone = '',province = null ,city = '110100' ,county = null from user_info_6 user_info where  id = 1011369912\G

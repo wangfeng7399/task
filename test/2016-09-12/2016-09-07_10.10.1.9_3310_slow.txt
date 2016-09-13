@@ -1,0 +1,124 @@
+
+# 490ms user time, 40ms system time, 26.19M rss, 211.00M vsz
+# Current date: Wed Sep  7 05:00:02 2016
+# Hostname: 26
+# Files: /tmp/2016-09-07_10.10.1.9_3310_slow.log
+# Overall: 5 total, 3 unique, 0 QPS, 0x concurrency ______________________
+# Attribute          total     min     max     avg     95%  stddev  median
+# ============     ======= ======= ======= ======= ======= ======= =======
+# Exec time            19s      3s      7s      4s      6s      1s      3s
+# Lock time          406us    42us   105us    81us   103us    21us    80us
+# Rows sent        427.54k       6 213.75k  85.51k 211.82k 103.76k   19.46
+# Rows examine       4.15M 234.41k 1003.11k 849.37k 961.27k 291.09k 961.27k
+# Query size         1.29k     259     271  264.60  258.32       0  258.32
+# Bytes              1.29k     259     271  264.60  258.32       0  258.32
+# hostname             130      26      26      26      26       0      26
+
+# Profile
+# Rank Query ID           Response time Calls R/Call V/M   Item
+# ==== ================== ============= ===== ====== ===== ===============
+#    1 0xBA5180708A23026A  6.6206 34.7%     1 6.6206  0.00 SELECT loan_count
+#    2 0xD727D218E7BFC683  6.3636 33.4%     2 3.1818  0.00 SELECT ps_apply
+#    3 0x7934ABB7F691CE87  6.0886 31.9%     2 3.0443  0.13 SELECT ps_apply
+
+# Query 1: 0 QPS, 0x concurrency, ID 0xBA5180708A23026A at byte 0 ________
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         20       1
+# Exec time     34      7s      7s      7s      7s      7s       0      7s
+# Lock time     10    42us    42us    42us    42us    42us       0    42us
+# Rows sent      0       6       6       6       6       6       0       6
+# Rows examine   5 234.41k 234.41k 234.41k 234.41k 234.41k       0 234.41k
+# Query size    19     263     263     263     263     263       0     263
+# Bytes         19     263     263     263     263     263       0     263
+# hostname      20      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'loan_count'\G
+#    SHOW CREATE TABLE `loan_count`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from loan_count where 1=1     and            status in('0','3','5')                                                                                                                                                      order by add_time desc limit 90120,20\G
+
+# Query 2: 0 QPS, 0x concurrency, ID 0xD727D218E7BFC683 at byte 753 ______
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         40       2
+# Exec time     33      6s      3s      3s      3s      3s    19ms      3s
+# Lock time     49   200us    95us   105us   100us   105us     7us   100us
+# Rows sent     99 427.49k 213.75k 213.75k 213.75k 213.75k       0 213.75k
+# Rows examine  47   1.96M 1003.11k 1003.11k 1003.11k 1003.11k       0 1003.11k
+# Query size    39     518     259     259     259     259       0     259
+# Bytes         39     518     259     259     259     259       0     259
+# hostname      40      52      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'ps_apply'\G
+#    SHOW CREATE TABLE `ps_apply`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select SQL_CALC_FOUND_ROWS  * from ps_apply where 1=1 and date_format(add_time, '%Y-%m-%d') >='2010-09-01' and date_format(add_time, '%Y-%m-%d') <='2016-09-06' and mobile is not null and mobile !='MTMxMTExMTExMTE=' and flag!=5 GROUP BY mobile order by id desc\G
+
+# Query 3: 0 QPS, 0x concurrency, ID 0x7934ABB7F691CE87 at byte 372 ______
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.13
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         40       2
+# Exec time     31      6s      3s      3s      3s      3s   623ms      3s
+# Lock time     40   164us    81us    83us    82us    83us     1us    82us
+# Rows sent      0      40      20      20      20      20       0      20
+# Rows examine  47   1.96M 1003.11k 1003.11k 1003.11k 1003.11k       0 1003.11k
+# Query size    40     542     271     271     271     271       0     271
+# Bytes         40     542     271     271     271     271       0     271
+# hostname      40      52      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'ps_apply'\G
+#    SHOW CREATE TABLE `ps_apply`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select SQL_CALC_FOUND_ROWS  * from ps_apply where 1=1 and date_format(add_time, '%Y-%m-%d') >='2010-09-01' and date_format(add_time, '%Y-%m-%d') <='2016-09-06' and mobile is not null and mobile !='MTMxMTExMTExMTE=' and flag!=5 GROUP BY mobile order by id desc  limit 0,20\G

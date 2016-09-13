@@ -1,0 +1,2371 @@
+
+# 4.7s user time, 70ms system time, 27.39M rss, 212.15M vsz
+# Current date: Mon Sep  5 05:00:07 2016
+# Hostname: 26
+# Files: /tmp/2016-09-05_10.10.2.6_23306_slow.log
+# Overall: 7.85k total, 58 unique, 0 QPS, 0x concurrency _________________
+# Attribute          total     min     max     avg     95%  stddev  median
+# ============     ======= ======= ======= ======= ======= ======= =======
+# Exec time         26032s      2s     36s      3s      7s      2s      2s
+# Lock time             2s    51us     2ms   251us   403us   103us   247us
+# Rows sent        679.37k       0 142.15k   88.59    4.96   2.73k    4.96
+# Rows examine       4.89G       0   1.18M 653.05k 871.90k 231.45k 753.18k
+# Query size         7.13M     173   1.91k  952.70 1012.63  215.20 1012.63
+# Bytes              7.13M     173   1.91k  952.70 1012.63  215.20 1012.63
+# hostname         199.39k      26      26      26      26       0      26
+
+# Profile
+# Rank Query ID           Response time    Calls R/Call  V/M   Item
+# ==== ================== ================ ===== ======= ===== ===========
+#    1 0xB7E534B4F51E65D5 16395.1829 63.0%  6015  2.7257  0.31 SELECT zcimage zdbankbranch crcreditrecord CRCreditmain uc_comment
+#    2 0xAC4516E5CB6014EA  4232.1561 16.3%   708  5.9776  0.19 SELECT zdbankbranch dict_city uc_activate_info_main
+#    3 0x2917BC8A22CCCE98   980.7097  3.8%   361  2.7166  2.65 SELECT uc_active_shop uc_activate_info_main
+#    4 0x86581A27C8CB0FFF   902.8977  3.5%   129  6.9992  0.33 SELECT zcarticle
+#    5 0x10B0D2D3537F10BD   766.9765  2.9%   109  7.0365  0.02 SELECT CRCREDITMAIN CRCreditinfo CRCreditRecord zdcardbranch ZDBankbranch
+#    6 0x647341E49745D4F7   546.3180  2.1%    76  7.1884  0.91 SELECT zccatalog zcsite zccatalog zcarticle
+#    7 0x0DFEC8B8ED0C71AE   357.7053  1.4%    52  6.8789  9.55 SELECT uc_active_detail uc_activate_info_main
+#    8 0x03B12EF403F02F72   228.4485  0.9%    37  6.1743  0.01 SELECT CRCREDITMAIN CRCreditinfo CRCreditRecord zdcardbranch ZDBankbranch CRCARDGROUP
+#    9 0x77BE8F575B73DF0E   227.6053  0.9%    54  4.2149  0.31 SELECT CRCREDITMAIN CRCreditinfo CRCreditRecord zdcardbranch ZDBankbranch
+#   10 0x74660CE9927B4C87   144.6616  0.6%    22  6.5755  0.16 SELECT CRCREDITMAIN CRCreditinfo CRCreditRecord zdcardbranch ZDBankbranch
+#   11 0x0DC5BF825421E866   136.7964  0.5%    23  5.9477  0.17 SELECT CRCREDITMAIN CRCreditinfo CRCreditRecord zdcardbranch ZDBankbranch
+#   12 0x885AAF101AC39E9B   107.1651  0.4%    19  5.6403  0.39 SELECT CRCREDITMAIN CRCreditinfo CRCreditRecord zdcardbranch ZDBankbranch
+#   13 0x4BA103808569AF1D   106.2833  0.4%    16  6.6427  0.02 SELECT CRCREDITMAIN CRCreditinfo CRCreditRecord zdcardbranch ZDBankbranch
+#   14 0x5AFF8ADB71E6A249    87.8679  0.3%     7 12.5526 11.03 SELECT uc_activate_info_main uc_active_shop
+#   15 0x960217157021800A    80.4393  0.3%    11  7.3127  0.02 SELECT CRCREDITMAIN CRCreditinfo CRCreditRecord zdcardbranch ZDBankbranch
+#   16 0x90B966F454BE07E0    62.2520  0.2%    27  2.3056  0.02 SELECT zccatalog zcarticle zccatalog
+#   17 0x26B444180BBE953E    60.0318  0.2%    19  3.1596  0.07 SELECT ZCIMAGE zdbankbranch uc_activate_type uc_activate_info_main uc_active_detail uc_active_props uc_hitcount
+#   18 0x3AE4AA488B1E2779    53.2663  0.2%    12  4.4389  1.58 SELECT uc_active_detail uc_activate_info_main
+#   19 0xE066A313DD29F0B9    44.7250  0.2%    11  4.0659  0.16 SELECT CRCREDITMAIN CRCreditinfo CRCreditRecord zdcardbranch ZDBankbranch CRCARDGROUP
+#   20 0x6580160D7F75D47A    43.6765  0.2%    13  3.3597  0.07 SELECT uc_active_detail uc_activate_info_main
+#   21 0x611B6A958F459E8C    41.3196  0.2%     9  4.5911  0.02 SELECT uc_activate_info_main uc_active_detail uc_active_props
+#   22 0xBAE13BA5530C76A4    39.1918  0.2%    12  3.2660  0.17 SELECT zdbankbranch uc_active_detail uc_activate_info_main uc_active_shop
+#   23 0xACF774DD4C456E8A    36.3128  0.1%    11  3.3012  0.03 SELECT zdbankbranch uc_active_detail uc_activate_info_main uc_active_shop
+#   24 0x63FA209570308C39    35.7020  0.1%     1 35.7020  0.00 SELECT uc_activate_info_main uc_active_shop
+#   25 0x1C879B0C6246E2E0    31.8788  0.1%     9  3.5421  0.05 SELECT uc_activate_info_main uc_active_detail uc_active_props
+#   26 0x0CF4530903570649    30.9191  0.1%    10  3.0919  0.04 SELECT ZCIMAGE zdbankbranch uc_activate_type uc_activate_info_main uc_active_detail uc_active_props uc_hitcount
+#   27 0x655ABF63368DE61C    30.4413  0.1%     7  4.3488  0.91 SELECT CRCREDITMAIN CRCreditinfo CRCreditRecord zdcardbranch ZDBankbranch
+#   28 0xD179AD987505268F    24.5223  0.1%    10  2.4522  0.06 SELECT zdbankbranch uc_activate_info_main uc_active_detail
+#   29 0xDBA0A245AEBB1EA9    21.0663  0.1%    10  2.1066  0.01 SELECT zcarticle zccatalog
+#   30 0xEA90E3D41C2B2384    14.4771  0.1%     5  2.8954  0.20 SELECT zdbankbranch uc_active_detail uc_activate_info_main uc_active_shop
+#   31 0x7104B36E1559A004    14.3670  0.1%     2  7.1835  0.01 SELECT dict_city uc_activate_info_main uc_active_detail
+#   32 0xB297B7A6A254D197    11.1427  0.0%     5  2.2285  0.01 SELECT uc_active_detail uc_activate_info_main
+#   33 0xE32600FDBF01AB5C     9.7813  0.0%     2  4.8907  0.06 SELECT CRCREDITMAIN CRCreditinfo CRCreditRecord zdcardbranch ZDBankbranch
+#   34 0x97B11E12CF72E865     8.8718  0.0%     4  2.2179  0.00 SELECT ZCIMAGE zdbankbranch uc_activate_type uc_activate_info_main uc_active_detail uc_active_props uc_hitcount
+#   35 0x9C76D268920CFF36     7.7254  0.0%     3  2.5751  0.02 SELECT uc_active_detail uc_activate_info_main
+#   36 0xACEBE9EDD660DAAA     7.5725  0.0%     2  3.7862  0.01 SELECT uc_activate_info_main uc_active_shop uc_active_detail uc_goods_sort
+#   37 0x323A2A4D5B724228     7.5030  0.0%     2  3.7515  0.03 SELECT dict_city uc_goods_sort uc_active_shop uc_activate_info_main
+#   38 0x060401D8ACFE35A2     7.4358  0.0%     1  7.4358  0.00 SELECT ZCIMAGE zdbankbranch uc_activate_type uc_activate_info_main uc_active_detail uc_active_props uc_hitcount
+#   39 0x467FAE25A4E7619D     7.1251  0.0%     1  7.1251  0.00 SELECT CRCREDITMAIN CRCreditinfo CRCreditRecord zdcardbranch ZDBankbranch
+#   40 0x649126C3F10331C7     6.8581  0.0%     3  2.2860  0.02 SELECT uc_active_shop uc_activate_info_main
+#   41 0x1CF4E6171AB0EE56     6.5486  0.0%     1  6.5486  0.00 SELECT CRCREDITMAIN CRCreditinfo CRCreditRecord zdcardbranch ZDBankbranch
+#   42 0x021CC1E8EAA8919B     6.2841  0.0%     1  6.2841  0.00 SELECT CRCREDITMAIN CRCreditinfo CRCreditRecord zdcardbranch ZDBankbranch
+#   43 0x731ADDC074D5ADBA     6.0949  0.0%     1  6.0949  0.00 SELECT zdbankbranch uc_active_detail uc_activate_info_main uc_active_shop
+#   44 0x2248199E2C19B0DC     4.7977  0.0%     2  2.3989  0.00 SELECT uc_active_shop uc_activate_info_main
+#   45 0x3923DFC5C4D39FC9     4.6657  0.0%     1  4.6657  0.00 SELECT zdbankbranch uc_active_detail uc_activate_info_main uc_active_shop
+#   46 0x70EB492EC2D15A3A     4.5796  0.0%     2  2.2898  0.03 SELECT uc_active_shop uc_activate_info_main
+#   47 0xCB2F52086C6ADEBD     4.5513  0.0%     2  2.2757  0.00 SELECT CRCREDITMAIN CRCreditinfo CRCreditRecord zdcardbranch ZDBankbranch CRCARDGROUP
+#   48 0x4DF840652B87F33F     4.4036  0.0%     1  4.4036  0.00 SELECT uc_activate_info_main uc_active_detail uc_active_props
+#   49 0xFD760B956086E034     4.3862  0.0%     2  2.1931  0.01 SELECT zdbankbranch uc_active_detail uc_activate_info_main uc_active_shop
+#   50 0xAEA56A6661A05CB4     4.1740  0.0%     2  2.0870  0.00 SELECT uc_active_shop uc_activate_info_main
+#   51 0xE3FFFD6F53B0BEA0     3.7913  0.0%     1  3.7913  0.00 SELECT uc_activate_info_main uc_active_detail uc_active_props
+#   52 0xA8AB6B6BD8C0A11D     3.2128  0.0%     1  3.2128  0.00 SELECT uc_active_detail uc_activate_info_main
+#   53 0x61303A6AFD3C8DCB     2.7847  0.0%     1  2.7847  0.00 SELECT uc_active_detail uc_activate_info_main
+#   54 0xAF9D420B1F8E48C8     2.7074  0.0%     1  2.7074  0.00 SELECT uc_active_shop uc_activate_info_main
+#   55 0x0A8059FE6E8D9022     2.5641  0.0%     1  2.5641  0.00 SELECT ZCIMAGE zdbankbranch uc_activate_type uc_activate_info_main uc_active_detail uc_active_props uc_hitcount
+#   56 0x7E0C41C1E7415A47     2.3005  0.0%     1  2.3005  0.00 SELECT CRCREDITMAIN CRCreditinfo CRCreditRecord zdcardbranch ZDBankbranch CRCARDGROUP
+#   57 0xB62256787489E902     2.2572  0.0%     1  2.2572  0.00 SELECT uc_active_shop uc_activate_info_main
+#   58 0x9C90BE9E250823C4     2.1843  0.0%     1  2.1843  0.00 SELECT uc_active_detail uc_activate_info_main
+
+# Query 1: 0 QPS, 0x concurrency, ID 0xB7E534B4F51E65D5 at byte 5815077 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.31
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         76    6015
+# Exec time     62  16395s      2s      8s      3s      5s   915ms      2s
+# Lock time     84      2s   101us     2ms   276us   403us    91us   273us
+# Rows sent      4  29.37k       5       5       5       5       0       5
+# Rows examine  81   4.01G 120.87k 761.63k 698.63k 753.18k 105.35k 753.18k
+# Query size    82   5.90M   1.00k   1.01k   1.00k 1012.63       0 1012.63
+# Bytes         82   5.90M   1.00k   1.01k   1.00k 1012.63       0 1012.63
+# hostname      76 152.72k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'zcimage'\G
+#    SHOW CREATE TABLE `zcimage`\G
+#    SHOW TABLE STATUS LIKE 'zdbankbranch'\G
+#    SHOW CREATE TABLE `zdbankbranch`\G
+#    SHOW TABLE STATUS LIKE 'crcreditrecord'\G
+#    SHOW CREATE TABLE `crcreditrecord`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditmain'\G
+#    SHOW CREATE TABLE `CRCreditmain`\G
+#    SHOW TABLE STATUS LIKE 'uc_comment'\G
+#    SHOW CREATE TABLE `uc_comment`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT crm.id,crm.name name,concat(' http://img.51credit.com/credit/',         concat(img.path, concat('1_', img.filename))) imagepath,         ifnull(comment.commentnum, 0) prop1,         ifnull(comment.avgscore, 0.0) prop2,         concat('http://kaku.51credit.com/', zbank.ENSignName,'/',crm.AliasName,'/index.html') prop11,         crm.applyclause applyclause,         crm.bankID         FROM zcimage img,zdbankbranch zbank,crcreditrecord rd,CRCreditmain crm         left outer join         (select real_id, count(real_id) commentnum, round(avg(total_scores)/10, 0.6)         avgscore         from uc_comment         where type_id = 2 group by real_id) comment         on crm.id = comment.real_id         WHERE crm.imagepath2 = img.id         AND crm.bankID=zbank.ID         And zbank.ParentID=0         AND rd.israte!=2         AND (substring(rd.crcreditmainID,1,3) = crm.ID or substring(rd.crcreditmainID,1,4) = crm.ID)         AND crm.bankID in ('8')         group by id         order by crm.OrderFlag DESC         limit 5\G
+
+# Query 2: 0 QPS, 0x concurrency, ID 0xAC4516E5CB6014EA at byte 6511635 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.19
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          9     708
+# Exec time     16   4232s      2s      7s      6s      7s      1s      6s
+# Lock time      3    73ms    66us   271us   103us   152us    29us    93us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   8 404.21M 583.75k 584.63k 584.62k 562.03k       0 562.03k
+# Query size     5 419.68k     607     607     607     607       0     607
+# Bytes          5 419.68k     607     607     607     607       0     607
+# hostname       9  17.98k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'zdbankbranch'\G
+#    SHOW CREATE TABLE `zdbankbranch`\G
+#    SHOW TABLE STATUS LIKE 'dict_city'\G
+#    SHOW CREATE TABLE `dict_city`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select main.bankId,        (select name from zdbankbranch where zdbankbranch.ID =main.bankId) as bankName,       main.detailId,main.city,        (select name from dict_city where dict_city.code=main.city) as cityName,       detail.content,detail.largelogo from        (select bankId,detailId,city from uc_activate_info_main where prop1=0  and city is not null and bankid is not null group by bankid) main,uc_active_detail detail        where main.detailId =detail.detailId and detail.dataFormer in (0,1)             and detail.endTime > NOW()    ORDER BY detail.hotLevel desc,detail.endTime desc   limit 0,5\G
+
+# Query 3: 0 QPS, 0x concurrency, ID 0x2917BC8A22CCCE98 at byte 5115701 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 2.65
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          4     361
+# Exec time      3    981s      2s     26s      3s      3s      3s      2s
+# Lock time      3    62ms    81us   351us   171us   224us    43us   159us
+# Rows sent      0   1.39k       0       4    3.96    3.89    0.41    3.89
+# Rows examine   8 410.81M   1.14M   1.14M   1.14M   1.09M       0   1.09M
+# Query size     3 223.69k     614     646  634.51  621.67    7.08  621.67
+# Bytes          3 223.69k     614     646  634.51  621.67    7.08  621.67
+# hostname       4   9.17k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  ##
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_active_shop'\G
+#    SHOW CREATE TABLE `uc_active_shop`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select tm.* from (    SELECT     us.shopid,     us. name,     us.fullname,     us.content,     us.largelogo,     us.tel,     us.ADDRESS,     us.X,     us.Y,     (POWER(MOD(ABS(us.x- '120.30306245534'),360),1) + POWER(ABS(us.y - '31.9289681571'),1)) AS distance    FROM     uc_active_shop us,     (      SELECT       shopid      FROM       uc_activate_info_main      WHERE       prop1 = '0'      AND shopid IS NOT NULL      GROUP BY       shopId     ) tmp    WHERE     tmp.shopid = us.SHOPID    and (us.x is not null or us.y is not null)    ) tm    where tm.distance != 0     and    tm.SHOPID != '197822'        order by distance limit 0,4\G
+
+# Query 4: 0 QPS, 0x concurrency, ID 0x86581A27C8CB0FFF at byte 5377617 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.33
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          1     129
+# Exec time      3    903s      2s      9s      7s      8s      2s      7s
+# Lock time      0    15ms    54us   211us   119us   167us    24us   113us
+# Rows sent      0     954       0       8    7.40    7.70    1.85    7.70
+# Rows examine   0   5.42M  35.56k  67.19k  43.05k  65.68k  12.76k  34.83k
+# Query size     0  29.41k     220     256  233.47  246.02   11.71  223.14
+# Bytes          0  29.41k     220     256  233.47  246.02   11.71  223.14
+# hostname       1   3.28k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'zcarticle'\G
+#    SHOW CREATE TABLE `zcarticle`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select title,url AS pcUrl,prop4 AS mUrl     from zcarticle where 1=1     and    Title  REGEXP '信用卡|实名认证|我的淘宝|支付宝|账号'       and catalogID in (9155,9169,9170,9484,9485,11104,11136,10991,10992,10993,10994)     order by rand()       limit 8\G
+
+# Query 5: 0 QPS, 0x concurrency, ID 0x10B0D2D3537F10BD at byte 5636690 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.02
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          1     109
+# Exec time      2    767s      6s      8s      7s      7s   362ms      7s
+# Lock time      2    42ms   215us   647us   387us   467us    62us   384us
+# Rows sent      0     545       5       5       5       5       0       5
+# Rows examine   0   6.83M  58.29k  67.86k  64.17k  65.68k   2.34k  62.55k
+# Query size     2 166.69k   1.53k   1.53k   1.53k   1.53k       0   1.53k
+# Bytes          2 166.69k   1.53k   1.53k   1.53k   1.53k       0   1.53k
+# hostname       1   2.77k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'CRCREDITMAIN'\G
+#    SHOW CREATE TABLE `CRCREDITMAIN`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditinfo'\G
+#    SHOW CREATE TABLE `CRCreditinfo`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditRecord'\G
+#    SHOW CREATE TABLE `CRCreditRecord`\G
+#    SHOW TABLE STATUS LIKE 'zdcardbranch'\G
+#    SHOW CREATE TABLE `zdcardbranch`\G
+#    SHOW TABLE STATUS LIKE 'ZDBankbranch'\G
+#    SHOW CREATE TABLE `ZDBankbranch`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT CRCREDITMAIN.id AS id, CRCREDITMAIN.name AS name, CRCREDITMAIN.AliasName,          TMP.prop1, TMP.prop2, TMP.imagepath1, TMP.catchword,          CRCREDITMAIN.bankID, CRCREDITMAIN.imagepath1 AS imagepath, CRCREDITMAIN.applyclause, CRCREDITMAIN.specialinfo,          CRCREDITMAIN.applystate   FROM CRCREDITMAIN, CRCreditinfo, CRCreditRecord, zdcardbranch,   (SELECT bank.ParentID as id, bank.City,    (SELECT ZDBankbranch.name from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS prop1,    (SELECT ZDBankbranch.MidLogo from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS imagepath1,        (SELECT ZDBankbranch.ensignname from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS catchword,   CONCAT("http://kaku.51credit.com/", (SELECT ZDBankbranch.ensignname FROM ZDBankbranch WHERE ZDBankbranch.id = bank.ParentID)) AS prop2   FROM ZDBankbranch bank where 1 = 1          AND bank.City = '410100'                    AND bank.parentid!=0 group by bank.parentid) AS TMP,ZDBankbranch       WHERE     1 = 1      AND CRCreditRecord.crcreditmainID = CRCreditinfo.id        AND CRCreditinfo.crcreditmainID = CRCREDITMAIN.id        AND CRCREDITMAIN.bankID = tmp.id        AND ZDBankbranch.id = tmp.id        AND ZDBankbranch.id = CRCREDITMAIN.bankID        AND zdcardbranch.id = CRCreditRecord.cardOrgID                                                                   GROUP BY ZDBankbranch.id,CRCreditmain.ID                   order by ZDBankbranch.OrderFlag ASC                   ,            CRCreditmain.OrderFlag DESC                  limit 0,5\G
+
+# Query 6: 0 QPS, 0x concurrency, ID 0x647341E49745D4F7 at byte 5541847 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.91
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      76
+# Exec time      2    546s      2s     13s      7s     12s      3s      7s
+# Lock time      0    18ms   160us   409us   237us   316us    49us   224us
+# Rows sent      0     456       6       6       6       6       0       6
+# Rows examine   0 163.50k     307   8.80k   2.15k   8.46k   2.82k 1012.63
+# Query size     0  59.51k     801     802  801.84  793.42       0  793.42
+# Bytes          0  59.51k     801     802  801.84  793.42       0  793.42
+# hostname       0   1.93k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  ############
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'zccatalog'\G
+#    SHOW CREATE TABLE `zccatalog`\G
+#    SHOW TABLE STATUS LIKE 'zcsite'\G
+#    SHOW CREATE TABLE `zcsite`\G
+#    SHOW TABLE STATUS LIKE 'zcarticle'\G
+#    SHOW CREATE TABLE `zcarticle`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT a.ID ,l.ParentID ,       (SELECT NAME FROM zccatalog WHERE ID=l.parentID) AS parentNme,   (SELECT alias FROM zcsite WHERE ID=a.siteID) AS siteAlias,   (SELECT url FROM zcsite WHERE ID=a.siteID) AS siteUrl,   (SELECT alias FROM zccatalog WHERE ID=l.parentID) AS parentAlias,      a.Title as aticle_title, a.Author as article_Author,a.Summary as aticle_Summary,      a.keyWord ,a.Content as article_Content,a.ReferName as  article_ReferName,      a.PublishDate as article_PublishDate,l.Name as cata_name,      l.id as article_CatalogID,a.Prop3 as article_image,a.prop1,a.summary,l.alias   FROM zcarticle a ,zccatalog l      WHERE l.id = a.CatalogID     AND a.status=30       and     l.id= 9898                        order by a.topflag desc,a.orderflag desc,a.ID desc                    limit 0,6\G
+
+# Query 7: 0 QPS, 0x concurrency, ID 0x0DFEC8B8ED0C71AE at byte 5125931 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 9.55
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      52
+# Exec time      1    358s      2s     26s      7s     25s      8s      2s
+# Lock time      0     6ms    65us   197us   116us   176us    35us   113us
+# Rows sent      0      52       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0  14.52k     286     286     286     286       0     286
+# Bytes          0  14.52k     286     286     286     286       0     286
+# hostname       0   1.32k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  #####################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT COUNT(1) AS cnt FROM (   SELECT 1   FROM uc_active_detail detail,uc_activate_info_main main   WHERE main.detailid=detail.detailId   AND detail.isdelete=0   AND detail.dataformer IN (0,1)   AND main.prop1=0             and    main.`city`='440300'      GROUP BY main.bankId   ) tmp\G
+
+# Query 8: 0 QPS, 0x concurrency, ID 0x03B12EF403F02F72 at byte 5553051 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.01
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      37
+# Exec time      0    228s      6s      7s      6s      6s   205ms      6s
+# Lock time      0    17ms   304us   857us   450us   568us    96us   424us
+# Rows sent      0     185       5       5       5       5       0       5
+# Rows examine   0   2.04M  52.36k  63.12k  56.47k  62.55k   3.82k  54.03k
+# Query size     0  61.64k   1.67k   1.67k   1.67k   1.67k       0   1.67k
+# Bytes          0  61.64k   1.67k   1.67k   1.67k   1.67k       0   1.67k
+# hostname       0     962      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'CRCREDITMAIN'\G
+#    SHOW CREATE TABLE `CRCREDITMAIN`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditinfo'\G
+#    SHOW CREATE TABLE `CRCreditinfo`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditRecord'\G
+#    SHOW CREATE TABLE `CRCreditRecord`\G
+#    SHOW TABLE STATUS LIKE 'zdcardbranch'\G
+#    SHOW CREATE TABLE `zdcardbranch`\G
+#    SHOW TABLE STATUS LIKE 'ZDBankbranch'\G
+#    SHOW CREATE TABLE `ZDBankbranch`\G
+#    SHOW TABLE STATUS LIKE 'CRCARDGROUP'\G
+#    SHOW CREATE TABLE `CRCARDGROUP`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT CRCREDITMAIN.id AS id, CRCREDITMAIN.name AS name, CRCREDITMAIN.AliasName,          TMP.prop1, TMP.prop2, TMP.imagepath1, TMP.catchword,          CRCREDITMAIN.bankID, CRCREDITMAIN.imagepath1 AS imagepath, CRCREDITMAIN.applyclause, CRCREDITMAIN.specialinfo,          CRCREDITMAIN.applystate   FROM CRCREDITMAIN, CRCreditinfo, CRCreditRecord, zdcardbranch,   (SELECT bank.ParentID as id, bank.City,    (SELECT ZDBankbranch.name from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS prop1,    (SELECT ZDBankbranch.MidLogo from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS imagepath1,        (SELECT ZDBankbranch.ensignname from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS catchword,   CONCAT("http://kaku.51credit.com/", (SELECT ZDBankbranch.ensignname FROM ZDBankbranch WHERE ZDBankbranch.id = bank.ParentID)) AS prop2   FROM ZDBankbranch bank where 1 = 1                            AND bank.parentid!=0 group by bank.parentid) AS TMP,ZDBankbranch   ,   (SELECT  CRCARDGROUP.SORTID, CRCARDGROUP.CARDPID FROM CRCARDGROUP WHERE 1 = 1 AND CRCARDGROUP.sortid = '54' ) AS TMP2       WHERE     1 = 1      AND CRCreditRecord.crcreditmainID = CRCreditinfo.id        AND CRCreditinfo.crcreditmainID = CRCREDITMAIN.id        AND CRCREDITMAIN.bankID = tmp.id        AND ZDBankbranch.id = tmp.id        AND ZDBankbranch.id = CRCREDITMAIN.bankID        AND zdcardbranch.id = CRCreditRecord.cardOrgID         AND CRCREDITMAIN.ID = TMP2.CARDPID                                                                  GROUP BY ZDBankbranch.id,CRCreditmain.ID                   order by ZDBankbranch.OrderFlag ASC                   ,            CRCreditmain.OrderFlag DESC                  limit 0,5\G
+
+# Query 9: 0 QPS, 0x concurrency, ID 0x77BE8F575B73DF0E at byte 5718452 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.31
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      54
+# Exec time      0    228s      2s      7s      4s      5s      1s      4s
+# Lock time      0    10ms    92us   317us   186us   260us    50us   185us
+# Rows sent      0      54       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0  42.19k     800     800     800     800       0     800
+# Bytes          0  42.19k     800     800     800     800       0     800
+# hostname       0   1.37k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'CRCREDITMAIN'\G
+#    SHOW CREATE TABLE `CRCREDITMAIN`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditinfo'\G
+#    SHOW CREATE TABLE `CRCreditinfo`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditRecord'\G
+#    SHOW CREATE TABLE `CRCreditRecord`\G
+#    SHOW TABLE STATUS LIKE 'zdcardbranch'\G
+#    SHOW CREATE TABLE `zdcardbranch`\G
+#    SHOW TABLE STATUS LIKE 'ZDBankbranch'\G
+#    SHOW CREATE TABLE `ZDBankbranch`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT COUNT(TOTAL.id) FROM(         SELECT CRCREDITMAIN.id AS id         FROM CRCREDITMAIN, CRCreditinfo, CRCreditRecord, zdcardbranch,         (SELECT bank.ParentID as id, bank.City FROM ZDBankbranch bank where 1 = 1          AND bank.City = '131000'                    AND bank.parentid!=0 group by bank.parentid) AS TMP ,ZDBankbranch                   WHERE     1 = 1           AND CRCreditRecord.crcreditmainID = CRCreditinfo.id        AND CRCreditinfo.crcreditmainID = CRCREDITMAIN.id        AND CRCREDITMAIN.bankID = tmp.id        AND ZDBankbranch.id = tmp.id        AND ZDBankbranch.id = CRCREDITMAIN.bankID        AND zdcardbranch.id = CRCreditRecord.cardOrgID                                                                                 GROUP BY ZDBankbranch.id,CRCreditmain.ID) AS TOTAL\G
+
+# Query 10: 0 QPS, 0x concurrency, ID 0x74660CE9927B4C87 at byte 5499244 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.16
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      22
+# Exec time      0    145s      2s      7s      7s      7s      1s      7s
+# Lock time      0     5ms   153us   281us   225us   260us    30us   224us
+# Rows sent      0      22       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0  17.84k     830     831  830.27  793.42       0  793.42
+# Bytes          0  17.84k     830     831  830.27  793.42       0  793.42
+# hostname       0     572      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'CRCREDITMAIN'\G
+#    SHOW CREATE TABLE `CRCREDITMAIN`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditinfo'\G
+#    SHOW CREATE TABLE `CRCreditinfo`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditRecord'\G
+#    SHOW CREATE TABLE `CRCreditRecord`\G
+#    SHOW TABLE STATUS LIKE 'zdcardbranch'\G
+#    SHOW CREATE TABLE `zdcardbranch`\G
+#    SHOW TABLE STATUS LIKE 'ZDBankbranch'\G
+#    SHOW CREATE TABLE `ZDBankbranch`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT COUNT(TOTAL.id) FROM(         SELECT CRCREDITMAIN.id AS id         FROM CRCREDITMAIN, CRCreditinfo, CRCreditRecord, zdcardbranch,         (SELECT bank.ParentID as id, bank.City FROM ZDBankbranch bank where 1 = 1                            AND bank.parentid!=0 group by bank.parentid) AS TMP ,ZDBankbranch                   WHERE     1 = 1           AND CRCreditRecord.crcreditmainID = CRCreditinfo.id        AND CRCreditinfo.crcreditmainID = CRCREDITMAIN.id        AND CRCREDITMAIN.bankID = tmp.id        AND ZDBankbranch.id = tmp.id        AND ZDBankbranch.id = CRCREDITMAIN.bankID        AND zdcardbranch.id = CRCreditRecord.cardOrgID                                               AND             CRCreditRecord.crgradeid = '9'                                            GROUP BY ZDBankbranch.id,CRCreditmain.ID) AS TOTAL\G
+
+# Query 11: 0 QPS, 0x concurrency, ID 0x0DC5BF825421E866 at byte 5413929 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.17
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      23
+# Exec time      0    137s      4s      7s      6s      7s      1s      6s
+# Lock time      0     9ms   182us   707us   402us   467us    99us   384us
+# Rows sent      0      87       1       5    3.78    4.96    1.58    4.96
+# Rows examine   0   1.36M  59.77k  63.94k  60.61k  62.55k   1.13k  59.57k
+# Query size     0  35.85k   1.56k   1.56k   1.56k   1.53k    0.00   1.53k
+# Bytes          0  35.85k   1.56k   1.56k   1.56k   1.53k    0.00   1.53k
+# hostname       0     598      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'CRCREDITMAIN'\G
+#    SHOW CREATE TABLE `CRCREDITMAIN`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditinfo'\G
+#    SHOW CREATE TABLE `CRCreditinfo`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditRecord'\G
+#    SHOW CREATE TABLE `CRCreditRecord`\G
+#    SHOW TABLE STATUS LIKE 'zdcardbranch'\G
+#    SHOW CREATE TABLE `zdcardbranch`\G
+#    SHOW TABLE STATUS LIKE 'ZDBankbranch'\G
+#    SHOW CREATE TABLE `ZDBankbranch`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT CRCREDITMAIN.id AS id, CRCREDITMAIN.name AS name, CRCREDITMAIN.AliasName,          TMP.prop1, TMP.prop2, TMP.imagepath1, TMP.catchword,          CRCREDITMAIN.bankID, CRCREDITMAIN.imagepath1 AS imagepath, CRCREDITMAIN.applyclause, CRCREDITMAIN.specialinfo,          CRCREDITMAIN.applystate   FROM CRCREDITMAIN, CRCreditinfo, CRCreditRecord, zdcardbranch,   (SELECT bank.ParentID as id, bank.City,    (SELECT ZDBankbranch.name from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS prop1,    (SELECT ZDBankbranch.MidLogo from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS imagepath1,        (SELECT ZDBankbranch.ensignname from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS catchword,   CONCAT("http://kaku.51credit.com/", (SELECT ZDBankbranch.ensignname FROM ZDBankbranch WHERE ZDBankbranch.id = bank.ParentID)) AS prop2   FROM ZDBankbranch bank where 1 = 1                            AND bank.parentid!=0 group by bank.parentid) AS TMP,ZDBankbranch       WHERE     1 = 1      AND CRCreditRecord.crcreditmainID = CRCreditinfo.id        AND CRCreditinfo.crcreditmainID = CRCREDITMAIN.id        AND CRCREDITMAIN.bankID = tmp.id        AND ZDBankbranch.id = tmp.id        AND ZDBankbranch.id = CRCREDITMAIN.bankID        AND zdcardbranch.id = CRCreditRecord.cardOrgID                                 AND             CRCreditRecord.crgradeid = '11'                                            GROUP BY ZDBankbranch.id,CRCreditmain.ID                   order by ZDBankbranch.OrderFlag ASC                   ,            CRCreditmain.OrderFlag DESC                  limit 0,5\G
+
+# Query 12: 0 QPS, 0x concurrency, ID 0x885AAF101AC39E9B at byte 5385576 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.39
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      19
+# Exec time      0    107s      2s      7s      6s      7s      1s      6s
+# Lock time      0     7ms   137us   441us   343us   424us    80us   348us
+# Rows sent      0      71       0       5    3.74    4.96    1.90    4.96
+# Rows examine   0   1.13M  59.77k  65.46k  60.70k  62.55k  936.07  59.57k
+# Query size     0  29.63k   1.56k   1.56k   1.56k   1.56k       0   1.56k
+# Bytes          0  29.63k   1.56k   1.56k   1.56k   1.56k       0   1.56k
+# hostname       0     494      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'CRCREDITMAIN'\G
+#    SHOW CREATE TABLE `CRCREDITMAIN`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditinfo'\G
+#    SHOW CREATE TABLE `CRCreditinfo`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditRecord'\G
+#    SHOW CREATE TABLE `CRCreditRecord`\G
+#    SHOW TABLE STATUS LIKE 'zdcardbranch'\G
+#    SHOW CREATE TABLE `zdcardbranch`\G
+#    SHOW TABLE STATUS LIKE 'ZDBankbranch'\G
+#    SHOW CREATE TABLE `ZDBankbranch`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT CRCREDITMAIN.id AS id, CRCREDITMAIN.name AS name, CRCREDITMAIN.AliasName,          TMP.prop1, TMP.prop2, TMP.imagepath1, TMP.catchword,          CRCREDITMAIN.bankID, CRCREDITMAIN.imagepath1 AS imagepath, CRCREDITMAIN.applyclause, CRCREDITMAIN.specialinfo,          CRCREDITMAIN.applystate   FROM CRCREDITMAIN, CRCreditinfo, CRCreditRecord, zdcardbranch,   (SELECT bank.ParentID as id, bank.City,    (SELECT ZDBankbranch.name from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS prop1,    (SELECT ZDBankbranch.MidLogo from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS imagepath1,        (SELECT ZDBankbranch.ensignname from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS catchword,   CONCAT("http://kaku.51credit.com/", (SELECT ZDBankbranch.ensignname FROM ZDBankbranch WHERE ZDBankbranch.id = bank.ParentID)) AS prop2   FROM ZDBankbranch bank where 1 = 1                            AND bank.parentid!=0 group by bank.parentid) AS TMP,ZDBankbranch       WHERE     1 = 1      AND CRCreditRecord.crcreditmainID = CRCreditinfo.id        AND CRCreditinfo.crcreditmainID = CRCREDITMAIN.id        AND CRCREDITMAIN.bankID = tmp.id        AND ZDBankbranch.id = tmp.id        AND ZDBankbranch.id = CRCREDITMAIN.bankID        AND zdcardbranch.id = CRCreditRecord.cardOrgID                        AND             CRCreditRecord.cardOrgID = '14'                                                     GROUP BY ZDBankbranch.id,CRCreditmain.ID                   order by ZDBankbranch.OrderFlag ASC                   ,            CRCreditmain.OrderFlag DESC                  limit 0,5\G
+
+# Query 13: 0 QPS, 0x concurrency, ID 0x4BA103808569AF1D at byte 5641162 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.02
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      16
+# Exec time      0    106s      6s      7s      7s      7s   390ms      7s
+# Lock time      0     4ms   171us   474us   270us   348us    67us   260us
+# Rows sent      0      16       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0  12.98k     831     831     831     831       0     831
+# Bytes          0  12.98k     831     831     831     831       0     831
+# hostname       0     416      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'CRCREDITMAIN'\G
+#    SHOW CREATE TABLE `CRCREDITMAIN`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditinfo'\G
+#    SHOW CREATE TABLE `CRCreditinfo`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditRecord'\G
+#    SHOW CREATE TABLE `CRCreditRecord`\G
+#    SHOW TABLE STATUS LIKE 'zdcardbranch'\G
+#    SHOW CREATE TABLE `zdcardbranch`\G
+#    SHOW TABLE STATUS LIKE 'ZDBankbranch'\G
+#    SHOW CREATE TABLE `ZDBankbranch`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT COUNT(TOTAL.id) FROM(         SELECT CRCREDITMAIN.id AS id         FROM CRCREDITMAIN, CRCreditinfo, CRCreditRecord, zdcardbranch,         (SELECT bank.ParentID as id, bank.City FROM ZDBankbranch bank where 1 = 1                            AND bank.parentid!=0 group by bank.parentid) AS TMP ,ZDBankbranch                   WHERE     1 = 1           AND CRCreditRecord.crcreditmainID = CRCreditinfo.id        AND CRCreditinfo.crcreditmainID = CRCREDITMAIN.id        AND CRCREDITMAIN.bankID = tmp.id        AND ZDBankbranch.id = tmp.id        AND ZDBankbranch.id = CRCREDITMAIN.bankID        AND zdcardbranch.id = CRCreditRecord.cardOrgID                                      AND             CRCreditRecord.cardOrgID = '15'                                                     GROUP BY ZDBankbranch.id,CRCreditmain.ID) AS TOTAL\G
+
+# Query 14: 0 QPS, 0x concurrency, ID 0x5AFF8ADB71E6A249 at byte 5151961 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 11.03
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       7
+# Exec time      0     88s      2s     28s     13s     27s     12s      2s
+# Lock time      0   771us    62us   157us   110us   152us    28us   113us
+# Rows sent      0     168      23      26      24   24.84    1.14   22.53
+# Rows examine   0   3.99M 583.69k 584.57k 584.07k 562.03k       0 562.03k
+# Query size     0   1.37k     200     203  200.86  202.40    1.50  192.76
+# Bytes          0   1.37k     200     203  200.86  202.40    1.50  192.76
+# hostname       0     182      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  ################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_shop'\G
+#    SHOW CREATE TABLE `uc_active_shop`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT  bankid FROM uc_activate_info_main where bankid is not null and prop1='0' and shopid in    (SELECT shopid from uc_active_shop where 1=1     and    owenrtype = '74'         )     GROUP BY bankid\G
+
+# Query 15: 0 QPS, 0x concurrency, ID 0x960217157021800A at byte 5708839 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.02
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      11
+# Exec time      0     80s      7s      8s      7s      7s   409ms      7s
+# Lock time      0     5ms   160us   653us   418us   490us   113us   424us
+# Rows sent      0      55       5       5       5       5       0       5
+# Rows examine   0 752.65k  68.41k  68.43k  68.42k  65.68k       0  65.68k
+# Query size     0  16.55k   1.50k   1.50k   1.50k   1.46k       0   1.46k
+# Bytes          0  16.55k   1.50k   1.50k   1.50k   1.46k       0   1.46k
+# hostname       0     286      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'CRCREDITMAIN'\G
+#    SHOW CREATE TABLE `CRCREDITMAIN`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditinfo'\G
+#    SHOW CREATE TABLE `CRCreditinfo`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditRecord'\G
+#    SHOW CREATE TABLE `CRCreditRecord`\G
+#    SHOW TABLE STATUS LIKE 'zdcardbranch'\G
+#    SHOW CREATE TABLE `zdcardbranch`\G
+#    SHOW TABLE STATUS LIKE 'ZDBankbranch'\G
+#    SHOW CREATE TABLE `ZDBankbranch`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT CRCREDITMAIN.id AS id, CRCREDITMAIN.name AS name, CRCREDITMAIN.AliasName,          TMP.prop1, TMP.prop2, TMP.imagepath1, TMP.catchword,          CRCREDITMAIN.bankID, CRCREDITMAIN.imagepath1 AS imagepath, CRCREDITMAIN.applyclause, CRCREDITMAIN.specialinfo,          CRCREDITMAIN.applystate   FROM CRCREDITMAIN, CRCreditinfo, CRCreditRecord, zdcardbranch,   (SELECT bank.ParentID as id, bank.City,    (SELECT ZDBankbranch.name from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS prop1,    (SELECT ZDBankbranch.MidLogo from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS imagepath1,        (SELECT ZDBankbranch.ensignname from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS catchword,   CONCAT("http://kaku.51credit.com/", (SELECT ZDBankbranch.ensignname FROM ZDBankbranch WHERE ZDBankbranch.id = bank.ParentID)) AS prop2   FROM ZDBankbranch bank where 1 = 1                            AND bank.parentid!=0 group by bank.parentid) AS TMP,ZDBankbranch       WHERE     1 = 1      AND CRCreditRecord.crcreditmainID = CRCreditinfo.id        AND CRCreditinfo.crcreditmainID = CRCREDITMAIN.id        AND CRCREDITMAIN.bankID = tmp.id        AND ZDBankbranch.id = tmp.id        AND ZDBankbranch.id = CRCREDITMAIN.bankID        AND zdcardbranch.id = CRCreditRecord.cardOrgID                                                                   GROUP BY ZDBankbranch.id,CRCreditmain.ID                   order by ZDBankbranch.OrderFlag ASC                   ,            CRCreditmain.OrderFlag DESC                  limit 5,5\G
+
+# Query 16: 0 QPS, 0x concurrency, ID 0x90B966F454BE07E0 at byte 8278483 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.02
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      27
+# Exec time      0     62s      2s      3s      2s      3s   207ms      2s
+# Lock time      0     4ms    65us   251us   133us   194us    39us   113us
+# Rows sent      7  51.33k      59   5.53k   1.90k   5.20k   1.99k  329.68
+# Rows examine   0  23.95M 906.63k 912.10k 908.47k 871.90k       0 871.90k
+# Query size     0   8.67k     328     333     329  329.68    2.50  313.99
+# Bytes          0   8.67k     328     333     329  329.68    2.50  313.99
+# hostname       0     702      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'zccatalog'\G
+#    SHOW CREATE TABLE `zccatalog`\G
+#    SHOW TABLE STATUS LIKE 'zcarticle'\G
+#    SHOW CREATE TABLE `zcarticle`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT a.ID ,l.ParentID ,    (SELECT alias FROM zccatalog WHERE ID=l.parentID) AS parentAlias,l.alias   FROM zcarticle a ,zccatalog l      WHERE l.id = a.CatalogID     AND a.status<>40         and (SELECT alias FROM zccatalog WHERE ID=l.parentID)  = 'citibank'         order by a.topflag desc,a.orderflag desc,a.ID desc limit 0,10000\G
+
+# Query 17: 0 QPS, 0x concurrency, ID 0x26B444180BBE953E at byte 5819677 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.07
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      19
+# Exec time      0     60s      2s      4s      3s      4s   477ms      3s
+# Lock time      0     4ms   119us   327us   185us   260us    44us   185us
+# Rows sent     10  71.80k   2.06k   5.32k   3.78k   5.20k   1.57k   5.20k
+# Rows examine   0 981.40k  37.71k  64.20k  51.65k  62.55k  12.97k  62.55k
+# Query size     0  15.83k     853     853     853     853       0     853
+# Bytes          0  15.83k     853     853     853     853       0     853
+# hostname       0     494      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'ZCIMAGE'\G
+#    SHOW CREATE TABLE `ZCIMAGE`\G
+#    SHOW TABLE STATUS LIKE 'zdbankbranch'\G
+#    SHOW CREATE TABLE `zdbankbranch`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_type'\G
+#    SHOW CREATE TABLE `uc_activate_type`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_props'\G
+#    SHOW CREATE TABLE `uc_active_props`\G
+#    SHOW TABLE STATUS LIKE 'uc_hitcount'\G
+#    SHOW CREATE TABLE `uc_hitcount`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT b.detailId,c.id,b.typeowner as typeid,b.fullname,     (select CONCAT('http://img.51credit.com/credit/',CONCAT(PATH,"s_"),FILENAME) from ZCIMAGE where id = b.smalllogo) as smalllogo,     a.bankid,(select name from zdbankbranch where id=a.bankid) as bankName,     (select name from uc_activate_type where typeid=b.typeowner AND crfrom = 1) as typeName,     max(c.propvalue) as point,max(c.prop4) as cash,c.propname as type,        ifnull(d.count,0) as cnt ,b.prop4     FROM uc_activate_info_main a,uc_active_detail b, uc_active_props c,uc_hitcount d      WHERE  b.dataFormer=3 AND a.prop1 = 0 AND a.shopid = 0 AND b.isdelete = 0     and d.name =b.detailId  AND d.crfrom='3'                      and     c.propname = '0'                       AND a.detailId = b.detailId and c.detailid=b.detailid  group by b.detailid               order by cnt desc\G
+
+# Query 18: 0 QPS, 0x concurrency, ID 0x3AE4AA488B1E2779 at byte 5111337 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 1.58
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      12
+# Exec time      0     53s      2s     12s      4s      6s      3s      3s
+# Lock time      0   995us    58us   107us    82us    93us    12us    84us
+# Rows sent      0      52       2       6    4.33    5.75    1.61    5.75
+# Rows examine   0   1.54M  63.95k 342.39k 131.38k 328.61k  91.87k 112.33k
+# Query size     0   7.37k     628     631  629.08  621.67       0  621.67
+# Bytes          0   7.37k     628     631  629.08  621.67       0  621.67
+# hostname       0     312      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  #####
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT           d.name ,d.largelogo , d.content,d.detailId         FROM           uc_active_detail d         WHERE           d.detailId         IN           (SELECT               u.detailId            FROM               uc_activate_info_main u            WHERE             u.bankid =                 (SELECT                     uc.bankid                  FROM                     uc_activate_info_main uc                  WHERE                     1=1                                   and                     uc.bankId = '81'                                   GROUP BY uc.bankId                 )           )         LIMIT 0,6\G
+
+# Query 19: 0 QPS, 0x concurrency, ID 0xE066A313DD29F0B9 at byte 5719687 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.16
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      11
+# Exec time      0     45s      3s      5s      4s      5s   812ms      4s
+# Lock time      0     2ms   148us   364us   227us   260us    54us   224us
+# Rows sent      0      11       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0  10.34k     963     963     963     963       0     963
+# Bytes          0  10.34k     963     963     963     963       0     963
+# hostname       0     286      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'CRCREDITMAIN'\G
+#    SHOW CREATE TABLE `CRCREDITMAIN`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditinfo'\G
+#    SHOW CREATE TABLE `CRCreditinfo`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditRecord'\G
+#    SHOW CREATE TABLE `CRCreditRecord`\G
+#    SHOW TABLE STATUS LIKE 'zdcardbranch'\G
+#    SHOW CREATE TABLE `zdcardbranch`\G
+#    SHOW TABLE STATUS LIKE 'ZDBankbranch'\G
+#    SHOW CREATE TABLE `ZDBankbranch`\G
+#    SHOW TABLE STATUS LIKE 'CRCARDGROUP'\G
+#    SHOW CREATE TABLE `CRCARDGROUP`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT COUNT(TOTAL.id) FROM(         SELECT CRCREDITMAIN.id AS id         FROM CRCREDITMAIN, CRCreditinfo, CRCreditRecord, zdcardbranch,         (SELECT bank.ParentID as id, bank.City FROM ZDBankbranch bank where 1 = 1                            AND bank.parentid!=0 group by bank.parentid) AS TMP ,ZDBankbranch         ,         (SELECT CRCARDGROUP.SORTID, CRCARDGROUP.CARDPID FROM CRCARDGROUP WHERE 1 = 1 AND CRCARDGROUP.sortid = '70' ) AS TMP2                   WHERE     1 = 1           AND CRCreditRecord.crcreditmainID = CRCreditinfo.id        AND CRCreditinfo.crcreditmainID = CRCREDITMAIN.id        AND CRCREDITMAIN.bankID = tmp.id        AND ZDBankbranch.id = tmp.id        AND ZDBankbranch.id = CRCREDITMAIN.bankID        AND zdcardbranch.id = CRCreditRecord.cardOrgID                             AND CRCREDITMAIN.ID = TMP2.CARDPID                                                                        GROUP BY ZDBankbranch.id,CRCreditmain.ID) AS TOTAL\G
+
+# Query 20: 0 QPS, 0x concurrency, ID 0x6580160D7F75D47A at byte 5121480 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.07
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      13
+# Exec time      0     44s      2s      4s      3s      4s   492ms      3s
+# Lock time      0     1ms    64us   135us   104us   125us    18us   103us
+# Rows sent      0      13       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0   4.04k     318     318     318     318       0     318
+# Bytes          0   4.04k     318     318     318     318       0     318
+# hostname       0     338      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT COUNT(1) FROM (   SELECT 1   FROM uc_active_detail detail,uc_activate_info_main main   WHERE main.detailid=detail.detailId   AND detail.isdelete=0   AND detail.dataformer IN (0,1) and detail.largelogo like 'http:%'   AND main.prop1=0             and    main.`city`='420100'      GROUP BY detail.detailid   ) tmp\G
+
+# Query 21: 0 QPS, 0x concurrency, ID 0x611B6A958F459E8C at byte 5771519 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.02
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       9
+# Exec time      0     41s      4s      5s      5s      5s   272ms      5s
+# Lock time      0     2ms   126us   259us   201us   247us    34us   204us
+# Rows sent      0       9       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0   4.38k     498     498     498     498       0     498
+# Bytes          0   4.38k     498     498     498     498       0     498
+# hostname       0     234      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_props'\G
+#    SHOW CREATE TABLE `uc_active_props`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select  count(1) as cnt     from     (SELECT max(c.propvalue) as point,ifnull(d.count,0) as cnt     FROM uc_activate_info_main a, uc_active_detail b, uc_active_props c ,uc_hitcount d        WHERE b.dataFormer=3 AND a.prop1 = 0 AND a.shopid =0 AND b.isdelete = 0     and d.name =b.detailId  AND d.crfrom='3'                and       a.bankId='22'                           AND a.detailId = b.detailId and c.detailid=b.detailid group by b.detailid                  order by cnt desc               ) t\G
+
+# Query 22: 0 QPS, 0x concurrency, ID 0xBAE13BA5530C76A4 at byte 5127132 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.17
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      12
+# Exec time      0     39s      2s      5s      3s      4s   747ms      3s
+# Lock time      0     2ms   138us   312us   206us   273us    43us   194us
+# Rows sent      0     120      10      10      10      10       0      10
+# Rows examine   0   4.43M 370.37k 415.19k 378.20k 380.41k  11.50k 362.29k
+# Query size     0   9.98k     852     852     852     852       0     852
+# Bytes          0   9.98k     852     852     852     852       0     852
+# hostname       0     312      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'zdbankbranch'\G
+#    SHOW CREATE TABLE `zdbankbranch`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_shop'\G
+#    SHOW CREATE TABLE `uc_active_shop`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT tmp.*,shop.x,shop.y,   (2 * 6378.137* ASIN(SQRT(POW(SIN(PI() * (NULL-shop.y) / 360), 2) + COS(PI() * NULL/ 180)* COS(shop.y* PI() / 180) * POW(SIN(PI() * (NULL-shop.x) / 360), 2)))) AS dis   FROM (   SELECT detail.detailId,detail.name,detail.fullName,detail.beginTime,detail.endTime,detail.weekDay,detail.content,main.bankid,main.shopId,detail.smalllogo,detail.largelogo,detail.addtime,   (SELECT NAME FROM zdbankbranch WHERE id=main.bankid) AS bankName   FROM uc_active_detail detail,uc_activate_info_main main   WHERE main.detailid=detail.detailId   AND detail.isdelete=0   AND detail.dataformer IN (0,1)   AND main.prop1=0 and detail.largelogo like 'http:%'             and    main.`city`='420100'      GROUP BY detail.detailid   ) tmp LEFT JOIN uc_active_shop shop    ON tmp.shopid=shop.`SHOPID`   ORDER BY tmp.endTime DESC,dis   LIMIT  0,10\G
+
+# Query 23: 0 QPS, 0x concurrency, ID 0xACF774DD4C456E8A at byte 8207876 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.03
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      11
+# Exec time      0     36s      3s      4s      3s      4s   312ms      3s
+# Lock time      0     3ms   173us   383us   241us   287us    59us   230us
+# Rows sent      0     110      10      10      10      10       0      10
+# Rows examine   0   7.28M 677.33k 677.39k 677.35k 650.62k       0 650.62k
+# Query size     0   8.83k     821     822  821.55  793.42       0  793.42
+# Bytes          0   8.83k     821     822  821.55  793.42       0  793.42
+# hostname       0     286      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'zdbankbranch'\G
+#    SHOW CREATE TABLE `zdbankbranch`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_shop'\G
+#    SHOW CREATE TABLE `uc_active_shop`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT tmp.*,shop.x,shop.y,   (2 * 6378.137* ASIN(SQRT(POW(SIN(PI() * (NULL-shop.y) / 360), 2) + COS(PI() * NULL/ 180)* COS(shop.y* PI() / 180) * POW(SIN(PI() * (NULL-shop.x) / 360), 2)))) AS dis   FROM (   SELECT detail.detailId,detail.name,detail.fullName,detail.beginTime,detail.endTime,detail.weekDay,detail.content,main.bankid,main.shopId,detail.smalllogo,detail.largelogo,detail.addtime,   (SELECT NAME FROM zdbankbranch WHERE id=main.bankid) AS bankName   FROM uc_active_detail detail,uc_activate_info_main main   WHERE main.detailid=detail.detailId   AND detail.isdelete=0   AND detail.dataformer IN (0,1)   AND main.prop1=0 and detail.largelogo like 'http:%'               GROUP BY detail.detailid   ) tmp LEFT JOIN uc_active_shop shop    ON tmp.shopid=shop.`SHOPID`   ORDER BY tmp.endTime DESC,dis   LIMIT  0,10\G
+
+# Query 24: 0 QPS, 0x concurrency, ID 0x63FA209570308C39 at byte 5152271 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0     36s     36s     36s     36s     36s       0     36s
+# Lock time      0    65us    65us    65us    65us    65us       0    65us
+# Rows sent      0      30      30      30      30      30       0      30
+# Rows examine   0 584.57k 584.57k 584.57k 584.57k 584.57k       0 584.57k
+# Query size     0     173     173     173     173     173       0     173
+# Bytes          0     173     173     173     173     173       0     173
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s
+#  10s+  ################################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_shop'\G
+#    SHOW CREATE TABLE `uc_active_shop`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT  bankid FROM uc_activate_info_main where bankid is not null and prop1='0' and shopid in    (SELECT shopid from uc_active_shop where 1=1          )     GROUP BY bankid\G
+
+# Query 25: 0 QPS, 0x concurrency, ID 0x1C879B0C6246E2E0 at byte 5807935 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.05
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       9
+# Exec time      0     32s      3s      4s      4s      4s   415ms      3s
+# Lock time      0     1ms   107us   153us   123us   152us    15us   113us
+# Rows sent      0       9       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0   4.40k     501     501     501     501       0     501
+# Bytes          0   4.40k     501     501     501     501       0     501
+# hostname       0     234      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_props'\G
+#    SHOW CREATE TABLE `uc_active_props`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select  count(1) as cnt     from     (SELECT max(c.propvalue) as point,ifnull(d.count,0) as cnt     FROM uc_activate_info_main a, uc_active_detail b, uc_active_props c ,uc_hitcount d        WHERE b.dataFormer=3 AND a.prop1 = 0 AND a.shopid =0 AND b.isdelete = 0     and d.name =b.detailId  AND d.crfrom='3'                     and       c.propname = '0'                      AND a.detailId = b.detailId and c.detailid=b.detailid group by b.detailid                  order by cnt desc               ) t\G
+
+# Query 26: 0 QPS, 0x concurrency, ID 0x0CF4530903570649 at byte 5777310 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.04
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      10
+# Exec time      0     31s      3s      4s      3s      4s   360ms      3s
+# Lock time      0     2ms   114us   306us   199us   273us    74us   247us
+# Rows sent      0   5.83k     597     597     597     597       0     597
+# Rows examine   0 270.49k  27.05k  27.05k  27.05k  27.05k       0  27.05k
+# Query size     0   8.30k     850     850     850     850       0     850
+# Bytes          0   8.30k     850     850     850     850       0     850
+# hostname       0     260      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'ZCIMAGE'\G
+#    SHOW CREATE TABLE `ZCIMAGE`\G
+#    SHOW TABLE STATUS LIKE 'zdbankbranch'\G
+#    SHOW CREATE TABLE `zdbankbranch`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_type'\G
+#    SHOW CREATE TABLE `uc_activate_type`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_props'\G
+#    SHOW CREATE TABLE `uc_active_props`\G
+#    SHOW TABLE STATUS LIKE 'uc_hitcount'\G
+#    SHOW CREATE TABLE `uc_hitcount`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT b.detailId,c.id,b.typeowner as typeid,b.fullname,     (select CONCAT('http://img.51credit.com/credit/',CONCAT(PATH,"s_"),FILENAME) from ZCIMAGE where id = b.smalllogo) as smalllogo,     a.bankid,(select name from zdbankbranch where id=a.bankid) as bankName,     (select name from uc_activate_type where typeid=b.typeowner AND crfrom = 1) as typeName,     max(c.propvalue) as point,max(c.prop4) as cash,c.propname as type,        ifnull(d.count,0) as cnt ,b.prop4     FROM uc_activate_info_main a,uc_active_detail b, uc_active_props c,uc_hitcount d      WHERE  b.dataFormer=3 AND a.prop1 = 0 AND a.shopid = 0 AND b.isdelete = 0     and d.name =b.detailId  AND d.crfrom='3'                 and     a.bankId='22'                            AND a.detailId = b.detailId and c.detailid=b.detailid  group by b.detailid               order by cnt desc\G
+
+# Query 27: 0 QPS, 0x concurrency, ID 0x655ABF63368DE61C at byte 5381322 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.91
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       7
+# Exec time      0     30s      2s      7s      4s      7s      2s      4s
+# Lock time      0     1ms   102us   351us   209us   348us    71us   214us
+# Rows sent      0       7       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0   5.29k     774     774     774     774       0     774
+# Bytes          0   5.29k     774     774     774     774       0     774
+# hostname       0     182      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'CRCREDITMAIN'\G
+#    SHOW CREATE TABLE `CRCREDITMAIN`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditinfo'\G
+#    SHOW CREATE TABLE `CRCreditinfo`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditRecord'\G
+#    SHOW CREATE TABLE `CRCreditRecord`\G
+#    SHOW TABLE STATUS LIKE 'zdcardbranch'\G
+#    SHOW CREATE TABLE `zdcardbranch`\G
+#    SHOW TABLE STATUS LIKE 'ZDBankbranch'\G
+#    SHOW CREATE TABLE `ZDBankbranch`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT COUNT(TOTAL.id) FROM(         SELECT CRCREDITMAIN.id AS id         FROM CRCREDITMAIN, CRCreditinfo, CRCreditRecord, zdcardbranch,         (SELECT bank.ParentID as id, bank.City FROM ZDBankbranch bank where 1 = 1                            AND bank.parentid!=0 group by bank.parentid) AS TMP ,ZDBankbranch                   WHERE     1 = 1           AND CRCreditRecord.crcreditmainID = CRCreditinfo.id        AND CRCreditinfo.crcreditmainID = CRCREDITMAIN.id        AND CRCREDITMAIN.bankID = tmp.id        AND ZDBankbranch.id = tmp.id        AND ZDBankbranch.id = CRCREDITMAIN.bankID        AND zdcardbranch.id = CRCreditRecord.cardOrgID                                                                                 GROUP BY ZDBankbranch.id,CRCreditmain.ID) AS TOTAL\G
+
+# Query 28: 0 QPS, 0x concurrency, ID 0xD179AD987505268F at byte 4216297 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.06
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      10
+# Exec time      0     25s      2s      3s      2s      3s   372ms      2s
+# Lock time      0     1ms   100us   181us   133us   167us    26us   119us
+# Rows sent      0     100      10      10      10      10       0      10
+# Rows examine   0   7.86M 804.89k 804.90k 804.90k 790.84k       0 790.84k
+# Query size     0   4.09k     419     419     419     419       0     419
+# Bytes          0   4.09k     419     419     419     419       0     419
+# hostname       0     260      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'zdbankbranch'\G
+#    SHOW CREATE TABLE `zdbankbranch`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT tmp.bankId,      (SELECT NAME FROM zdbankbranch WHERE id=tmp.bankId) AS bankName,         COUNT(1) AS cnt FROM (      SELECT main.bankid FROM uc_activate_info_main main,uc_active_detail detail      WHERE main.detailid=detail.detailid      AND detail.isdelete=0      AND main.prop1=0      AND detail.dataformer IN (0,1)      GROUP BY detail.detailid      ) tmp GROUP BY bankId      ORDER BY cnt DESC      LIMIT 10\G
+
+# Query 29: 0 QPS, 0x concurrency, ID 0xDBA0A245AEBB1EA9 at byte 8278926 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.01
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      10
+# Exec time      0     21s      2s      2s      2s      2s   147ms      2s
+# Lock time      0     1ms    75us   179us   124us   144us    31us   131us
+# Rows sent      0      10       1       1       1       1       0       1
+# Rows examine   0   6.44M 659.55k 659.55k 659.55k 659.55k       0 659.55k
+# Query size     0   2.23k     228     229  228.50  223.14       0  223.14
+# Bytes          0   2.23k     228     229  228.50  223.14       0  223.14
+# hostname       0     260      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'zcarticle'\G
+#    SHOW CREATE TABLE `zcarticle`\G
+#    SHOW TABLE STATUS LIKE 'zccatalog'\G
+#    SHOW CREATE TABLE `zccatalog`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT count(1)   FROM zcarticle a ,zccatalog l      WHERE l.id = a.CatalogID     AND a.status<>40         and (SELECT alias FROM zccatalog WHERE ID=l.parentID)  = 'scb'         order by a.topflag desc,a.orderflag desc,a.ID desc\G
+
+# Query 30: 0 QPS, 0x concurrency, ID 0xEA90E3D41C2B2384 at byte 5108077 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.20
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       5
+# Exec time      0     14s      2s      4s      3s      4s   768ms      2s
+# Lock time      0   802us   115us   191us   160us   185us    23us   159us
+# Rows sent      0      50      10      10      10      10       0      10
+# Rows examine   0 897.84k  81.78k 297.67k 179.57k 283.86k  93.03k 136.54k
+# Query size     0   4.14k     847     848  847.80  833.10       0  833.10
+# Bytes          0   4.14k     847     848  847.80  833.10       0  833.10
+# hostname       0     130      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'zdbankbranch'\G
+#    SHOW CREATE TABLE `zdbankbranch`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_shop'\G
+#    SHOW CREATE TABLE `uc_active_shop`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT tmp.*,shop.x,shop.y,   (2 * 6378.137* ASIN(SQRT(POW(SIN(PI() * (NULL-shop.y) / 360), 2) + COS(PI() * NULL/ 180)* COS(shop.y* PI() / 180) * POW(SIN(PI() * (NULL-shop.x) / 360), 2)))) AS dis   FROM (   SELECT detail.detailId,detail.name,detail.fullName,detail.beginTime,detail.endTime,detail.weekDay,detail.content,main.bankid,main.shopId,detail.smalllogo,detail.largelogo,detail.addtime,   (SELECT NAME FROM zdbankbranch WHERE id=main.bankid) AS bankName   FROM uc_active_detail detail,uc_activate_info_main main   WHERE main.detailid=detail.detailId   AND detail.isdelete=0   AND detail.dataformer IN (0,1)   AND main.prop1=0 and detail.largelogo like 'http:%'    and    main.bankid='26'               GROUP BY detail.detailid   ) tmp LEFT JOIN uc_active_shop shop    ON tmp.shopid=shop.`SHOPID`   ORDER BY tmp.endTime DESC,dis   LIMIT  0,10\G
+
+# Query 31: 0 QPS, 0x concurrency, ID 0x7104B36E1559A004 at byte 3196893 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.01
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0     14s      7s      7s      7s      7s   240ms      7s
+# Lock time      0   269us    98us   171us   134us   171us    51us   134us
+# Rows sent     31 212.05k 106.02k 106.02k 106.02k 106.02k    1.41 106.02k
+# Rows examine   0   2.36M   1.18M   1.18M   1.18M   1.18M    8.49   1.18M
+# Query size     0   1.13k     580     580     580     580       0     580
+# Bytes          0   1.13k     580     580     580     580       0     580
+# hostname       0      52      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'dict_city'\G
+#    SHOW CREATE TABLE `dict_city`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT tmp.*,bank.name as bankName,bank.enSignName FROM   (SELECT      detail.detailId,     detail.fullName,     detail.beginTime,     detail.endTime,     detail.content,     detail.largelogo,           detail.weekday,     main.bankId,     main.city,    (select name from dict_city c where c.code=main.city) as cityName    FROM     uc_activate_info_main main,     uc_active_detail detail    WHERE detail.`detailId` = main.`detailId`      AND main.`prop1` = 0      AND detail.`dataFormer` IN (0, 1)      GROUP BY detail.detailId   ) tmp,zdbankbranch bank   WHERE tmp.bankid=bank.id\G
+
+# Query 32: 0 QPS, 0x concurrency, ID 0xB297B7A6A254D197 at byte 7792487 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.01
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       5
+# Exec time      0     11s      2s      2s      2s      2s   175ms      2s
+# Lock time      0   512us    51us   161us   102us   159us    39us    98us
+# Rows sent      0       5       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0   1.25k     255     255     255     255       0     255
+# Bytes          0   1.25k     255     255     255     255       0     255
+# hostname       0     130      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT COUNT(1) AS cnt FROM (   SELECT 1   FROM uc_active_detail detail,uc_activate_info_main main   WHERE main.detailid=detail.detailId   AND detail.isdelete=0   AND detail.dataformer IN (0,1)   AND main.prop1=0               GROUP BY main.bankId   ) tmp\G
+
+# Query 33: 0 QPS, 0x concurrency, ID 0xE32600FDBF01AB5C at byte 5763581 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.06
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0     10s      5s      5s      5s      5s   536ms      5s
+# Lock time      0   539us   248us   291us   269us   291us    30us   269us
+# Rows sent      0       2       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0   1.72k     881     881     881     881       0     881
+# Bytes          0   1.72k     881     881     881     881       0     881
+# hostname       0      52      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'CRCREDITMAIN'\G
+#    SHOW CREATE TABLE `CRCREDITMAIN`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditinfo'\G
+#    SHOW CREATE TABLE `CRCreditinfo`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditRecord'\G
+#    SHOW CREATE TABLE `CRCreditRecord`\G
+#    SHOW TABLE STATUS LIKE 'zdcardbranch'\G
+#    SHOW CREATE TABLE `zdcardbranch`\G
+#    SHOW TABLE STATUS LIKE 'ZDBankbranch'\G
+#    SHOW CREATE TABLE `ZDBankbranch`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT COUNT(TOTAL.id) FROM(         SELECT CRCREDITMAIN.id AS id         FROM CRCREDITMAIN, CRCreditinfo, CRCreditRecord, zdcardbranch,         (SELECT bank.ParentID as id, bank.City FROM ZDBankbranch bank where 1 = 1                            AND bank.parentid!=0 group by bank.parentid) AS TMP ,ZDBankbranch                   WHERE     1 = 1           AND CRCreditRecord.crcreditmainID = CRCreditinfo.id        AND CRCreditinfo.crcreditmainID = CRCREDITMAIN.id        AND CRCREDITMAIN.bankID = tmp.id        AND ZDBankbranch.id = tmp.id        AND ZDBankbranch.id = CRCREDITMAIN.bankID        AND zdcardbranch.id = CRCreditRecord.cardOrgID                                                        AND             CRCREDITMAIN.currencyid !=" , , , , ," AND CRCREDITMAIN.dcurrencyid =" , , , , ,"                                   GROUP BY ZDBankbranch.id,CRCreditmain.ID) AS TOTAL\G
+
+# Query 34: 0 QPS, 0x concurrency, ID 0x97B11E12CF72E865 at byte 5814112 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       4
+# Exec time      0      9s      2s      2s      2s      2s    75ms      2s
+# Lock time      0   862us   164us   303us   215us   301us    53us   252us
+# Rows sent      1   9.03k   2.26k   2.26k   2.26k   2.26k       0   2.26k
+# Rows examine   0 107.41k  26.85k  26.85k  26.85k  26.85k       0  26.85k
+# Query size     0   3.34k     855     855     855     855       0     855
+# Bytes          0   3.34k     855     855     855     855       0     855
+# hostname       0     104      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'ZCIMAGE'\G
+#    SHOW CREATE TABLE `ZCIMAGE`\G
+#    SHOW TABLE STATUS LIKE 'zdbankbranch'\G
+#    SHOW CREATE TABLE `zdbankbranch`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_type'\G
+#    SHOW CREATE TABLE `uc_activate_type`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_props'\G
+#    SHOW CREATE TABLE `uc_active_props`\G
+#    SHOW TABLE STATUS LIKE 'uc_hitcount'\G
+#    SHOW CREATE TABLE `uc_hitcount`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT b.detailId,c.id,b.typeowner as typeid,b.fullname,     (select CONCAT('http://img.51credit.com/credit/',CONCAT(PATH,"s_"),FILENAME) from ZCIMAGE where id = b.smalllogo) as smalllogo,     a.bankid,(select name from zdbankbranch where id=a.bankid) as bankName,     (select name from uc_activate_type where typeid=b.typeowner AND crfrom = 1) as typeName,     max(c.propvalue) as point,max(c.prop4) as cash,c.propname as type,        ifnull(d.count,0) as cnt ,b.prop4     FROM uc_activate_info_main a,uc_active_detail b, uc_active_props c,uc_hitcount d      WHERE  b.dataFormer=3 AND a.prop1 = 0 AND a.shopid = 0 AND b.isdelete = 0     and d.name =b.detailId  AND d.crfrom='3'            and     b.typeowner = '12'                                 AND a.detailId = b.detailId and c.detailid=b.detailid  group by b.detailid               order by cnt desc\G
+
+# Query 35: 0 QPS, 0x concurrency, ID 0x9C76D268920CFF36 at byte 5098057 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.02
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       3
+# Exec time      0      8s      2s      3s      3s      3s   200ms      3s
+# Lock time      0   216us    67us    77us    72us    76us     4us    69us
+# Rows sent      0       3       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0     941     313     314  313.67  313.99    0.50  313.99
+# Bytes          0     941     313     314  313.67  313.99    0.50  313.99
+# hostname       0      78      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT COUNT(1) FROM (   SELECT 1   FROM uc_active_detail detail,uc_activate_info_main main   WHERE main.detailid=detail.detailId   AND detail.isdelete=0   AND detail.dataformer IN (0,1) and detail.largelogo like 'http:%'   AND main.prop1=0    and    main.bankid='26'               GROUP BY detail.detailid   ) tmp\G
+
+# Query 36: 0 QPS, 0x concurrency, ID 0xACEBE9EDD660DAAA at byte 266496 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.01
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0      8s      4s      4s      4s      4s   159ms      4s
+# Lock time      0   382us   186us   196us   191us   196us     7us   191us
+# Rows sent      0       6       3       3       3       3       0       3
+# Rows examine   0   1.94M 993.97k 993.97k 993.97k 993.97k       0 993.97k
+# Query size     0   1.38k     708     708     708     708       0     708
+# Bytes          0   1.38k     708     708     708     708       0     708
+# hostname       0      52      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_shop'\G
+#    SHOW CREATE TABLE `uc_active_shop`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_goods_sort'\G
+#    SHOW CREATE TABLE `uc_goods_sort`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT owenrtype AS shopTypeId,good.sort_Name AS shopTypeName,totalShopCnt FROM (    select owenrtype,count(1) as totalShopCnt from     (SELECT shop.owenrtype     FROM uc_activate_info_main main,uc_active_shop shop,uc_active_detail detail     WHERE main.`shopId`=shop.`SHOPID`     AND detail.detailid=main.detailid     AND main.`prop1`=0     AND shop.`PROP1`=0     AND main.shopid IS NOT NULL     AND main.bankid IS NOT NULL     AND main.detailId IS NOT NULL and shop.owenrtype is not null     GROUP BY main.shopId    ) aa GROUP BY owenrtype   ) tmp left join uc_goods_sort good   on tmp.owenrtype=good.id   where good.prop1!=1 AND good.parent_id=0 AND good.sort_type=0   ORDER BY totalShopCnt DESC   LIMIT 3\G
+
+# Query 37: 0 QPS, 0x concurrency, ID 0x323A2A4D5B724228 at byte 6846183 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.03
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0      8s      4s      4s      4s      4s   325ms      4s
+# Lock time      0   201us    63us   138us   100us   138us    53us   100us
+# Rows sent     41 284.30k 142.15k 142.15k 142.15k 142.15k       0 142.15k
+# Rows examine   0   1.01M 516.37k 516.37k 516.37k 516.37k       0 516.37k
+# Query size     0     624     312     312     312     312       0     312
+# Bytes          0     624     312     312     312     312       0     312
+# hostname       0      52      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'dict_city'\G
+#    SHOW CREATE TABLE `dict_city`\G
+#    SHOW TABLE STATUS LIKE 'uc_goods_sort'\G
+#    SHOW CREATE TABLE `uc_goods_sort`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_shop'\G
+#    SHOW CREATE TABLE `uc_active_shop`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT shop.fullName,shop.tel,shop.address,main.`city`,   (SELECT NAME FROM dict_city WHERE CODE=main.`city`) AS cityName,   (SELECT sort_name FROM uc_goods_sort WHERE id=shop.owenrtype LIMIT 1) AS typeName    FROM uc_active_shop shop,uc_activate_info_main main   WHERE main.prop1=0 AND shop.shopId=main.`shopId`\G
+
+# Query 38: 0 QPS, 0x concurrency, ID 0x060401D8ACFE35A2 at byte 5775776 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      7s      7s      7s      7s      7s       0      7s
+# Lock time      0   293us   293us   293us   293us   293us       0   293us
+# Rows sent      0   5.51k   5.51k   5.51k   5.51k   5.51k       0   5.51k
+# Rows examine   0  69.66k  69.66k  69.66k  69.66k  69.66k       0  69.66k
+# Query size     0     823     823     823     823     823       0     823
+# Bytes          0     823     823     823     823     823       0     823
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'ZCIMAGE'\G
+#    SHOW CREATE TABLE `ZCIMAGE`\G
+#    SHOW TABLE STATUS LIKE 'zdbankbranch'\G
+#    SHOW CREATE TABLE `zdbankbranch`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_type'\G
+#    SHOW CREATE TABLE `uc_activate_type`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_props'\G
+#    SHOW CREATE TABLE `uc_active_props`\G
+#    SHOW TABLE STATUS LIKE 'uc_hitcount'\G
+#    SHOW CREATE TABLE `uc_hitcount`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT b.detailId,c.id,b.typeowner as typeid,b.fullname,     (select CONCAT('http://img.51credit.com/credit/',CONCAT(PATH,"s_"),FILENAME) from ZCIMAGE where id = b.smalllogo) as smalllogo,     a.bankid,(select name from zdbankbranch where id=a.bankid) as bankName,     (select name from uc_activate_type where typeid=b.typeowner AND crfrom = 1) as typeName,     max(c.propvalue) as point,max(c.prop4) as cash,c.propname as type,        ifnull(d.count,0) as cnt ,b.prop4     FROM uc_activate_info_main a,uc_active_detail b, uc_active_props c,uc_hitcount d      WHERE  b.dataFormer=3 AND a.prop1 = 0 AND a.shopid = 0 AND b.isdelete = 0     and d.name =b.detailId  AND d.crfrom='3'                                       AND a.detailId = b.detailId and c.detailid=b.detailid  group by b.detailid               order by cnt desc\G
+
+# Query 39: 0 QPS, 0x concurrency, ID 0x467FAE25A4E7619D at byte 5375534 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      7s      7s      7s      7s      7s       0      7s
+# Lock time      0   509us   509us   509us   509us   509us       0   509us
+# Rows sent      0       5       5       5       5       5       0       5
+# Rows examine   0  62.75k  62.75k  62.75k  62.75k  62.75k       0  62.75k
+# Query size     0   1.61k   1.61k   1.61k   1.61k   1.61k       0   1.61k
+# Bytes          0   1.61k   1.61k   1.61k   1.61k   1.61k       0   1.61k
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'CRCREDITMAIN'\G
+#    SHOW CREATE TABLE `CRCREDITMAIN`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditinfo'\G
+#    SHOW CREATE TABLE `CRCreditinfo`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditRecord'\G
+#    SHOW CREATE TABLE `CRCreditRecord`\G
+#    SHOW TABLE STATUS LIKE 'zdcardbranch'\G
+#    SHOW CREATE TABLE `zdcardbranch`\G
+#    SHOW TABLE STATUS LIKE 'ZDBankbranch'\G
+#    SHOW CREATE TABLE `ZDBankbranch`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT CRCREDITMAIN.id AS id, CRCREDITMAIN.name AS name, CRCREDITMAIN.AliasName,          TMP.prop1, TMP.prop2, TMP.imagepath1, TMP.catchword,          CRCREDITMAIN.bankID, CRCREDITMAIN.imagepath1 AS imagepath, CRCREDITMAIN.applyclause, CRCREDITMAIN.specialinfo,          CRCREDITMAIN.applystate   FROM CRCREDITMAIN, CRCreditinfo, CRCreditRecord, zdcardbranch,   (SELECT bank.ParentID as id, bank.City,    (SELECT ZDBankbranch.name from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS prop1,    (SELECT ZDBankbranch.MidLogo from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS imagepath1,        (SELECT ZDBankbranch.ensignname from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS catchword,   CONCAT("http://kaku.51credit.com/", (SELECT ZDBankbranch.ensignname FROM ZDBankbranch WHERE ZDBankbranch.id = bank.ParentID)) AS prop2   FROM ZDBankbranch bank where 1 = 1                            AND bank.parentid!=0 group by bank.parentid) AS TMP,ZDBankbranch       WHERE     1 = 1      AND CRCreditRecord.crcreditmainID = CRCreditinfo.id        AND CRCreditinfo.crcreditmainID = CRCREDITMAIN.id        AND CRCREDITMAIN.bankID = tmp.id        AND ZDBankbranch.id = tmp.id        AND ZDBankbranch.id = CRCREDITMAIN.bankID        AND zdcardbranch.id = CRCreditRecord.cardOrgID                                          AND             CRCREDITMAIN.currencyid !=" , , , , ," AND CRCREDITMAIN.dcurrencyid =" , , , , ,"                                   GROUP BY ZDBankbranch.id,CRCreditmain.ID                   order by ZDBankbranch.OrderFlag ASC                   ,            CRCreditmain.OrderFlag DESC                  limit 0,5\G
+
+# Query 40: 0 QPS, 0x concurrency, ID 0x649126C3F10331C7 at byte 5154684 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.02
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       3
+# Exec time      0      7s      2s      3s      2s      3s   210ms      2s
+# Lock time      0   442us   127us   168us   147us   167us    17us   144us
+# Rows sent      0       3       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0   1.20k     407     410     408  400.73    0.00  400.73
+# Bytes          0   1.20k     407     410     408  400.73    0.00  400.73
+# hostname       0      78      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_active_shop'\G
+#    SHOW CREATE TABLE `uc_active_shop`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select count(1) from (      select tmpp.* from (   select us.shopid,us.name,us.fullname,us.LARGELOGO,us.tel,us.ADDRESS,us.x,us.y    from uc_active_shop  us,   (select shopid  from  uc_activate_info_main where prop1 ='0' and shopid is not null and bankid is not NULL and detailId is not null         GROUP BY shopId) tmp    where tmp.shopid =us.SHOPID      and    owenrtype='71'       ) tmpp  where 1=1   ) t\G
+
+# Query 41: 0 QPS, 0x concurrency, ID 0x1CF4E6171AB0EE56 at byte 5371903 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      7s      7s      7s      7s      7s       0      7s
+# Lock time      0   264us   264us   264us   264us   264us       0   264us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0     839     839     839     839     839       0     839
+# Bytes          0     839     839     839     839     839       0     839
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'CRCREDITMAIN'\G
+#    SHOW CREATE TABLE `CRCREDITMAIN`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditinfo'\G
+#    SHOW CREATE TABLE `CRCreditinfo`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditRecord'\G
+#    SHOW CREATE TABLE `CRCreditRecord`\G
+#    SHOW TABLE STATUS LIKE 'zdcardbranch'\G
+#    SHOW CREATE TABLE `zdcardbranch`\G
+#    SHOW TABLE STATUS LIKE 'ZDBankbranch'\G
+#    SHOW CREATE TABLE `ZDBankbranch`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT COUNT(TOTAL.id) FROM(         SELECT CRCREDITMAIN.id AS id         FROM CRCREDITMAIN, CRCreditinfo, CRCreditRecord, zdcardbranch,         (SELECT bank.ParentID as id, bank.City FROM ZDBankbranch bank where 1 = 1                            AND bank.parentid!=0 group by bank.parentid) AS TMP ,ZDBankbranch                   WHERE     1 = 1           AND CRCreditRecord.crcreditmainID = CRCreditinfo.id        AND CRCreditinfo.crcreditmainID = CRCREDITMAIN.id        AND CRCREDITMAIN.bankID = tmp.id        AND ZDBankbranch.id = tmp.id        AND ZDBankbranch.id = CRCREDITMAIN.bankID        AND zdcardbranch.id = CRCreditRecord.cardOrgID                                                                 AND             CRCREDITMAIN.dcurrencyid !=" , , , , ,"                          GROUP BY ZDBankbranch.id,CRCreditmain.ID) AS TOTAL\G
+
+# Query 42: 0 QPS, 0x concurrency, ID 0x021CC1E8EAA8919B at byte 5354393 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      6s      6s      6s      6s      6s       0      6s
+# Lock time      0   434us   434us   434us   434us   434us       0   434us
+# Rows sent      0       5       5       5       5       5       0       5
+# Rows examine   0  58.88k  58.88k  58.88k  58.88k  58.88k       0  58.88k
+# Query size     0   1.57k   1.57k   1.57k   1.57k   1.57k       0   1.57k
+# Bytes          0   1.57k   1.57k   1.57k   1.57k   1.57k       0   1.57k
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'CRCREDITMAIN'\G
+#    SHOW CREATE TABLE `CRCREDITMAIN`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditinfo'\G
+#    SHOW CREATE TABLE `CRCreditinfo`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditRecord'\G
+#    SHOW CREATE TABLE `CRCreditRecord`\G
+#    SHOW TABLE STATUS LIKE 'zdcardbranch'\G
+#    SHOW CREATE TABLE `zdcardbranch`\G
+#    SHOW TABLE STATUS LIKE 'ZDBankbranch'\G
+#    SHOW CREATE TABLE `ZDBankbranch`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT CRCREDITMAIN.id AS id, CRCREDITMAIN.name AS name, CRCREDITMAIN.AliasName,          TMP.prop1, TMP.prop2, TMP.imagepath1, TMP.catchword,          CRCREDITMAIN.bankID, CRCREDITMAIN.imagepath1 AS imagepath, CRCREDITMAIN.applyclause, CRCREDITMAIN.specialinfo,          CRCREDITMAIN.applystate   FROM CRCREDITMAIN, CRCreditinfo, CRCreditRecord, zdcardbranch,   (SELECT bank.ParentID as id, bank.City,    (SELECT ZDBankbranch.name from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS prop1,    (SELECT ZDBankbranch.MidLogo from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS imagepath1,        (SELECT ZDBankbranch.ensignname from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS catchword,   CONCAT("http://kaku.51credit.com/", (SELECT ZDBankbranch.ensignname FROM ZDBankbranch WHERE ZDBankbranch.id = bank.ParentID)) AS prop2   FROM ZDBankbranch bank where 1 = 1                            AND bank.parentid!=0 group by bank.parentid) AS TMP,ZDBankbranch       WHERE     1 = 1      AND CRCreditRecord.crcreditmainID = CRCreditinfo.id        AND CRCreditinfo.crcreditmainID = CRCREDITMAIN.id        AND CRCREDITMAIN.bankID = tmp.id        AND ZDBankbranch.id = tmp.id        AND ZDBankbranch.id = CRCREDITMAIN.bankID        AND zdcardbranch.id = CRCreditRecord.cardOrgID                                                   AND             CRCREDITMAIN.dcurrencyid !=" , , , , ,"                          GROUP BY ZDBankbranch.id,CRCreditmain.ID                   order by ZDBankbranch.OrderFlag ASC                   ,            CRCreditmain.OrderFlag DESC                  limit 0,5\G
+
+# Query 43: 0 QPS, 0x concurrency, ID 0x731ADDC074D5ADBA at byte 8285384 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      6s      6s      6s      6s      6s       0      6s
+# Lock time      0   253us   253us   253us   253us   253us       0   253us
+# Rows sent      0      10      10      10      10      10       0      10
+# Rows examine   0   1.09M   1.09M   1.09M   1.09M   1.09M       0   1.09M
+# Query size     0     856     856     856     856     856       0     856
+# Bytes          0     856     856     856     856     856       0     856
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'zdbankbranch'\G
+#    SHOW CREATE TABLE `zdbankbranch`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_shop'\G
+#    SHOW CREATE TABLE `uc_active_shop`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT tmp.*,shop.x,shop.y,   (2 * 6378.137* ASIN(SQRT(POW(SIN(PI() * ('30.877925'-shop.y) / 360), 2) + COS(PI() * '30.877925'/ 180)* COS(shop.y* PI() / 180) * POW(SIN(PI() * ('120.137243'-shop.x) / 360), 2)))) AS dis   FROM (   SELECT detail.detailId,detail.name,detail.fullName,detail.beginTime,detail.endTime,detail.weekDay,detail.content,main.bankid,main.shopId,detail.smalllogo,detail.largelogo,   (SELECT NAME FROM zdbankbranch WHERE id=main.bankid) AS bankName   FROM uc_active_detail detail,uc_activate_info_main main   WHERE main.detailid=detail.detailId   AND detail.isdelete=0   AND detail.dataformer IN (0,1)   AND main.prop1=0   and detail.endtime is not null               GROUP BY detail.detailid   ) tmp LEFT JOIN uc_active_shop shop    ON tmp.shopid=shop.`SHOPID`   and tmp.endtime is not null   ORDER BY tmp.endTime desc,dis   LIMIT  0,10\G
+
+# Query 44: 0 QPS, 0x concurrency, ID 0x2248199E2C19B0DC at byte 7665206 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0      5s      2s      2s      2s      2s    48ms      2s
+# Lock time      0   438us   210us   228us   219us   228us    12us   219us
+# Rows sent      0       2       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0   1.40k     718     718     718     718       0     718
+# Bytes          0   1.40k     718     718     718     718       0     718
+# hostname       0      52      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_active_shop'\G
+#    SHOW CREATE TABLE `uc_active_shop`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select count(1) from(     select tmpp.* from (   select us.shopid,us.name,us.fullname,us.LARGELOGO,us.tel,us.ADDRESS,us.x,us.y,(2 * 6378.137* ASIN(SQRT(POW(SIN(PI() * ('42.896414'-us.y) / 360), 2) + COS(PI() * '42.896414'/ 180)* COS(us.y* PI() / 180) * POW(SIN(PI() * ('129.485902'-us.x) / 360), 2))))*1000 AS  distance     from uc_active_shop  us,   (select shopid  from  uc_activate_info_main where prop1 ='0' and shopid is not null and bankid is not NULL and detailId is not null         GROUP BY shopId) tmp    where tmp.shopid =us.SHOPID          and  (us.x is not null or us.y is not null)           ) tmpp  where 1=1      and tmpp.distance !=0    and   tmpp.distance  <   '500'      order by tmpp.distance   ) t\G
+
+# Query 45: 0 QPS, 0x concurrency, ID 0x3923DFC5C4D39FC9 at byte 5113211 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      5s      5s      5s      5s      5s       0      5s
+# Lock time      0   233us   233us   233us   233us   233us       0   233us
+# Rows sent      0      10      10      10      10      10       0      10
+# Rows examine   0 287.12k 287.12k 287.12k 287.12k 287.12k       0 287.12k
+# Query size     0     853     853     853     853     853       0     853
+# Bytes          0     853     853     853     853     853       0     853
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'zdbankbranch'\G
+#    SHOW CREATE TABLE `zdbankbranch`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_shop'\G
+#    SHOW CREATE TABLE `uc_active_shop`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT tmp.*,shop.x,shop.y,   (2 * 6378.137* ASIN(SQRT(POW(SIN(PI() * (NULL-shop.y) / 360), 2) + COS(PI() * NULL/ 180)* COS(shop.y* PI() / 180) * POW(SIN(PI() * (NULL-shop.x) / 360), 2)))) AS dis   FROM (   SELECT detail.detailId,detail.name,detail.fullName,detail.beginTime,detail.endTime,detail.weekDay,detail.content,main.bankid,main.shopId,detail.smalllogo,detail.largelogo,detail.addtime,   (SELECT NAME FROM zdbankbranch WHERE id=main.bankid) AS bankName   FROM uc_active_detail detail,uc_activate_info_main main   WHERE main.detailid=detail.detailId   AND detail.isdelete=0   AND detail.dataformer IN (0,1)   AND main.prop1=0 and detail.largelogo like 'http:%'       and    detail.typeowner='50'            GROUP BY detail.detailid   ) tmp LEFT JOIN uc_active_shop shop    ON tmp.shopid=shop.`SHOPID`   ORDER BY tmp.endTime DESC,dis   LIMIT  0,10\G
+
+# Query 46: 0 QPS, 0x concurrency, ID 0x70EB492EC2D15A3A at byte 4021528 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.03
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0      5s      2s      2s      2s      2s   241ms      2s
+# Lock time      0   531us   208us   323us   265us   323us    81us   265us
+# Rows sent      0      16       6      10       8      10    2.83       8
+# Rows examine   0   2.27M   1.14M   1.14M   1.14M   1.14M   25.46   1.14M
+# Query size     0   1.39k     713     715     714     715    1.41     714
+# Bytes          0   1.39k     713     715     714     715    1.41     714
+# hostname       0      52      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_active_shop'\G
+#    SHOW CREATE TABLE `uc_active_shop`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select tmpp.* from (   select us.shopid,us.name,us.fullname,us.LARGELOGO,us.tel,us.ADDRESS,us.x,us.y,us.OWENRTYPE,(2 * 6378.137* ASIN(SQRT(POW(SIN(PI() * ('31.771397'-us.y) / 360), 2) + COS(PI() * '31.771397'/ 180)* COS(us.y* PI() / 180) * POW(SIN(PI() * ('119.981861'-us.x) / 360), 2))))*1000 AS  distance     from uc_active_shop  us,   (select shopid  from  uc_activate_info_main where prop1 ='0' and shopid is not null and bankid is not NULL and detailId is not null         GROUP BY shopId) tmp    where tmp.shopid =us.SHOPID          and  (us.x is not null or us.y is not null)           ) tmpp  where 1=1      and tmpp.distance !=0    and   tmpp.distance  <   '2000'      order by tmpp.distance   LIMIT  40,10\G
+
+# Query 47: 0 QPS, 0x concurrency, ID 0xCB2F52086C6ADEBD at byte 5645556 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0      5s      2s      2s      2s      2s    53ms      2s
+# Lock time      0   846us   352us   494us   423us   494us   100us   423us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0  37.64k  18.82k  18.82k  18.82k  18.82k       0  18.82k
+# Query size     0   3.81k   1.91k   1.91k   1.91k   1.91k       0   1.91k
+# Bytes          0   3.81k   1.91k   1.91k   1.91k   1.91k       0   1.91k
+# hostname       0      52      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'CRCREDITMAIN'\G
+#    SHOW CREATE TABLE `CRCREDITMAIN`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditinfo'\G
+#    SHOW CREATE TABLE `CRCreditinfo`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditRecord'\G
+#    SHOW CREATE TABLE `CRCreditRecord`\G
+#    SHOW TABLE STATUS LIKE 'zdcardbranch'\G
+#    SHOW CREATE TABLE `zdcardbranch`\G
+#    SHOW TABLE STATUS LIKE 'ZDBankbranch'\G
+#    SHOW CREATE TABLE `ZDBankbranch`\G
+#    SHOW TABLE STATUS LIKE 'CRCARDGROUP'\G
+#    SHOW CREATE TABLE `CRCARDGROUP`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT CRCREDITMAIN.id AS id, CRCREDITMAIN.name AS name, CRCREDITMAIN.AliasName,          TMP.prop1, TMP.prop2, TMP.imagepath1, TMP.catchword,          CRCREDITMAIN.bankID, CRCREDITMAIN.imagepath1 AS imagepath, CRCREDITMAIN.applyclause, CRCREDITMAIN.specialinfo,          CRCREDITMAIN.applystate   FROM CRCREDITMAIN, CRCreditinfo, CRCreditRecord, zdcardbranch,   (SELECT bank.ParentID as id, bank.City,    (SELECT ZDBankbranch.name from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS prop1,    (SELECT ZDBankbranch.MidLogo from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS imagepath1,        (SELECT ZDBankbranch.ensignname from ZDBankbranch where ZDBankbranch.id = bank.ParentID) AS catchword,   CONCAT("http://kaku.51credit.com/", (SELECT ZDBankbranch.ensignname FROM ZDBankbranch WHERE ZDBankbranch.id = bank.ParentID)) AS prop2   FROM ZDBankbranch bank where 1 = 1                   AND  bank.ParentID = '7'           AND bank.parentid!=0 group by bank.parentid) AS TMP,ZDBankbranch   ,   (SELECT  CRCARDGROUP.SORTID, CRCARDGROUP.CARDPID FROM CRCARDGROUP WHERE 1 = 1 AND CRCARDGROUP.sortid = '69' ) AS TMP2       WHERE     1 = 1      AND CRCreditRecord.crcreditmainID = CRCreditinfo.id        AND CRCreditinfo.crcreditmainID = CRCREDITMAIN.id        AND CRCREDITMAIN.bankID = tmp.id        AND ZDBankbranch.id = tmp.id        AND ZDBankbranch.id = CRCREDITMAIN.bankID        AND zdcardbranch.id = CRCreditRecord.cardOrgID         AND CRCREDITMAIN.ID = TMP2.CARDPID                       AND             CRCreditRecord.cardOrgID = '27'                   AND             CRCreditRecord.crgradeid = '11'                   AND             CRCREDITMAIN.currencyid !=" , , , , ," AND CRCREDITMAIN.dcurrencyid =" , , , , ,"                                   GROUP BY ZDBankbranch.id,CRCreditmain.ID                   order by ZDBankbranch.OrderFlag ASC                   ,            CRCreditmain.OrderFlag DESC                  limit 0,5\G
+
+# Query 48: 0 QPS, 0x concurrency, ID 0x4DF840652B87F33F at byte 5808539 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      4s      4s      4s      4s      4s       0      4s
+# Lock time      0   167us   167us   167us   167us   167us       0   167us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0     475     475     475     475     475       0     475
+# Bytes          0     475     475     475     475     475       0     475
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_props'\G
+#    SHOW CREATE TABLE `uc_active_props`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select  count(1) as cnt     from     (SELECT max(c.propvalue) as point,ifnull(d.count,0) as cnt     FROM uc_activate_info_main a, uc_active_detail b, uc_active_props c ,uc_hitcount d        WHERE b.dataFormer=3 AND a.prop1 = 0 AND a.shopid =0 AND b.isdelete = 0     and d.name =b.detailId  AND d.crfrom='3'                                     AND a.detailId = b.detailId and c.detailid=b.detailid group by b.detailid                  order by b.addtime desc               ) t\G
+
+# Query 49: 0 QPS, 0x concurrency, ID 0xFD760B956086E034 at byte 7444143 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.01
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0      4s      2s      2s      2s      2s   111ms      2s
+# Lock time      0   474us   156us   318us   237us   318us   114us   237us
+# Rows sent      0      20      10      10      10      10       0      10
+# Rows examine   0 971.84k 464.09k 507.75k 485.92k 507.75k  30.87k 485.92k
+# Query size     0   1.67k     857     857     857     857       0     857
+# Bytes          0   1.67k     857     857     857     857       0     857
+# hostname       0      52      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'zdbankbranch'\G
+#    SHOW CREATE TABLE `zdbankbranch`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_shop'\G
+#    SHOW CREATE TABLE `uc_active_shop`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT tmp.*,shop.x,shop.y,   (2 * 6378.137* ASIN(SQRT(POW(SIN(PI() * (NULL-shop.y) / 360), 2) + COS(PI() * NULL/ 180)* COS(shop.y* PI() / 180) * POW(SIN(PI() * (NULL-shop.x) / 360), 2)))) AS dis   FROM (   SELECT detail.detailId,detail.name,detail.fullName,detail.beginTime,detail.endTime,detail.weekDay,detail.content,main.bankid,main.shopId,detail.smalllogo,detail.largelogo,detail.addtime,   (SELECT NAME FROM zdbankbranch WHERE id=main.bankid) AS bankName   FROM uc_active_detail detail,uc_activate_info_main main   WHERE main.detailid=detail.detailId   AND detail.isdelete=0   AND detail.dataformer IN (0,1)   AND main.prop1=0 and detail.largelogo like 'http:%'          and    detail.weekday LIKE '%5%'         GROUP BY detail.detailid   ) tmp LEFT JOIN uc_active_shop shop    ON tmp.shopid=shop.`SHOPID`   ORDER BY tmp.endTime DESC,dis   LIMIT  0,10\G
+
+# Query 50: 0 QPS, 0x concurrency, ID 0xAEA56A6661A05CB4 at byte 5156237 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       2
+# Exec time      0      4s      2s      2s      2s      2s    33ms      2s
+# Lock time      0   222us   109us   113us   111us   113us     2us   111us
+# Rows sent      0      20      10      10      10      10       0      10
+# Rows examine   0   2.06M   1.03M   1.03M   1.03M   1.03M       0   1.03M
+# Query size     0     849     423     426  424.50     426    2.12  424.50
+# Bytes          0     849     423     426  424.50     426    2.12  424.50
+# hostname       0      52      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_active_shop'\G
+#    SHOW CREATE TABLE `uc_active_shop`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select tmpp.* from (   select us.shopid,us.name,us.fullname,us.LARGELOGO,us.tel,us.ADDRESS,us.x,us.y,us.OWENRTYPE    from uc_active_shop  us,   (select shopid  from  uc_activate_info_main where prop1 ='0' and shopid is not null and bankid is not NULL and detailId is not null         GROUP BY shopId ORDER BY addtime DESC) tmp    where tmp.shopid =us.SHOPID      and    owenrtype='71'       ) tmpp  where 1=1    LIMIT  0,10\G
+
+# Query 51: 0 QPS, 0x concurrency, ID 0xE3FFFD6F53B0BEA0 at byte 5816214 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      4s      4s      4s      4s      4s       0      4s
+# Lock time      0   111us   111us   111us   111us   111us       0   111us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0     471     471     471     471     471       0     471
+# Bytes          0     471     471     471     471     471       0     471
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_props'\G
+#    SHOW CREATE TABLE `uc_active_props`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select  count(1) as cnt     from     (SELECT max(c.propvalue) as point,ifnull(d.count,0) as cnt     FROM uc_activate_info_main a, uc_active_detail b, uc_active_props c ,uc_hitcount d        WHERE b.dataFormer=3 AND a.prop1 = 0 AND a.shopid =0 AND b.isdelete = 0     and d.name =b.detailId  AND d.crfrom='3'                                     AND a.detailId = b.detailId and c.detailid=b.detailid group by b.detailid                  order by point desc               ) t\G
+
+# Query 52: 0 QPS, 0x concurrency, ID 0xA8AB6B6BD8C0A11D at byte 5109991 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      3s      3s      3s      3s      3s       0      3s
+# Lock time      0    84us    84us    84us    84us    84us       0    84us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0     287     287     287     287     287       0     287
+# Bytes          0     287     287     287     287     287       0     287
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT COUNT(1) AS cnt FROM (   SELECT 1   FROM uc_active_detail detail,uc_activate_info_main main   WHERE main.detailid=detail.detailId   AND detail.isdelete=0   AND detail.dataformer IN (0,1)   AND main.prop1=0       and    detail.typeowner='50'            GROUP BY main.bankId   ) tmp\G
+
+# Query 53: 0 QPS, 0x concurrency, ID 0x61303A6AFD3C8DCB at byte 6530225 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      3s      3s      3s      3s      3s       0      3s
+# Lock time      0    86us    86us    86us    86us    86us       0    86us
+# Rows sent      0       6       6       6       6       6       0       6
+# Rows examine   0 236.30k 236.30k 236.30k 236.30k 236.30k       0 236.30k
+# Query size     0     688     688     688     688     688       0     688
+# Bytes          0     688     688     688     688     688       0     688
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT           d.name ,d.largelogo , d.content,d.detailId         FROM           uc_active_detail d         WHERE           d.detailId         IN           (SELECT               u.detailId            FROM               uc_activate_info_main u            WHERE             u.bankid =                 (SELECT                     uc.bankid                  FROM                     uc_activate_info_main uc                  WHERE                     1=1                  and                     uc.city = '500100'                                   and                     uc.bankId = '26'                                   GROUP BY uc.bankId                 )           )         LIMIT 0,6\G
+
+# Query 54: 0 QPS, 0x concurrency, ID 0xAF9D420B1F8E48C8 at byte 5153687 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      3s      3s      3s      3s      3s       0      3s
+# Lock time      0    71us    71us    71us    71us    71us       0    71us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0     381     381     381     381     381       0     381
+# Bytes          0     381     381     381     381     381       0     381
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_active_shop'\G
+#    SHOW CREATE TABLE `uc_active_shop`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select count(1) from (      select tmpp.* from (   select us.shopid,us.name,us.fullname,us.LARGELOGO,us.tel,us.ADDRESS,us.x,us.y    from uc_active_shop  us,   (select shopid  from  uc_activate_info_main where prop1 ='0' and shopid is not null and bankid is not NULL and detailId is not null         GROUP BY shopId) tmp    where tmp.shopid =us.SHOPID        ) tmpp  where 1=1   ) t\G
+
+# Query 55: 0 QPS, 0x concurrency, ID 0x0A8059FE6E8D9022 at byte 5849123 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      3s      3s      3s      3s      3s       0      3s
+# Lock time      0   283us   283us   283us   283us   283us       0   283us
+# Rows sent      0   5.51k   5.51k   5.51k   5.51k   5.51k       0   5.51k
+# Rows examine   0  69.66k  69.66k  69.66k  69.66k  69.66k       0  69.66k
+# Query size     0     791     791     791     791     791       0     791
+# Bytes          0     791     791     791     791     791       0     791
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'ZCIMAGE'\G
+#    SHOW CREATE TABLE `ZCIMAGE`\G
+#    SHOW TABLE STATUS LIKE 'zdbankbranch'\G
+#    SHOW CREATE TABLE `zdbankbranch`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_type'\G
+#    SHOW CREATE TABLE `uc_activate_type`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_active_props'\G
+#    SHOW CREATE TABLE `uc_active_props`\G
+#    SHOW TABLE STATUS LIKE 'uc_hitcount'\G
+#    SHOW CREATE TABLE `uc_hitcount`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT b.detailId,c.id,b.typeowner as typeid,b.fullname,     (select CONCAT('http://img.51credit.com/credit/',CONCAT(PATH,"s_"),FILENAME) from ZCIMAGE where id = b.smalllogo) as smalllogo,     a.bankid,(select name from zdbankbranch where id=a.bankid) as bankName,     (select name from uc_activate_type where typeid=b.typeowner AND crfrom = 1) as typeName,     max(c.propvalue) as point,max(c.prop4) as cash,c.propname as type,        ifnull(d.count,0) as cnt ,b.prop4     FROM uc_activate_info_main a,uc_active_detail b, uc_active_props c,uc_hitcount d      WHERE  b.dataFormer=3 AND a.prop1 = 0 AND a.shopid = 0 AND b.isdelete = 0     and d.name =b.detailId  AND d.crfrom='3'                                       AND a.detailId = b.detailId and c.detailid=b.detailid  group by b.detailid\G
+
+# Query 56: 0 QPS, 0x concurrency, ID 0x7E0C41C1E7415A47 at byte 5687453 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      2s      2s      2s      2s      2s       0      2s
+# Lock time      0   276us   276us   276us   276us   276us       0   276us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0   1.18k   1.18k   1.18k   1.18k   1.18k       0   1.18k
+# Bytes          0   1.18k   1.18k   1.18k   1.18k   1.18k       0   1.18k
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'CRCREDITMAIN'\G
+#    SHOW CREATE TABLE `CRCREDITMAIN`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditinfo'\G
+#    SHOW CREATE TABLE `CRCreditinfo`\G
+#    SHOW TABLE STATUS LIKE 'CRCreditRecord'\G
+#    SHOW CREATE TABLE `CRCreditRecord`\G
+#    SHOW TABLE STATUS LIKE 'zdcardbranch'\G
+#    SHOW CREATE TABLE `zdcardbranch`\G
+#    SHOW TABLE STATUS LIKE 'ZDBankbranch'\G
+#    SHOW CREATE TABLE `ZDBankbranch`\G
+#    SHOW TABLE STATUS LIKE 'CRCARDGROUP'\G
+#    SHOW CREATE TABLE `CRCARDGROUP`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT COUNT(TOTAL.id) FROM(         SELECT CRCREDITMAIN.id AS id         FROM CRCREDITMAIN, CRCreditinfo, CRCreditRecord, zdcardbranch,         (SELECT bank.ParentID as id, bank.City FROM ZDBankbranch bank where 1 = 1                   AND  bank.ParentID = '7'           AND bank.parentid!=0 group by bank.parentid) AS TMP ,ZDBankbranch         ,         (SELECT CRCARDGROUP.SORTID, CRCARDGROUP.CARDPID FROM CRCARDGROUP WHERE 1 = 1 AND CRCARDGROUP.sortid = '69' ) AS TMP2                   WHERE     1 = 1           AND CRCreditRecord.crcreditmainID = CRCreditinfo.id        AND CRCreditinfo.crcreditmainID = CRCREDITMAIN.id        AND CRCREDITMAIN.bankID = tmp.id        AND ZDBankbranch.id = tmp.id        AND ZDBankbranch.id = CRCREDITMAIN.bankID        AND zdcardbranch.id = CRCreditRecord.cardOrgID                             AND CRCREDITMAIN.ID = TMP2.CARDPID                             AND             CRCreditRecord.cardOrgID = '27'                   AND             CRCreditRecord.crgradeid = '11'                   AND             CRCREDITMAIN.currencyid !=" , , , , ," AND CRCREDITMAIN.dcurrencyid =" , , , , ,"                                   GROUP BY ZDBankbranch.id,CRCreditmain.ID) AS TOTAL\G
+
+# Query 57: 0 QPS, 0x concurrency, ID 0xB62256787489E902 at byte 5155194 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      2s      2s      2s      2s      2s       0      2s
+# Lock time      0   123us   123us   123us   123us   123us       0   123us
+# Rows sent      0      10      10      10      10      10       0      10
+# Rows examine   0   1.03M   1.03M   1.03M   1.03M   1.03M       0   1.03M
+# Query size     0     397     397     397     397     397       0     397
+# Bytes          0     397     397     397     397     397       0     397
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_active_shop'\G
+#    SHOW CREATE TABLE `uc_active_shop`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select tmpp.* from (   select us.shopid,us.name,us.fullname,us.LARGELOGO,us.tel,us.ADDRESS,us.x,us.y,us.OWENRTYPE    from uc_active_shop  us,   (select shopid  from  uc_activate_info_main where prop1 ='0' and shopid is not null and bankid is not NULL and detailId is not null         GROUP BY shopId ORDER BY addtime DESC) tmp    where tmp.shopid =us.SHOPID        ) tmpp  where 1=1    LIMIT  0,10\G
+
+# Query 58: 0 QPS, 0x concurrency, ID 0x9C90BE9E250823C4 at byte 6980085 _
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      2s      2s      2s      2s      2s       0      2s
+# Lock time      0   121us   121us   121us   121us   121us       0   121us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0       0       0       0       0       0       0       0
+# Query size     0     287     287     287     287     287       0     287
+# Bytes          0     287     287     287     287     287       0     287
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'uc_active_detail'\G
+#    SHOW CREATE TABLE `uc_active_detail`\G
+#    SHOW TABLE STATUS LIKE 'uc_activate_info_main'\G
+#    SHOW CREATE TABLE `uc_activate_info_main`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT COUNT(1) FROM (   SELECT 1   FROM uc_active_detail detail,uc_activate_info_main main   WHERE main.detailid=detail.detailId   AND detail.isdelete=0   AND detail.dataformer IN (0,1) and detail.largelogo like 'http:%'   AND main.prop1=0               GROUP BY detail.detailid   ) tmp\G

@@ -1,0 +1,56 @@
+
+# 250ms user time, 20ms system time, 26.17M rss, 211.00M vsz
+# Current date: Tue Sep 13 05:00:28 2016
+# Hostname: 26
+# Files: /tmp/2016-09-13_10.10.3.10_13307_slow.log
+# Overall: 3 total, 1 unique, 0 QPS, 0x concurrency ______________________
+# Attribute          total     min     max     avg     95%  stddev  median
+# ============     ======= ======= ======= ======= ======= ======= =======
+# Exec time             8s      1s      6s      3s      6s      2s      1s
+# Lock time              0       0       0       0       0       0       0
+# Rows sent          7.84M 244.31k   7.23M   2.61M   6.94M   3.13M 380.41k
+# Rows examine       7.84M 244.31k   7.23M   2.61M   6.94M   3.13M 380.41k
+# Query size           165      52      59      55   56.92    2.49   51.63
+# Bytes                165      52      59      55   56.92    2.49   51.63
+# hostname              78      26      26      26      26       0      26
+
+# Profile
+# Rank Query ID           Response time Calls R/Call V/M   Item
+# ==== ================== ============= ===== ====== ===== ===============
+#    1 0x67A347A2812914DF 8.4784 100.0%     3 2.8261  1.60 SELECT discount_shop_qcwx
+
+# Query 1: 0 QPS, 0x concurrency, ID 0x67A347A2812914DF at byte 333 ______
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 1.60
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count        100       3
+# Exec time    100      8s      1s      6s      3s      6s      2s      1s
+# Lock time      0       0       0       0       0       0       0       0
+# Rows sent    100   7.84M 244.31k   7.23M   2.61M   6.94M   3.13M 380.41k
+# Rows examine 100   7.84M 244.31k   7.23M   2.61M   6.94M   3.13M 380.41k
+# Query size   100     165      52      59      55   56.92    2.49   51.63
+# Bytes        100     165      52      59      55   56.92    2.49   51.63
+# hostname     100      78      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 2016-09-12 03:55:10
+#     last_seen: 2016-09-13 05:00:27
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'discount_shop_qcwx'\G
+#    SHOW CREATE TABLE `discount_shop_qcwx`\G
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `discount_shop_qcwx`\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT /*!40001 SQL_NO_CACHE */ * FROM `discount_shop_qcwx`\G

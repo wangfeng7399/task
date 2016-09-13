@@ -1,0 +1,128 @@
+
+# 290ms user time, 10ms system time, 26.20M rss, 211.00M vsz
+# Current date: Wed Sep  7 05:00:18 2016
+# Hostname: 26
+# Files: /tmp/2016-09-07_10.10.1.9_23306_slow.log
+# Overall: 9 total, 3 unique, 0 QPS, 0x concurrency ______________________
+# Attribute          total     min     max     avg     95%  stddev  median
+# ============     ======= ======= ======= ======= ======= ======= =======
+# Exec time            22s      2s      3s      2s      3s   303ms      2s
+# Lock time          582us    19us    97us    64us    93us    26us    80us
+# Rows sent             56       0      10    6.22    9.83    3.93    7.70
+# Rows examine       3.70M 247.10k 493.89k 421.37k 485.50k  93.95k 440.37k
+# Query size         1.89k     109     246  215.11  234.30   51.68  234.30
+# Bytes              1.89k     109     246  215.11  234.30   51.68  234.30
+# hostname             234      26      26      26      26       0      26
+
+# Profile
+# Rank Query ID           Response time Calls R/Call V/M   Item
+# ==== ================== ============= ===== ====== ===== ===============
+#    1 0x41D039B6ADA006F0 18.0786 81.5%     7 2.5827  0.02 SELECT zcarticle
+#    2 0x6F0034366175E2CE  2.0775  9.4%     1 2.0775  0.00 SELECT ZCArticle zcarticle
+#    3 0xB8205CF1AE33A9AE  2.0379  9.2%     1 2.0379  0.00 SELECT ZCArticle zcarticle
+
+# Query 1: 0 QPS, 0x concurrency, ID 0x41D039B6ADA006F0 at byte 2560 _____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.02
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         77       7
+# Exec time     81     18s      2s      3s      3s      3s   246ms      3s
+# Lock time     92   541us    52us    97us    77us    93us    14us    80us
+# Rows sent     96      54       0      10    7.71    9.83    3.22    7.70
+# Rows examine  86   3.22M 440.80k 493.89k 471.17k 485.50k  22.34k 485.50k
+# Query size    88   1.67k     243     246  244.29  234.30       0  234.30
+# Bytes         88   1.67k     243     246  244.29  234.30       0  234.30
+# hostname      77     182      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'zcarticle'\G
+#    SHOW CREATE TABLE `zcarticle`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT a.id as article_id,a.title as article_title,a.Summary as article_des    FROM zcarticle a ,zccatalog l      WHERE l.id = a.catalogID     AND a.status<>40          and      l.`Name`='»Î√≈∆™'           ORDER BY a.id asc          limit 0,10\G
+
+# Query 2: 0 QPS, 0x concurrency, ID 0x6F0034366175E2CE at byte 0 ________
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         11       1
+# Exec time      9      2s      2s      2s      2s      2s       0      2s
+# Lock time      3    19us    19us    19us    19us    19us       0    19us
+# Rows sent      1       1       1       1       1       1       0       1
+# Rows examine   6 247.10k 247.10k 247.10k 247.10k 247.10k       0 247.10k
+# Query size     6     117     117     117     117     117       0     117
+# Bytes          6     117     117     117     117     117       0     117
+# hostname      11      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'ZCArticle'\G
+#    SHOW CREATE TABLE `ZCArticle`\G
+#    SHOW TABLE STATUS LIKE 'zcarticle'\G
+#    SHOW CREATE TABLE `zcarticle`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select  *  from ZCArticle where id in(11163706) or id in(select id from zcarticle where refersourceid in (11163706) )\G
+
+# Query 3: 0 QPS, 0x concurrency, ID 0xB8205CF1AE33A9AE at byte 1286 _____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         11       1
+# Exec time      9      2s      2s      2s      2s      2s       0      2s
+# Lock time      3    22us    22us    22us    22us    22us       0    22us
+# Rows sent      1       1       1       1       1       1       0       1
+# Rows examine   6 247.11k 247.11k 247.11k 247.11k 247.11k       0 247.11k
+# Query size     5     109     109     109     109     109       0     109
+# Bytes          5     109     109     109     109     109       0     109
+# hostname      11      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'ZCArticle'\G
+#    SHOW CREATE TABLE `ZCArticle`\G
+#    SHOW TABLE STATUS LIKE 'zcarticle'\G
+#    SHOW CREATE TABLE `zcarticle`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select  *  from ZCArticle where id =11163841 or id in(select id from zcarticle where refersourceid=11163841 )\G

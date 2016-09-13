@@ -81,3 +81,13 @@ class Monitor(models.Model):
     num=models.IntegerField()
     name=models.CharField(max_length=2000)
     #zabbixid=models.CharField(max_length=200)
+
+
+class Slow(models.Model):
+    date=models.DateField()
+    datab=models.CharField(max_length=100)
+    maxtime=models.CharField(max_length=100)
+    avgtime=models.CharField(max_length=100)
+    mintime=models.CharField(max_length=100)
+    insql=models.CharField(max_length=20000)
+    count=models.IntegerField()

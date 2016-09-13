@@ -19,7 +19,7 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from web import views
-from web import user,code,property
+from web import user,code,property,mysql
 app_name="web"
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -44,6 +44,7 @@ urlpatterns = [
     url(r'^rust/$',views.rust,name='rust'),
     url(r'^status/$',code.status,name='status'),
     url(r'^updateall/$',code.updateall,name='updateall'),
+    url(r'slow/$',mysql.slow,name='slow'),
     url(r'^backall/$',code.backall,name='backall'),
     url(r'^tree/(?P<id>[0-9]+)$',code.tree,name='tree'),
     url(r'^retype/$',code.retype,name='retype'),

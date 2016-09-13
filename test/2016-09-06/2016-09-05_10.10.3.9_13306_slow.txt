@@ -1,0 +1,651 @@
+
+# 1.3s user time, 30ms system time, 26.67M rss, 211.52M vsz
+# Current date: Mon Sep  5 05:00:18 2016
+# Hostname: 26
+# Files: /tmp/2016-09-05_10.10.3.9_13306_slow.log
+# Overall: 1.17k total, 18 unique, 0 QPS, 0x concurrency _________________
+# Attribute          total     min     max     avg     95%  stddev  median
+# ============     ======= ======= ======= ======= ======= ======= =======
+# Exec time          3580s      2s     13s      3s     11s      2s      2s
+# Lock time          101ms    28us    10ms    86us   125us   294us    66us
+# Rows sent         47.95k       0     300   41.93   49.17   29.40   49.17
+# Rows examine     437.74M   1.26k   6.12M 382.79k   2.05M 467.36k 283.86k
+# Query size       182.45k      82     699  159.55  174.84   81.30  136.99
+# Bytes            182.45k      82     699  159.55  174.84   81.30  136.99
+# hostname          29.73k      26      26      26      26       0      26
+
+# Profile
+# Rank Query ID           Response time   Calls R/Call  V/M   Item
+# ==== ================== =============== ===== ======= ===== ============
+#    1 0x1D353CF3BB033329 1368.1878 38.2%   210  6.5152  2.34 SELECT pre_forum_thread
+#    2 0x534B2F451B42C04B 1058.0651 29.6%   484  2.1861  0.01 SELECT pre_forum_thread
+#    3 0x14054B777B5FE084  254.0917  7.1%   114  2.2289  0.06 SELECT pre_forum_thread
+#    4 0xBABDF1AF7F7080C2  214.8417  6.0%    92  2.3352  0.50 SELECT pre_forum_thread
+#    5 0x2DE77167CFFCD291  202.9648  5.7%    91  2.2304  0.11 SELECT pre_forum_thread
+#    6 0x81894881E35CB515  181.5143  5.1%    60  3.0252  0.12 SELECT pre_forum_thread
+#    7 0x15D24947ED897775  111.7779  3.1%    51  2.1917  0.01 SELECT pre_forum_thread
+#    8 0x892B55C16171EB02   81.4049  2.3%    37  2.2001  0.03 SELECT pre_forum_thread
+#    9 0x47C0CB5207336D94   35.2528  1.0%    10  3.5253  0.78 SELECT pre_forum_thread
+#   10 0x3E19D8D462AD5D8E   19.7317  0.6%     9  2.1924  0.04 SELECT pre_forum_thread pre_forum_poll
+#   11 0xAFD156127455BABA   13.6034  0.4%     4  3.4009  0.11 SELECT pre_forum_thread
+#   12 0x772CF3D2FFD66D78   13.1512  0.4%     1 13.1512  0.00 SELECT pre_forum_post
+#   13 0x19B2F78BD0A5D790    9.9606  0.3%     3  3.3202  0.45 SELECT pre_home_notification
+#   14 0x4E57D946A278EE8A    3.7143  0.1%     1  3.7143  0.00 SELECT pre_forum_thread
+#   15 0xA1F5249D45711299    3.5054  0.1%     1  3.5054  0.00 SELECT pre_forum_thread
+#   16 0x4E8D6E151858EE4B    2.8781  0.1%     1  2.8781  0.00 SELECT pre_home_notification
+#   17 0x42B719C6B9386D43    2.7685  0.1%     1  2.7685  0.00 SELECT pre_forum_thread
+#   18 0x6F3D8DBEA267DCA3    2.2497  0.1%     1  2.2497  0.00 SELECT pre_forum_thread
+
+# Query 1: 0 QPS, 0x concurrency, ID 0x1D353CF3BB033329 at byte 236608 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 2.34
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         17     210
+# Exec time     38   1368s      2s     13s      7s     12s      4s      4s
+# Lock time     14    15ms    43us   188us    70us    98us    19us    63us
+# Rows sent      0     210       1       1       1       1       0       1
+# Rows examine   7  33.81M  67.54k 269.94k 164.87k 257.47k  91.37k 101.89k
+# Query size    15  27.73k     135     136  135.21  130.47       0  130.47
+# Bytes         15  27.73k     135     136  135.21  130.47       0  130.47
+# hostname      17   5.33k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  ######################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_forum_thread'\G
+#    SHOW CREATE TABLE `pre_forum_thread`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT tid FROM pre_forum_thread WHERE fid=8 AND displayorder>=0 AND closed=0 AND lastpost<1472975166  ORDER BY `lastpost` DESC LIMIT 1\G
+
+# Query 2: 0 QPS, 0x concurrency, ID 0x534B2F451B42C04B at byte 302185 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.01
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         41     484
+# Exec time     29   1058s      2s      3s      2s      2s   153ms      2s
+# Lock time     35    36ms    28us     3ms    74us    98us   136us    60us
+# Rows sent     49  23.63k      50      50      50      50       0      50
+# Rows examine  32 142.17M 116.36k 318.80k 300.79k 312.96k  12.98k 298.06k
+# Query size    37  67.62k     140     152  143.07  151.03       6  136.99
+# Bytes         37  67.62k     140     152  143.07  151.03       6  136.99
+# hostname      41  12.29k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_forum_thread'\G
+#    SHOW CREATE TABLE `pre_forum_thread`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM pre_forum_thread  WHERE `fid`='3' AND `displayorder` IN('0','1')  ORDER BY displayorder DESC, lastpost DESC    LIMIT 48100, 50\G
+
+# Query 3: 0 QPS, 0x concurrency, ID 0x14054B777B5FE084 at byte 244678 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.06
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          9     114
+# Exec time      7    254s      2s      6s      2s      3s   351ms      2s
+# Lock time     18    19ms    34us    10ms   166us   119us   892us    69us
+# Rows sent     11   5.57k      50      50      50      50       0      50
+# Rows examine   6  30.33M  67.58k 318.70k 272.44k 312.96k  67.70k 283.86k
+# Query size     9  16.78k     144     151  150.75  143.84       0  143.84
+# Bytes          9  16.78k     144     151  150.75  143.84       0  143.84
+# hostname       9   2.89k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_forum_thread'\G
+#    SHOW CREATE TABLE `pre_forum_thread`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM pre_forum_thread  WHERE `fid`='5' AND `displayorder` IN('0','1','2','3','4')  ORDER BY displayorder DESC, replies DESC    LIMIT 35650, 50\G
+
+# Query 4: 0 QPS, 0x concurrency, ID 0xBABDF1AF7F7080C2 at byte 232072 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.50
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          7      92
+# Exec time      6    215s      2s     12s      2s      2s      1s      2s
+# Lock time      7     7ms    36us   315us    77us   119us    38us    69us
+# Rows sent      9   4.49k      50      50      50      50       0      50
+# Rows examine   5  25.86M  67.58k 318.80k 287.86k 312.96k  43.33k 298.06k
+# Query size     7  13.59k     133     152  151.25  151.03    3.36  151.03
+# Bytes          7  13.59k     133     152  151.25  151.03    3.36  151.03
+# hostname       7   2.34k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+  #
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_forum_thread'\G
+#    SHOW CREATE TABLE `pre_forum_thread`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM pre_forum_thread  WHERE `fid`='3' AND `displayorder` IN('0','1')  ORDER BY displayorder DESC, dateline DESC    LIMIT 50\G
+
+# Query 5: 0 QPS, 0x concurrency, ID 0x2DE77167CFFCD291 at byte 220140 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.11
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          7      91
+# Exec time      5    203s      2s      7s      2s      2s   490ms      2s
+# Lock time      7     7ms    34us   412us    80us   113us    42us    69us
+# Rows sent      9   4.44k      50      50      50      50       0      50
+# Rows examine   5  24.01M  67.58k 317.97k 270.23k 312.96k  74.31k 283.86k
+# Query size     7  13.21k     142     149  148.69  143.84    0.71  143.84
+# Bytes          7  13.21k     142     149  148.69  143.84    0.71  143.84
+# hostname       7   2.31k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_forum_thread'\G
+#    SHOW CREATE TABLE `pre_forum_thread`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM pre_forum_thread  WHERE `fid`='7' AND `displayorder` IN('0','1','2','3','4')  ORDER BY displayorder DESC, views DESC    LIMIT 13200, 50\G
+
+# Query 6: 0 QPS, 0x concurrency, ID 0x81894881E35CB515 at byte 132932 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.12
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          5      60
+# Exec time      5    182s      2s      4s      3s      4s   601ms      3s
+# Lock time      6     7ms    45us   245us   110us   204us    48us    89us
+# Rows sent     10   4.96k       0     300   84.60  258.32   88.31   49.17
+# Rows examine  28 123.44M 966.69k   2.08M   2.06M   2.05M 145.56k   2.05M
+# Query size    12  23.32k     178     668  397.93  621.67  223.87  183.58
+# Bytes         12  23.32k     178     668  397.93  621.67  223.87  183.58
+# hostname       5   1.52k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_forum_thread'\G
+#    SHOW CREATE TABLE `pre_forum_thread`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT  t.tid, t.closed, t.author, t.authorid FROM pre_forum_thread t WHERE  t.fid IN ('99','243','248','267','247','118','127','28','235','181','245','236','246','130','151','178','180','169','152','201','166','101','50','35','153','269','116','3','8','5','6','7','9','11','38','13','15','14','4','239','115','91','211','268','97','202','204','205','212','16','96','133','141','216','219','218','226','217','233','232','263','264','265','234','260','261','262','266','231','220','223','221','222','224','225','229','228','175','138','136','182','73') AND t.displayorder>='0' AND (0 OR t.subject LIKE '%6号费改%') ORDER BY tid DESC LIMIT 300\G
+
+# Query 7: 0 QPS, 0x concurrency, ID 0x15D24947ED897775 at byte 33442 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.01
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          4      51
+# Exec time      3    112s      2s      3s      2s      2s   148ms      2s
+# Lock time      3     4ms    34us   117us    70us    98us    19us    69us
+# Rows sent      5   2.49k      50      50      50      50       0      50
+# Rows examine   3  14.78M 269.44k 318.52k 296.82k 298.06k  10.85k 298.06k
+# Query size     4   7.67k     153     154  153.98  151.03       0  151.03
+# Bytes          4   7.67k     153     154  153.98  151.03       0  151.03
+# hostname       4   1.29k      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_forum_thread'\G
+#    SHOW CREATE TABLE `pre_forum_thread`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM pre_forum_thread  WHERE `fid`='8' AND `displayorder` IN('0','1','2','3','4')  ORDER BY displayorder DESC, recommends DESC    LIMIT 33750, 50\G
+
+# Query 8: 0 QPS, 0x concurrency, ID 0x892B55C16171EB02 at byte 198317 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.03
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          3      37
+# Exec time      2     81s      2s      3s      2s      3s   246ms      2s
+# Lock time      3     3ms    35us   733us    93us   125us   108us    69us
+# Rows sent      3   1.81k      50      50      50      50       0      50
+# Rows examine   2  10.84M 269.99k 318.68k 299.90k 312.96k  13.76k 298.06k
+# Query size     2   5.37k     130     149  148.49  143.84    3.18  143.84
+# Bytes          2   5.37k     130     149  148.49  143.84    3.18  143.84
+# hostname       3     962      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_forum_thread'\G
+#    SHOW CREATE TABLE `pre_forum_thread`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM pre_forum_thread  WHERE `fid`='8' AND `displayorder` IN('0','1')  ORDER BY displayorder DESC, heats DESC    LIMIT 50\G
+
+# Query 9: 0 QPS, 0x concurrency, ID 0x47C0CB5207336D94 at byte 248107 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.78
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0      10
+# Exec time      0     35s      2s      7s      4s      5s      2s      3s
+# Lock time      0   612us    44us    90us    61us    66us    11us    60us
+# Rows sent      0      10       1       1       1       1       0       1
+# Rows examine   0   2.21M 104.03k 269.94k 225.81k 257.47k  63.20k 257.47k
+# Query size     0     840      84      84      84      84       0      84
+# Bytes          0     840      84      84      84      84       0      84
+# hostname       0     260      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_forum_thread'\G
+#    SHOW CREATE TABLE `pre_forum_thread`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT COUNT(*) FROM pre_forum_thread t  WHERE t.`fid`='8' AND t.`displayorder`>='0'\G
+
+# Query 10: 0 QPS, 0x concurrency, ID 0x3E19D8D462AD5D8E at byte 139039 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.04
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       9
+# Exec time      0     20s      2s      3s      2s      3s   278ms      2s
+# Lock time      1     1ms    95us   194us   124us   185us    30us   119us
+# Rows sent      0      90      10      10      10      10       0      10
+# Rows examine   2  11.62M   1.08M   2.08M   1.29M   2.05M 285.24k   1.20M
+# Query size     1   2.56k     291     291     291     291       0     291
+# Bytes          1   2.56k     291     291     291     291       0     291
+# hostname       0     234      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_forum_thread'\G
+#    SHOW CREATE TABLE `pre_forum_thread`\G
+#    SHOW TABLE STATUS LIKE 'pre_forum_poll'\G
+#    SHOW CREATE TABLE `pre_forum_poll`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT t.tid, t.fid, t.author, t.authorid, t.subject, t.dateline, t.favtimes, t.sharetimes, t.heats,  p.pollpreview, p.voters FROM pre_forum_thread t LEFT JOIN pre_forum_poll p ON p.tid=t.tid  WHERE t.special=1 AND t.dateline>1472362437 AND t.displayorder>=0  ORDER BY `heats` DESC  LIMIT 20\G
+
+# Query 11: 0 QPS, 0x concurrency, ID 0xAFD156127455BABA at byte 143530 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.11
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       4
+# Exec time      0     14s      2s      4s      3s      4s   611ms      4s
+# Lock time      0   597us   116us   202us   149us   194us    30us   169us
+# Rows sent      0     160       2     136      40  130.47   53.52   74.50
+# Rows examine   1   8.31M   2.08M   2.08M   2.08M   2.05M       0   2.05M
+# Query size     1   2.18k     208     683  558.25  652.75  195.01  652.75
+# Bytes          1   2.18k     208     683  558.25  652.75  195.01  652.75
+# hostname       0     104      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_forum_thread'\G
+#    SHOW CREATE TABLE `pre_forum_thread`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT  t.tid, t.closed, t.author, t.authorid FROM pre_forum_thread t WHERE  t.fid IN ('99','243','248','267','247','118','127','28','235','181','245','236','137','246','130','151','178','180','169','152','201','166','101','50','35','153','269','116','3','8','5','6','7','9','11','38','13','15','14','4','239','115','91','211','268','97','202','204','205','212','16','96','133','141','216','219','218','226','217','233','232','263','264','265','234','260','261','262','266','231','220','223','221','222','224','225','229','228','175','138','136','182','73') AND t.displayorder>='0' AND (1 AND t.subject LIKE '%招行白金卡%' AND t.subject LIKE '%现金分期%') ORDER BY tid DESC LIMIT 300\G
+
+# Query 12: 0 QPS, 0x concurrency, ID 0x772CF3D2FFD66D78 at byte 303702 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0     13s     13s     13s     13s     13s       0     13s
+# Lock time      0    50us    50us    50us    50us    50us       0    50us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   1   6.12M   6.12M   6.12M   6.12M   6.12M       0   6.12M
+# Query size     0      82      82      82      82      82       0      82
+# Bytes          0      82      82      82      82      82       0      82
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s
+#  10s+  ################################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_forum_post'\G
+#    SHOW CREATE TABLE `pre_forum_post`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM pre_forum_post WHERE `tid`='2205872'  ORDER BY dateline ASC  LIMIT 1\G
+
+# Query 13: 0 QPS, 0x concurrency, ID 0x19B2F78BD0A5D790 at byte 117571 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.45
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       3
+# Exec time      0     10s      2s      5s      3s      5s      1s      3s
+# Lock time      0   194us    33us   107us    64us   103us    29us    52us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0  11.04k   1.26k   6.60k   3.68k   6.31k   2.09k   3.04k
+# Query size     0     294      98      98      98      98       0      98
+# Bytes          0     294      98      98      98      98       0      98
+# hostname       0      78      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_home_notification'\G
+#    SHOW CREATE TABLE `pre_home_notification`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM pre_home_notification WHERE from_id=31552086 AND from_idtype='quote' AND uid=1051667\G
+
+# Query 14: 0 QPS, 0x concurrency, ID 0x4E57D946A278EE8A at byte 81959 ___
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      4s      4s      4s      4s      4s       0      4s
+# Lock time      0    91us    91us    91us    91us    91us       0    91us
+# Rows sent      0      20      20      20      20      20       0      20
+# Rows examine   0   2.01M   2.01M   2.01M   2.01M   2.01M       0   2.01M
+# Query size     0     180     180     180     180     180       0     180
+# Bytes          0     180     180     180     180     180       0     180
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_forum_thread'\G
+#    SHOW CREATE TABLE `pre_forum_thread`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT tid, fid, author, authorid, subject, dateline, views, replies, favtimes, sharetimes, heats FROM pre_forum_thread  WHERE displayorder>=0  ORDER BY `sharetimes` DESC  LIMIT 20\G
+
+# Query 15: 0 QPS, 0x concurrency, ID 0xA1F5249D45711299 at byte 312174 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      4s      4s      4s      4s      4s       0      4s
+# Lock time      0   193us   193us   193us   193us   193us       0   193us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   0   2.08M   2.08M   2.08M   2.08M   2.08M       0   2.08M
+# Query size     0     699     699     699     699     699       0     699
+# Bytes          0     699     699     699     699     699       0     699
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_forum_thread'\G
+#    SHOW CREATE TABLE `pre_forum_thread`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT  t.tid, t.closed, t.author, t.authorid FROM pre_forum_thread t WHERE  t.fid IN ('99','243','248','267','247','118','127','28','235','181','245','236','246','130','151','178','180','169','152','201','166','101','50','35','153','269','116','3','8','5','6','7','9','11','38','13','15','14','4','239','115','91','211','268','97','202','204','205','212','16','96','133','141','216','219','218','226','217','233','232','263','264','265','234','260','261','262','266','231','220','223','221','222','224','225','229','228','175','138','136','182','73') AND t.displayorder>='0' AND (1 AND t.subject LIKE '%工行%' AND t.subject LIKE '%步步为赢%' AND t.subject LIKE '%2016%') ORDER BY tid DESC LIMIT 300\G
+
+# Query 16: 0 QPS, 0x concurrency, ID 0x4E8D6E151858EE4B at byte 100334 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      3s      3s      3s      3s      3s       0      3s
+# Lock time      0    46us    46us    46us    46us    46us       0    46us
+# Rows sent      0      30      30      30      30      30       0      30
+# Rows examine   0   2.11k   2.11k   2.11k   2.11k   2.11k       0   2.11k
+# Query size     0     107     107     107     107     107       0     107
+# Bytes          0     107     107     107     107     107       0     107
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_home_notification'\G
+#    SHOW CREATE TABLE `pre_home_notification`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM pre_home_notification WHERE uid=1158719    AND `type`='post' ORDER BY dateline DESC  LIMIT 30\G
+
+# Query 17: 0 QPS, 0x concurrency, ID 0x42B719C6B9386D43 at byte 238313 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      3s      3s      3s      3s      3s       0      3s
+# Lock time      0    73us    73us    73us    73us    73us       0    73us
+# Rows sent      0      50      50      50      50      50       0      50
+# Rows examine   0  87.17k  87.17k  87.17k  87.17k  87.17k       0  87.17k
+# Query size     0     172     172     172     172     172       0     172
+# Bytes          0     172     172     172     172     172       0     172
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_forum_thread'\G
+#    SHOW CREATE TABLE `pre_forum_thread`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM pre_forum_thread  WHERE `fid`='6' AND `displayorder` IN('0','1','2','3','4') AND `typeid`='82'  ORDER BY displayorder DESC, recommends DESC    LIMIT 33350, 50\G
+
+# Query 18: 0 QPS, 0x concurrency, ID 0x6F3D8DBEA267DCA3 at byte 233287 __
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0      2s      2s      2s      2s      2s       0      2s
+# Lock time      0    86us    86us    86us    86us    86us       0    86us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0  54.55k  54.55k  54.55k  54.55k  54.55k       0  54.55k
+# Query size     0     104     104     104     104     104       0     104
+# Bytes          0     104     104     104     104     104       0     104
+# hostname       0      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'pre_forum_thread'\G
+#    SHOW CREATE TABLE `pre_forum_thread`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT COUNT(*) FROM pre_forum_thread t  WHERE t.`fid`='6' AND t.`displayorder`>='0' AND t.`typeid`='82'\G

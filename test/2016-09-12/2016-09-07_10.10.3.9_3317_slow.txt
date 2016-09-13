@@ -1,0 +1,58 @@
+
+# 390ms user time, 10ms system time, 26.26M rss, 211.13M vsz
+# Current date: Wed Sep  7 05:00:30 2016
+# Hostname: 26
+# Files: /tmp/2016-09-07_10.10.3.9_3317_slow.log
+# Overall: 144 total, 1 unique, 0 QPS, 0x concurrency ____________________
+# Attribute          total     min     max     avg     95%  stddev  median
+# ============     ======= ======= ======= ======= ======= ======= =======
+# Exec time           299s      2s      3s      2s      2s    96ms      2s
+# Lock time           36ms    96us   762us   248us   366us    94us   224us
+# Rows sent              0       0       0       0       0       0       0
+# Rows examine       3.09M  21.81k  22.21k  22.00k  21.38k       0  21.38k
+# Query size        34.72k     205     283  246.91  258.32   14.56  246.02
+# Bytes             34.72k     205     283  246.91  258.32   14.56  246.02
+# hostname           3.66k      26      26      26      26       0      26
+
+# Profile
+# Rank Query ID           Response time   Calls R/Call V/M   Item
+# ==== ================== =============== ===== ====== ===== =============
+#    1 0xAF83998E3A4F4A4E 299.4623 100.0%   144 2.0796  0.00 SELECT ask_info
+
+# Query 1: 0 QPS, 0x concurrency, ID 0xAF83998E3A4F4A4E at byte 25609 ____
+# This item is included in the report because it matches --limit.
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count        100     144
+# Exec time    100    299s      2s      3s      2s      2s    96ms      2s
+# Lock time    100    36ms    96us   762us   248us   366us    94us   224us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine 100   3.09M  21.81k  22.21k  22.00k  21.38k       0  21.38k
+# Query size   100  34.72k     205     283  246.91  258.32   14.56  246.02
+# Bytes        100  34.72k     205     283  246.91  258.32   14.56  246.02
+# hostname     100   3.66k      26      26      26      26       0      26
+# String:
+# Hosts        10.10.1.5
+# Time         2016-09-05... (1/0%), 2016-09-05... (1/0%)... 142 more
+# Users        woaikaAskdbs
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'ask_info'\G
+#    SHOW CREATE TABLE `ask_info`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select  distinct t.*  from ask_info t  where  t.state = 2     and    t.title REGEXP   'éªè¯ç |ä¿¡ç¨å¡|æµè§å¨|å¯ç |è´¦å·'               order by rand()  limit 0,2\G

@@ -1,0 +1,420 @@
+
+# 690ms user time, 40ms system time, 26.39M rss, 211.26M vsz
+# Current date: Wed Sep  7 05:00:22 2016
+# Hostname: 26
+# Files: /tmp/2016-09-07_10.10.3.9_3316_slow.log
+# Overall: 216 total, 8 unique, 0 QPS, 0x concurrency ____________________
+# Attribute          total     min     max     avg     95%  stddev  median
+# ============     ======= ======= ======= ======= ======= ======= =======
+# Exec time           119s   100ms     33s   549ms   900ms      2s   279ms
+# Lock time           59ms   119us     4ms   272us   403us   281us   224us
+# Rows sent         62.44k       0  58.74k  296.01  223.14   3.85k    0.99
+# Rows examine     100.99M  21.50k   7.23M 478.76k 440.37k 536.58k 440.37k
+# Query size        67.38k      78   1.74k  319.45  329.68  151.49  313.99
+# Bytes             67.38k      78   1.74k  319.45  329.68  151.49  313.99
+# hostname           5.48k      26      26      26      26       0      26
+
+# Profile
+# Rank Query ID           Response time Calls R/Call  V/M   Item
+# ==== ================== ============= ===== ======= ===== ==============
+#    1 0x8ADE200A2BE049C3 59.5381 50.2%   189  0.3150  0.02 SELECT user_? user_source_?
+#    2 0x0ED1F4359503F235 33.0196 27.8%     1 33.0196  0.00 SELECT UNION record_user_integral_?
+#    3 0x4960E3A9726B68D5 11.4350  9.6%     1 11.4350  0.00 SELECT passport.user_login_his_temp
+#    4 0xE8DAB9A7B334C6D4 11.0171  9.3%    10  1.1017  0.02 SELECT user_?
+#    5 0xF3E6F0D755DE08E2  1.8962  1.6%     1  1.8962  0.00 SELECT user_? user_source_?
+#    6 0x6D1684174BCEA707  1.3660  1.2%    12  0.1138  0.00 SELECT record_user_binding_card_?
+#    7 0x0CF1C43566822F7B  0.2405  0.2%     1  0.2405  0.00 SELECT UNION record_user_binding_card_?
+#    8 0xD4DA0A6AC278EDEC  0.1012  0.1%     1  0.1012  0.00 SELECT record_user_binding_card_?
+
+# Query 1: 0 QPS, 0x concurrency, ID 0x8ADE200A2BE049C3 at byte 85961 ____
+# Scores: V/M = 0.02
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         87     189
+# Exec time     50     60s   203ms   549ms   315ms   433ms    87ms   279ms
+# Lock time     88    52ms   119us     4ms   275us   384us   284us   224us
+# Rows sent      0     161       0       1    0.85    0.99    0.35    0.99
+# Rows examine  82  83.60M 450.58k 461.49k 452.94k 440.37k    0.01 440.37k
+# Query size    90  60.81k     323     340  329.48  329.68    7.84  313.99
+# Bytes         90  60.81k     323     340  329.48  329.68    7.84  313.99
+# hostname      87   4.80k      26      26      26      26       0      26
+# String:
+# Hosts        10.10.0.31
+# Time         2016-09-05... (1/0%), 2016-09-05... (1/0%)... 187 more
+# Users        passportdbs
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'user_9'\G
+#    SHOW CREATE TABLE `user_9`\G
+#    SHOW TABLE STATUS LIKE 'user_source_9'\G
+#    SHOW CREATE TABLE `user_source_9`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select   tt.source as code,  DATE_FORMAT(t.create_time,'%Y-%m-%d') as createTime  ,count(*)  as count   from  user_9    t, user_source_9 tt   where t.id = tt.user_id          and       DATE_FORMAT(t.create_time,'%Y-%m-%d')  = '2016-09-05'         and     tt.source  = 'pc'                     group by  tt.source, createTime\G
+
+# Query 2: 0 QPS, 0x concurrency, ID 0x0ED1F4359503F235 at byte 5808 _____
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time     27     33s     33s     33s     33s     33s       0     33s
+# Lock time      2     2ms     2ms     2ms     2ms     2ms       0     2ms
+# Rows sent     94  58.74k  58.74k  58.74k  58.74k  58.74k       0  58.74k
+# Rows examine   4   4.36M   4.36M   4.36M   4.36M   4.36M       0   4.36M
+# Query size     2   1.70k   1.70k   1.70k   1.70k   1.70k       0   1.70k
+# Bytes          2   1.70k   1.70k   1.70k   1.70k   1.70k       0   1.70k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Hosts        10.10.0.32
+# Time         2016-09-05T16:36:21.959496Z
+# Users        dev_user
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s
+#  10s+  ################################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'record_user_integral_0'\G
+#    SHOW CREATE TABLE `record_user_integral_0`\G
+#    SHOW TABLE STATUS LIKE 'record_user_integral_1'\G
+#    SHOW CREATE TABLE `record_user_integral_1`\G
+#    SHOW TABLE STATUS LIKE 'record_user_integral_2'\G
+#    SHOW CREATE TABLE `record_user_integral_2`\G
+#    SHOW TABLE STATUS LIKE 'record_user_integral_3'\G
+#    SHOW CREATE TABLE `record_user_integral_3`\G
+#    SHOW TABLE STATUS LIKE 'record_user_integral_4'\G
+#    SHOW CREATE TABLE `record_user_integral_4`\G
+#    SHOW TABLE STATUS LIKE 'record_user_integral_5'\G
+#    SHOW CREATE TABLE `record_user_integral_5`\G
+#    SHOW TABLE STATUS LIKE 'record_user_integral_6'\G
+#    SHOW CREATE TABLE `record_user_integral_6`\G
+#    SHOW TABLE STATUS LIKE 'record_user_integral_7'\G
+#    SHOW CREATE TABLE `record_user_integral_7`\G
+#    SHOW TABLE STATUS LIKE 'record_user_integral_8'\G
+#    SHOW CREATE TABLE `record_user_integral_8`\G
+#    SHOW TABLE STATUS LIKE 'record_user_integral_9'\G
+#    SHOW CREATE TABLE `record_user_integral_9`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_integral_0 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')
+UNION ALL
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_integral_1 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')
+UNION ALL
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_integral_2 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')
+UNION ALL
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_integral_3 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')
+UNION ALL
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_integral_4 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')
+UNION ALL
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_integral_5 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')
+UNION ALL
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_integral_6 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')
+UNION ALL
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_integral_7 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')
+UNION ALL
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_integral_8 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')
+UNION ALL
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_integral_9 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')\G
+
+# Query 3: 0 QPS, 0x concurrency, ID 0x4960E3A9726B68D5 at byte 112443 ___
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      9     11s     11s     11s     11s     11s       0     11s
+# Lock time      0   126us   126us   126us   126us   126us       0   126us
+# Rows sent      1    1000    1000    1000    1000    1000       0    1000
+# Rows examine   7   7.23M   7.23M   7.23M   7.23M   7.23M       0   7.23M
+# Query size     0      78      78      78      78      78       0      78
+# Bytes          0      78      78      78      78      78       0      78
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Hosts        192.168.7.74
+# Time         2016-09-06T02:03:23.806400Z
+# Users        passportdbs
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s
+#  10s+  ################################################################
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS FROM `passport` LIKE 'user_login_his_temp'\G
+#    SHOW CREATE TABLE `passport`.`user_login_his_temp`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from `passport`.`user_login_his_temp` order by `id` desc limit 0,1000\G
+
+# Query 4: 0 QPS, 0x concurrency, ID 0xE8DAB9A7B334C6D4 at byte 3474 _____
+# Scores: V/M = 0.02
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          4      10
+# Exec time      9     11s   874ms      1s      1s      1s   134ms      1s
+# Lock time      2     2ms   138us   281us   174us   247us    47us   144us
+# Rows sent      3   2.35k     228     255  240.50  246.02    7.99  234.30
+# Rows examine   4   4.41M 450.56k 453.19k 451.63k 440.37k       0 440.37k
+# Query size     2   1.42k     145     145     145     145       0     145
+# Bytes          2   1.42k     145     145     145     145       0     145
+# hostname       4     260      26      26      26      26       0      26
+# String:
+# Hosts        10.10.0.32
+# Time         2016-09-05... (1/10%), 2016-09-05... (1/10%)... 8 more
+# Users        dev_user
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ##########################################
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'user_7'\G
+#    SHOW CREATE TABLE `user_7`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT a.*,str_to_date('2016-09-05','%Y-%m-%d %T:%f') as ETL_TIME  FROM user_7 a
+where update_time >= str_to_date('2016-09-05','%Y-%m-%d %T:%f')\G
+
+# Query 5: 0 QPS, 0x concurrency, ID 0xF3E6F0D755DE08E2 at byte 8402 _____
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      1      2s      2s      2s      2s      2s       0      2s
+# Lock time      0   334us   334us   334us   334us   334us       0   334us
+# Rows sent      0      21      21      21      21      21       0      21
+# Rows examine   0 903.43k 903.43k 903.43k 903.43k 903.43k       0 903.43k
+# Query size     0     293     293     293     293     293       0     293
+# Bytes          0     293     293     293     293     293       0     293
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Hosts        10.10.0.31
+# Time         2016-09-05T18:16:24.651525Z
+# Users        passportdbs
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'user_0'\G
+#    SHOW CREATE TABLE `user_0`\G
+#    SHOW TABLE STATUS LIKE 'user_source_0'\G
+#    SHOW CREATE TABLE `user_source_0`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select   tt.source as code,  DATE_FORMAT(t.create_time,'%Y-%m-%d') as createTime  ,count(*)  as count   from  user_0    t, user_source_0 tt   where t.id = tt.user_id          and       DATE_FORMAT(t.create_time,'%Y-%m-%d')  = '2016-09-05'                        group by  tt.source, createTime\G
+
+# Query 6: 0 QPS, 0x concurrency, ID 0x6D1684174BCEA707 at byte 8088 _____
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          5      12
+# Exec time      1      1s   100ms   136ms   114ms   128ms    11ms   116ms
+# Lock time      4     2ms   142us   255us   199us   236us    35us   185us
+# Rows sent      0       2       0       1    0.17    0.99    0.37       0
+# Rows examine   0 267.09k  21.50k  22.75k  22.26k  22.45k  539.76  22.45k
+# Query size     1   1.24k     105     108     106  107.34    1.50  102.22
+# Bytes          1   1.24k     105     108     106  107.34    1.50  102.22
+# hostname       5     312      26      26      26      26       0      26
+# String:
+# Hosts        10.10.2.61 (6/50%), 10.10.1.61 (4/33%)... 1 more
+# Time         2016-09-05... (1/8%), 2016-09-05... (1/8%)... 10 more
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'record_user_binding_card_2'\G
+#    SHOW CREATE TABLE `record_user_binding_card_2`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select * FROM record_user_binding_card_2 record_user_binding_card WHERE user_id = 3263490 and is_delete=0\G
+
+# Query 7: 0 QPS, 0x concurrency, ID 0x0CF1C43566822F7B at byte 3825 _____
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   240ms   240ms   240ms   240ms   240ms       0   240ms
+# Lock time      0   438us   438us   438us   438us   438us       0   438us
+# Rows sent      0     196     196     196     196     196       0     196
+# Rows examine   0 221.97k 221.97k 221.97k 221.97k 221.97k       0 221.97k
+# Query size     2   1.74k   1.74k   1.74k   1.74k   1.74k       0   1.74k
+# Bytes          2   1.74k   1.74k   1.74k   1.74k   1.74k       0   1.74k
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Hosts        10.10.0.32
+# Time         2016-09-05T16:34:56.104155Z
+# Users        dev_user
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'record_user_binding_card_0'\G
+#    SHOW CREATE TABLE `record_user_binding_card_0`\G
+#    SHOW TABLE STATUS LIKE 'record_user_binding_card_1'\G
+#    SHOW CREATE TABLE `record_user_binding_card_1`\G
+#    SHOW TABLE STATUS LIKE 'record_user_binding_card_2'\G
+#    SHOW CREATE TABLE `record_user_binding_card_2`\G
+#    SHOW TABLE STATUS LIKE 'record_user_binding_card_3'\G
+#    SHOW CREATE TABLE `record_user_binding_card_3`\G
+#    SHOW TABLE STATUS LIKE 'record_user_binding_card_4'\G
+#    SHOW CREATE TABLE `record_user_binding_card_4`\G
+#    SHOW TABLE STATUS LIKE 'record_user_binding_card_5'\G
+#    SHOW CREATE TABLE `record_user_binding_card_5`\G
+#    SHOW TABLE STATUS LIKE 'record_user_binding_card_6'\G
+#    SHOW CREATE TABLE `record_user_binding_card_6`\G
+#    SHOW TABLE STATUS LIKE 'record_user_binding_card_7'\G
+#    SHOW CREATE TABLE `record_user_binding_card_7`\G
+#    SHOW TABLE STATUS LIKE 'record_user_binding_card_8'\G
+#    SHOW CREATE TABLE `record_user_binding_card_8`\G
+#    SHOW TABLE STATUS LIKE 'record_user_binding_card_9'\G
+#    SHOW CREATE TABLE `record_user_binding_card_9`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_binding_card_0 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')
+UNION ALL
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_binding_card_1 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')
+UNION ALL
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_binding_card_2 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')
+UNION ALL
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_binding_card_3 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')
+UNION ALL
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_binding_card_4 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')
+UNION ALL
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_binding_card_5 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')
+UNION ALL
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_binding_card_6 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')
+UNION ALL
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_binding_card_7 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')
+UNION ALL
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_binding_card_8 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')
+UNION ALL
+SELECT a.*,STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f') AS ETL_TIME   FROM record_user_binding_card_9 a
+WHERE create_time  > STR_TO_DATE('2016-09-05','%Y-%m-%d %T:%f')\G
+
+# Query 8: 0 QPS, 0x concurrency, ID 0xD4DA0A6AC278EDEC at byte 7755 _____
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          0       1
+# Exec time      0   101ms   101ms   101ms   101ms   101ms       0   101ms
+# Lock time      0   222us   222us   222us   222us   222us       0   222us
+# Rows sent      0       1       1       1       1       1       0       1
+# Rows examine   0  22.06k  22.06k  22.06k  22.06k  22.06k       0  22.06k
+# Query size     0     124     124     124     124     124       0     124
+# Bytes          0     124     124     124     124     124       0     124
+# hostname       0      26      26      26      26      26       0      26
+# String:
+# Hosts        10.10.1.56
+# Time         2016-09-05T17:57:37.489216Z
+# Users        passportdbm
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms  ################################################################
+#    1s
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'record_user_binding_card_2'\G
+#    SHOW CREATE TABLE `record_user_binding_card_2`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select * from record_user_binding_card_2 record_user_binding_card  where is_delete=0 and user_id = 1008602992 and bank_id=26\G

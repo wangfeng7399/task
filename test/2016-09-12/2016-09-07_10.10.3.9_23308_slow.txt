@@ -1,0 +1,195 @@
+
+# 470ms user time, 30ms system time, 26.22M rss, 211.00M vsz
+# Current date: Wed Sep  7 05:00:03 2016
+# Hostname: 26
+# Files: /tmp/2016-09-07_10.10.3.9_23308_slow.log
+# Overall: 11 total, 5 unique, 0 QPS, 0x concurrency _____________________
+# Attribute          total     min     max     avg     95%  stddev  median
+# ============     ======= ======= ======= ======= ======= ======= =======
+# Exec time            26s      1s      5s      2s      5s      1s      2s
+# Lock time            2ms    71us   284us   142us   159us    53us   144us
+# Rows sent              3       0       1    0.27    0.99    0.44       0
+# Rows examine       8.52M 115.55k   1.09M 793.28k   1.03M 321.68k 830.38k
+# Query size         1.32k      37     202  123.18  192.76   54.73  136.99
+# Bytes              1.32k      37     202  123.18  192.76   54.73  136.99
+# hostname             286      26      26      26      26       0      26
+
+# Profile
+# Rank Query ID           Response time Calls R/Call V/M   Item
+# ==== ================== ============= ===== ====== ===== ===============
+#    1 0x6EDF12915B0AF90F 14.2744 55.2%     3 4.7581  0.03 UPDATE mb_code
+#    2 0xF22C784F34412D4A  4.2346 16.4%     2 2.1173  0.01 SELECT mobile_member
+#    3 0xB585FC9FFD3ECEAE  3.6021 13.9%     3 1.2007  0.01 UPDATE mb_code
+#    4 0xD9473B922F1E395C  2.0653  8.0%     2 1.0326  0.00 UPDATE mobile_member_dictionary
+#    5 0x597381E577825639  1.7012  6.6%     1 1.7012  0.00 SELECT mobile_member
+
+# Query 1: 0 QPS, 0x concurrency, ID 0x6EDF12915B0AF90F at byte 311 ______
+# Scores: V/M = 0.03
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         27       3
+# Exec time     55     14s      4s      5s      5s      5s   372ms      5s
+# Lock time     15   240us    71us    96us    80us    93us    11us    69us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine  29   2.52M 860.10k 860.10k 860.10k 860.10k       0 860.10k
+# Query size     8     111      37      37      37      37       0      37
+# Bytes          8     111      37      37      37      37       0      37
+# hostname      27      78      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'mb_code'\G
+#    SHOW CREATE TABLE `mb_code`\G
+update  mb_code  set  countCode = '0'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select   countCode = '0' from mb_code \G
+
+# Query 2: 0 QPS, 0x concurrency, ID 0xF22C784F34412D4A at byte 1304 _____
+# Scores: V/M = 0.01
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         18       2
+# Exec time     16      4s      2s      2s      2s      2s   164ms      2s
+# Lock time     19   303us   151us   152us   151us   152us       0   151us
+# Rows sent     66       2       1       1       1       1       0       1
+# Rows examine  25   2.17M   1.09M   1.09M   1.09M   1.09M       0   1.09M
+# Query size    20     284     141     143     142     143    1.41     142
+# Bytes         20     284     141     143     142     143    1.41     142
+# hostname      18      52      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'mobile_member'\G
+#    SHOW CREATE TABLE `mobile_member`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select count(mm.member_userId)   from mobile_member mm ,user_auth ua   where ua.user_id =mm.member_userId and ua.ref_type  regexp 'kashen-SINA'\G
+
+# Query 3: 0 QPS, 0x concurrency, ID 0xB585FC9FFD3ECEAE at byte 2299 _____
+# Scores: V/M = 0.01
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         27       3
+# Exec time     13      4s      1s      1s      1s      1s   111ms      1s
+# Lock time     29   463us   146us   166us   154us   159us     7us   144us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine  29   2.52M 860.10k 860.14k 860.12k 830.38k       0 830.38k
+# Query size    30     420     140     140     140     140       0     140
+# Bytes         30     420     140     140     140     140       0     140
+# hostname      27      78      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'mb_code'\G
+#    SHOW CREATE TABLE `mb_code`\G
+update mb_code set mobileCode = '769834',updTime ='2016-09-06 23:21:32',countCode = countCode+1 where mobile = '13624535930'  and type = '9'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select  mobileCode = '769834',updTime ='2016-09-06 23:21:32',countCode = countCode+1 from mb_code where  mobile = '13624535930'  and type = '9'\G
+
+# Query 4: 0 QPS, 0x concurrency, ID 0xD9473B922F1E395C at byte 0 ________
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         18       2
+# Exec time      7      2s      1s      1s      1s      1s    10ms      1s
+# Lock time     28   445us   161us   284us   222us   284us    86us   222us
+# Rows sent      0       0       0       0       0       0       0       0
+# Rows examine   2 231.09k 115.55k 115.55k 115.55k 115.55k       0 115.55k
+# Query size    29     404     202     202     202     202       0     202
+# Bytes         29     404     202     202     202     202       0     202
+# hostname      18      52      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'mobile_member_dictionary'\G
+#    SHOW CREATE TABLE `mobile_member_dictionary`\G
+update  mobile_member_dictionary md ,mobile_dictionary d set md.oper_num = 0 ,end = 0     where d.mdt_Id = md.mdt_Id and d.mdt_code not like 'unbh%' and d.mdt_codeValueH > 0      and d.mdt_code!='bs_hk'\G
+# Converted for EXPLAIN
+# EXPLAIN /*!50100 PARTITIONS*/
+select  md.oper_num = 0 ,end = 0 from mobile_member_dictionary md ,mobile_dictionary d where  d.mdt_Id = md.mdt_Id and d.mdt_code not like 'unbh%' and d.mdt_codeValueH > 0      and d.mdt_code!='bs_hk'\G
+
+# Query 5: 0 QPS, 0x concurrency, ID 0x597381E577825639 at byte 1806 _____
+# Scores: V/M = 0.00
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count          9       1
+# Exec time      6      2s      2s      2s      2s      2s       0      2s
+# Lock time      7   120us   120us   120us   120us   120us       0   120us
+# Rows sent     33       1       1       1       1       1       0       1
+# Rows examine  12   1.09M   1.09M   1.09M   1.09M   1.09M       0   1.09M
+# Query size    10     136     136     136     136     136       0     136
+# Bytes         10     136     136     136     136     136       0     136
+# hostname       9      26      26      26      26      26       0      26
+# Query_time distribution
+#   1us
+#  10us
+# 100us
+#   1ms
+#  10ms
+# 100ms
+#    1s  ################################################################
+#  10s+
+# Review information
+#    first_seen: 
+#     last_seen: 
+#   reviewed_by: 
+#   reviewed_on: 
+#      comments: 
+# Tables
+#    SHOW TABLE STATUS LIKE 'mobile_member'\G
+#    SHOW CREATE TABLE `mobile_member`\G
+# EXPLAIN /*!50100 PARTITIONS*/
+select count(mm.member_userId)   from mobile_member mm ,user_auth ua   where ua.user_id =mm.member_userId and ua.ref_type like 'kashen%'\G
