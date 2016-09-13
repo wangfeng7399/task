@@ -86,8 +86,8 @@ class Monitor(models.Model):
 class Slow(models.Model):
     date=models.DateField()
     datab=models.CharField(max_length=100)
-    maxtime=models.IntegerField
-    avgtime=models.IntegerField
-    mintime=models.IntegerField
+    maxtime=models.CharField(max_length=100)
+    avgtime=models.CharField(max_length=100)
+    mintime=models.CharField(max_length=100)
     insql=models.TextField(max_length=20000)
     count=models.IntegerField()
