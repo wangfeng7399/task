@@ -536,8 +536,8 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/master/master.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/.~lock.test.xls#" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/sqlall.html" afterPath="$PROJECT_DIR$/templates/sqlall.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/log.py" afterPath="$PROJECT_DIR$/test/log.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/models.py" afterPath="$PROJECT_DIR$/web/models.py" />
     </list>
     <ignored path="task.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -555,7 +555,7 @@
     <SUITE FILE_PATH="coverage/task$base.coverage" NAME="base Coverage Results" MODIFIED="1464083451527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
     <SUITE FILE_PATH="coverage/task$Test__templates_createhost_html.coverage" NAME="Test: templates.createhost.html Coverage Results" MODIFIED="1463635216912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/task$a.coverage" NAME="a Coverage Results" MODIFIED="1470989257732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/task$log.coverage" NAME="log Coverage Results" MODIFIED="1473744726380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/task$log.coverage" NAME="log Coverage Results" MODIFIED="1473745143460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/task$property.coverage" NAME="property Coverage Results" MODIFIED="1470637379274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
     <SUITE FILE_PATH="coverage/task$manage.coverage" NAME="manage Coverage Results" MODIFIED="1463539178113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/task$tets.coverage" NAME="tets Coverage Results" MODIFIED="1470295366576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
@@ -592,35 +592,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="property.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/property.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="516.7083">
-              <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47368422">
-              <caret line="88" column="28" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="91" column="44" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sqlall.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sqlall.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/sqlall.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.1666665">
-              <caret line="67" column="54" selection-start-line="67" selection-start-column="54" selection-end-line="67" selection-end-column="54" />
-              <folding>
-                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.101045296">
+              <caret line="61" column="52" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="52" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -629,20 +616,40 @@
         <entry file="file://$PROJECT_DIR$/test/log.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+              <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
               <folding>
                 <element signature="e#34#44#0" expanded="true" />
-                <marker date="1473744726375" expanded="true" signature="1022:1104" placeholder="insert into web_slow... " />
-                <marker date="1473744726375" expanded="true" signature="1022:1128" placeholder="insert into web_slow... " />
-                <marker date="1473744726375" expanded="true" signature="1022:1132" placeholder="insert into web_slow... " />
-                <marker date="1473744726375" expanded="true" signature="1022:1138" placeholder="insert into web_slow... " />
-                <marker date="1473744726375" expanded="true" signature="1022:1240" placeholder="insert into web_slow... " />
-                <marker date="1473744726375" expanded="true" signature="1022:2167" placeholder="insert into web_slow... " />
-                <marker date="1473744726375" expanded="true" signature="1868:1974" placeholder="insert into web_slow... " />
-                <marker date="1473744726375" expanded="true" signature="1868:1978" placeholder="insert into web_slow... " />
-                <marker date="1473744726375" expanded="true" signature="1868:1984" placeholder="insert into web_slow... " />
-                <marker date="1473744726375" expanded="true" signature="1868:2167" placeholder="insert into web_slow... " />
+                <marker date="1473818440995" expanded="true" signature="1081:1163" placeholder="insert into web_slow... " />
+                <marker date="1473818440995" expanded="true" signature="1081:1187" placeholder="insert into web_slow... " />
+                <marker date="1473818440995" expanded="true" signature="1081:1191" placeholder="insert into web_slow... " />
+                <marker date="1473818440995" expanded="true" signature="1081:1197" placeholder="insert into web_slow... " />
+                <marker date="1473818440995" expanded="true" signature="1081:1299" placeholder="insert into web_slow... " />
+                <marker date="1473818440995" expanded="true" signature="1081:2318" placeholder="insert into web_slow... " />
+                <marker date="1473818440995" expanded="true" signature="2007:2113" placeholder="insert into web_slow... " />
+                <marker date="1473818440995" expanded="true" signature="2007:2117" placeholder="insert into web_slow... " />
+                <marker date="1473818440995" expanded="true" signature="2007:2123" placeholder="insert into web_slow... " />
+                <marker date="1473818440995" expanded="true" signature="2007:2318" placeholder="insert into web_slow... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016-09-13_10.10.3.10_3316_slow.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/2016-09-13/2016-09-13_10.10.3.10_3316_slow.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3549" column="42" selection-start-line="3549" selection-start-column="42" selection-end-line="3549" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016-09-13_10.10.2.6_23306_slow.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/2016-09-13/2016-09-13_10.10.2.6_23306_slow.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="456" column="26" selection-start-line="456" selection-start-column="23" selection-end-line="456" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -742,10 +749,10 @@
         <option value="$PROJECT_DIR$/test/2016-09-06/2016-09-05_10.10.2.6_23306_slow.txt" />
         <option value="$PROJECT_DIR$/templates/codedetail.html" />
         <option value="$PROJECT_DIR$/web/mysql.py" />
-        <option value="$PROJECT_DIR$/templates/sqlall.html" />
         <option value="$PROJECT_DIR$/web/migrations/0017_auto_20160912_1638.py" />
-        <option value="$PROJECT_DIR$/test/log.py" />
         <option value="$PROJECT_DIR$/web/models.py" />
+        <option value="$PROJECT_DIR$/test/log.py" />
+        <option value="$PROJECT_DIR$/templates/sqlall.html" />
       </list>
     </option>
   </component>
@@ -1306,7 +1313,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25078124" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3974359" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5016026" sideWeight="0.490625" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5016026" sideWeight="0.490625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5016026" sideWeight="0.509375" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1353,20 +1360,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/python34/lib/python3.4/urllib/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/extra_search.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.54741377">
@@ -1684,7 +1677,7 @@
         <state vertical-scroll-proportion="-0.8561873">
           <caret line="311" column="99" selection-start-line="311" selection-start-column="99" selection-end-line="311" selection-end-column="99" />
           <folding>
-            <element signature="e#39#96#0" expanded="true" />
+            <element signature="e#39#96#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1723,17 +1716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sqlall.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.1666665">
-          <caret line="67" column="54" selection-start-line="67" selection-start-column="54" selection-end-line="67" selection-end-column="54" />
-          <folding>
-            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/migrations/0017_auto_20160912_1638.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1750,30 +1732,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="91" column="44" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/2016-09-13/2016-09-13_10.10.2.6_23306_slow.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="456" column="26" selection-start-line="456" selection-start-column="23" selection-end-line="456" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/2016-09-13/2016-09-13_10.10.3.10_3316_slow.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3549" column="42" selection-start-line="3549" selection-start-column="42" selection-end-line="3549" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/log.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
           <folding>
             <element signature="e#34#44#0" expanded="true" />
-            <marker date="1473744726375" expanded="true" signature="1022:1104" placeholder="insert into web_slow... " />
-            <marker date="1473744726375" expanded="true" signature="1022:1128" placeholder="insert into web_slow... " />
-            <marker date="1473744726375" expanded="true" signature="1022:1132" placeholder="insert into web_slow... " />
-            <marker date="1473744726375" expanded="true" signature="1022:1138" placeholder="insert into web_slow... " />
-            <marker date="1473744726375" expanded="true" signature="1022:1240" placeholder="insert into web_slow... " />
-            <marker date="1473744726375" expanded="true" signature="1022:2167" placeholder="insert into web_slow... " />
-            <marker date="1473744726375" expanded="true" signature="1868:1974" placeholder="insert into web_slow... " />
-            <marker date="1473744726375" expanded="true" signature="1868:1978" placeholder="insert into web_slow... " />
-            <marker date="1473744726375" expanded="true" signature="1868:1984" placeholder="insert into web_slow... " />
-            <marker date="1473744726375" expanded="true" signature="1868:2167" placeholder="insert into web_slow... " />
+            <marker date="1473818440995" expanded="true" signature="1081:1163" placeholder="insert into web_slow... " />
+            <marker date="1473818440995" expanded="true" signature="1081:1187" placeholder="insert into web_slow... " />
+            <marker date="1473818440995" expanded="true" signature="1081:1191" placeholder="insert into web_slow... " />
+            <marker date="1473818440995" expanded="true" signature="1081:1197" placeholder="insert into web_slow... " />
+            <marker date="1473818440995" expanded="true" signature="1081:1299" placeholder="insert into web_slow... " />
+            <marker date="1473818440995" expanded="true" signature="1081:2318" placeholder="insert into web_slow... " />
+            <marker date="1473818440995" expanded="true" signature="2007:2113" placeholder="insert into web_slow... " />
+            <marker date="1473818440995" expanded="true" signature="2007:2117" placeholder="insert into web_slow... " />
+            <marker date="1473818440995" expanded="true" signature="2007:2123" placeholder="insert into web_slow... " />
+            <marker date="1473818440995" expanded="true" signature="2007:2318" placeholder="insert into web_slow... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/models.py">
+    <entry file="file://$PROJECT_DIR$/templates/sqlall.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47368422">
-          <caret line="88" column="28" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.101045296">
+          <caret line="61" column="52" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="52" />
           <folding />
         </state>
       </provider>
