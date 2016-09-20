@@ -7,7 +7,7 @@ from django.core.urlresolvers import reverse_lazy
 from pyzabbix import ZabbixAPI
 from .models import Host,Team,Code,Type,Monitor
 import time
-
+import json
 # def wapkaku(request):
 #     data={"title":["邮件营销","联盟广告","视频广告","直接访问","搜索引擎"],"xAxis":["周一","周二","周三","周四","周五","周六","周日"],
 #           "youjian":[120, 132, 101, 134, 90, 230, 210],"lianmeng":[220, 182, 191, 234, 290, 330, 310],"shipin":[150, 232, 201, 154, 190, 330, 410],
@@ -161,10 +161,11 @@ def proprty(request,codeid,hostid):
             memdict["freemem"]=list
     memdict["title"]=memtitle
     all["member"]=memdict
-    data.append(all)
+    # data.append(all)
     # print(data)
     # print(time.strftime("%m-%d %H:%M:%S",time.localtime(1470034355)))
     # #获取前15次数值
     # for a in z.history.get(output="extend",history=0,itemids="23944",limit=15):
     #     print(a)
-    return HttpResponse(data)
+    all=json.dumps(all)
+    return HttpResponse(all)
