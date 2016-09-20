@@ -537,7 +537,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/.~lock.test.xls#" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/codedetail.html" afterPath="$PROJECT_DIR$/templates/codedetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/property.py" afterPath="$PROJECT_DIR$/web/property.py" />
     </list>
     <ignored path="task.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -575,8 +574,8 @@
       <file leaf-file-name="codedetail.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15679443">
-              <caret line="624" column="24" selection-start-line="624" selection-start-column="24" selection-end-line="624" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.33972126">
+              <caret line="622" column="22" selection-start-line="622" selection-start-column="22" selection-end-line="622" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -1746,8 +1745,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15679443">
-          <caret line="624" column="24" selection-start-line="624" selection-start-column="24" selection-end-line="624" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.33972126">
+          <caret line="622" column="22" selection-start-line="622" selection-start-column="22" selection-end-line="622" selection-end-column="22" />
           <folding />
         </state>
       </provider>
