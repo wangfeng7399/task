@@ -161,10 +161,10 @@ def proprty(request,codeid,hostid):
             memdict["freemem"]=list
     memdict["title"]=memtitle
     all["member"]=memdict
-    #data.append(all)
+    data.append(all)
     # print(data)
     # print(time.strftime("%m-%d %H:%M:%S",time.localtime(1470034355)))
     # #获取前15次数值
     # for a in z.history.get(output="extend",history=0,itemids="23944",limit=15):
     #     print(a)
-    return HttpResponse(all)
+    return HttpResponse(data)
