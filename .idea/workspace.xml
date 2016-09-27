@@ -536,12 +536,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/master/master.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test/.~lock.test.xls#" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/bootstrap-datepicker.js" afterPath="$PROJECT_DIR$/static/js/bootstrap-datepicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/form-components.js" afterPath="$PROJECT_DIR$/static/js/form-components.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task/urls.py" afterPath="$PROJECT_DIR$/task/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/master/index.html" afterPath="$PROJECT_DIR$/templates/master/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/sqlall.html" afterPath="$PROJECT_DIR$/templates/sqlall.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/mysql.py" afterPath="$PROJECT_DIR$/web/mysql.py" />
     </list>
     <ignored path="task.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -609,8 +603,8 @@
       <file leaf-file-name="mysql.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/mysql.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5518395">
-              <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.5769231">
+              <caret line="23" column="21" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="21" />
               <folding>
                 <element signature="e#35#92#0" expanded="true" />
               </folding>
@@ -1729,8 +1723,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/mysql.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5518395">
-          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.5769231">
+          <caret line="23" column="21" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="21" />
           <folding>
             <element signature="e#35#92#0" expanded="true" />
           </folding>
