@@ -19,7 +19,7 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from web import views
-from web import user,code,property,mysql
+from web import user,code,property,mysql,streen
 app_name="web"
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -45,6 +45,7 @@ urlpatterns = [
     url(r'^status/$',code.status,name='status'),
     url(r'^updateall/$',code.updateall,name='updateall'),
     url(r'slow/$',mysql.slow,name='slow'),
+    url(r'sqlselect/$',mysql.sqlselect,name='sqlselect'),
     url(r'^backall/$',code.backall,name='backall'),
     url(r'^tree/(?P<id>[0-9]+)$',code.tree,name='tree'),
     url(r'^retype/$',code.retype,name='retype'),
@@ -61,5 +62,6 @@ urlpatterns = [
     url(r'^updateuser/$',user.updateuser,name='updateuser'),
     url(r'^updateteam/$',user.updateteam,name='updateteam'),
     # url(r'^wapkahu/$',property.wapkaku,name='wapkahu'),
-    url(r'^zabbix/(?P<codeid>[0-9]+)/(?P<hostid>[0-9]+)$',property.proprty,name='zabbix')
+    url(r'^zabbix/(?P<codeid>[0-9]+)/(?P<hostid>[0-9]+)$',property.proprty,name='zabbix'),
+    url(r'^stree/$',streen.streen,name="stree")
 ]

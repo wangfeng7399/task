@@ -120,14 +120,14 @@ var FormComponents = function () {
         $('.date-range').daterangepicker(
             {
                 opens: (App.isRTL() ? 'left' : 'right'),
-                format: 'MM/dd/yyyy',
+                format: 'yyyy-MM-dd',
                 separator: ' to ',
                 startDate: Date.today().add({
                     days: -29
                 }),
                 endDate: Date.today(),
-                minDate: '01/01/2012',
-                maxDate: '12/31/2014',
+                minDate: '2012-01-01',
+                maxDate: '2014-12-31',
             }
         );
 
@@ -149,7 +149,7 @@ var FormComponents = function () {
                     })]
             },
             opens: (App.isRTL() ? 'left' : 'right'),
-            format: 'MM/dd/yyyy',
+            format: 'yyyy-MM-dd',
             separator: ' to ',
             startDate: Date.today().add({
                 days: -29
@@ -199,7 +199,7 @@ var FormComponents = function () {
                     })]
             },
             opens: (App.isRTL() ? 'left' : 'right'),
-            format: 'MM/dd/yyyy',
+            format: 'yyyy-MM-dd',
             separator: ' to ',
             startDate: Date.today().add({
                 days: -29
