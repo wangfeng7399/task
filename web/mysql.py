@@ -20,5 +20,4 @@ def sqlselect(request):
         sql=Slow.objects.all()
         selectsql=sql.exclude(date__lt=starttime)
         sqls=selectsql.exclude(date__gt=endtime)
-        print(sqls)
         return render(request,'sqlall.html',{"sqlall":sqls})

@@ -51,7 +51,6 @@ urlpatterns = [
     url(r'^retype/$',code.retype,name='retype'),
     url(r'^svncode/$',code.svncode,name='svncode'),
     url(r'^upyun/$',code.upyun,name='upyun'),
-    url(r'^download/$',code.downloadxls,name='downloadxls'),
     url(r'^issuper/$',user.issuper,name='issuper'),
     url(r'^reuser/(?P<id>[0-9]+)$',user.reuser,name='reuser'),
     url(r'^del/(?P<id>[0-9]+)$',code.delfile,name='delfile'),

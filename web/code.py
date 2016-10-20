@@ -404,10 +404,3 @@ def upyun(request):
         #TODO
 
     return render(request,'upyunupload.html',{"teamall":teamall})
-
-
-@login_required(login_url=reverse_lazy('login'))
-def downloadxls(request):
-    with open('/data/pycharm/django/task/templates/readme.xls',) as f:
-        c=f.read()
-    return HttpResponse(c)
