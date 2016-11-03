@@ -210,7 +210,7 @@ def updateteam(request):
     if request.method=='POST':
         hostlist=[]
         nginxlist=[]
-        host=request.POST.getlist('host')
+        host=request.POST.getlist('host')      #获取前端传过来的主机
         teamname=request.POST.get('teamname')
         teampath=request.POST.get('teampath')
         datapath=request.POST.get('datapath')
@@ -219,7 +219,7 @@ def updateteam(request):
         svnuser=request.POST.get('svnuser')
         svnpwd=request.POST.get('svnpwd')
         nginxpath=request.POST.get('nginxpath')
-        nginxhost=request.POST.getlist('nginxhost')
+        nginxhost=request.POST.getlist('nginxhost') #获取前端传过来的nginx主机
         nginxupstream=request.POST.get('nginxupstream')
         url=request.POST.get('url')
         teamlanguage=request.POST.get('teamlanguage')
@@ -240,8 +240,8 @@ def updateteam(request):
         team.language_id=languageid
         team.ps=ps
         team.save()
-        hall=team.host.all()
-        nall=team.nginxhost.all()
+        hall=team.host.all()             #获取现在已经存在的host
+        nall=team.nginxhost.all()       #获取现在已经存在的nginx host
         for hl in hall:
             hostlist.append(hl.id)
         for nl in nall:
@@ -250,10 +250,19 @@ def updateteam(request):
             if h not in hall:
                 hostid=Host.objects.get(id=h)
                 team.host.add(hostid)
+        print(host)
+        for dh in hostlist:
+            if dh not in host:
+                dhostid=Host.objects.get(id=dh)
+                team.host.remove(dhostid)
         for nh in nginxhost:
             if nh not in nall:
                 nhid=NginxHost.objects.get(id=nh)
                 team.nginxhost.add(nhid)
+        for dnh in nginxlist:
+            if dnh not in nginxhost:
+                dnhid=NginxHost.objects.get(id=dnh)
+                team.nginxhost.remove(dnhid)
         return redirect(reverse("teamall"))
     else:
         return render(request,'createteam.html',{"language":language,"hostall":hostall,"nginxhost":nhost})
