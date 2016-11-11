@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 #coding:utf-8
 #代码操作
 from django.shortcuts import render,redirect,HttpResponse

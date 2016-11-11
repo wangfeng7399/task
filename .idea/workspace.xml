@@ -2,541 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7da08bf5-c66f-48f1-895a-d8b81e5f6c44" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/javascripts/graphDemo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/javascripts/html5.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/bootstrap/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/bootstrap/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/bootstrap/img/glyphicons-halflings-white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/bootstrap/img/glyphicons-halflings.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/bootstrap/js/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/bootstrap/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/FontAwesome-Vectors.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/FontAwesome.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/css/font-awesome-ie7.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/css/font-awesome.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/css/font-awesome-ie7.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/css/font-awesome.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/css/prettify.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/css/site.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/font/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/font/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/font/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/font/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/font/museo_slab_300-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/font/museo_slab_300-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/font/museo_slab_500-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/font/museo_slab_500-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/font/proximanova-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/font/proximanova-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/ico/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/js/backbone.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/js/index/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/js/jquery-1.7.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/js/prettify.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/js/tw-bs-201/bootstrap-alert.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/js/tw-bs-201/bootstrap-button.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/js/tw-bs-201/bootstrap-carousel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/js/tw-bs-201/bootstrap-collapse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/js/tw-bs-201/bootstrap-dropdown.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/js/tw-bs-201/bootstrap-modal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/js/tw-bs-201/bootstrap-popover.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/js/tw-bs-201/bootstrap-scrollspy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/js/tw-bs-201/bootstrap-tab.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/js/tw-bs-201/bootstrap-tooltip.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/js/tw-bs-201/bootstrap-transition.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/js/tw-bs-201/bootstrap-typeahead.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/js/underscore.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/font-awesome-ie7.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/font-awesome.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/font-site.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/mixins.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/site.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/accordion.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/alerts.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/bootstrap.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/breadcrumbs.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/button-groups.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/buttons.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/carousel.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/close.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/code.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/component-animations.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/dropdowns.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/forms.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/grid.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/hero-unit.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/labels-badges.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/layouts.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/mixins.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/modals.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/navbar.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/navs.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/pager.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/pagination.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/popovers.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/progress-bars.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/reset.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/responsive-1200px-min.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/responsive-767px-max.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/responsive-768px-979px.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/responsive-navbar.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/responsive-utilities.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/responsive.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/scaffolding.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/sprites.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/tables.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/thumbnails.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/tooltip.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/type.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/utilities.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/variables.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/twbs-203/wells.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/assets/less/variables.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/docs/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/font/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/font/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/font/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/font/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/less/font-awesome-ie7.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/less/font-awesome.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/sass/font-awesome.sass" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/font-awesome/sass/font-awesome.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/GPL-LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/MIT-LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/changelog.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/agenda-views.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/basic-views.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/cupertino/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/cupertino/images/ui-bg_flat_15_cd0a0a_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/cupertino/images/ui-bg_glass_100_e4f1fb_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/cupertino/images/ui-bg_glass_50_3baae3_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/cupertino/images/ui-bg_glass_80_d7ebf9_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/cupertino/images/ui-bg_highlight-hard_100_f2f5f7_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/cupertino/images/ui-bg_highlight-hard_70_000000_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/cupertino/images/ui-bg_highlight-soft_100_deedf7_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/cupertino/images/ui-bg_highlight-soft_25_ffef8f_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/cupertino/images/ui-icons_2694e8_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/cupertino/images/ui-icons_2e83ff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/cupertino/images/ui-icons_3d80b3_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/cupertino/images/ui-icons_72a7cf_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/cupertino/images/ui-icons_ffffff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/cupertino/theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/default.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/external-dragging.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/gcal.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/json-events.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/json.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/selectable.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/demos/theme.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/fullcalendar/fullcalendar.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/fullcalendar/fullcalendar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/fullcalendar/fullcalendar.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/fullcalendar/fullcalendar.print.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/fullcalendar/gcal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/jquery/jquery-1.7.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/fullcalendar-1.5.3/jquery/jquery-ui-1.8.17.custom.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/MIT-LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/README.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/changes.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/copyright.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/MIT-LICENSE-txt.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/changes-txt.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/gpl-2-0-txt.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/images/background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/images/basicline.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/images/basiclogaxis.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/images/basiclogoptions.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/images/basicoptions.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/images/dualaxis.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/images/logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/images/navdocs.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/images/navdocsover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/images/navdownload.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/images/navdownloadover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/images/navexamples.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/images/navexamplesover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/images/navhome.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/images/navhomeover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/images/new.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/images/sample3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/images/samplesm.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/jqPlotCssStyling-txt.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/jqPlotOptions-txt.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/jqplot-axisLabelRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/jqplot-axisTickRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/jqplot-canvasGridRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/jqplot-core-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/jqplot-divTitleRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/jqplot-lineRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/jqplot-linearAxisRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/jqplot-markerRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/jqplot-shadowRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/jqplot-shapeRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/jqplot-themeEngine-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/jqplot-toImage-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/optionsTutorial-txt.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-BezierCurveRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-barRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-blockRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-bubbleRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-canvasAxisLabelRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-canvasAxisTickRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-canvasOverlay-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-categoryAxisRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-ciParser-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-cursor-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-dateAxisRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-donutRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-dragable-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-enhancedLegendRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-funnelRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-highlighter-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-logAxisRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-mekkoAxisRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-mekkoRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-meterGaugeRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-ohlcRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-pieRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-pointLabels-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-pyramidAxisRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-pyramidGridRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-pyramidRenderer-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/plugins/jqplot-trendline-js.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/files/usage-txt.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/index/Classes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/index/Files.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/index/Functions.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/index/General.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/index/General2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/index/General3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/index/General4.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/index/General5.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/index/General6.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/index/General7.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/index/Hooks.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/index/Properties.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/index/Properties2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/index/Properties3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/index/Properties4.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/index/Properties5.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/index/Properties6.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/javascript/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/javascript/searchdata.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/ClassesA.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/ClassesD.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/ClassesG.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/ClassesH.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/ClassesJ.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/ClassesL.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/ClassesS.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/ClassesSymbols.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/ClassesT.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/ClassesV.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/FilesJ.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/FunctionsC.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/FunctionsD.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/FunctionsG.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/FunctionsI.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/FunctionsM.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/FunctionsN.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/FunctionsQ.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/FunctionsR.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/FunctionsS.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/FunctionsZ.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralA.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralB.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralC.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralD.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralE.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralF.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralG.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralH.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralI.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralJ.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralL.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralM.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralN.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralO.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralP.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralQ.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralR.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralS.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralSymbols.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralT.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralU.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralV.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralW.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralX.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralY.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/GeneralZ.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/HooksA.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/HooksE.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/HooksJ.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/HooksP.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/NoResults.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesA.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesB.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesC.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesD.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesE.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesF.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesG.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesH.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesI.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesL.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesM.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesN.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesO.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesP.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesR.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesS.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesT.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesU.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesV.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesW.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesX.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesY.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/search/PropertiesZ.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/styles/1.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/styles/2.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/docs/styles/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/KCPsample4.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/ages.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/ages.json.bak" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/ajax-loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/area.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/axisLabelTests.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/axisLabelsRotatedText.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/axisScalingForceTickAt.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/bandedLine.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/bar-charts.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/barLineAnimated.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/barTest.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/bezierCurve.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/blockPlot.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/bubble-plots.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/bubbleChart.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/candlestick-charts.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/candlestick.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/canvas-overlay.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/colorpicker/README" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/colorpicker/TODO" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/colorpicker/images/bar-alpha.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/colorpicker/images/bar-opacity.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/colorpicker/images/bar-pointer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/colorpicker/images/bar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/colorpicker/images/map-opacity.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/colorpicker/images/map-pointer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/colorpicker/images/map.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/colorpicker/images/preview-opacity.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/colorpicker/images/ui-colorpicker.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/colorpicker/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/colorpicker/jquery.colorpicker.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/colorpicker/jquery.colorpicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/cursor-highlighter.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/customHighlighterCursorTrendline.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/dashboardWidget.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/dashedLines.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/data-renderers.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/date-axes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/dateAxisLogAxisZooming.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/dateAxisRenderer.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/example.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/example.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/examples.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/examples.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/fillBetweenLines.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/hiddenPlotsInTabs.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/images/logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/images/ui-colorpicker.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/smoothness/images/ui-bg_flat_75_ffffff_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/smoothness/images/ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/smoothness/images/ui-bg_glass_75_dadada_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/smoothness/images/ui-icons_222222_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/smoothness/images/ui-icons_2e83ff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/smoothness/images/ui-icons_454545_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/smoothness/images/ui-icons_888888_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/smoothness/images/ui-icons_cd0a0a_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/smoothness/jquery-ui.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/smoothness/jquery-ui.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/ui-lightness/images/ui-bg_flat_10_000000_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/ui-lightness/images/ui-icons_228ef1_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/ui-lightness/images/ui-icons_ef8c08_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/ui-lightness/images/ui-icons_ffd27a_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/ui-lightness/images/ui-icons_ffffff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/ui-lightness/jquery-ui-1.9pre.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/ui-lightness/jquery-ui-1.9pre.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/ui-lightness/jquery-ui.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/css/ui-lightness/jquery-ui.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/js/jquery-ui-1.9pre.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/js/jquery-ui.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/js/jquery-ui.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/js/jquery.effects.blind.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/js/jquery.effects.blind.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/js/jquery.effects.core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery-ui/js/jquery.effects.core.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery.print.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jquery.printElement.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/jsondata.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/kcp.print.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/kcp_area.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/kcp_area2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/kcp_area2.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/kcp_cdf.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/kcp_engel.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/kcp_lorenz.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/kcp_pdf.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/kcp_pyramid.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/kcp_pyramid2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/kcp_pyramid_by_age.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/kcp_pyramid_by_age.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/kcp_quintiles.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/line-charts.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/mekkoCharts.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/mekkoCharts.php.orig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/meritOrder.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/meterGauge.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/multipleBarColors.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/nav.inc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/pie-donut-charts.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/pieTest.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/pieTest2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/pieTest4.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/point-labels.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/quintiles.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/resizablePlot.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/resizablePlot.php.orig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/rotated-tick-labels.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/rotatedTickLabelsZoom.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/selectorSyntax.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/smoothedLine.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/syntaxhighlighter/LGPL-LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/syntaxhighlighter/MIT-LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/syntaxhighlighter/scripts/shAutoloader.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/syntaxhighlighter/scripts/shAutoloader.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/syntaxhighlighter/scripts/shBrushJScript.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/syntaxhighlighter/scripts/shBrushJScript.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/syntaxhighlighter/scripts/shBrushXml.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/syntaxhighlighter/scripts/shBrushXml.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/syntaxhighlighter/scripts/shCore.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/syntaxhighlighter/scripts/shCore.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/syntaxhighlighter/styles/shCore.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/syntaxhighlighter/styles/shCore.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/syntaxhighlighter/styles/shCoreDefault.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/syntaxhighlighter/styles/shCoreDefault.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/syntaxhighlighter/styles/shThemeDefault.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/syntaxhighlighter/styles/shThemeDefault.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/syntaxhighlighter/styles/shThemejqPlot.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/syntaxhighlighter/styles/shThemejqPlot.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/theming.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/topbanner.inc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/waterfall.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/waterfall2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/yahooData.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/yahooData.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/zoom1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/zoomOptions.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/zoomProxy.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/examples/zooming.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/excanvas.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/excanvas.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/gpl-2.0.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/jqPlotCssStyling.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/jqPlotOptions.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/jquery.jqplot.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/jquery.jqplot.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/jquery.jqplot.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/jquery.jqplot.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/optionsTutorial.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.BezierCurveRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.BezierCurveRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.barRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.barRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.blockRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.blockRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.bubbleRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.bubbleRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.canvasAxisLabelRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.canvasAxisLabelRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.canvasAxisTickRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.canvasAxisTickRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.canvasOverlay.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.canvasOverlay.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.canvasTextRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.canvasTextRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.categoryAxisRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.categoryAxisRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.ciParser.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.ciParser.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.cursor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.cursor.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.dateAxisRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.dateAxisRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.donutRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.donutRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.dragable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.dragable.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.enhancedLegendRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.enhancedLegendRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.funnelRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.funnelRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.highlighter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.highlighter.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.json2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.json2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.logAxisRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.logAxisRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.mekkoAxisRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.mekkoAxisRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.mekkoRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.mekkoRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.meterGaugeRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.meterGaugeRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.mobile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.mobile.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.ohlcRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.ohlcRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.pieRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.pieRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.pointLabels.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.pointLabels.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.pyramidAxisRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.pyramidAxisRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.pyramidGridRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.pyramidGridRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.pyramidRenderer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.pyramidRenderer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.trendline.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/plugins/jqplot.trendline.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jqplot/usage.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/lib/jquery-1.8.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/elements.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/myelements.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/stylesheets/theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/.~lock.readme.xls#" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/master/master.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/users.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/.~lock.test.xls#" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/task.iml" afterPath="$PROJECT_DIR$/.idea/task.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/admin.py" afterPath="$PROJECT_DIR$/web/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/apps.py" afterPath="$PROJECT_DIR$/web/apps.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/base.py" afterPath="$PROJECT_DIR$/web/base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/code.py" afterPath="$PROJECT_DIR$/web/code.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/db.py" afterPath="$PROJECT_DIR$/web/db.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/log.py" afterPath="$PROJECT_DIR$/web/log.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/models.py" afterPath="$PROJECT_DIR$/web/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/mysql.py" afterPath="$PROJECT_DIR$/web/mysql.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/property.py" afterPath="$PROJECT_DIR$/web/property.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/streen.py" afterPath="$PROJECT_DIR$/web/streen.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/tree.py" afterPath="$PROJECT_DIR$/web/tree.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/user.py" afterPath="$PROJECT_DIR$/web/user.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views.py" afterPath="$PROJECT_DIR$/web/views.py" />
     </list>
     <ignored path="task.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -548,16 +29,15 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/task$Test__templates_login_html.coverage" NAME="Test: templates.login.html Coverage Results" MODIFIED="1463540663374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/task$base.coverage" NAME="base Coverage Results" MODIFIED="1464083451527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
     <SUITE FILE_PATH="coverage/task$Test__templates_createhost_html.coverage" NAME="Test: templates.createhost.html Coverage Results" MODIFIED="1463635216912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/task$a.coverage" NAME="a Coverage Results" MODIFIED="1470989257732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/task$log.coverage" NAME="log Coverage Results" MODIFIED="1473745143460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/task$manage.coverage" NAME="manage Coverage Results" MODIFIED="1463539178113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/task$a.coverage" NAME="a Coverage Results" MODIFIED="1470989257732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/task$Test__templates_login_html.coverage" NAME="Test: templates.login.html Coverage Results" MODIFIED="1463540663374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/task$property.coverage" NAME="property Coverage Results" MODIFIED="1470637379274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web" />
     <SUITE FILE_PATH="coverage/task$tets.coverage" NAME="tets Coverage Results" MODIFIED="1470295366576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/task$manage.coverage" NAME="manage Coverage Results" MODIFIED="1463539178113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -571,85 +51,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/login.html">
+      <file leaf-file-name="tests.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="35.625">
+            <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="code.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/code.py">
+      <file leaf-file-name="mysql.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/mysql.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.9090909">
-              <caret line="134" column="69" selection-start-line="134" selection-start-column="69" selection-end-line="134" selection-end-column="69" />
-              <folding>
-                <element signature="e#39#96#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="property.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/property.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="10.625">
-              <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="upload.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/upload.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.041667">
-              <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="property.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/property.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-              <folding>
-                <element signature="e#37#85#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="updateall.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/updateall.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="113.083336">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/master/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-81.25">
-              <caret line="311" column="56" selection-start-line="311" selection-start-column="56" selection-end-line="311" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reteam.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/reteam.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="31.875">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="18">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -658,8 +74,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/task/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="89" column="25" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="25" />
+            <state relative-caret-position="900">
+              <caret line="84" column="1" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -681,17 +97,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/a.html" />
-        <option value="$PROJECT_DIR$/templates/treenew.html" />
         <option value="$PROJECT_DIR$/templates/tree.html" />
         <option value="$PROJECT_DIR$/static/json.json" />
         <option value="$PROJECT_DIR$/static/json/json.json" />
-        <option value="$PROJECT_DIR$/web/tree.py" />
         <option value="$PROJECT_DIR$/templates/userall.html" />
         <option value="$PROJECT_DIR$/templates/backall.html" />
         <option value="$PROJECT_DIR$/web/tests.py" />
         <option value="$PROJECT_DIR$/web/urls.py" />
-        <option value="$PROJECT_DIR$/web/views.py" />
         <option value="$PROJECT_DIR$/templates/teamall.html" />
         <option value="$PROJECT_DIR$/templates/createteam.html" />
         <option value="$PROJECT_DIR$/templates/reteam.html" />
@@ -705,7 +117,6 @@
         <option value="$PROJECT_DIR$/templates/upyunupload.html" />
         <option value="$PROJECT_DIR$/static/upload/js/upyuncustom.js" />
         <option value="$PROJECT_DIR$/templates/svn.html" />
-        <option value="$PROJECT_DIR$/web/base.py" />
         <option value="$PROJECT_DIR$/templates/test.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/property.html" />
@@ -715,36 +126,40 @@
         <option value="$PROJECT_DIR$/test/q" />
         <option value="$PROJECT_DIR$/test/2016-09-06/2016-09-05_10.10.2.6_23306_slow.txt" />
         <option value="$PROJECT_DIR$/web/migrations/0017_auto_20160912_1638.py" />
-        <option value="$PROJECT_DIR$/web/models.py" />
         <option value="$PROJECT_DIR$/test/log.py" />
         <option value="$PROJECT_DIR$/templates/master/index.html" />
         <option value="$PROJECT_DIR$/templates/sqlall.html" />
         <option value="$PROJECT_DIR$/static/js/form-components.js" />
         <option value="$PROJECT_DIR$/static/js/bootstrap-datepicker.js" />
-        <option value="$PROJECT_DIR$/web/mysql.py" />
         <option value="$PROJECT_DIR$/templates/codedetail.html" />
-        <option value="$PROJECT_DIR$/web/admin.py" />
         <option value="$PROJECT_DIR$/task/urls.py" />
+        <option value="$PROJECT_DIR$/templates/stree.html" />
+        <option value="$PROJECT_DIR$/templates/upload.html" />
         <option value="$PROJECT_DIR$/web/code.py" />
+        <option value="$PROJECT_DIR$/web/admin.py" />
+        <option value="$PROJECT_DIR$/web/apps.py" />
+        <option value="$PROJECT_DIR$/web/base.py" />
+        <option value="$PROJECT_DIR$/web/db.py" />
         <option value="$PROJECT_DIR$/web/log.py" />
+        <option value="$PROJECT_DIR$/web/models.py" />
+        <option value="$PROJECT_DIR$/web/mysql.py" />
         <option value="$PROJECT_DIR$/web/property.py" />
         <option value="$PROJECT_DIR$/web/streen.py" />
-        <option value="$PROJECT_DIR$/templates/stree.html" />
+        <option value="$PROJECT_DIR$/web/tree.py" />
         <option value="$PROJECT_DIR$/web/user.py" />
-        <option value="$PROJECT_DIR$/templates/upload.html" />
+        <option value="$PROJECT_DIR$/web/views.py" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" />
-  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2" />
-    <option name="y" value="25" />
-    <option name="width" value="1684" />
-    <option name="height" value="1004" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -850,10 +265,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Linters.ClosureLinter" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ace" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../python/shims/python3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="138" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="138" />
@@ -870,6 +285,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="815" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -1077,7 +493,21 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="task" />
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
@@ -1088,6 +518,7 @@
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run-script" />
       <scripts />
+      <node-interpreter value="project" />
       <envs />
       <method />
     </configuration>
@@ -1242,7 +673,9 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration>$USER_HOME$/.subversion</configuration>
   </component>
@@ -1251,6 +684,7 @@
       <changelist id="7da08bf5-c66f-48f1-895a-d8b81e5f6c44" name="Default" comment="" />
       <created>1463364105686</created>
       <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1463364105686</updated>
     </task>
     <servers />
@@ -1264,27 +698,27 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="25" width="1684" height="1004" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18958333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18988095" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5016026" sideWeight="0.509375" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41346154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3974359" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5016026" sideWeight="0.490625" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41346154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3974359" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1327,66 +761,30 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/2016-09-06/2016-09-05_10.10.3.10_13306_slow.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6315789">
-          <caret line="193" column="17" selection-start-line="193" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/2016-09-06/2016-09-05_10.10.3.10_3316_slow.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-33.68421">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/2016-09-06/2016-09-05_10.10.3.9_3316_slow.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7894738">
-          <caret line="121" column="34" selection-start-line="121" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/2016-09-06/2016-09-07_10.10.3.10_13306_slow.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/2016-09-12/2016-09-07_10.10.1.9_23306_slow.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/2016-09-12/2016-09-07_10.10.3.9_23308_slow.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/createlanguage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125">
+        <state relative-caret-position="0">
           <caret line="101" column="20" selection-start-line="101" selection-start-column="20" selection-end-line="101" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/2016-09-12/2016-09-07_10.10.3.10_13306_slow.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="32" column="51" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/a.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32274246">
+        <state relative-caret-position="0">
           <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="96" selection-end-column="21" />
           <folding />
         </state>
@@ -1394,270 +792,163 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/2016-09-12/2016-09-07_10.10.3.10_3316_slow.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52675587">
+        <state relative-caret-position="0">
           <caret line="1100" column="0" selection-start-line="1095" selection-start-column="0" selection-end-line="1100" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/migrations/0017_auto_20160912_1638.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="17" column="34" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/2016-09-13/2016-09-13_10.10.3.10_23308_slow.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/2016-09-13/2016-09-13_10.10.2.6_23306_slow.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="456" column="26" selection-start-line="456" selection-start-column="23" selection-end-line="456" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/2016-09-13/2016-09-13_10.10.3.10_3316_slow.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="3549" column="42" selection-start-line="3549" selection-start-column="42" selection-end-line="3549" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/log.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/user.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.9583335">
+        <state relative-caret-position="0">
           <caret line="81" column="42" selection-start-line="71" selection-start-column="36" selection-end-line="81" selection-end-column="42" />
-          <folding>
-            <element signature="e#2037#2311#0#HTML" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/form_component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.017857">
+        <state relative-caret-position="0">
           <caret line="4080" column="44" selection-start-line="4080" selection-start-column="44" selection-end-line="4080" selection-end-column="134" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33215547">
+        <state relative-caret-position="0">
           <caret line="47" column="51" selection-start-line="47" selection-start-column="46" selection-end-line="47" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/bootstrap-datepicker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="24.280937">
+        <state relative-caret-position="0">
           <caret line="1190" column="70" selection-start-line="1190" selection-start-column="70" selection-end-line="1190" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/form-components.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.21875">
+        <state relative-caret-position="0">
           <caret line="443" column="5" selection-start-line="443" selection-start-column="5" selection-end-line="443" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/sqlall.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.4166665">
+        <state relative-caret-position="0">
           <caret line="56" column="80" selection-start-line="56" selection-start-column="80" selection-end-line="56" selection-end-column="91" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/python34/lib/python3.4/subprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33277592">
-          <caret line="725" column="4" selection-start-line="725" selection-start-column="4" selection-end-line="725" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/python34/lib/python3.4/subprocess.py" />
     <entry file="file://$PROJECT_DIR$/templates/createstatus.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12541807">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/update.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/python34/lib/python3.4/site-packages/django/contrib/auth/decorators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.458194">
-          <caret line="47" column="47" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/python34/lib/python3.4/site-packages/django/contrib/auth/decorators.py" />
     <entry file="file://$PROJECT_DIR$/task/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4949495">
+        <state relative-caret-position="0">
           <caret line="52" column="45" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
-          <folding>
-            <element signature="e#671#711#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/db.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/log.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1474964349000" expanded="true" signature="1081:1197" placeholder="insert into web_slow... " />
-            <marker date="1474964349000" expanded="true" signature="2007:2123" placeholder="insert into web_slow... " />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/ui_general.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21052632">
+        <state relative-caret-position="0">
           <caret line="2694" column="0" selection-start-line="2694" selection-start-column="0" selection-end-line="2699" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/mysql.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="43" selection-start-line="22" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="e#35#92#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/stree.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.041666">
+        <state relative-caret-position="0">
           <caret line="354" column="76" selection-start-line="354" selection-start-column="76" selection-end-line="354" selection-end-column="76" />
-          <folding>
-            <element signature="e#4556#4577#0#HTML" expanded="true" />
-            <element signature="e#4628#4646#0#HTML" expanded="true" />
-            <element signature="e#4764#4785#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="242" column="30" selection-start-line="242" selection-start-column="30" selection-end-line="242" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/streen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
-          <folding>
-            <element signature="e#34#91#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/agentpasswd.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/teamall.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="39.958332">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/backall.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/codedetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="74.5">
+        <state relative-caret-position="0">
           <caret line="83" column="28" selection-start-line="83" selection-start-column="28" selection-end-line="286" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/createhost.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.333333">
+        <state relative-caret-position="0">
           <caret line="71" column="85" selection-start-line="71" selection-start-column="62" selection-end-line="71" selection-end-column="85" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/property.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.625">
+        <state relative-caret-position="2550">
           <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
           <folding />
         </state>
@@ -1665,69 +956,169 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="35.625">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/updateall.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="113.083336">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/reteam.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/master/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4665">
+          <caret line="311" column="56" selection-start-line="311" selection-start-column="56" selection-end-line="311" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1335">
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/code.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <element signature="e#38#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../python/versions/3.5.0/lib/python3.5/site-packages/django/contrib/admin/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../python/versions/3.5.0/lib/python3.5/site-packages/django/db/models/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="569" column="8" selection-start-line="569" selection-start-column="8" selection-end-line="569" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/mysql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/task/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="89" column="25" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/reteam.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="31.875">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/master/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-81.25">
-          <caret line="311" column="56" selection-start-line="311" selection-start-column="56" selection-end-line="311" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/upload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.041667">
-          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+        <state relative-caret-position="900">
+          <caret line="84" column="1" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/property.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        <state relative-caret-position="18">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="e#37#85#0" expanded="true" />
+            <element signature="e#41#89#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/code.py">
+    <entry file="file://$PROJECT_DIR$/web/streen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.9090909">
-          <caret line="134" column="69" selection-start-line="134" selection-start-column="69" selection-end-line="134" selection-end-column="69" />
-          <folding>
-            <element signature="e#39#96#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="18">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

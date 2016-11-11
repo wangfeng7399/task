@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 #coding:utf-8
 from django.db import models
 from django.contrib.auth.models import User,Group

@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 #coding:utf-8
 #公用的模块
 import base64

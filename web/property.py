@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 #coding:utf-8
 #性能
 from django.shortcuts import HttpResponse,render
