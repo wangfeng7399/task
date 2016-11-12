@@ -2,16 +2,17 @@
 #coding:utf-8
 
 
-from django.shortcuts import render,redirect,HttpResponse
-
+from django.shortcuts import render
+from django.core.urlresolvers import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from .models import Slow
-import time,datetime
 
-
+@login_required(login_url=reverse_lazy('login'))
 def slow(request):
     sql=Slow.objects.all()
     return render(request,'sqlall.html',{"sqlall":sql})
+
+@login_required(login_url=reverse_lazy('login'))
 def sqlselect(request):
     if request.method == "POST":
         starttime=request.POST.get("starttime")

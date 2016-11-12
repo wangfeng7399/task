@@ -5,6 +5,8 @@ import base64
 import smtplib
 import  os
 from email.mime.text import MIMEText
+
+
 def ec(str):
     encodestr=base64.b64encode(str.encode())
     return encodestr.decode()
