@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7da08bf5-c66f-48f1-895a-d8b81e5f6c44" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/master/index.html" afterPath="$PROJECT_DIR$/templates/master/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/log.py" afterPath="$PROJECT_DIR$/web/log.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/mysql.py" afterPath="$PROJECT_DIR$/web/mysql.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/sqlall.html" afterPath="$PROJECT_DIR$/templates/sqlall.html" />
     </list>
     <ignored path="task.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,7 +78,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mysql.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mysql.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/mysql.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -89,6 +86,16 @@
               <folding>
                 <element signature="e#39#74#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sqlall.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/sqlall.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="173" column="79" selection-start-line="173" selection-start-column="79" selection-end-line="173" selection-end-column="79" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -183,7 +190,6 @@
         <option value="$PROJECT_DIR$/test/2016-09-06/2016-09-05_10.10.2.6_23306_slow.txt" />
         <option value="$PROJECT_DIR$/web/migrations/0017_auto_20160912_1638.py" />
         <option value="$PROJECT_DIR$/test/log.py" />
-        <option value="$PROJECT_DIR$/templates/sqlall.html" />
         <option value="$PROJECT_DIR$/static/js/form-components.js" />
         <option value="$PROJECT_DIR$/static/js/bootstrap-datepicker.js" />
         <option value="$PROJECT_DIR$/templates/codedetail.html" />
@@ -204,6 +210,7 @@
         <option value="$PROJECT_DIR$/web/log.py" />
         <option value="$PROJECT_DIR$/templates/master/index.html" />
         <option value="$PROJECT_DIR$/web/mysql.py" />
+        <option value="$PROJECT_DIR$/templates/sqlall.html" />
       </list>
     </option>
   </component>
@@ -295,7 +302,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -902,13 +909,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sqlall.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="56" column="80" selection-start-line="56" selection-start-column="80" selection-end-line="56" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/python34/lib/python3.4/subprocess.py" />
     <entry file="file://$PROJECT_DIR$/templates/createstatus.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -1169,6 +1169,14 @@
           <folding>
             <element signature="e#39#74#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sqlall.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="173" column="79" selection-start-line="173" selection-start-column="79" selection-end-line="173" selection-end-column="79" />
+          <folding />
         </state>
       </provider>
     </entry>
