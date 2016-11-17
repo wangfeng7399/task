@@ -52,3 +52,4 @@ for i in os.listdir("/var/www/html/history/{0}".format(t)):
                         mysqlinsert(insertsql)
             except Exception:
                 pass
+
