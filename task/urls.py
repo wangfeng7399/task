@@ -53,6 +53,7 @@ urlpatterns = [
     url(r'^upyun/$',code.upyun,name='upyun'),
     url(r'^issuper/$',user.issuper,name='issuper'),
     url(r'^reuser/(?P<id>[0-9]+)$',user.reuser,name='reuser'),
+    url(r'^deluser/(?P<id>[0-9]+)$', user.deluser, name='deluser'),
     url(r'^del/(?P<id>[0-9]+)$',code.delfile,name='delfile'),
     url(r'^reteam/(?P<id>[0-9]+)$',user.reteam,name='reteam'),
     url(r'^goback/(?P<id>[0-9]+)$',code.goback,name='goback'),

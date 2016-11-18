@@ -174,6 +174,14 @@ def reuser(request,id):
     user=User.objects.get(id=id)
     return render(request,'reuser.html',{"teamall":teamall,"user":user})
 
+@login_required(login_url=reverse_lazy('login'))
+def deluser(request,id):
+    user = User.objects.get(id=id)
+    #user.team_set.filter(userid=user).delete()
+    #会把所有跟user有关的配置都删除
+    user.delete()
+    return redirect(reverse("userall"))
+
 
 @login_required(login_url=reverse_lazy('login'))
 def updateuser(request):
@@ -246,23 +254,23 @@ def updateteam(request):
             hostlist.append(hl.id)
         for nl in nall:
             nginxlist.append(nl.id)
-        for h in host:
-            if h not in hall:
-                hostid=Host.objects.get(id=h)
-                team.host.add(hostid)
-        print(host)
         for dh in hostlist:
             if dh not in host:
                 dhostid=Host.objects.get(id=dh)
                 team.host.remove(dhostid)
-        for nh in nginxhost:
-            if nh not in nall:
-                nhid=NginxHost.objects.get(id=nh)
-                team.nginxhost.add(nhid)
+        for h in host:
+            if h not in hall:
+                hostid=Host.objects.get(id=h)
+                team.host.add(hostid)
+
         for dnh in nginxlist:
             if dnh not in nginxhost:
                 dnhid=NginxHost.objects.get(id=dnh)
                 team.nginxhost.remove(dnhid)
+        for nh in nginxhost:
+            if nh not in nall:
+                nhid=NginxHost.objects.get(id=nh)
+                team.nginxhost.add(nhid)
         return redirect(reverse("teamall"))
     else:
         return render(request,'createteam.html',{"language":language,"hostall":hostall,"nginxhost":nhost})

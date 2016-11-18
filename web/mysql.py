@@ -24,7 +24,13 @@ def sqlselect(request):
     if request.method == "POST":
         starttime=request.POST.get("starttime")
         endtime=request.POST.get("endtime")
-        print(starttime,endtime)
+        if starttime =="":
+            starttime="2010-01-01"
+        d = datetime.date.today()
+        onday = datetime.timedelta(days=1)
+        yesterday = d - onday
+        if endtime =="":
+            endtime=yesterday
         sql=Slow.objects.all()
         selectsql=sql.exclude(date__lt=starttime)
         sqls=selectsql.exclude(date__gt=endtime)
