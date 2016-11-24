@@ -91,3 +91,6 @@ class Slow(models.Model):
     mintime=models.CharField(max_length=100)
     insql=models.TextField(max_length=20000)
     count=models.IntegerField()
+
+class Svn(models.Model):
+    name=models.CharField(max_length=100)
