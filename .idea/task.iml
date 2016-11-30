@@ -13,7 +13,7 @@
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.5.0 (/data/python/shims/python3)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.5.2 (/data/python/versions/3.5.2/bin/python3)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TemplatesService">
