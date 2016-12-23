@@ -1,1 +1,39 @@
-{% extends 'master/index.html' %}{% block css %}    <link rel="stylesheet" href="/static/css/bootstrap.min.css">    <link rel="stylesheet" href="/static/css/bootstrap-responsive.min.css">    <link rel="stylesheet" href="/static/css/font-awesome.css">    <link rel="stylesheet" href="/static/css/style-metro.css">    <link rel="stylesheet" href="/static/css/style.css">    <link rel="stylesheet" href="/static/css/style-non-responsive.css">    <link rel="stylesheet" href="/static/css/default.css">    <link rel="stylesheet" href="/static">    <link rel="stylesheet" href="/static/css/error.css">{% endblock %}{% block body %}<div class="page-container row-fluid">    <!-- BEGIN PAGE CONTENT-->    <div>        <div class="span12 page-404">            <div class="number">                Sorry            </div>            <div class="details">                <h3>敬请期待!</h3>                <p>                    <a href="{% url 'index' %}">Return home</a>                </p>            </div>        </div>    </div>    <!-- END PAGE CONTENT--></div>{% endblock %}{% block js %}    	<script src="/static/js/app.js"></script>	<script>		jQuery(document).ready(function() {		   App.init();		});	</script>{% endblock %}
+{% extends 'master/index.html' %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/css/style-metro.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/style-non-responsive.css">
+    <link rel="stylesheet" href="/static/css/default.css">
+    <link rel="stylesheet" href="/static">
+    <link rel="stylesheet" href="/static/css/error.css">
+{% endblock %}
+{% block body %}
+    <div class="page-container row-fluid">
+        <!-- BEGIN PAGE CONTENT-->
+        <div>
+            <div class="span12 page-404">
+                <div class="number">
+                    Sorry
+                </div>
+                <div class="details">
+                    <h3>敬请期待!</h3>
+                    <p>
+                        <a href="{% url 'index' %}">Return home</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE CONTENT-->
+    </div>
+{% endblock %}
+{% block js %}
+    <script src="/static/js/app.js"></script>
+    <script>
+        jQuery(document).ready(function() {
+            App.init();
+        });
+    </script>
+{% endblock %}

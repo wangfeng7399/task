@@ -1,1 +1,287 @@
-{% extends 'master/index.html' %}	<!-- BEGIN GLOBAL MANDATORY STYLES -->{% block css %}   <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-fileupload.css" /><link rel="stylesheet" type="text/css" href="/static/css/jquery.gritter.css" /><link rel="stylesheet" type="text/css" href="/static/css/chosen.css" /><link rel="stylesheet" type="text/css" href="/static/css/select2_metro.css" /><link rel="stylesheet" type="text/css" href="/static/css/jquery.tagsinput.css" /><link rel="stylesheet" type="text/css" href="/static/css/clockface.css" /><link rel="stylesheet" type="text/css" href="/static/css/bootstrap-wysihtml5.css" /><link rel="stylesheet" type="text/css" href="/static/css/datepicker.css" /><link rel="stylesheet" type="text/css" href="/static/css/timepicker.css" /><link rel="stylesheet" type="text/css" href="/static/css/colorpicker.css" /><link rel="stylesheet" type="text/css" href="/static/css/bootstrap-toggle-buttons.css" /><link rel="stylesheet" type="text/css" href="/static/css/daterangepicker.css" /><link rel="stylesheet" type="text/css" href="/static/css/datetimepicker.css" /><link rel="stylesheet" type="text/css" href="/static/css/multi-select-metro.css" /><link href="/static/css/bootstrap-modal.css" rel="stylesheet" type="text/css"/>{% endblock %}{% block body %}<div class="container-fluid"><!-- BEGIN PAGE CONTENT--><div class="row-fluid ">    <div class="span12">        <!-- BEGIN INLINE TABS PORTLET-->        <div class="portlet box green">            <div class="portlet-title">                <div class="caption"><i class="icon-reorder"></i>项目详情                </div>                <a href="{% url 'teamall' %}">&nbsp;返回</a>            </div>            <div class="portlet-body">                <div class="row-fluid">                    <div class="span6">                        <!--BEGIN TABS-->                        <div class="tabbable tabbable-custom">                            <ul class="nav nav-tabs">                                <li ><a href="#status" data-toggle="tab">修改项目</a></li>                                <li class="active"><a href="#logs" data-toggle="tab">项目详情</a></li>                            </ul>                            <div class="tab-content" style="width: 200%;">                                <div class="tab-pane " id="status">                                    <form action="{% url 'updateteam' %}" class="form-horizontal" method="post">                                            <div class="control-group">                                                <label class="control-label">项目名：</label>                                                <div class="controls">                                                    <input name="teamname" type="text" value="{{ team.groupname }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="项目名称" />                                                </div>                                            </div>                                            <div class="control-group">                                                <label class="control-label">项目语言：</label>                                                <div class="controls">                                                    <select name="teamlanguage" class="span6" data-placeholder="项目语言" tabindex="1">                                                    <option value=""></option>                                                        {% for lan in language %}                                                        <option value="{{ lan.id }}">{{ lan.language }}</option>                                                    {% endfor %}                                                    </select>                                                </div>                                            </div>                                            <div class="control-group">                                                <label class="control-label">项目目录：</label>                                                <div class="controls">                                                    <input name="teampath" type="text" value="{{ team.path }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="项目目录" />                                                </div>                                            </div>                                             <div class="control-group">                                                <label class="control-label">项目端口：</label>                                                <div class="controls">                                                    <input type="text" name="teamport" value="{{ team.teamport }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="项目端口" />                                                </div>                                            </div>                                            <div class="control-group">                                                <label class="control-label">数据目录：</label>                                                <div class="controls">                                                    <input name="datapath" type="text" value="{{ team.datapath }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="数据目录" />                                                </div>                                            </div>                                             <div class="control-group">                                                <label class="control-label">包含主机：</label>                                                <div class="controls">                                                    <select multiple="multiple" id="my_multi_select1" name="host">                                                        {% for host in hostall %}                                                        <option value="{{ host.id }}">{{ host.hostname }}-{{ host.hostip }}</option>                                                        {% endfor %}                                                    </select>                                                </div>                                            </div>                                            <div class="control-group">                                                <label class="control-label">svn路径：</label>                                                <div class="controls">                                                    <input type="text" name="svnpath" value="{{ team.svnpath }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="svn路径" />                                                </div>                                            </div>                                            <div class="control-group">                                                <label class="control-label">svn用户：</label>                                                <div class="controls">                                                    <input type="text" name="svnuser" value="{{ team.svnnnuser }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="svn用户" />                                                </div>                                            </div>                                            <div class="control-group">                                                <label class="control-label">svn密码：</label>                                                <div class="controls">                                                    <input type="text" name="svnpwd" value="{{ team.svnpwd }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="svn密码" />                                                </div>                                            </div>                                             <div class="control-group">										<label class="control-label">nginx主机：</label>										<div class="controls">											<select multiple="multiple" id="my_multi_select2" name="nginxhost">												{% for nginx in nginxhost %}                                                <option value="{{ nginx.id }}">{{ nginx.hostname }}-{{ nginx.hostip }}</option>                                                {% endfor %}											</select>										</div>									</div>                                            <div class="control-group">                                                <label class="control-label">nginx配置文件路径：</label>                                                <div class="controls">                                                    <input type="text" name="nginxpath" value="{{ team.nginxconf }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="nginx配置文件路径" />                                                </div>                                            </div>                                            <div class="control-group">                                                <label class="control-label">nginx upstream名：</label>                                                <div class="controls">                                                    <input type="text" name="nginxupstream" value="{{ team.nginxupstream }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="nginx upstream名" />                                                </div>                                            </div>                                            <div class="control-group">                                                <label class="control-label">添加测试url：</label>                                                <div class="controls">                                                    <input type="text" name="url" value="{{ team.url }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="添加测试" />                                                </div>                                            </div>                                            <div class="control-group">                                                <label class="control-label">备注：</label>                                                <div class="controls">                                                    <textarea name="ps" class="span6 m-wrap" rows="3"></textarea>                                                </div>                                            </div>                                            <div class="form-actions">                                                <button type="submit" class="btn blue">提交</button>                                                <button type="reset" class="btn">清空</button>                                            </div>                                         </form>                                </div>                                <div class="tab-pane active" id="logs">                                    <div class="portlet-body form">                                        <table class="table table-striped table-hover table-bordered" id="sample_editable_1">									<thead>										<tr>											<th>类型</th>											<th>值</th>										</tr>									</thead>									<tbody>										<tr>											<td>项目名称</td>											<td>{{  team.groupname }}</td>										</tr>                                        <tr>											<td>项目语言</td>											<td>{{  team.language_id.language }}</td>										</tr>                                        <tr>											<td>项目目录</td>											<td>{{  team.path }}</td>										</tr>                                        <tr>											<td>项目端口</td>											<td>{{  team.teamport }}</td>										</tr>                                        <tr>											<td>数据目录</td>											<td>{{  team.datapath }}</td>										</tr>                                        <tr>											<td>包含主机</td>											<td>                                            {% for host in team.host.all %}                                                {{ host.hostname }}-{{ host.hostip }},                                            {% endfor %}                                            </td>										</tr>                                        <tr>											<td>svn路径</td>											<td>{{  team.svnpath }}</td>										</tr>                                        <tr>											<td>svn用户</td>											<td>{{  team.svnuser }}</td>										</tr>                                        <tr>											<td>svn密码</td>											<td>{{  team.svnpwd }}</td>										</tr>                                        <tr>											<td>nginx主机</td>											<td>                                                {% for nginxhost in team.nginxhost.all %}                                                    {{ nginxhost.hostname }}-{{ nginxhost.hostip }},                                                {% endfor %}                                            </td>										</tr>                                        <tr>											<td>nginx配置文件路径</td>											<td>{{  team.nginxconf }}</td>										</tr>                                        <tr>											<td>nginx upstream</td>											<td>{{  team.nginxupstream }}</td>										</tr>                                        <tr>											<td>测试url</td>											<td>{{  team.url}}</td>										</tr>                                        <tr>											<td>备注信息</td>											<td>{{  team.ps}}</td>										</tr>									</tbody>								</table>                                    </div>                                </div>                            </div>                        </div>                        <!--END TABS-->                    </div>                    <div class="space10 visible-phone"></div>                </div>            </div>        </div>        <!-- END INLINE TABS PORTLET-->        </div>    </div>    <!-- END PAGE CONTENT--></div>{% endblock %}{% block js %} <script type="text/javascript" src="/static/js/ckeditor.js"></script><script type="text/javascript" src="/static/js/bootstrap-fileupload.js"></script><script type="text/javascript" src="/static/js/chosen.jquery.min.js"></script><script type="text/javascript" src="/static/js/select2.min.js"></script><script type="text/javascript" src="/static/js/wysihtml5-0.3.0.js"></script><script type="text/javascript" src="/static/js/bootstrap-wysihtml5.js"></script><script type="text/javascript" src="/static/js/jquery.tagsinput.min.js"></script><script type="text/javascript" src="/static/js/jquery.toggle.buttons.js"></script><script type="text/javascript" src="/static/js/bootstrap-datepicker.js"></script><script type="text/javascript" src="/static/js/bootstrap-datetimepicker.js"></script><script type="text/javascript" src="/static/js/clockface.js"></script><script type="text/javascript" src="/static/js/date.js"></script><script type="text/javascript" src="/static/js/daterangepicker.js"></script><script type="text/javascript" src="/static/js/bootstrap-colorpicker.js"></script><script type="text/javascript" src="/static/js/bootstrap-timepicker.js"></script><script type="text/javascript" src="/static/js/jquery.inputmask.bundle.min.js"></script><script type="text/javascript" src="/static/js/jquery.input-ip-address-control-1.0.min.js"></script><script type="text/javascript" src="/static/js/jquery.multi-select.js"></script><script src="/static/js/bootstrap-modal.js" type="text/javascript" ></script><script src="/static/js/bootstrap-modalmanager.js" type="text/javascript" ></script><!-- END PAGE LEVEL PLUGINS --><!-- BEGIN PAGE LEVEL SCRIPTS --><script src="/static/js/app.js"></script><script src="/static/js/form-components.js"></script><!-- END PAGE LEVEL SCRIPTS --><script>    jQuery(document).ready(function() {       // initiate layout and plugins       App.init();       FormComponents.init();    });</script><!-- END JAVASCRIPTS --><script type="text/javascript">  var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-37564768-1']);  _gaq.push(['_setDomainName', 'keenthemes.com']);  _gaq.push(['_setAllowLinker', true]);  _gaq.push(['_trackPageview']);  (function() {    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })();</script></body><!-- END BODY -->{% endblock %}
+{% extends 'master/index.html' %}
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-fileupload.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/select2_metro.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/jquery.tagsinput.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/clockface.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-wysihtml5.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/timepicker.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/colorpicker.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-toggle-buttons.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/datetimepicker.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/multi-select-metro.css" />
+    <link href="/static/css/bootstrap-modal.css" rel="stylesheet" type="text/css"/>
+{% endblock %}
+{% block body %}
+    <div class="container-fluid">
+        <!-- BEGIN PAGE CONTENT-->
+        <div class="row-fluid ">
+            <div class="span12">
+                <!-- BEGIN INLINE TABS PORTLET-->
+                <div class="portlet box green">
+                    <div class="portlet-title">
+                        <div class="caption"><i class="icon-reorder"></i>项目详情
+                        </div>
+                        <a href="{% url 'teamall' %}">&nbsp;返回</a>
+                    </div>
+                    <div class="portlet-body">
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <!--BEGIN TABS-->
+                            <div class="tabbable tabbable-custom">
+                                <ul class="nav nav-tabs">
+                                    <li ><a href="#status" data-toggle="tab">修改项目</a></li>
+                                    <li class="active"><a href="#logs" data-toggle="tab">项目详情</a></li>
+                                </ul>
+                                <div class="tab-content" style="width: 200%;">
+                                    <div class="tab-pane " id="status">
+                                        <form action="{% url 'updateteam' %}" class="form-horizontal" method="post">                                            <div class="control-group">
+                                            <label class="control-label">项目名：</label>
+                                            <div class="controls">
+                                                <input name="teamname" type="text" value="{{ team.groupname }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="项目名称" />
+                                            </div>
+                                        </div>
+                                            <div class="control-group">
+                                                <label class="control-label">项目语言：</label>
+                                                <div class="controls">
+                                                    <select name="teamlanguage" class="span6" data-placeholder="项目语言" tabindex="1">
+                                                        <option value=""></option>
+                                                        {% for lan in language %}
+                                                        <option value="{{ lan.id }}">{{ lan.language }}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">项目目录：</label>
+                                                <div class="controls">
+                                                    <input name="teampath" type="text" value="{{ team.path }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="项目目录" />
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">项目端口：</label>
+                                                <div class="controls">
+                                                    <input type="text" name="teamport" value="{{ team.teamport }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="项目端口" />
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">数据目录：</label>
+                                                <div class="controls">
+                                                    <input name="datapath" type="text" value="{{ team.datapath }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="数据目录" />
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">包含主机：</label>
+                                                <div class="controls">
+                                                    <select multiple="multiple" id="my_multi_select1" name="host">
+                                                        {% for host in hostall %}
+                                                            <option value="{{ host.id }}">{{ host.hostname }}-{{ host.hostip }}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">svn路径：</label>
+                                                <div class="controls">
+                                                    <input type="text" name="svnpath" value="{{ team.svnpath }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="svn路径" />
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">svn用户：</label>
+                                                <div class="controls">
+                                                    <input type="text" name="svnuser" value="{{ team.svnnnuser }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="svn用户" />
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">svn密码：</label>
+                                                <div class="controls">
+                                                    <input type="text" name="svnpwd" value="{{ team.svnpwd }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="svn密码" />
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">nginx主机：</label>
+                                                <div class="controls">
+                                                    <select multiple="multiple" id="my_multi_select2" name="nginxhost">
+                                                        {% for nginx in nginxhost %}
+                                                        <option value="{{ nginx.id }}">{{ nginx.hostname }}-{{ nginx.hostip }}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">nginx配置文件路径：</label>
+                                                <div class="controls">
+                                                    <input type="text" name="nginxpath" value="{{ team.nginxconf }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="nginx配置文件路径" />
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">nginx upstream名：</label>
+                                                <div class="controls">
+                                                    <input type="text" name="nginxupstream" value="{{ team.nginxupstream }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="nginx upstream名" />
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">添加测试url：</label>
+                                                <div class="controls">
+                                                    <input type="text" name="url" value="{{ team.url }}" class="span6 m-wrap tooltips" data-trigger="hover" data-original-title="添加测试" />
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">备注：</label>
+                                                <div class="controls">
+                                                    <textarea name="ps" class="span6 m-wrap" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-actions">
+                                                <button type="submit" class="btn blue">提交</button>
+                                                <button type="reset" class="btn">清空</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane active" id="logs">
+                                        <div class="portlet-body form">
+                                            <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+                                                <thead>
+                                                <tr>
+                                                    <th>类型</th>
+                                                    <th>值</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>项目名称</td>
+                                                    <td>{{  team.groupname }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>项目语言</td>
+                                                    <td>{{  team.language_id.language }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>项目目录</td>
+                                                    <td>{{  team.path }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>项目端口</td>
+                                                    <td>{{  team.teamport }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>数据目录</td>
+                                                    <td>{{  team.datapath }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>包含主机</td>
+                                                    <td>
+                                                        {% for host in team.host.all %}
+                                                            {{ host.hostname }}-{{ host.hostip }},
+                                                        {% endfor %}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>svn路径</td>
+                                                    <td>{{  team.svnpath }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>svn用户</td>
+                                                    <td>{{  team.svnuser }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>svn密码</td>
+                                                    <td>{{  team.svnpwd }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>nginx主机</td>
+                                                    <td>
+                                                        {% for nginxhost in team.nginxhost.all %}
+                                                            {{ nginxhost.hostname }}-{{ nginxhost.hostip }},
+                                                        {% endfor %}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>nginx配置文件路径</td>
+                                                    <td>{{  team.nginxconf }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>nginx upstream</td>
+                                                    <td>{{  team.nginxupstream }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>测试url</td>
+                                                    <td>{{  team.url}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>备注信息</td>
+                                                    <td>{{  team.ps}}</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END TABS-->
+                        </div>
+                        <div class="space10 visible-phone"></div>
+                    </div>
+                    </div>
+                </div>
+                <!-- END INLINE TABS PORTLET-->
+            </div>
+        </div>
+        <!-- END PAGE CONTENT-->
+    </div>
+{% endblock %}
+{% block js %}
+    <script type="text/javascript" src="/static/js/ckeditor.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap-fileupload.js">
+    </script><script type="text/javascript" src="/static/js/chosen.jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/select2.min.js"></script>
+    <script type="text/javascript" src="/static/js/wysihtml5-0.3.0.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap-wysihtml5.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.tagsinput.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.toggle.buttons.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="/static/js/clockface.js"></script>
+    <script type="text/javascript" src="/static/js/date.js"></script>
+    <script type="text/javascript" src="/static/js/daterangepicker.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap-colorpicker.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap-timepicker.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.inputmask.bundle.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.input-ip-address-control-1.0.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.multi-select.js"></script>
+    <script src="/static/js/bootstrap-modal.js" type="text/javascript" ></script>
+    <script src="/static/js/bootstrap-modalmanager.js" type="text/javascript" ></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/form-components.js"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <script>
+        jQuery(document).ready(function() {
+        // initiate layout and plugins
+            App.init();
+            FormComponents.init();
+         });
+    </script>
+    <!-- END JAVASCRIPTS -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-37564768-1']);
+        _gaq.push(['_setDomainName', 'keenthemes.com']);
+        _gaq.push(['_setAllowLinker', true]);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })();
+    </script>
+    </body>
+    <!-- END BODY -->
+{% endblock %}
