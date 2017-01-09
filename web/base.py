@@ -3,7 +3,8 @@
 #公用的模块
 import base64
 import smtplib
-import  os
+import logging
+import logging.handlers
 from email.mime.text import MIMEText
 
 
@@ -31,3 +32,15 @@ def send_mail(to_list,sub,content):
     s.sendmail(me,to_list,msg.as_string())
     s.close()
 
+
+def logfunc():
+    logname="python.log"
+    log=logging.getLogger()
+    sh=logging.handlers.TimedRotatingFileHandler(logname,when="D",interval=1)
+    sh.setLevel(logging.DEBUG)
+    fmt = "%(asctime)-15s %(levelname)s %(filename)s %(lineno)d %(process)d %(message)s"
+    datefmt = "%Y-%m-%d %H:%M:%S"
+    formatter = logging.Formatter(fmt, datefmt)
+    sh.setFormatter(formatter)
+    log.addHandler(sh)
+    return log
