@@ -478,57 +478,57 @@
             $.ajax({
                 url:'/zabbix/'+id,
                 type:"GET",
-                success:function(arg) {
-         alert(arg);
-         arg = eval("(" + arg + ")");
+                 success:function(arg) {
+                 alert(arg);
+                 arg = eval("(" + arg + ")");
 
-        var arg=JSON.parse(arg);
+                var arg=JSON.parse(arg);
 
-        for(var i =0;i<arg.cpu.xAxis.length;i++){
-                              xAxis_data.push(arg.cpu.xAxis[i]);
-                              one_data.push(arg.cpu.cpuone[i]);
-                              five_data.push(arg.cpu.cpufive[i]);
-                              fivten_data.push(arg.cpu.cpufivten[i]);
-                            }
-          for(var i =0;i<arg.network.xAxis.length;i++){
-                             netwrokx.push(arg.network.xAxis[i]);
-                             networkin.push(arg.network.networkin[i]);
-                             networkout.push(arg.network.networkout[i]);
-                       }
-          for(var i =0;i<arg.process.xAxis.length;i++){
-                            processx.push(arg.process.xAxis[i]);
-                            processmax.push(arg.process.max[i]);
-                            processnew.push(arg.process.new[i]);
-                            processall.push(arg.process.all[i]);
-                           }
-          for(var i =0;i<arg.disk.data.length;i++){
-              disk_data.push(arg.disk.data[i]);
-                         }
-         var processoption=process.getOption();
-         var option=cpu.getOption();
-         var networkoption=network.getOption();
-         var diskoption=disk.getOption();
-            option.xAxis[0].data=xAxis_data;
-            option.series[0].data=one_data;
-            option.series[1].data=five_data;
-            option.series[2].data=fivten_data;
-            networkoption.xAxis[0].data=netwrokx;
-            networkoption.series[0].data=networkin;
-            networkoption.series[1].data=networkout;
-            processoption.xAxis[0].data=processx;
-            processoption.series[0].data=processmax;
-            processoption.series[1].data=processnew;
-            processoption.series[2].data=processall;
-            diskoption.series[0].data=disk_data;
-            cpu.setOption(option);
-            network.setOption(networkoption);
-            process.setOption(processoption);
-            disk.setOption(diskoption);
-                   },
-         error:function(){
-               alert('error')
-                }
-         })
+                for(var i =0;i<arg.cpu.xAxis.length;i++){
+                                      xAxis_data.push(arg.cpu.xAxis[i]);
+                                      one_data.push(arg.cpu.cpuone[i]);
+                                      five_data.push(arg.cpu.cpufive[i]);
+                                      fivten_data.push(arg.cpu.cpufivten[i]);
+                                    }
+                for(var i =0;i<arg.network.xAxis.length;i++){
+                                     netwrokx.push(arg.network.xAxis[i]);
+                                     networkin.push(arg.network.networkin[i]);
+                                     networkout.push(arg.network.networkout[i]);
+                               }
+                for(var i =0;i<arg.process.xAxis.length;i++){
+                                    processx.push(arg.process.xAxis[i]);
+                                    processmax.push(arg.process.max[i]);
+                                    processnew.push(arg.process.new[i]);
+                                    processall.push(arg.process.all[i]);
+                                   }
+                for(var i =0;i<arg.disk.data.length;i++){
+                      disk_data.push(arg.disk.data[i]);
+                                 }
+                var processoption=process.getOption();
+                 var option=cpu.getOption();
+                 var networkoption=network.getOption();
+                 var diskoption=disk.getOption();
+                    option.xAxis[0].data=xAxis_data;
+                    option.series[0].data=one_data;
+                    option.series[1].data=five_data;
+                    option.series[2].data=fivten_data;
+                    networkoption.xAxis[0].data=netwrokx;
+                    networkoption.series[0].data=networkin;
+                    networkoption.series[1].data=networkout;
+                    processoption.xAxis[0].data=processx;
+                    processoption.series[0].data=processmax;
+                    processoption.series[1].data=processnew;
+                    processoption.series[2].data=processall;
+                    diskoption.series[0].data=disk_data;
+                    cpu.setOption(option);
+                    network.setOption(networkoption);
+                    process.setOption(processoption);
+                    disk.setOption(diskoption);
+                           },
+                 error:function(){
+                       alert('error')
+                        }
+                 })
          });
     </script>
     <!-- END JAVASCRIPTS -->

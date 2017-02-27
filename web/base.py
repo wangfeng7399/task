@@ -5,6 +5,7 @@ import base64
 import smtplib
 import logging
 import logging.handlers
+import os
 from email.mime.text import MIMEText
 
 
@@ -34,7 +35,9 @@ def send_mail(to_list,sub,content):
 
 
 def logfunc():
-    logname="python.log"
+    if not os.path.exists("/var/log/python/"):
+        os.mkdir("/var/log/python/",755)
+    logname="/var/log/python/python.log"
     log=logging.getLogger()
     sh=logging.handlers.TimedRotatingFileHandler(logname,when="D",interval=1)
     sh.setLevel(logging.DEBUG)
